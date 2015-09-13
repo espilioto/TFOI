@@ -1,0 +1,103 @@
+﻿<Window x:Class="TFOIBeta.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TFOIBeta"
+        mc:Ignorable="d"
+        Title="The Finding of Items: ReCompile" Width="960" Height="570" Loaded="Window_Loaded" ResizeMode="NoResize" >
+    <Window.Resources>
+        <Storyboard x:Key="logoSway" AutoReverse="True" RepeatBehavior="Forever">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="logo">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource logoSway}"/>
+        </EventTrigger>
+    </Window.Triggers>
+
+    <Grid>
+        <Frame Name="mainWindowFrame" NavigationUIVisibility="Hidden"/>
+        <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="Resources/BG.png"/>
+        <Image x:Name="logo" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="Resources/logoNoShadow.png" RenderTransformOrigin="0.5,0.5" Margin="82,16,82,0" VerticalAlignment="Top" Height="150">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+            <Image.Effect>
+                <DropShadowEffect Direction="300" Opacity="0.4" BlurRadius="7" ShadowDepth="10"/>
+            </Image.Effect>
+        </Image>
+        <Image Name="newrun" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="Resources/NEWRUN.png" Margin="377,209,394,268" RenderTransformOrigin="0.5,0.5" MouseEnter="newrun_MouseEnter" MouseLeave="newrun_MouseLeave">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-4"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Name="runs" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="Resources/RUNS.png" Margin="335,269,396,222">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-4"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Name="chars" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="Resources/CHARS.png" RenderTransformOrigin="0.5,0.5" Margin="391,304,406,172">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform AngleY="0"/>
+                    <RotateTransform Angle="-4"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Name="items" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="Resources/ITEMS.png" Margin="399,361,413,130" RenderTransformOrigin="0.5,0.5" >
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-4"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Name="bosses" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="Resources/BOSSES.png" Margin="407,386,375,57" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-4"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Name="options" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="Resources/OPTIONS.png" Margin="412,418,334,3" RenderTransformOrigin="0.5,0.5" >
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-4"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Name="exit" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="Resources/exit.png" MouseDown="exit_MouseDown" Margin="798,444,72,43">
+        </Image>
+    </Grid>
+</Window>
