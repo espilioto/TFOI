@@ -73,6 +73,12 @@
     <Compile Include="menus\PageMain.xaml.cs">
       <DependentUpon>PageMain.xaml</DependentUpon>
     </Compile>
+    <Compile Include="menus\PageNewRun.xaml.cs">
+      <DependentUpon>PageNewRun.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="menus\PageOptions.xaml.cs">
+      <DependentUpon>PageOptions.xaml</DependentUpon>
+    </Compile>
     <Compile Include="menus\PageRuns.xaml.cs">
       <DependentUpon>PageRuns.xaml</DependentUpon>
     </Compile>
@@ -109,6 +115,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="menus\PageMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="menus\PageNewRun.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="menus\PageOptions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

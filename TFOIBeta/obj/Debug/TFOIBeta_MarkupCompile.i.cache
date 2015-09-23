@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\App.xaml
-6-1969415019
+81951400386
 
-19126833122
+21762657031
 15-27593
-MainWindow.xaml;menus\PageBosses.xaml;menus\PageItems.xaml;menus\PageChars.xaml;menus\PageMain.xaml;menus\PageRuns.xaml;
+MainWindow.xaml;menus\PageBosses.xaml;menus\PageItems.xaml;menus\PageChars.xaml;menus\PageMain.xaml;menus\PageNewRun.xaml;menus\PageOptions.xaml;menus\PageRuns.xaml;
 
-True
+False
 
