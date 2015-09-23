@@ -61,6 +61,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Characters.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="menus\PageBosses.xaml.cs">
       <DependentUpon>PageBosses.xaml</DependentUpon>
     </Compile>

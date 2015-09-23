@@ -24,5 +24,12 @@ namespace TFOIBeta.menus
         {
             InitializeComponent();
         }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            Log.LoadPathFromSettings();
+            Log.Read();
+            
+        }
     }
 }

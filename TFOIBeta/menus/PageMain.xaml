@@ -105,8 +105,8 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image Name="exit" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/exit.png" MouseDown="exit_MouseDown" Margin="794,435,63,44"  MouseEnter="exit_MouseEnter" MouseLeave="exit_MouseLeave"/>
-        <Image Name="exit_" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/underline.png" Margin="795,466,55,15" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
+        <Image Name="exit" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/exit.png" MouseDown="exit_MouseDown" Margin="795,442,62,37"  MouseEnter="exit_MouseEnter" MouseLeave="exit_MouseLeave"/>
+        <Image Name="exit_" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/underline.png" Margin="797,473,53,8" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
