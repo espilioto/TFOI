@@ -83,9 +83,9 @@ namespace TFOIBeta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap back_ {
+        public static System.Drawing.Bitmap BGChars {
             get {
-                object obj = ResourceManager.GetObject("back_", resourceCulture);
+                object obj = ResourceManager.GetObject("BGChars", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,29 @@ namespace TFOIBeta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap BG {
+        public static System.Drawing.Bitmap BGItems {
             get {
-                object obj = ResourceManager.GetObject("BG", resourceCulture);
+                object obj = ResourceManager.GetObject("BGItems", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap BGMainMenu {
+            get {
+                object obj = ResourceManager.GetObject("BGMainMenu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap BGNewRun {
+            get {
+                object obj = ResourceManager.GetObject("BGNewRun", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,16 +146,6 @@ namespace TFOIBeta.Properties {
         public static System.Drawing.Bitmap exit {
             get {
                 object obj = ResourceManager.GetObject("exit", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap exit_ {
-            get {
-                object obj = ResourceManager.GetObject("exit_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

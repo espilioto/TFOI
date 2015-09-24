@@ -24,5 +24,19 @@ namespace TFOIBeta.menus
         {
             InitializeComponent();
         }
+
+        private void back_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow.mainWindow.mainWindowFrame.GoBack();
+        }
+        private void back_MouseEnter(object sender, MouseEventArgs e)
+        {
+            back_.Visibility = Visibility.Visible;
+        }
+        private void back_MouseLeave(object sender, MouseEventArgs e)
+        {
+            back_.Visibility = Visibility.Hidden;
+        }
+
     }
 }

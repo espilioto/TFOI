@@ -167,12 +167,6 @@
     <Resource Include="Resources\back.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\back_.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\BG.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\BOSSES.png" />
   </ItemGroup>
   <ItemGroup>
@@ -180,9 +174,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\exit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\exit_.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\ITEMS.png" />
@@ -201,6 +192,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\underline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BGMainMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BGNewRun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BGChars.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BGItems.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions />

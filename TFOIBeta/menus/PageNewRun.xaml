@@ -9,6 +9,26 @@
       Title="PageNewRun">
 
     <Grid Loaded="Grid_Loaded">
-        
+        <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/BGNewRun.png"/>
+        <Image Name="back" Source="/Resources/back.png" Margin="17,437,821,18" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-11.167"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Name="back_" Source="/Resources/underline.png" Margin="26,475,813,1" Visibility="Hidden" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-16.415"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
     </Grid>
 </Page>

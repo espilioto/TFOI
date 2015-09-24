@@ -67,7 +67,7 @@ namespace TFOIBeta
 
         private static void Tick(Object O)
         {
-            MessageBox.Show("derp");
+            //MessageBox.Show("derp");
         }
 
     }

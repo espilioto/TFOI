@@ -46,7 +46,7 @@ namespace TFOIBeta
 
                 character.Id = jsonChar.Name;
                 character.Name = jsonChar.First["name"];                                     
-                character.Icon = new Bitmap(Environment.CurrentDirectory + "\\resources\\images\\chars\\" + character.Id + ".png");
+                character.Icon = new Bitmap(Environment.CurrentDirectory + "\\resources\\images\\chars\\bw\\" + character.Id + ".png");
 
                 Characters.List.Add(character);
 

@@ -5,10 +5,30 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TFOIBeta.menus"
       mc:Ignorable="d" 
-      d:DesignHeight="540" d:DesignWidth="960" Background="White"
+      d:DesignHeight="540" d:DesignWidth="960"
       Title="Items">
 
     <Grid>
-        
+        <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/BGItems.png"/>
+        <Image Name="back" Source="/Resources/back.png" Margin="17,437,821,18" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-11.167"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Name="back_" Source="/Resources/underline.png" Margin="26,475,813,1" Visibility="Hidden" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-16.415"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
     </Grid>
 </Page>

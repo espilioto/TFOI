@@ -24,7 +24,7 @@
     </Page.Triggers>
     
     <Grid>
-        <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/BG.png"/>
+        <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/BGMainMenu.png"/>
         <Image x:Name="logo" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/logoNoShadow.png" RenderTransformOrigin="0.5,0.5" Margin="82,16,82,0" VerticalAlignment="Top" Height="150">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -40,7 +40,7 @@
         </Image>
 
         <Image Name="newrun_" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/arrow.png" Margin="320,232,549,271" Visibility="Hidden"/>
-        <Image Name="newrun" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/NEWRUN.png" Margin="377,209,394,268" RenderTransformOrigin="0.5,0.5" MouseEnter="newrun_MouseEnter" MouseLeave="newrun_MouseLeave" MouseDown="newrun_MouseDown">
+        <Image Name="newrun" Source="/Resources/NEWRUN.png" Margin="377,209,394,268" RenderTransformOrigin="0.5,0.5" MouseEnter="newrun_MouseEnter" MouseLeave="newrun_MouseLeave" MouseDown="newrun_MouseDown">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -51,7 +51,7 @@
             </Image.RenderTransform>
         </Image>
         <Image Name="runs_" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/arrow.png" Margin="328,279,541,224" Visibility="Hidden"/>
-        <Image Name="runs" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/RUNS.png" Margin="335,269,396,222" MouseEnter="runs_MouseEnter" MouseLeave="runs_MouseLeave" MouseDown="runs_MouseDown">
+        <Image Name="runs"  Source="/Resources/RUNS.png" Margin="335,269,396,222" MouseEnter="runs_MouseEnter" MouseLeave="runs_MouseLeave" MouseDown="runs_MouseDown">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -62,7 +62,7 @@
             </Image.RenderTransform>
         </Image>
         <Image Name="chars_" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/arrow.png" Margin="338,328,531,175" Visibility="Hidden"/>
-        <Image Name="chars" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/CHARS.png" RenderTransformOrigin="0.5,0.5" Margin="391,304,406,172" MouseEnter="chars_MouseEnter" MouseLeave="chars_MouseLeave" MouseDown="chars_MouseDown" >
+        <Image Name="chars" Source="/Resources/CHARS.png" RenderTransformOrigin="0.5,0.5" Margin="391,304,406,172" MouseEnter="chars_MouseEnter" MouseLeave="chars_MouseLeave" MouseDown="chars_MouseDown" >
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="1"/>
@@ -73,7 +73,7 @@
             </Image.RenderTransform>
         </Image>
         <Image Name="items_" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/arrow.png" Margin="346,375,523,128" Visibility="Hidden"/>
-        <Image Name="items" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/ITEMS.png" Margin="399,361,413,130" RenderTransformOrigin="0.5,0.5" MouseEnter="items_MouseEnter" MouseLeave="items_MouseLeave" MouseDown="items_MouseDown" >
+        <Image Name="items" Source="/Resources/ITEMS.png" Margin="399,361,413,130" RenderTransformOrigin="0.5,0.5" MouseEnter="items_MouseEnter" MouseLeave="items_MouseLeave" MouseDown="items_MouseDown" >
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -84,7 +84,7 @@
             </Image.RenderTransform>
         </Image>
         <Image Name="bosses_" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/arrow.png" Margin="355,423,514,80" Visibility="Hidden"/>
-        <Image Name="bosses" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/BOSSES.png" Margin="407,386,375,57" RenderTransformOrigin="0.5,0.5" MouseEnter="bosses_MouseEnter" MouseLeave="bosses_MouseLeave" MouseDown="bosses_MouseDown" >
+        <Image Name="bosses" Source="/Resources/BOSSES.png" Margin="407,386,375,57" RenderTransformOrigin="0.5,0.5" MouseEnter="bosses_MouseEnter" MouseLeave="bosses_MouseLeave" MouseDown="bosses_MouseDown" >
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -95,7 +95,7 @@
             </Image.RenderTransform>
         </Image>
         <Image Name="options_" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/arrow.png" Margin="360,471,509,33" Visibility="Hidden"/>
-        <Image Name="options" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/OPTIONS.png" Margin="412,418,334,3" RenderTransformOrigin="0.5,0.5" MouseEnter="options_MouseEnter" MouseLeave="options_MouseLeave" MouseDown="options_MouseDown" >
+        <Image Name="options" Source="/Resources/OPTIONS.png" Margin="412,418,334,3" RenderTransformOrigin="0.5,0.5" MouseEnter="options_MouseEnter" MouseLeave="options_MouseLeave" MouseDown="options_MouseDown" >
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -105,13 +105,22 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image Name="exit" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/exit.png" MouseDown="exit_MouseDown" Margin="795,442,62,37"  MouseEnter="exit_MouseEnter" MouseLeave="exit_MouseLeave"/>
-        <Image Name="exit_" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/underline.png" Margin="797,473,53,8" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
+        <Image Name="exit" Source="/Resources/exit.png" MouseDown="exit_MouseDown" Margin="792,432,65,33"  MouseEnter="exit_MouseEnter" MouseLeave="exit_MouseLeave" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="-11.151"/>
+                    <RotateTransform Angle="-6.504"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Name="exit_" Source="/Resources/underline.png" Margin="796,464,54,17" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-19.145"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Image.RenderTransform>
