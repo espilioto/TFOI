@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +32,7 @@ namespace TFOIBeta.menus
             Log.LoadPathFromSettings();
             Log.Read();
             
+
         }
 
         private void back_MouseDown(object sender, MouseButtonEventArgs e)

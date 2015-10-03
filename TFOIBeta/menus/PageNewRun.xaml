@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:TFOIBeta.menus"
       mc:Ignorable="d" 
       d:DesignHeight="540" d:DesignWidth="960" Background="White"
-      Title="PageNewRun">
+      Title="PageNewRun" >
 
     <Grid Loaded="Grid_Loaded">
         <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/BGNewRun.png"/>
@@ -30,5 +30,16 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
+        <TextBlock Name="txtSeed" Text="HERP DERP" Foreground="#F84F4E4A" Margin="28,140,728,289" RenderTransformOrigin="0.5,0.5" TextWrapping="Wrap" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="56" LineStackingStrategy="BlockLineHeight" >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-9.389"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <StackPanel Name="Items" HorizontalAlignment="Left" Height="311" Margin="296,154,0,0" VerticalAlignment="Top" Width="445"/>
     </Grid>
 </Page>

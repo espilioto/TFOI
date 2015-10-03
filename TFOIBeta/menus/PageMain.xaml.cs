@@ -27,6 +27,11 @@ namespace TFOIBeta.menus
             InitializeComponent();   
         }
 
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
         #region main menu stuff
         private void exit_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -113,5 +118,6 @@ namespace TFOIBeta.menus
             options_.Visibility = Visibility.Hidden;
         }
         #endregion
+
     }
 }

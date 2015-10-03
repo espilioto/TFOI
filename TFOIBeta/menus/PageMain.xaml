@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:TFOIBeta.menus"
       mc:Ignorable="d" 
       d:DesignHeight="540" d:DesignWidth="960"
-      Title="PageMain">
+      Title="PageMain" Loaded="Page_Loaded">
 
     <Page.Resources>
         <Storyboard x:Key="logoSway" AutoReverse="True" RepeatBehavior="Forever">

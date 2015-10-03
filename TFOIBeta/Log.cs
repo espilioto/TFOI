@@ -23,7 +23,7 @@ namespace TFOIBeta
         {
             if (string.IsNullOrEmpty(Properties.Settings.Default.LogPath))
             {
-                FindLog();
+                Locate();
             }
             else
             {
@@ -34,7 +34,7 @@ namespace TFOIBeta
         /// <summary>
         /// Checks the default locations for the log. If it can't be found show a browse dialog and then save the path.
         /// </summary>
-        private static void FindLog()//If the "path setting is empty, check the default locations for the log. If it can't be found, show a dialog to locate it and save the path.
+        private static void Locate()
         {
             if (File.Exists(Environment.ExpandEnvironmentVariables("%userprofile%") + @"\Documents\My Games\Binding of Isaac Rebirth\log.txt"))
             {
@@ -61,7 +61,7 @@ namespace TFOIBeta
         /// </summary>
         public static void Read()
         {
-            Timer timer = new Timer(Tick, null, 0, 1000);
+            Timer timer = new Timer(Tick, null, 0, 16);
 
         }
 

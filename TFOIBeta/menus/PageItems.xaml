@@ -30,5 +30,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
+        <StackPanel Name="Items" HorizontalAlignment="Left" Height="342" Margin="251,136,0,0" VerticalAlignment="Top" Width="440"/>
+
     </Grid>
 </Page>

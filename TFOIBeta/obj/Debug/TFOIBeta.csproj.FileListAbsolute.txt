@@ -1,8 +1,10 @@
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\bin\Debug\TFOIBeta.exe.config
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\bin\Debug\TFOIBeta.exe
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\bin\Debug\TFOIBeta.pdb
+C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\bin\Debug\Microsoft.Expression.Effects.dll
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\bin\Debug\Newtonsoft.Json.dll
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\bin\Debug\Newtonsoft.Json.xml
+C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\obj\Debug\TFOIBeta.csprojResolveAssemblyReference.cache
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\obj\Debug\MainWindow.g.cs
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\obj\Debug\menus\PageBosses.g.cs
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\obj\Debug\menus\PageItems.g.cs
@@ -27,4 +29,3 @@ C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\obj\
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\obj\Debug\TFOIBeta.csproj.GenerateResource.Cache
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\obj\Debug\TFOIBeta.exe
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\obj\Debug\TFOIBeta.pdb
-C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\obj\Debug\TFOIBeta.csprojResolveAssemblyReference.cache
