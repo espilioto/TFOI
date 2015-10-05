@@ -161,6 +161,46 @@ namespace TFOIBeta.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] JsonBossList {
+            get {
+                object obj = ResourceManager.GetObject("JsonBossList", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] JsonCharList {
+            get {
+                object obj = ResourceManager.GetObject("JsonCharList", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] JsonFloorList {
+            get {
+                object obj = ResourceManager.GetObject("JsonFloorList", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] JsonItemList {
+            get {
+                object obj = ResourceManager.GetObject("JsonItemList", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap logoNoShadow {

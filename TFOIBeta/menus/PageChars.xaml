@@ -10,25 +10,7 @@
 
     <Grid>
         <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/BGChars.png"/>
-        <Image Name="back" Source="/Resources/back.png" Margin="17,437,821,18" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-11.167"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
-        <Image Name="back_" Source="/Resources/underline.png" Margin="26,475,813,1" Visibility="Hidden" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-16.415"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
+        <Image Name="back" Source="/Resources/back.png" Margin="23,442,859,62" RenderOptions.BitmapScalingMode="NearestNeighbor" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Width="75" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave"/>
+        <Image Name="back_" Source="/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Width="87" Margin="18,477,855,44" Height="19"/>
     </Grid>
 </Page>

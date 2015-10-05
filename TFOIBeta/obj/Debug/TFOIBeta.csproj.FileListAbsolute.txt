@@ -4,7 +4,6 @@ C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\bin\
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\bin\Debug\Microsoft.Expression.Effects.dll
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\bin\Debug\Newtonsoft.Json.dll
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\bin\Debug\Newtonsoft.Json.xml
-C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\obj\Debug\TFOIBeta.csprojResolveAssemblyReference.cache
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\obj\Debug\MainWindow.g.cs
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\obj\Debug\menus\PageBosses.g.cs
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\obj\Debug\menus\PageItems.g.cs

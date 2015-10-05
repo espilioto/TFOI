@@ -91,7 +91,5 @@ namespace TFOIBeta
             get { return _icon; }
             set { _icon = value; }
         }
-
-
     }
 }

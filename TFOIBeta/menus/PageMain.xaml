@@ -22,7 +22,7 @@
             <BeginStoryboard Storyboard="{StaticResource logoSway}"/>
         </EventTrigger>
     </Page.Triggers>
-    
+
     <Grid>
         <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/BGMainMenu.png"/>
         <Image x:Name="logo" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/logoNoShadow.png" RenderTransformOrigin="0.5,0.5" Margin="82,16,82,0" VerticalAlignment="Top" Height="150">
@@ -105,25 +105,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image Name="exit" Source="/Resources/exit.png" MouseDown="exit_MouseDown" Margin="792,432,65,33"  MouseEnter="exit_MouseEnter" MouseLeave="exit_MouseLeave" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-6.504"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
-        <Image Name="exit_" Source="/Resources/underline.png" Margin="796,464,54,17" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-19.145"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
+        <Image Name="exit" Source="/Resources/exit.png" Margin="858,442,24,62" RenderOptions.BitmapScalingMode="NearestNeighbor" Height="36" Width="78" MouseDown="exit_MouseDown" MouseEnter="exit_MouseEnter" MouseLeave="exit_MouseLeave"/>
+        <Image Name="exit_" Source="/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Width="87" Margin="853,475,20,46" Height="19"/>
     </Grid>
 </Page>

@@ -76,8 +76,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Characters.cs" />
-    <Compile Include="Log.cs" />
+    <Compile Include="Classes\Characters.cs" />
+    <Compile Include="Classes\Floors.cs" />
+    <Compile Include="Classes\Log.cs" />
     <Compile Include="menus\PageBosses.xaml.cs">
       <DependentUpon>PageBosses.xaml</DependentUpon>
     </Compile>
@@ -99,12 +100,7 @@
     <Compile Include="menus\PageRuns.xaml.cs">
       <DependentUpon>PageRuns.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Stuff.cs" />
+    <Compile Include="Classes\Stuff.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -113,8 +109,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Bosses.cs" />
-    <Compile Include="Items.cs" />
+    <Compile Include="Classes\Bosses.cs" />
+    <Compile Include="Classes\Items.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -149,9 +145,14 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Player.cs" />
+    <Compile Include="Classes\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -169,6 +170,10 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <Resource Include="Resources\JSON\JsonBossList.json" />
+    <Resource Include="Resources\JSON\JsonCharList.json" />
+    <Resource Include="Resources\JSON\JsonFloorList.json" />
+    <Resource Include="Resources\JSON\JsonItemList.json" />
     <Resource Include="Resources\TeamMeatFontBOLD.ttf" />
   </ItemGroup>
   <ItemGroup>
@@ -188,9 +193,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\CHARS.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\exit.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\ITEMS.png" />
@@ -233,6 +235,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions />
