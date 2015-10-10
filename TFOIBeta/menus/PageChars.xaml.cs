@@ -27,7 +27,14 @@ namespace TFOIBeta.menus
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            foreach (var character in Characters.List)
+            {
+                var icon = new Image();
+                icon.Stretch = Stretch.None;
 
+                icon.Source = Stuff.BitmapToImageSource(character.Icon);
+                charPanel.Children.Add(icon);
+            }
         }
 
         private void back_MouseDown(object sender, MouseButtonEventArgs e)
