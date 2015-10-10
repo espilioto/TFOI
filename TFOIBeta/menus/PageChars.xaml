@@ -6,11 +6,15 @@
       xmlns:local="clr-namespace:TFOIBeta.menus"
       mc:Ignorable="d" 
       d:DesignHeight="540" d:DesignWidth="960" Background="White"
-      Title="PageChars">
+      Title="PageChars" Loaded="Page_Loaded">
 
     <Grid>
         <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/BGChars.png"/>
-        <Image Name="back" Source="/Resources/back.png" Margin="23,442,859,62" RenderOptions.BitmapScalingMode="NearestNeighbor" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Width="75" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave"/>
-        <Image Name="back_" Source="/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Width="87" Margin="18,477,855,44" Height="19"/>
+        <Image Name="back" Source="/TFOIBeta;component/Resources/back.png" Margin="25,439,847,60" RenderOptions.BitmapScalingMode="NearestNeighbor" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave" Stretch="Fill"/>
+        <Image Name="back_" Source="/TFOIBeta;component/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Margin="10,470,832,44" RenderTransformOrigin="0.5,0.5"/>
+
+        <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="239,83,238,386" >
+            <WrapPanel  Name="charPanel" Height="71" Width="484" Orientation="Horizontal" VerticalAlignment="Center"/>
+        </ScrollViewer>
     </Grid>
 </Page>

@@ -10,9 +10,10 @@
 
     <Grid Loaded="Grid_Loaded">
         <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/BGNewRun.png"/>
-        <Image Name="back" Source="/Resources/back.png" Margin="23,442,859,62" RenderOptions.BitmapScalingMode="NearestNeighbor" Height="35" Width="75" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave"/>
-        <Image Name="back_" Source="/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Width="87" Margin="18,477,855,44" Height="19"/>
-        <TextBlock Name="txtSeed" Text="HERP DERP" Foreground="#F84F4E4A" Margin="28,140,728,289" RenderTransformOrigin="0.5,0.5" TextWrapping="Wrap" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="56" LineStackingStrategy="BlockLineHeight" >
+        <Image Name="back" Source="/TFOIBeta;component/Resources/back.png" Margin="25,439,847,60" RenderOptions.BitmapScalingMode="NearestNeighbor" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave" Stretch="Fill"/>
+        <Image Name="back_" Source="/TFOIBeta;component/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Margin="10,470,832,44" RenderTransformOrigin="0.5,0.5"/>
+
+        <TextBlock Name="txtSeed" Text="HERP DERP" Foreground="#F84F4E4A" Margin="34,151,722,278" RenderTransformOrigin="0.5,0.5" TextWrapping="Wrap" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="60" LineStackingStrategy="BlockLineHeight" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -22,6 +23,6 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <StackPanel Name="Items" HorizontalAlignment="Left" Height="311" Margin="296,154,0,0" VerticalAlignment="Top" Width="445"/>
+        <StackPanel Name="itemPanel" HorizontalAlignment="Left" Height="311" Margin="296,154,0,0" VerticalAlignment="Top" Width="445"/>
     </Grid>
 </Page>

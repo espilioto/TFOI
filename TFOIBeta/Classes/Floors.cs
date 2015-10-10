@@ -15,7 +15,7 @@ namespace TFOIBeta
 
         public static void ParseJsonFloorList()
         {
-            string json = File.ReadAllText(Environment.CurrentDirectory + "\\resources\\JSON\\JsonCharList.json");
+            string json = File.ReadAllText(Environment.CurrentDirectory + "\\resources\\JSON\\JsonFloorList.json");
 
             dynamic deserializedItems = JsonConvert.DeserializeObject(json);
 

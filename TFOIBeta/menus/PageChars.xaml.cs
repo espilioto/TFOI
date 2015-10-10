@@ -25,6 +25,11 @@ namespace TFOIBeta.menus
             InitializeComponent();
         }
 
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void back_MouseDown(object sender, MouseButtonEventArgs e)
         {
             MainWindow.mainWindow.mainWindowFrame.GoBack();
@@ -37,5 +42,6 @@ namespace TFOIBeta.menus
         {
             back_.Visibility = Visibility.Hidden;
         }
+
     }
 }

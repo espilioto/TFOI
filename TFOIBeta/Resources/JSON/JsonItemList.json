@@ -8,11 +8,11 @@
         "delay": 3,
         "delayx": 2.1,
         "name": "The Inner Eye",
-        "text": "triple shot"
+        "text": "Triple shot"
     },
     "003": {
         "name": "Spoon Bender",
-        "text": "homing tears"
+        "text": "Homing tears"
     },
     "004": {
         "dmg": 0.5,
@@ -24,7 +24,7 @@
         "height": 1,
         "name": "My Reflection",
         "range": 1.5,
-        "text": "boomerang tears"
+        "text": "Boomerang tears"
     },
     "006": {
         "height": 0.45,
@@ -40,15 +40,15 @@
     },
     "008": {
         "name": "Brother Bobby",
-        "text": "familiar (3.5 dmg / tear)"
+        "text": "Familiar (3.5 dmg / tear)"
     },
     "009": {
         "name": "Skatole",
-        "text": "flies won't attack you"
+        "text": "Flies won't attack you"
     },
     "010": {
         "name": "Halo of Flies",
-        "text": "two fly orbitals"
+        "text": "Two fly orbitals"
     },
     "011": {
         "name": "1UP",
@@ -62,12 +62,12 @@
         "name": "Magic Mushroom",
         "range": 5.25,
         "speed": 0.3,
-        "text": "size up"
+        "text": "Size up"
     },
     "013": {
         "name": "The Virus",
         "speed": -0.1,
-        "text": "poison touch, speed delayed"
+        "text": "Poison touch, speed delayed"
     },
     "014": {
         "height": 0.5,
@@ -84,7 +84,7 @@
     "016": {
         "health": 2,
         "name": "Raw Liver",
-        "text": "full heal"
+        "text": "Full heal"
     },
     "017": {
         "name": "Skeleton Key",
@@ -100,7 +100,7 @@
     },
     "020": {
         "name": "Transcendence",
-        "text": "flight"
+        "text": "Flight"
     },
     "021": {
         "name": "The Compass",
@@ -303,7 +303,7 @@
     },
     "065": {
         "name": "Anarchist's Cookbook",
-        "text": "spawns 6 troll bombs",
+        "text": "Spawns six troll bombs around the room.",
       "space": true
     },
     "066": {
@@ -650,7 +650,7 @@
     },
     "136": {
         "name": "Best Friend",
-        "text": "spawns a decoy (110 dmg explosion)",
+        "text": "Spawns a decoy (110 dmg explosion)",
       "space": true
     },
     "137": {
