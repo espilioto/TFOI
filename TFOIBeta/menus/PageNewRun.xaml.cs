@@ -28,11 +28,9 @@ namespace TFOIBeta.menus
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
-        {
+        {    
             Log.LoadPathFromSettings();
             Log.Read();
-            
-
         }
 
         private void back_MouseDown(object sender, MouseButtonEventArgs e)
