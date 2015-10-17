@@ -23,19 +23,26 @@ namespace TFOIBeta
                 var boss = new Bosses();
 
                 boss.Id = jsonBoss.Name;
-                boss.Name = jsonBoss.First["name"];                                     //these four properties (should) exist for every boss
+                boss.Name = jsonBoss.First["name"];                                     //these five properties (should) exist for every boss
                 boss.Text = jsonBoss.First["text"];
+                boss.HP = jsonBoss.First["bossHP"]; ;
                 boss.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\bosses\" + boss.Id + ".png");
 
                 if (jsonBoss.First["alts1"] != null)
+                {
                     boss.Alts1 = jsonBoss.First["alts1"];
+                    boss.DetailsString += boss.Alts1 + Environment.NewLine;
+                }
                 if (jsonBoss.First["alts2"] != null)
+                {
                     boss.Alts1 = jsonBoss.First["alts2"];
+                    boss.DetailsString += boss.Alts2 + Environment.NewLine;
+                }
 
                 Bosses.List.Add(boss);
             }
         }
-        private bool _killedPlayer;
+        private bool _killedPlayer;                         //bool
         public bool KilledPlayer
         {
             get { return _killedPlayer; }
@@ -48,7 +55,7 @@ namespace TFOIBeta
             set { _killedByPlayer = value; }
         }
 
-        private string _id;
+        private string _id;                                 //string
         public string Id
         {
             get { return _id; }
@@ -60,11 +67,11 @@ namespace TFOIBeta
             get { return _name; }
             set { _name = value; }
         }
-        private string _BossHP;
-        public string BossHP
+        private string _HP;
+        public string HP
         {
-            get { return _BossHP; }
-            set { _BossHP = value; }
+            get { return _HP; }
+            set { _HP = value; }
         }
         private string _alts1;
         public string Alts1
@@ -84,8 +91,14 @@ namespace TFOIBeta
             get { return _text; }
             set { _text = value; }
         }
+        private string _detailsString;
+        public string DetailsString
+        {
+            get { return _detailsString; }
+            set { _detailsString = value; }
+        }
 
-        private Bitmap _icon;
+        private Bitmap _icon;                           //icon
         public Bitmap Icon
         {
             get { return _icon; }

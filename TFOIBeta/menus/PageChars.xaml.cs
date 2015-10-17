@@ -30,6 +30,7 @@ namespace TFOIBeta.menus
             foreach (var character in Characters.List)
             {
                 var icon = new Image();
+                icon.ToolTip = character.Name;
                 icon.Stretch = Stretch.None;
 
                 icon.Source = Stuff.BitmapToImageSource(character.Icon);

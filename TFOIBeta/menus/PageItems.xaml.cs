@@ -11,6 +11,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -28,11 +29,10 @@ namespace TFOIBeta.menus
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
-        { 
+        {
             foreach (var item in Items.List)
             {
                 var icon = new System.Windows.Controls.Image();
-                icon.Name = "_" + item.Id;
                 icon.ToolTip = item.Name + Environment.NewLine + item.Text;
                 icon.Tag = item.DetailsString;
                 icon.Stretch = Stretch.None;

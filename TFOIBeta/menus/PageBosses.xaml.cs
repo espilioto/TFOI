@@ -30,14 +30,21 @@ namespace TFOIBeta.menus
             foreach (var boss in Bosses.List)
             {
                 var icon = new System.Windows.Controls.Image();
-                icon.Stretch = Stretch.None;
-
                 icon.ToolTip = boss.Name + Environment.NewLine + boss.Text; ;
-                //Maybe TODO: display rest stats
-
+                icon.Tag = "HP: " + boss.HP;
+                icon.Stretch = Stretch.None;
                 icon.Source = Stuff.BitmapToImageSource(boss.Icon);
+
+
                 bossPanel.Children.Add(icon);
+                icon.MouseLeftButtonDown += new MouseButtonEventHandler(icon_MouseLeftButtonDown);
             }
+        }
+
+        private void icon_MouseLeftButtonDown(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Controls.Image image = sender as System.Windows.Controls.Image;
+            textBossInfo.Text = image.Tag.ToString();
         }
 
         private void back_MouseDown(object sender, MouseButtonEventArgs e)

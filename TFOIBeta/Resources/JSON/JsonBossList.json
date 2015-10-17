@@ -2,15 +2,15 @@
   "001": {
     "name": "Monstro",
     "bossHP": "250",
-    "alts1": "Red: Two smaller Monstros, each with 45% of Monstro's normal health, replace the normal Monstro.",
-    "alts2": "Dark Grey: Slightly larger and has 25% more health. Uses tear volleys much more often and will jump off-screen less often.",
+    "alts1": "RED: TWO SMALLER MONSTROS, EACH WITH 45% OF MONSTRO'S NORMAL HEALTH, REPLACE THE NORMAL MONSTRO.",
+    "alts2": "DARK GREY: SLIGHTLY LARGER AND HAS 25% MORE HEALTH. USES TEAR VOLLEYS MUCH MORE OFTEN AND WILL JUMP OFF-SCREEN LESS OFTEN.",
     "text": "Monstro is one of the bosses that can appear in The Basement. He is amongst the most common to fight, particularly because he can appear on later floors as an enemy. "
   },
   "002": {
     "name": "Gemini",
-    "bossHP": "Contusion: 140, Suture: 140 ",
-    "alts1": "Green: They start off separated from each other and have no difference in attacks.",
-    "alts2": "Blue: The blue variant has more health. ",
+    "bossHP": "CONTUSION: 140, SUTURE: 140 ",
+    "alts1": "GREEN: THEY START OFF SEPARATED FROM EACH OTHER AND HAVE NO DIFFERENCE IN ATTACKS.",
+    "alts2": "BLUE: THE BLUE VARIANT HAS MORE HEALTH. ",
     "text": "Gemini are one of the bosses that can appear in The Basement. Gemini are composed of not one, but two separate 'bosses': One large twin with a smaller twin attached. They both have the same amount of health, sharing the health bar fifty-fifty. The large twin is called Contusion and the small twin is called Suture."
   },
   "003": {
@@ -20,16 +20,16 @@
   },
   "004": {
     "name": " Larry Jr.",
-    "bossHP": "22 per segment",
-    "alts1": "Green: Will occasionally shoot a tear in the direction it's facing, pausing momentarily as it does so.",
-    "alts2": "Blue: Is larger and has more health, but moves more slowly and does not leave poop behind. This version always drops a Soul Heart when defeated. ",
+    "bossHP": "22 PER SEGMENT",
+    "alts1": "GREEN: WILL OCCASIONALLY SHOOT A TEAR IN THE DIRECTION IT'S FACING, PAUSING MOMENTARILY AS IT DOES SO.",
+    "alts2": "BLUE: IS LARGER AND HAS MORE HEALTH, BUT MOVES MORE SLOWLY AND DOES NOT LEAVE POOP BEHIND. THIS VERSION ALWAYS DROPS A SOUL HEART WHEN DEFEATED.",
     "text": "Larry Jr. is one of the bosses that can appear in The Basement. He is amongst the most common to fight, particularly because he can appear on later floors as an enemy."
   },
   "005": {
     "name": "The Duke of Flies",
     "bossHP": "110",
-    "alts1": "Green Duke of Flies spawns Moters instead of Large Attack Flies and shoots blood shots in eight directions when coughing.",
-    "alts2": "Orange Duke of Flies is larger than normal and spawns Suckers instead of Large Attack Flies.",
+    "alts1": "GREEN DUKE OF FLIES SPAWNS MOTERS INSTEAD OF LARGE ATTACK FLIES AND SHOOTS BLOOD SHOTS IN EIGHT DIRECTIONS WHEN COUGHING.",
+    "alts2": "ORANGE DUKE OF FLIES IS LARGER THAN NORMAL AND SPAWNS SUCKERS INSTEAD OF LARGE ATTACK FLIES.",
     "text": "The Duke of Flies is a boss that appears in The Basement. Compared to most other bosses, the Duke has little health and cannot even attack on his own. He makes up for this by summoning attack flies for both offensive and defensive purposes. The Duke of Flies was a boss in the original Binding of Isaac."
   },
   "006": {
@@ -39,26 +39,26 @@
   },
   "007": {
     "name": "Fistula",
-    "bossHP": "Large: 60, Medium: 15, Small: 8",
-    "alts1": "Black: Spawns Boom Flies instead of Chargers. Each piece travels much slower, and splits into three medium Fistulas as opposed to the original's four.",
+    "bossHP": "LARGE: 60, MEDIUM: 15, SMALL: 8",
+    "alts1": "BLACK: SPAWNS BOOM FLIES INSTEAD OF CHARGERS. EACH PIECE TRAVELS MUCH SLOWER, AND SPLITS INTO THREE MEDIUM FISTULAS AS OPPOSED TO THE ORIGINAL'S FOUR.",
     "text": "Fistula is a boss that can appear in the Cellar."
   },
   "008": {
     "name": "Steven",
-    "bossHP": "Big Steven: 140, Small Steven: 140",
+    "bossHP": "BIG STEVEN: 140, SMALL STEVEN: 140",
     "text": "Steven is one of the bosses that can appear in The Basement and is an alternative to Gemini."
   },
   "009": {
     "name": "Famine",
     "bossHP": "240",
-    "alts1": "Blue: This version charges more often and it will slightly home in on Isaac, (similar to the Dark One's charge attack). It cannot summon Pooters and will instead regularly shoot six tears radially. In Phase 2 it will vomit out a large amount of blood, similar to Monstro's attack.",
+    "alts1": "BLUE: THIS VERSION CHARGES MORE OFTEN AND IT WILL SLIGHTLY HOME IN ON ISAAC, (SIMILAR TO THE DARK ONE'S CHARGE ATTACK). IT CANNOT SUMMON POOTERS AND WILL INSTEAD REGULARLY SHOOT SIX TEARS RADIALLY. IN PHASE 2 IT WILL VOMIT OUT A LARGE AMOUNT OF BLOOD, SIMILAR TO MONSTRO'S ATTACK.",
     "text": "Famine is a boss that can appear in the Basement or the Cellar. He is one of the four Harbingers, and the horseman of Chapter 1."
   },
   "010": {
     "name": "Gurdy Jr.",
     "bossHP": "250",
-    "alts1": "Blue: Instead of one Gurdy Jr., there will be two smaller ones. This version has decreased health and only charges at the player, and drops a Soul Heart upon death.",
-    "alts2": "Orange: Is slightly larger than the regular. She spawns Fat Flies and charges at the player, but does not shoot bullets of any sort.",
+    "alts1": "BLUE: INSTEAD OF ONE GURDY JR., THERE WILL BE TWO SMALLER ONES. THIS VERSION HAS DECREASED HEALTH AND ONLY CHARGES AT THE PLAYER, AND DROPS A SOUL HEART UPON DEATH.",
+    "alts2": "ORANGE: IS SLIGHTLY LARGER THAN THE REGULAR. SHE SPAWNS FAT FLIES AND CHARGES AT THE PLAYER, BUT DOES NOT SHOOT BULLETS OF ANY SORT.",
     "text": "Gurdy Jr. is one of the bosses that can appear in The Cellar. She is one of the most common bosses to fight, particularly because she can appear in later chapters as a regular enemy."
   },
   "011": {
@@ -69,8 +69,8 @@
   "012": {
     "name": "Widow",
     "bossHP": "130",
-    "alts1": "Pink: Spawns Boils and Guts instead of Sacks, spawns hostile flies instead of spiders. Jumps more quickly.",
-    "alts2": "Black: Spawns B. Spiders instead of Sacks, black creep instead of white, and spits out blood shots instead of small spiders.",
+    "alts1": "PINK: SPAWNS BOILS AND GUTS INSTEAD OF SACKS, SPAWNS HOSTILE FLIES INSTEAD OF SPIDERS. JUMPS MORE QUICKLY.",
+    "alts2": "BLACK: SPAWNS B. SPIDERS INSTEAD OF SACKS, BLACK CREEP INSTEAD OF WHITE, AND SPITS OUT BLOOD SHOTS INSTEAD OF SMALL SPIDERS.",
     "text": "Widow is one of the bosses that can appear in The Cellar. She is one of the most common bosses to fight, particularly because she can appear in later chapters as a regular enemy."
   },
   "013": {
@@ -86,14 +86,14 @@
   "015": {
     "name": "Chub",
     "bossHP": "350",
-    "alts1": "Orange: Smaller and faster than normal. Spawns Spitties instead of Chargers.",
-    "alts2": "Blue: Larger than normal. Spawns blue Boils instead of Chargers.",
+    "alts1": "ORANGE: SMALLER AND FASTER THAN NORMAL. SPAWNS SPITTIES INSTEAD OF CHARGERS.",
+    "alts2": "BLUE: LARGER THAN NORMAL. SPAWNS BLUE BOILS INSTEAD OF CHARGERS.",
     "text": "Chub is a boss found in The Caves. Chub is a large maggot which will charge Isaac as well as spawn chargers to aid her."
   },
   "016": {
     "name": "Gurdy",
     "bossHP": "595",
-    "alts1": "Black: Will never attack with a blood shot, but instead summons monsters at a faster rate.",
+    "alts1": "BLACK: WILL NEVER ATTACK WITH A BLOOD SHOT, BUT INSTEAD SUMMONS MONSTERS AT A FASTER RATE.",
     "text": "Mega Maw is one of the bosses found in found in The Caves."
   },
   "017": {
@@ -119,26 +119,26 @@
   "021": {
     "name": "Pestilence",
     "bossHP": "280",
-    "alts1": "White: Leaves a trail of white creep, which slows the player down and shoots 6 bullets away from itself instead of explosive shots. It spawns Spiders instead of flies in Phase 2.",
+    "alts1": "WHITE: LEAVES A TRAIL OF WHITE CREEP, WHICH SLOWS THE PLAYER DOWN AND SHOOTS 6 BULLETS AWAY FROM ITSELF INSTEAD OF EXPLOSIVE SHOTS. IT SPAWNS SPIDERS INSTEAD OF FLIES IN PHASE 2.",
     "text": "Pestilence is a boss that can appear in The Caves or The Catacombs. It is one of the four Harbingers, and the horseman of Chapter 2."
   },
   "022": {
     "name": "The Hollow",
-    "bossHP": "22 per segment",
+    "bossHP": "22 PER SEGMENT",
     "text": "The Hollow is a boss that can be found in the Caves or Catacombs. It is the posthumous version of Larry Jr."
   },
   "023": {
     "name": "The Husk",
     "bossHP": "150",
-    "alts1": "Black: Instead of spiders and flies, the Husk spawns Boom Flies. Dodging them can prove to be tricky, but the Boom Flies' explosions can damage the Husk as well.",
-    "alts2": "Red: The Husk is about half its usual size and moves twice as fast. Rather than spawning enemies, it only fires blood shots in 8 directions.",
+    "alts1": "BLACK: INSTEAD OF SPIDERS AND FLIES, THE HUSK SPAWNS BOOM FLIES. DODGING THEM CAN PROVE TO BE TRICKY, BUT THE BOOM FLIES' EXPLOSIONS CAN DAMAGE THE HUSK AS WELL.",
+    "alts2": "RED: THE HUSK IS ABOUT HALF ITS USUAL SIZE AND MOVES TWICE AS FAST. RATHER THAN SPAWNING ENEMIES, IT ONLY FIRES BLOOD SHOTS IN 8 DIRECTIONS.",
     "text": "The Husk is a boss found in the Catacombs, and is the posthumous version of The Duke of Flies."
   },
   "024": {
     "name": "Peep",
     "bossHP": "450",
-    "alts1": "Dark Green Peep: This variant of Peep starts the battle with both its eyes popped out.",
-    "alts2": "Yellow Peep: Peep will be smaller, and will constantly create his yellow Creep.",
+    "alts1": "DARK GREEN PEEP: THIS VARIANT OF PEEP STARTS THE BATTLE WITH BOTH ITS EYES POPPED OUT.",
+    "alts2": "YELLOW PEEP: PEEP WILL BE SMALLER, AND WILL CONSTANTLY CREATE HIS YELLOW CREEP.",
     "text": "Peep is a boss found in the Caves. It is the living version of The Bloat."
   },
   "025": {
@@ -149,7 +149,7 @@
   "026": {
     "name": "The Carrion Queen",
     "bossHP": "350",
-    "alts1": "Pink: Moves slightly quicker, and instead of spawning Red Poop every so often, she spawns a small heart that roams the room. Killing the hearts damages the Carrion Queen. This version does not diagonally bounce around the map at all.",
+    "alts1": "PINK: MOVES SLIGHTLY QUICKER, AND INSTEAD OF SPAWNING RED POOP EVERY SO OFTEN, SHE SPAWNS A SMALL HEART THAT ROAMS THE ROOM. KILLING THE HEARTS DAMAGES THE CARRION QUEEN. THIS VERSION DOES NOT DIAGONALLY BOUNCE AROUND THE MAP AT ALL.",
     "text": "The Carrion Queen is a boss found in the Catacombs and the Necropolis. She is the posthumous version of Chub. She has a skeletal appearance and is only vulnerable in the leftover flesh at her behind."
   },
   "027": {
@@ -165,7 +165,7 @@
   "029": {
     "name": "Monstro II",
     "bossHP": "632.5",
-    "alts1": "Red: Moves and attacks much more quickly, but only spawns 2 suckers when landing.",
+    "alts1": "RED: MOVES AND ATTACKS MUCH MORE QUICKLY, BUT ONLY SPAWNS 2 SUCKERS WHEN LANDING.",
     "text": "Monstro II is a boss found in the Depths, and is the posthumous version of Monstro. Monstro II consists of a skull with only a small patch of skin covering its right eye, which is now white."
   },
   "030": {
@@ -191,26 +191,26 @@
   "034": {
     "name": "War",
     "bossHP": "500",
-    "alts1": "Black: Summons 2 Super Troll bombs when he ascends off screen, and summons a single troll bomb behind his path when he charges through the screen. Also shoots in 6 directions when he stops chasing the player on his second form.",
+    "alts1": "BLACK: SUMMONS 2 SUPER TROLL BOMBS WHEN HE ASCENDS OFF SCREEN, AND SUMMONS A SINGLE TROLL BOMB BEHIND HIS PATH WHEN HE CHARGES THROUGH THE SCREEN. ALSO SHOOTS IN 6 DIRECTIONS WHEN HE STOPS CHASING THE PLAYER ON HIS SECOND FORM.",
     "text": "War is a boss that can appear in the Depths or the Necropolis. He is one of the four Harbingers, and the horseman of Chapter 3."
   },
   "035": {
     "name": "Mom",
     "bossHP": "645",
-    "alts1": "Blue: Summons more often and only summons various types of enemies added in the Wrath of The Lamb expansion for the original game, including Big Spiders, Trites, Buttlickers, and Keeper.",
-    "alts2": "Red: Does not summon at all, and instead constantly uses her foot stomp. Her eyes can shoot three blood shots at the player when they emerge and she uses her hand much more often.",
+    "alts1": "BLUE: SUMMONS MORE OFTEN AND ONLY SUMMONS VARIOUS TYPES OF ENEMIES ADDED IN THE WRATH OF THE LAMB EXPANSION FOR THE ORIGINAL GAME, INCLUDING BIG SPIDERS, TRITES, BUTTLICKERS, AND KEEPER.",
+    "alts2": "RED: DOES NOT SUMMON AT ALL, AND INSTEAD CONSTANTLY USES HER FOOT STOMP. HER EYES CAN SHOOT THREE BLOOD SHOTS AT THE PLAYER WHEN THEY EMERGE AND SHE USES HER HAND MUCH MORE OFTEN.",
     "text": "Isaac's Mom is the boss found in The Depths II and is the final boss for the game's prologue. She is a delusional woman who believes that the hallucination she hears telling her to murder her son is the voice of God."
   },
   "036": {
     "name": "The Bloat",
     "bossHP": "450",
-    "alts1": "Green: Does not shoot blood projectiles. Rather, fires three green Ipecac projectiles. More dangerous than the regular Bloat as he has a tendency to use his blood beams with no warning at all and use his bombs if you are behind him. ",
+    "alts1": "GREEN: DOES NOT SHOOT BLOOD PROJECTILES. RATHER, FIRES THREE GREEN IPECAC PROJECTILES. MORE DANGEROUS THAN THE REGULAR BLOAT AS HE HAS A TENDENCY TO USE HIS BLOOD BEAMS WITH NO WARNING AT ALL AND USE HIS BOMBS IF YOU ARE BEHIND HIM. ",
     "text": "The Bloat is the posthumous version of Peep found in Necropolis and the Womb. The Bloat was also a boss featured in Wrath of the Lamb. It appears to have lost its lower set of 'arms', and the ones that still remain look slightly different."
   },
   "037": {
     "name": "Mask of Infamy",
-    "bossHP": "Heart: 200, Mask: 150",
-    "alts1": "Black: The Heart shoots 4 homing shots in a cross formation. Phase 2 behaves like the normal version.",
+    "bossHP": "HEART: 200, MASK: 150",
+    "alts1": "BLACK: THE HEART SHOOTS 4 HOMING SHOTS IN A CROSS FORMATION. PHASE 2 BEHAVES LIKE THE NORMAL VERSION.",
     "text": "Mask of Infamy is a boss that can appear in Necropolis. It appears as a giant version of a Mask + Heart."
   },
   "038": {
@@ -221,12 +221,12 @@
   "039": {
     "name": "Scolex",
     "bossHP": "300",
-    "alts1": "Black: Scolex is larger, slower, and has more health.",
+    "alts1": "BLACK: SCOLEX IS LARGER, SLOWER, AND HAS MORE HEALTH.",
     "text": "Scolex is a large tapeworm boss found in The Womb. He can be considered an older or younger version of Pin, but not a posthumous one."
   },
   "040": {
     "name": "Teratoma",
-    "bossHP": "Large: 60, Medium: 15, Small: 8 ",
+    "bossHP": "LARGE: 60, MEDIUM: 15, SMALL: 8 ",
     "text": "Teratoma is the posthumous version of Fistula."
   },
   "041": {
@@ -236,13 +236,13 @@
   },
   "042": {
     "name": "Lokii",
-    "bossHP": "350 x2",
+    "bossHP": "350 *2",
     "text": "Lokii is a posthumous version of Loki that can be found in the The Womb and Utero."
   },
   "043": {
     "name": "Death",
     "bossHP": "450",
-    "alts1": "Black: In his first form, he summons Kamikaze Leeches instead of using the Hourglass. He spawns red maws rather than Knights when he dismounts his horse.",
+    "alts1": "BLACK: IN HIS FIRST FORM, HE SUMMONS KAMIKAZE LEECHES INSTEAD OF USING THE HOURGLASS. HE SPAWNS RED MAWS RATHER THAN KNIGHTS WHEN HE DISMOUNTS HIS HORSE.",
     "text": "Death is a boss that can appear in The Womb or Utero. He is one of the four Harbingers, and the horseman of Chapter 4."
   },
   "044": {
@@ -262,7 +262,7 @@
   },
   "047": {
     "name": "Blastocyst",
-    "bossHP": "Large: 190, Medium: 75, Small: 30, Embryo: 12",
+    "bossHP": "LARGE: 190, MEDIUM: 75, SMALL: 30, EMBRYO: 12",
     "text": "Blastocyst is a boss that spawns in the Womb/Utero. It is a large blob with a small fetus inside."
   },
   "048": {
@@ -277,23 +277,22 @@
   },
   "050": {
     "name": "The Fallen",
-    "bossHP": "If you know, update the Wiki :D",
-    "alts1": "",
+    "bossHP": "FIRST PHASE: 60, SECOND PHASE: 45*2",
     "text": "The Fallen is a boss that, similarly to the The Headless Horseman, can appear as the boss of any floor before The Womb II, except The Depths II. He also can appear as a normal enemy on floors after The Womb, and will always spawn before the Satan battle."
   },
   "051": {
     "name": "Satan",
-    "bossHP": "First form: 600, Second form: 600",
+    "bossHP": "FIRST FORM: 600, SECOND FORM: 600",
     "text": "Satan is the final boss of Sheol in The Binding of Isaac: Rebirth."
   },
   "052": {
     "name": "The Lamb",
-    "bossHP": "Head: 2000, Body: 600 ",
+    "bossHP": "HEAD: 2000, BODY: 600 ",
     "text": "The Lamb is the final boss of the Dark Room."
   },
   "053": {
     "name": "Mega Satan",
-    "bossHP": "First phase: 3000, Second phase: 2000, Hands: 600",
+    "bossHP": "FIRST PHASE: 3000, SECOND PHASE: 2000, HANDS: 600",
     "text": "Mega Satan is an unlockable boss in The Binding of Isaac: Rebirth."
   },
   "054": {
@@ -308,7 +307,7 @@
   },
   "056": {
     "name": "Krampus",
-    "bossHP": "If you know, update the Wiki :D",
+    "bossHP": "FIRST PHASE: 60, SECOND PHASE: 45*2",
     "text": "Krampus is a boss that occasionally appears inside of a Devil Room."
   },
   "057": {
@@ -323,7 +322,7 @@
   },
   "059": {
     "name": "The Headless Horseman",
-    "bossHP": "Head: 100, Horse: 60, Roaming Horse: 30",
+    "bossHP": "HEAD: 100, HORSE: 60, ROAMING HORSE: 30",
     "text": "This boss has a chance of replacing any other Horsemen Isaac could meet."
   }
 }
