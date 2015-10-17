@@ -25,7 +25,7 @@ namespace TFOIBeta
                 boss.Id = jsonBoss.Name;
                 boss.Name = jsonBoss.First["name"];                                     //these four properties (should) exist for every boss
                 boss.Text = jsonBoss.First["text"];
-                boss.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\bosses\bw\" + boss.Id + ".png");
+                boss.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\bosses\" + boss.Id + ".png");
 
                 if (jsonBoss.First["alts1"] != null)
                     boss.Alts1 = jsonBoss.First["alts1"];

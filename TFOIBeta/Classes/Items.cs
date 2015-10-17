@@ -16,7 +16,7 @@ namespace TFOIBeta
 
         public static void ParseJsonItemList()
         {
-            string json = File.ReadAllText(Environment.CurrentDirectory + "\\Resources\\JSON\\JsonItemList.json");
+            string json = File.ReadAllText(Environment.CurrentDirectory + @"\Resources\JSON\JsonItemList.json");
             dynamic deserializedItems = JsonConvert.DeserializeObject(json);
 
             foreach (var jsonItem in deserializedItems)
@@ -26,7 +26,7 @@ namespace TFOIBeta
                 item.Id = jsonItem.Name;                                     //these four properties (should) exist for every item
                 item.Name = jsonItem.First["name"];
                 item.Text = jsonItem.First["text"];
-                item.Icon = new Bitmap(Environment.CurrentDirectory + "\\Resources\\images\\collectibles\\" + item.Id + ".png");
+                item.Icon = new Bitmap(Environment.CurrentDirectory + @"\Resources\images\collectibles\" + item.Id + ".png");
 
                 if (jsonItem.First["health"] != null)                                                              //int
                 {

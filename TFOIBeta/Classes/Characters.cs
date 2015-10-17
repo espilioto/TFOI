@@ -15,7 +15,7 @@ namespace TFOIBeta
 
         public static void ParseJsonCharList()
         {
-            string json = File.ReadAllText(Environment.CurrentDirectory + "\\resources\\JSON\\JsonCharList.json");
+            string json = File.ReadAllText(Environment.CurrentDirectory + @"\resources\JSON\JsonCharList.json");
 
             dynamic deserializedItems = JsonConvert.DeserializeObject(json);
 
@@ -25,7 +25,7 @@ namespace TFOIBeta
 
                 character.Id = jsonChar.Name;
                 character.Name = jsonChar.First["name"];
-                character.Icon = new Bitmap(Environment.CurrentDirectory + "\\resources\\images\\chars\\bw\\" + character.Id + ".png");
+                character.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\chars\" + character.Id + ".png");
 
                 Characters.List.Add(character);
             }
