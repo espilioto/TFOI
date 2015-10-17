@@ -74,14 +74,14 @@
     "text": "Widow is one of the bosses that can appear in The Cellar. She is one of the most common bosses to fight, particularly because she can appear in later chapters as a regular enemy."
   },
   "013": {
-    "name": "Blighted Ovum",
-    "bossHP": "140",
-    "text": "The Blighted Ovum is one of the bosses that can appear in The Cellar, and is the posthumous version of Gemini."
-  },
-  "014": {
     "name": "Haunt",
     "bossHP": "200",
     "text": "The Haunt is one of the bosses found in The Cellar. It can appear on later floors as an enemy."
+  },
+    "014": {
+    "name": "Blighted Ovum",
+    "bossHP": "140",
+    "text": "The Blighted Ovum is one of the bosses that can appear in The Cellar, and is the posthumous version of Gemini."
   },
   "015": {
     "name": "Chub",
@@ -288,7 +288,7 @@
   },
   "052": {
     "name": "The Lamb",
-    "bossHP": "Head: 2000, Body: 600",
+    "bossHP": "Head: 2000, Body: 600 ",
     "text": "The Lamb is the final boss of the Dark Room."
   },
   "053": {

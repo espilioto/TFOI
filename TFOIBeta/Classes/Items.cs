@@ -16,7 +16,7 @@ namespace TFOIBeta
 
         public static void ParseJsonItemList()
         {
-            string json = File.ReadAllText(Environment.CurrentDirectory + "\\resources\\JSON\\JsonItemList.json");
+            string json = File.ReadAllText(Environment.CurrentDirectory + "\\Resources\\JSON\\JsonItemList.json");
             dynamic deserializedItems = JsonConvert.DeserializeObject(json);
 
             foreach (var jsonItem in deserializedItems)
@@ -26,40 +26,92 @@ namespace TFOIBeta
                 item.Id = jsonItem.Name;                                     //these four properties (should) exist for every item
                 item.Name = jsonItem.First["name"];
                 item.Text = jsonItem.First["text"];
-                item.Icon = new Bitmap(Environment.CurrentDirectory + "\\resources\\images\\collectibles\\" + item.Id + ".png");
+                item.Icon = new Bitmap(Environment.CurrentDirectory + "\\Resources\\images\\collectibles\\" + item.Id + ".png");
 
-                if (jsonItem.First["health"] != null)                                     //int
+                if (jsonItem.First["health"] != null)                                                              //int
+                {
                     item.Health = jsonItem.First["health"];
+                    item.DetailsString += "HP: " + item.Health.ToString() + Environment.NewLine;
+                }
                 if (jsonItem.First["soulhearts"] != null)
+                {
                     item.SoulHearts = jsonItem.First["soulhearts"];
+                    item.DetailsString += "SOUL HEARTS +" + item.SoulHearts.ToString() + Environment.NewLine;
+                }
                 if (jsonItem.First["sinhearts"] != null)
+                {
                     item.SinHearts = jsonItem.First["sinhearts"];
+                    item.DetailsString += "SIN HEARTS +" + item.SinHearts.ToString() + Environment.NewLine;
+                }
 
-                if (jsonItem.First["healthOnly"] != null)                                 //bool
+                if (jsonItem.First["healthOnly"] != null)                                                        //bool
+                { 
                     item.HealthOnly = jsonItem.First["healthOnly"];
+                }
                 if (jsonItem.First["space"] != null)
+                {
                     item.Space = jsonItem.First["space"];
+                }
+                if (jsonItem.First["guppy"] != null)
+                {
+                    item.Guppy = jsonItem.First["guppy"];
+                }
 
-                if (jsonItem.First["delay"] != null)                                       //float
+                if (jsonItem.First["delay"] != null)                                                             //float
+                {
                     item.Delay = jsonItem.First["delay"];
+                    item.DetailsString += "TEAR DELAY: " + item.Delay.ToString() + Environment.NewLine;
+                }
                 if (jsonItem.First["delayX"] != null)
+                {
                     item.DelayX = jsonItem.First["delayX"];
+                    item.DetailsString += "TEAR DELAY MULTI: " + item.DelayX.ToString() + Environment.NewLine;
+                }
                 if (jsonItem.First["dmg"] != null)
+                {
                     item.Damage = jsonItem.First["dmg"];
+                    item.DetailsString += "DAMAGE: " + item.Damage.ToString() + Environment.NewLine;
+                }
                 if (jsonItem.First["dmgX"] != null)
+                {
                     item.DamageX = jsonItem.First["dmgX"];
+                    item.DetailsString += "TEAR DAMAGE MULTI: " + item.DamageX.ToString() + Environment.NewLine;
+                }
                 if (jsonItem.First["range"] != null)
+                {
                     item.Range = jsonItem.First["range"];
+                    item.DetailsString += "TEAR RANGE: " + item.Range.ToString() + Environment.NewLine;
+                }
                 if (jsonItem.First["tears"] != null)
+                {
                     item.Tears = jsonItem.First["tears"];
+                    item.DetailsString += "TEARS: " + item.Tears.ToString() + Environment.NewLine;
+                }
                 if (jsonItem.First["tearHeight"] != null)
-                    item.TearHeight = jsonItem.First["tearHeight"];
+                {
+                    item.TearHeight = jsonItem.First["height"];
+                    item.DetailsString += "TEAR HEIGHT: " + item.TearHeight.ToString() + Environment.NewLine;
+                }
+                if (jsonItem.First["shotspeed"] != null)
+                {
+                    item.ShotSpeed = jsonItem.First["shotspeed"];
+                    item.DetailsString += "SHOT SPEED: " + item.ShotSpeed.ToString() + Environment.NewLine;
+                }
                 if (jsonItem.First["speed"] != null)
+                {
                     item.Speed = jsonItem.First["speed"];
+                    item.DetailsString += "SPEED: " + item.Speed.ToString() + Environment.NewLine;
+                }
+
+                if (!string.IsNullOrEmpty(item.DetailsString))
+                    if (item.DetailsString.EndsWith(Environment.NewLine))
+                        item.DetailsString  = item.DetailsString.TrimEnd(Environment.NewLine.ToCharArray());
 
                 Items.List.Add(item);
             }
         }
+
+
 
         private string _id;                                 //string
         public string Id
@@ -79,6 +131,13 @@ namespace TFOIBeta
             get { return _text; }
             set { _text = value; }
         }
+        private string _detailsString;
+        public string DetailsString
+        {
+            get { return _detailsString; }
+            set { _detailsString = value; }
+        }
+
 
         private int _health;                                //int
         public int Health
@@ -111,6 +170,13 @@ namespace TFOIBeta
             get { return _space; }
             set { _space = value; }
         }
+        private bool _guppy;
+        public bool Guppy
+        {
+            get { return _guppy; }
+            set { _guppy = value; }
+        }
+
 
         private float _delay;                               //float
         public float Delay
@@ -153,6 +219,12 @@ namespace TFOIBeta
         {
             get { return _tearHeight; }
             set { _tearHeight = value; }
+        }
+        private float _shotSpeed;
+        public float ShotSpeed
+        {
+            get { return _shotSpeed; }
+            set { _shotSpeed = value; }
         }
         private float _speed;
         public float Speed

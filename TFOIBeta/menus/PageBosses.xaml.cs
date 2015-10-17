@@ -24,5 +24,33 @@ namespace TFOIBeta.menus
         {
             InitializeComponent();
         }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            foreach (var boss in Bosses.List)
+            {
+                var icon = new System.Windows.Controls.Image();
+                icon.Stretch = Stretch.None;
+
+                icon.ToolTip = boss.Name + Environment.NewLine + boss.Text; ;
+                //Maybe TODO: display rest stats
+
+                icon.Source = Stuff.BitmapToImageSource(boss.Icon);
+                bossPanel.Children.Add(icon);
+            }
+        }
+
+        private void back_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow.mainWindow.mainWindowFrame.GoBack();
+        }
+        private void back_MouseEnter(object sender, MouseEventArgs e)
+        {
+            back_.Visibility = Visibility.Visible;
+        }
+        private void back_MouseLeave(object sender, MouseEventArgs e)
+        {
+            back_.Visibility = Visibility.Hidden;
+        }
     }
 }
