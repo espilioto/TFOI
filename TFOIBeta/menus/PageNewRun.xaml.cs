@@ -57,6 +57,13 @@ namespace TFOIBeta.menus
                     run.Seed = Regex.Match(line, @" (\w{4} \w{4}) ").Groups[1].Value;
                     txtSeed.Text = run.Seed;
                 }
+                if (line.StartsWith("Initialized player with"))
+                {
+                    var character = Characters.getCharFromId(Regex.Match(line, @"Subtype (\d)").Groups[1].Value);
+
+                    charIcon.ToolTip = character.Name;
+                    charIcon.Source = Stuff.BitmapToImageSource(character.Icon);
+                }
                 if (line.StartsWith("Adding collectible "))
                 {
                     var item = Items.getItemFromName(Regex.Match(line, @"\(([^)]*)\)").Groups[1].Value);

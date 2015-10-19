@@ -17,6 +17,7 @@ namespace TFOIBeta
 
         public Run()
         {
+            RunCharacter = new Characters();
             RunItems = new List<Items>();
             RunFloors = new List<Floors>();
             RunBosses = new List<Bosses>();

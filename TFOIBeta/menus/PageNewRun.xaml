@@ -24,9 +24,10 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        
-        <WrapPanel Name="itemPanel" HorizontalAlignment="Left" Height="149" Margin="296,154,0,0" VerticalAlignment="Top" Width="445"/>
-        <WrapPanel Name="bossPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="296,308,219,108"/>
+
+        <Image Name="charIcon" Margin="296,138,219,326" Stretch="None"/>
+        <WrapPanel Name="itemPanel" HorizontalAlignment="Left" Height="141" Margin="296,214,0,0" VerticalAlignment="Top" Width="445"/>
+        <WrapPanel Name="bossPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="296,360,0,0" Height="110" Width="445"/>
 
     </Grid>
 </Page>

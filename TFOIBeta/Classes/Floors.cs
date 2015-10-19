@@ -19,20 +19,20 @@ namespace TFOIBeta
 
             dynamic deserializedItems = JsonConvert.DeserializeObject(json);
 
-            foreach (var jsonChar in deserializedItems)
+            foreach (var jsonFloor in deserializedItems)
             {
-                var floor = new Characters();
+                var floor = new Floors();
 
-                floor.Id = jsonChar.Name;
-                floor.Name = jsonChar.First["name"];
+                floor.Id = jsonFloor.Name;
+                floor.Name = jsonFloor.First["name"];
                 //character.Icon = new Bitmap(Environment.CurrentDirectory + "\\resources\\images\\chars\\bw\\" + character.Id + ".png");
 
-                Characters.List.Add(floor);
+                Floors.List.Add(floor);
             }
         }
 
-        private int _id;
-        public int Id
+        private string _id;
+        public string Id
         {
             get { return _id; }
             set { _id = value; }

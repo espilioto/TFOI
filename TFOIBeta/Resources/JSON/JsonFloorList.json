@@ -1,38 +1,38 @@
 {
-   "1":{
-      "name":"Basement"
-   },
-   "2":{
-      "name":"Cellar"
-   },
-   "3":{
-      "name":"Caves"
-   },
-   "4":{
-      "name":"Catacombs"
-   },
-   "5":{
-      "name":"Depths"
-   },
-   "6":{
-      "name":"Necropolis"
-   },
-   "7":{
-      "name":"Womb"
-   },
-   "8":{
-      "name":"Utero"
-   },
-   "9":{
-      "name":"Sheol"
-   },
-   "10":{
-      "name":"Cathedral"
-   },
-   "11":{
-      "name":"Dark Room"
-   },
-   "12":{
-      "name":"Chest"
-   }
+    "1": {
+        "name": "Basement"
+    },
+    "2": {
+        "name": "Cellar"
+    },
+    "3": {
+        "name": "Caves"
+    },
+    "4": {
+        "name": "Catacombs"
+    },
+    "5": {
+        "name": "Depths"
+    },
+    "6": {
+        "name": "Necropolis"
+    },
+    "7": {
+        "name": "Womb"
+    },
+    "8": {
+        "name": "Utero"
+    },
+    "9": {
+        "name": "Sheol"
+    },
+    "10": {
+        "name": "Cathedral"
+    },
+    "11": {
+        "name": "Dark Room"
+    },
+    "12": {
+        "name": "Chest"
+    }
 }
