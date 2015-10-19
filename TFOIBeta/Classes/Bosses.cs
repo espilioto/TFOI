@@ -13,6 +13,12 @@ namespace TFOIBeta
     {
         public static List<Bosses> List = new List<Bosses>();
 
+
+        public static Bosses getBossFromName(string bossName)
+        {
+            return Bosses.List.Find(boss => boss.Name == bossName);
+        }
+
         public static void ParseJsonBossList()
         {
             string json = File.ReadAllText(Environment.CurrentDirectory + @"\resources\JSON\JsonBossList.json");

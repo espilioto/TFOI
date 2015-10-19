@@ -36,12 +36,10 @@ namespace TFOIBeta
             mainWindow = this;
             mainWindowFrame.NavigationService.Navigate(new menus.PageMain());
 
-            Items.ParseJsonItemList();
             Bosses.ParseJsonBossList();
             Characters.ParseJsonCharList();
-            
-            
-            var player = new Player();
+            Floors.ParseJsonFloorList();
+            Items.ParseJsonItemList();
         }
 
         

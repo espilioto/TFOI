@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TFOIBeta.menus"
+      xmlns:gif="http://wpfanimatedgif.codeplex.com"
       mc:Ignorable="d" 
       d:DesignHeight="540" d:DesignWidth="960" Background="White"
       Title="PageNewRun" >
@@ -23,8 +24,9 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <StackPanel x:Name="itemPanel" HorizontalAlignment="Left" Height="311" Margin="296,154,0,0" VerticalAlignment="Top" Width="445">
-            <StackPanel HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100"/>
-        </StackPanel>
+        
+        <WrapPanel Name="itemPanel" HorizontalAlignment="Left" Height="149" Margin="296,154,0,0" VerticalAlignment="Top" Width="445"/>
+        <WrapPanel Name="bossPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="296,308,219,108"/>
+
     </Grid>
 </Page>

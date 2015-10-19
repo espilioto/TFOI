@@ -14,6 +14,11 @@ namespace TFOIBeta
     {
         public static List<Items> List = new List<Items>();
 
+        public static Items getItemFromId(string itemId)
+        {
+            return Items.List.Find(item => item.Id == itemId);
+        }
+
         public static void ParseJsonItemList()
         {
             string json = File.ReadAllText(Environment.CurrentDirectory + @"\Resources\JSON\JsonItemList.json");

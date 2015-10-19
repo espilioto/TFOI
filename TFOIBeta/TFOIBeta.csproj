@@ -147,9 +147,16 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="menus\PageWaiting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Player.cs" />
+    <Compile Include="Classes\Run.cs" />
+    <Compile Include="menus\PageWaiting.xaml.cs">
+      <DependentUpon>PageWaiting.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -251,6 +258,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\BGBosses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BGBase.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions />

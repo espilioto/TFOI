@@ -44,5 +44,13 @@ namespace TFOIBeta
             get { return _name; }
             set { _name = value; }
         }
+
+        private string _curse;
+        public string Curse
+        {
+            get { return _curse; }
+            set { _curse = value; }
+        }
+
     }
 }

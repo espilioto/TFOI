@@ -25,7 +25,7 @@
 
     <Grid>
         <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/BGMainMenu.png"/>
-        <Image x:Name="logo" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/logoNoShadow.png" RenderTransformOrigin="0.5,0.5" Margin="82,16,82,0" VerticalAlignment="Top" Height="150">
+        <Image Name="logo" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOIBeta;component/Resources/logoNoShadow.png" RenderTransformOrigin="0.5,0.5" Margin="82,16,82,0" VerticalAlignment="Top" Height="150">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

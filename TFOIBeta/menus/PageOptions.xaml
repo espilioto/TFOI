@@ -9,6 +9,9 @@
       Title="PageOptions">
 
     <Grid>
-        
+        <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOIBeta;component/Resources/BGBase.png"/>
+
+        <Image Name="back" Source="/TFOIBeta;component/Resources/back.png" Margin="25,439,847,60" RenderOptions.BitmapScalingMode="NearestNeighbor" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave"/>
+        <Image Name="back_" Source="/TFOIBeta;component/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Margin="10,470,832,44" RenderTransformOrigin="0.5,0.5" Width="87"/>
     </Grid>
 </Page>
