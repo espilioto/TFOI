@@ -39,8 +39,8 @@ namespace TFOIBeta.menus
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            timer.Stop();
-            timer.Elapsed += ReadLog;
+            //timer.Stop();
+            //timer.Elapsed += ReadLog;
 
             Run.Initialise();
 
@@ -48,7 +48,63 @@ namespace TFOIBeta.menus
             streamReader = new StreamReader(stream);
 
             run = new Run();
-            timer.Start();
+            //timer.Start();
+
+            while ((line = streamReader.ReadLine()) != null && System.Diagnostics.Process.GetProcessesByName("isaac-ng").Length > 0)
+            {
+                if (line.StartsWith("RNG Start Seed:")) //regex returns the seed in this form: ((a-Z 0-9)x4)space((a-Z 0-9)x4)
+                {
+                    run.Seed = Regex.Match(line, @" (\w{4} \w{4}) ").Groups[1].Value;
+                    txtSeed.Text = run.Seed;
+                }
+                if (line.StartsWith("Adding collectible "))
+                {
+                    var item = Items.getItemFromName(Regex.Match(line, @"\(([^)]*)\)").Groups[1].Value);
+                    if (run.AddItem(item))
+                    {
+                        Image icon = new Image();
+                        icon.Stretch = Stretch.None;
+                        icon.ToolTip = item.Name + Environment.NewLine + item.Text;
+                        icon.Source = Stuff.BitmapToImageSource(item.Icon);
+                        itemPanel.Children.Add(icon);
+                    }
+                    //Regex.Match(line, @"(\d+)").Groups[1].Value  //regex item id
+                    //Regex.Match(line, @"\(([^)]*)\)").Groups[1].Value  //regex item name
+                }
+                if (line.StartsWith("Game Over"))
+                {
+                    //txtScan.AppendText("--: " + ("Game over :<") + Environment.NewLine);
+                    //gotta figure out what to do here
+                }
+                if (line.StartsWith("playing cutscene"))
+                {
+                    if (line.StartsWith("playing cutscene 1 (Intro).")) //don't match the intro cutscene that plays on every launch
+                    {
+                        ; ;
+                    }
+                    else
+                    {
+                        //txtScan.AppendText("--: " + ("Victory!" + Environment.NewLine));
+                        //gotta figure out what to do here aswell
+                    }
+                }
+                if (Regex.Match(line, (@"Room \d\.\d{4}\(")).Success) //regex boss name
+                {
+                    var boss = Bosses.getBossFromName(Regex.Match(line, @"\(([^\)]+)\)").Groups[1].Value); //if miniboss, var boss will remain null
+
+                    if (boss != null)           //so let's check that over here, even though AddBoss checks if the boss exists in the main boss list
+                    {
+                        run.AddBoss(boss);
+                        Image icon = new Image();
+                        icon.Stretch = Stretch.None;
+                        icon.ToolTip = boss.Name + Environment.NewLine + boss.Text;
+
+                        icon.Source = Stuff.BitmapToImageSource(boss.Icon);
+                        bossPanel.Children.Add(icon);
+                    }
+
+                }
+            }
         }
 
         private void ReadLog(object sender, ElapsedEventArgs e)
@@ -62,7 +118,7 @@ namespace TFOIBeta.menus
                 }
                 if (line.StartsWith("Adding collectible "))
                 {
-                    var item = Items.getItemFromId(Regex.Match(line, @"(\d+)").Groups[1].Value);  //regex item id
+                    var item = Items.getItemFromName(Regex.Match(line, @"(\d+)").Groups[1].Value);  //regex item id
                     if (run.AddItem(item))
                     {
                         Image icon = new Image();

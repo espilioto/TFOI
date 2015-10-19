@@ -15,6 +15,13 @@ namespace TFOIBeta
         public List<Floors> RunFloors { get; set; }
         public List<Bosses> RunBosses { get; set; }
 
+        public Run()
+        {
+            RunItems = new List<Items>();
+            RunFloors = new List<Floors>();
+            RunBosses = new List<Bosses>();
+        }
+
         private bool _gameOver = false;
         public bool GameOver
         {

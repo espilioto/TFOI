@@ -30,7 +30,7 @@ namespace TFOIBeta.menus
             foreach (var boss in Bosses.List)
             {
                 var icon = new System.Windows.Controls.Image();
-                icon.ToolTip = boss.Name + Environment.NewLine + boss.Text; ;
+                icon.ToolTip = boss.Name + Environment.NewLine + boss.Text;
                 icon.Tag = "HP: " + boss.HP;
                 icon.Stretch = Stretch.None;
                 icon.Source = Stuff.BitmapToImageSource(boss.Icon);
