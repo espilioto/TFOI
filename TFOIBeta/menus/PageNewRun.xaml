@@ -25,7 +25,17 @@
             </TextBlock.RenderTransform>
         </TextBlock>
 
-        <Image Name="charIcon" Margin="296,138,219,326" Stretch="None"/>
+        <TextBlock x:Name="txtIsRunning" TextWrapping="Wrap" TextAlignment="Center" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" Margin="799,153,23,264" RenderTransformOrigin="0.5,0.5" FontSize="26.667" Foreground="#FF362F2D" >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-7.873"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform></TextBlock>
+        <Image x:Name="charIcon" Margin="296,138,219,326" Stretch="None"/>
+        <TextBlock Name="txtRIP" TextAlignment="Center" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" Margin="296,165,219,331" FontSize="42.667" Visibility="Hidden" />
         <WrapPanel Name="itemPanel" HorizontalAlignment="Left" Height="141" Margin="296,214,0,0" VerticalAlignment="Top" Width="445"/>
         <WrapPanel Name="bossPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="296,360,0,0" Height="110" Width="445"/>
 
