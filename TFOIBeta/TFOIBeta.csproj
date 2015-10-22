@@ -260,7 +260,10 @@
     <Resource Include="Resources\BGBosses.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\BGBase.png" />
+    <Resource Include="Resources\BGOptions.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BGRuns.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions />

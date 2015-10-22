@@ -28,8 +28,9 @@ namespace TFOIBeta.menus
 
         Stream stream;
         StreamReader streamReader;
-        Timer timer = new Timer(100);
         string line = "";
+
+        Timer timer = new Timer(100);
         Run run;
 
         public PageNewRun()
