@@ -87,17 +87,20 @@ namespace TFOIBeta.menus
                     {
                         var item = Items.getItemFromName(Regex.Match(line, @"\(([^)]*)\)").Groups[1].Value);
 
-                        if (run.AddItem(item))
+                        if (item != null)               //can't be too careful
                         {
-                            Application.Current.Dispatcher.Invoke((Action)delegate
+                            if (run.AddItem(item))
                             {
-                                Image icon = new Image();
+                                Application.Current.Dispatcher.Invoke((Action)delegate
+                                {
+                                    Image icon = new Image();
+                                    icon.Stretch = Stretch.None;
+                                    icon.ToolTip = item.Name + Environment.NewLine + item.Text;
+                                    icon.Source = Stuff.BitmapToImageSource(item.Icon);
 
-                                icon.Stretch = Stretch.None;
-                                icon.ToolTip = item.Name + Environment.NewLine + item.Text;
-                                icon.Source = Stuff.BitmapToImageSource(item.Icon);
-                                itemPanel.Children.Add(icon);
-                            });
+                                    itemPanel.Children.Add(icon);
+                                });
+                            }
                         }
                         //Regex.Match(line, @"(\d+)").Groups[1].Value  //regex item id
                         //Regex.Match(line, @"\(([^)]*)\)").Groups[1].Value  //regex item name
@@ -134,20 +137,51 @@ namespace TFOIBeta.menus
                             //gotta figure out what to do here aswell
                         }
                     }
-                    if (Regex.Match(line, (@"Room \d\.\d{4}\(")).Success) //regex boss name
+                    if (Regex.Match(line, (@"Room \d\.\d{4}")).Success) //regex boss name
                     {
-                        var boss = Bosses.getBossFromName(Regex.Match(line, @"\(([^\)]+)\)").Groups[1].Value); //if miniboss, var boss will remain null
+                        var boss = Bosses.getBossFromName(Regex.Match(line, @"\(([^\)]+)\)").Groups[1].Value); //if miniboss or dual boss, var boss will remain null
+
+                        if (boss == null)
+                        {
+                            boss = Bosses.getBossFromName(Regex.Match(line, @"\((\w+)").Groups[1].Value);  //regex dual boss
+                        }
 
                         if (boss != null)           //so let's check that over here, even though AddBoss checks if the boss exists in the main boss list
                         {
-                            run.AddBoss(boss);
-                            Image icon = new Image();
-                            icon.Stretch = Stretch.None;
-                            icon.ToolTip = boss.Name + Environment.NewLine + boss.Text;
+                            Application.Current.Dispatcher.Invoke((Action)delegate
+                            {
+                                if (run.AddBoss(boss))
+                                {
+                                    Image icon = new Image();
+                                    icon.Stretch = Stretch.None;
+                                    icon.ToolTip = boss.Name;
+                                    icon.Source = Stuff.BitmapToImageSource(boss.Icon);
 
-                            icon.Source = Stuff.BitmapToImageSource(boss.Icon);
-                            Dispatcher.Invoke(new Action(() => bossPanel.Children.Add(icon)));
+                                    Dispatcher.Invoke(new Action(() => bossPanel.Children.Add(icon)));
+                                }
+                            });
                         }
+                    }
+                    if (line.StartsWith("deathspawn_boss"))
+                    {
+                        Application.Current.Dispatcher.Invoke((Action)delegate
+                        {
+                            //mark boss as defeated in the object and maybe add a visual marker
+
+                            //Image icon = new Image();
+                            //icon.Stretch = Stretch.None;
+
+                            //icon.Source = Stuff.BitmapToImageSource(Properties.Resources.BossDefeated);
+                            //bossDefeatedPanel.Children.Add(icon);
+                        });
+                    }
+                    if (line.StartsWith("Mom clear time"))
+                    {
+                        var time = Double.Parse(Regex.Match(line, @"\d+").Groups[1].Value); //regex framecounter (30/sec. why not 60? no idea)
+                        time /= 30;                                                         //get seconds
+                        time /= 60;                                                         //get minutes
+
+                        run.Time = time;
                     }
                 }
             }

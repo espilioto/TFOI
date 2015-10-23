@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TFOIBeta"
         mc:Ignorable="d"
-        Title="The Finding of Items: ReCompile" Width="960" Height="570" Loaded="Window_Loaded" ResizeMode="NoResize" >
+        Title="The Finding of Items: ReCompile" Width="960" Height="570" Loaded="Window_Loaded" ResizeMode="NoResize" 
+        Icon="Resources/icon.png">
     <Grid>
         <Frame Name="mainWindowFrame" NavigationUIVisibility="Hidden"/>
     </Grid>

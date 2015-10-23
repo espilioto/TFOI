@@ -98,8 +98,8 @@ namespace TFOIBeta
         }
         public void AddFloor(Floors floor, string curse)
         {
-            floor.Curse = curse;
             this.RunFloors.Add(floor);
+            floor.Curse = curse;
         }
         public bool AddBoss(Bosses boss)            //check if the played just re-entered the Boss room and the (= boss exists in the list)
         {
