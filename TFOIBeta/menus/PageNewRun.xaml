@@ -12,10 +12,10 @@
     <Grid Loaded="Grid_Loaded">
         <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOIBeta;component/Resources/BGNewRun.png"/>
 
-        <Image x:Name="back" Source="/TFOIBeta;component/Resources/back.png" Margin="25,439,847,60" RenderOptions.BitmapScalingMode="NearestNeighbor" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave" Stretch="Fill"/>
-        <Image x:Name="back_" Source="/TFOIBeta;component/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Margin="10,470,832,44" RenderTransformOrigin="0.5,0.5"/>
+        <Image Name="back" Source="/TFOIBeta;component/Resources/back.png" Margin="25,439,847,60" RenderOptions.BitmapScalingMode="NearestNeighbor" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave" Stretch="Fill"/>
+        <Image Name="back_" Source="/TFOIBeta;component/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Margin="10,470,832,44" RenderTransformOrigin="0.5,0.5"/>
 
-        <TextBlock x:Name="txtSeed" Text="HERP DERP" Foreground="#F84F4E4A" Margin="33,145,723,242" RenderTransformOrigin="0.5,0.5" TextWrapping="Wrap" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="60" LineStackingStrategy="BlockLineHeight" >
+        <TextBlock Name="txtSeed" Text="HERP DERP" Foreground="#F84F4E4A" Margin="33,145,723,242" RenderTransformOrigin="0.5,0.5" TextWrapping="Wrap" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="60" LineStackingStrategy="BlockLineHeight" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -26,7 +26,9 @@
             </TextBlock.RenderTransform>
         </TextBlock>
 
-        <TextBlock x:Name="txtIsRunning" TextWrapping="Wrap" TextAlignment="Center" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" Margin="799,153,23,264" RenderTransformOrigin="0.5,0.5" FontSize="26.667" Foreground="#FF362F2D" >
+        <TextBlock Name="txtTime" Margin="25,0,719,202" Text="TIME: " FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="34.667" Foreground="#FF53524E" VerticalAlignment="Bottom" Height="29"/>
+
+        <TextBlock Name="txtIsRunning" TextWrapping="Wrap" TextAlignment="Center" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" Margin="799,153,23,264" RenderTransformOrigin="0.5,0.5" FontSize="26.667" Foreground="#FF362F2D" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -34,12 +36,14 @@
                     <RotateTransform Angle="-7.873"/>
                     <TranslateTransform/>
                 </TransformGroup>
-            </TextBlock.RenderTransform></TextBlock>
-        <Image x:Name="charIcon" Margin="296,138,219,326" Stretch="None"/>
-        <TextBlock x:Name="txtRIP" TextAlignment="Center" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" Margin="296,165,219,331" FontSize="42.667" Visibility="Hidden" />
-       
+            </TextBlock.RenderTransform>
+        </TextBlock>
+
+        <Image Name="charIcon" Margin="296,138,219,326" Stretch="None"/>
+        <TextBlock Name="txtRIP" TextAlignment="Center" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" Margin="296,165,219,331" FontSize="42.667" Visibility="Hidden" />
+
         <WrapPanel x:Name="itemPanel" HorizontalAlignment="Left" Height="108" Margin="296,214,0,0" VerticalAlignment="Top" Width="445"/>
-       
+
         <WrapPanel x:Name="bossPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="296,327,0,0" Height="143" Width="445"/>
         <WrapPanel x:Name="bossDefeatedPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="296,327,0,0" Height="143" Width="445"/>
 

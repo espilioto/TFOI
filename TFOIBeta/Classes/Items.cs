@@ -14,9 +14,9 @@ namespace TFOIBeta
     {
         public static List<Items> List = new List<Items>();
 
-        public static Items getItemFromName(string itemName)
+        public static Items GetItemFromId(string itemId)
         {
-            return Items.List.Find(item => item.Name == itemName);
+            return Items.List.Find(item => item.Id == itemId);
         }
 
         public static void ParseJsonItemList()

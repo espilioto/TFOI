@@ -13,7 +13,7 @@ namespace TFOIBeta
     {
         public static List<Characters> List = new List<Characters>();
 
-        public static Characters getCharFromId(string charId)
+        public static Characters GetCharFromId(string charId)
         {
             return Characters.List.Find(character => character.Id == charId);
         }

@@ -73,19 +73,19 @@ namespace TFOIBeta.menus
 
                         Dispatcher.Invoke(new Action(() => txtRIP.Visibility = Visibility.Hidden));
 
-                        Dispatcher.Invoke(new Action(() => run.Seed = Regex.Match(line, @" (\w{4} \w{4}) ").Groups[1].Value)); ////regex seed
+                        Dispatcher.Invoke(new Action(() => run.Seed = Regex.Match(line, @"(\w{4} \w{4}) ").Value)); //regex seed
                         Dispatcher.Invoke(new Action(() => txtSeed.Text = run.Seed));
                     }
                     if (line.StartsWith("Initialized player with"))
                     {
-                        var character = Characters.getCharFromId(Regex.Match(line, @"Subtype (\d)").Groups[1].Value);
+                        var character = Characters.GetCharFromId(Regex.Match(line, @"Subtype (\d)").Groups[1].Value); //regex character ID
 
                         Dispatcher.Invoke(new Action(() => charIcon.ToolTip = character.Name));
                         Dispatcher.Invoke(new Action(() => charIcon.Source = Stuff.BitmapToImageSource(character.Icon)));
                     }
                     if (line.StartsWith("Adding collectible "))
                     {
-                        var item = Items.getItemFromName(Regex.Match(line, @"\(([^)]*)\)").Groups[1].Value);
+                        var item = Items.GetItemFromId(Regex.Match(line, @"(\d+)").Value); //regex item id
 
                         if (item != null)               //can't be too careful
                         {
@@ -102,8 +102,8 @@ namespace TFOIBeta.menus
                                 });
                             }
                         }
-                        //Regex.Match(line, @"(\d+)").Groups[1].Value  //regex item id
-                        //Regex.Match(line, @"\(([^)]*)\)").Groups[1].Value  //regex item name
+                        //Regex.Match(line, @"(\d+)").Value        //regex item id
+                        //Regex.Match(line, @"\(([^)]*)\)").Value  //regex item name
                     }
                     if (line.StartsWith("Game Over"))
                     {
@@ -125,28 +125,25 @@ namespace TFOIBeta.menus
                         }
                         else
                         {
-                            Dispatcher.Invoke(new Action(() => txtRIP.Visibility = Visibility.Hidden));
-                            Dispatcher.Invoke(new Action(() => txtRIP.Foreground = Brushes.DarkRed));
-                            Dispatcher.Invoke(new Action(() => txtRIP.Text = "VICTORY!"));
+                            Dispatcher.Invoke(new Action(() => txtRIP.Visibility = Visibility.Visible));
+                            Dispatcher.Invoke(new Action(() => txtRIP.Foreground = Brushes.Goldenrod));
+                            Dispatcher.Invoke(new Action(() => txtRIP.Text = "VICTORY :D"));
 
                             if (run != null)
                             {
                                 run.Dispose();
                             }
-                            //txtScan.AppendText("--: " + ("Victory!" + Environment.NewLine));
                             //gotta figure out what to do here aswell
                         }
                     }
                     if (Regex.Match(line, (@"Room \d\.\d{4}")).Success) //regex boss name
                     {
-                        var boss = Bosses.getBossFromName(Regex.Match(line, @"\(([^\)]+)\)").Groups[1].Value); //if miniboss or dual boss, var boss will remain null
+                        var boss = Bosses.GetBossFromName(Regex.Match(line, @"\((.+)\)").Groups[1].Value); //if miniboss or double trouble, var boss will remain null
 
                         if (boss == null)
-                        {
-                            boss = Bosses.getBossFromName(Regex.Match(line, @"\((\w+)").Groups[1].Value);  //regex dual boss
-                        }
+                            boss = Bosses.GetBossFromName(Regex.Match(line, @"\((.+)\)").Groups[1].Value);  //regex dual boss
 
-                        if (boss != null)           //so let's check that over here, even though AddBoss checks if the boss exists in the main boss list
+                        if (boss != null)           //safety net, boss name may be triggered by miniboss fight
                         {
                             Application.Current.Dispatcher.Invoke((Action)delegate
                             {
@@ -164,24 +161,30 @@ namespace TFOIBeta.menus
                     }
                     if (line.StartsWith("deathspawn_boss"))
                     {
-                        Application.Current.Dispatcher.Invoke((Action)delegate
-                        {
-                            //mark boss as defeated in the object and maybe add a visual marker
+                        //Application.Current.Dispatcher.Invoke((Action)delegate
+                        //{
+                        //    //TODO mark boss as defeated in the object and maybe add a visual marker
 
-                            //Image icon = new Image();
-                            //icon.Stretch = Stretch.None;
+                        //    Image icon = new Image();
+                        //    icon.Stretch = Stretch.None;
 
-                            //icon.Source = Stuff.BitmapToImageSource(Properties.Resources.BossDefeated);
-                            //bossDefeatedPanel.Children.Add(icon);
-                        });
+                        //    icon.Source = Stuff.BitmapToImageSource(Properties.Resources.BossDefeated);
+                        //    bossDefeatedPanel.Children.Add(icon);
+                        //});
                     }
                     if (line.StartsWith("Mom clear time"))
                     {
-                        var time = Double.Parse(Regex.Match(line, @"\d+").Groups[1].Value); //regex framecounter (30/sec. why not 60? no idea)
-                        time /= 30;                                                         //get seconds
-                        time /= 60;                                                         //get minutes
+                        var time = float.Parse(Regex.Match(line, @"\d+").Value);           //regex framecounter (30/sec. why not 60? no idea)
+                        TimeSpan timeSpan = TimeSpan.FromSeconds(time / 30);                   //get seconds
+                        //time /= 30;                                                         //get seconds
+                        //time /= 60;                                                         //get minutes
 
-                        run.Time = time;
+                        //run.Time = time;
+
+
+                        //Dispatcher.Invoke(new Action(() => txtTime.Text = "TIME: " + time.ToString("0.00")));
+                        string str = timeSpan.ToString(@"hh\:mm\:ss");
+                        Dispatcher.Invoke(new Action(() => txtTime.Text = "TIME: " + str));
                     }
                 }
             }
@@ -190,25 +193,6 @@ namespace TFOIBeta.menus
                 Dispatcher.Invoke(new Action(() => txtIsRunning.Foreground = Brushes.DarkRed));
                 Dispatcher.Invoke(new Action(() => txtIsRunning.Text = "GAME IS NOT RUNNING"));
             }
-        }
-
-        /// <summary>
-        /// Let's hope it is.
-        /// </summary>
-        private bool IsaacIsRunning()
-        {
-            if (System.Diagnostics.Process.GetProcessesByName("isaac-ng").Length > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-            //try { System.Diagnostics.Process.GetProcessesByName("isaac-ng"); }
-            //catch (InvalidOperationException) { return false; }
-            //catch (ArgumentException) { return false; }
-            //return true;
         }
 
         #region menu stuff

@@ -13,7 +13,7 @@ namespace TFOIBeta
     {
         public static List<Bosses> List = new List<Bosses>();
 
-        public static Bosses getBossFromName(string bossName)
+        public static Bosses GetBossFromName(string bossName)
         {
             return Bosses.List.Find(boss => boss.Name == bossName);
         }

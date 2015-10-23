@@ -13,7 +13,7 @@ namespace TFOIBeta
         bool disposed = false;
         SafeHandle handle = new SafeFileHandle(IntPtr.Zero, true);
 
-        public double Time { get; set; }
+        public float Time { get; set; }
         public string Seed { get; set; }
         public Characters RunCharacter { get; set; }
         public List<Items> RunItems { get; set; }

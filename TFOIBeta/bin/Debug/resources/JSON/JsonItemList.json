@@ -1,60 +1,60 @@
 {
-    "001": {
+    "1": {
         "name": "The Sad Onion",
         "tears": 0.7,
         "text": "Tears up "
     },
-    "002": {
+    "2": {
         "delay": 3,
         "delayx": 2.1,
         "name": "The Inner Eye",
         "text": "Triple shot"
     },
-    "003": {
+    "3": {
         "name": "Spoon Bender",
         "text": "Homing shots"
     },
-    "004": {
+    "4": {
         "dmg": 0.5,
         "dmgx": 1.5,
         "name": "Cricket's Head",
         "text": "DMG up "
     },
-    "005": {
+    "5": {
         "height": 1,
         "name": "My Reflection",
         "range": 1.5,
         "text": "Boomerang tears"
     },
-    "006": {
+    "6": {
         "height": 0.45,
         "name": "Number One",
         "range": -15.78,
         "tears": 1.5,
         "text": "Tears up"
     },
-    "007": {
+    "7": {
         "dmg": 1,
         "name": "Blood of the Martyr",
         "text": "DMG up"
     },
-    "008": {
+    "8": {
         "name": "Brother Bobby",
         "text": "Friends 'till the end"
     },
-    "009": {
+    "9": {
         "name": "Skatole",
         "text": "Fly love"
     },
-    "010": {
+    "10": {
         "name": "Halo of Flies",
         "text": "Projectile protection"
     },
-    "011": {
+    "11": {
         "name": "1UP",
         "text": "Extra life"
     },
-    "012": {
+    "12": {
         "dmg": 0.3,
         "dmgx": 1.5,
         "health": 1,
@@ -64,414 +64,414 @@
         "speed": 0.3,
         "text": "All stats up!"
     },
-    "013": {
+    "13": {
         "name": "The Virus",
         "speed": -0.1,
         "text": "Poison touch"
     },
-    "014": {
+    "14": {
         "height": 0.5,
         "name": "Roid Rage",
         "range": 5.25,
         "speed": 0.6,
         "text": "Speed and range up"
     },
-    "015": {
+    "15": {
         "health": 1,
         "name": "<3",
         "text": "HP up"
     },
-    "016": {
+    "16": {
         "health": 2,
         "name": "Raw Liver",
         "text": "HP up"
     },
-    "017": {
+    "17": {
         "name": "Skeleton Key",
         "text": "99 keys"
     },
-    "018": {
+    "18": {
         "name": "A Dollar",
         "text": "$$$"
     },
-    "019": {
+    "19": {
         "name": "Boom!",
         "text": "10 bombs"
     },
-    "020": {
+    "20": {
         "name": "Transcendence",
         "text": "We all float down here..."
     },
-    "021": {
+    "21": {
         "name": "The Compass",
         "text": "The end is near"
     },
-    "022": {
+    "22": {
         "health": 1,
         "name": "Lunch",
         "text": "HP up"
     },
-    "023": {
+    "23": {
         "health": 1,
         "name": "Dinner",
         "text": "HP up"
     },
-    "024": {
+    "24": {
         "health": 1,
         "name": "Dessert",
         "text": "HP up"
     },
-    "025": {
+    "25": {
         "health": 1,
         "name": "Breakfast",
         "text": "HP up"
     },
-    "026": {
+    "26": {
         "health": 1,
         "name": "Rotten Meat",
         "text": "HP up "
     },
-    "027": {
+    "27": {
         "name": "Wooden Spoon",
         "speed": 0.3,
         "text": "Speed up"
     },
-    "028": {
+    "28": {
         "name": "The Belt",
         "speed": 0.3,
         "text": "Speed up"
     },
-    "029": {
+    "29": {
         "height": 0.5,
         "name": "Mom's Underwear",
         "range": 5.25,
         "text": "Range up"
     },
-    "030": {
+    "30": {
         "height": 0.5,
         "name": "Mom's Heels",
         "range": 5.25,
         "text": "Range up"
     },
-    "031": {
+    "31": {
         "height": 0.5,
         "name": "Mom's Lipstick",
         "range": 5.25,
         "text": "Range up"
     },
-    "032": {
+    "32": {
         "name": "Wire Coat Hanger",
         "tears": 0.7,
         "text": "Tears up"
     },
-    "033": {
+    "33": {
         "name": "The Bible",
         "text": "temporary flight, instantly kills mom / it lives",
         "space": true
     },
-    "034": {
+    "34": {
         "name": "The Book of Belial",
         "text": "Temporary DMG up",
         "space": true
     },
-    "035": {
+    "35": {
         "name": "The Necronomicon",
         "text": "Mass room damage",
         "space": true
     },
-    "036": {
+    "36": {
         "name": "The Poop",
         "text": "Plop!",
         "space": true
     },
-    "037": {
+    "37": {
         "name": "Mr. Boom",
         "text": "Reusable bomb buddy",
         "space": true
     },
-    "038": {
+    "38": {
         "name": "Tammy's Head",
         "text": "Reusable tear burst",
         "space": true
     },
-    "039": {
+    "39": {
         "name": "Mom's Bra",
         "text": "Mass fear",
         "space": true
     },
-    "040": {
+    "40": {
         "name": "Kamikaze!",
         "text": "Become the bomb!",
         "space": true
     },
-    "041": {
+    "41": {
         "name": "Mom's Pad",
         "text": "Gross...",
         "space": true
     },
-    "042": {
+    "42": {
         "name": "Bob's Rotten Head",
         "text": "Reusable ranged bomb",
         "space": true
     },
-    "044": {
+    "44": {
         "name": "Teleport",
         "text": "Teleport!",
         "space": true
     },
-    "045": {
+    "45": {
         "name": "Yum Heart",
         "text": "Reusable regeneration",
         "space": true
     },
-    "046": {
+    "46": {
         "luck": 1,
         "name": "Lucky Foot",
         "text": "Luck up"
     },
-    "047": {
+    "47": {
         "name": "Doctor's Remote",
         "text": "Reusable air strike",
         "space": true
     },
-    "048": {
+    "48": {
         "name": "Cupid's Arrow",
         "text": "Piercing shots"
     },
-    "049": {
+    "49": {
         "name": "Shoop Da Whoop",
         "text": "BLLLARRRRGGG",
         "space": true
     },
-    "050": {
+    "50": {
         "dmg": 1,
         "name": "Steven",
         "text": "DMG up"
     },
-    "051": {
+    "51": {
         "dmg": 1,
         "name": "Pentagram",
         "text": "DMG up"
     },
-    "052": {
+    "52": {
         "delayx": 2.5,
         "dmgx": 3,
         "name": "Dr. Fetus",
         "text": "On-demand air strike"
     },
-    "053": {
+    "53": {
         "name": "Magneto",
         "text": "Item snatcher"
     },
-    "054": {
+    "54": {
         "name": "Treasure Map",
         "text": "Full visible map"
     },
-    "055": {
+    "55": {
         "name": "Mom's Eye",
         "text": "Eye in the back of your head"
     },
-    "056": {
+    "56": {
         "name": "Lemon Mishap",
         "text": "Oops...",
         "space": true
     },
-    "057": {
+    "57": {
         "dmg": 5,
         "name": "Distant Admiration",
         "text": "Attack fly"
     },
-    "058": {
+    "58": {
         "name": "Book of Shadows",
         "text": "Temporary invincibility",
         "space": true
     },
-    "060": {
+    "60": {
         "name": "The Ladder",
         "text": "Building bridges"
     },
-    "062": {
+    "62": {
         "name": "Charm of the Vampire",
         "text": "Kills heal"
     },
-    "063": {
+    "63": {
         "name": "The Battery",
         "text": "Stores energy"
     },
-    "064": {
+    "64": {
         "name": "Steam Sale",
         "text": "50% off"
     },
-    "065": {
+    "65": {
         "name": "Anarchist Cookbook",
         "text": "Summon bombs",
         "space": true
     },
-    "066": {
+    "66": {
         "name": "The Hourglass",
         "text": "Temporary enemy slowdown",
         "space": true
     },
-    "067": {
+    "67": {
         "name": "Sister Maggy",
         "text": "Friends 'till the end"
     },
-    "068": {
+    "68": {
         "name": "Technology",
         "text": "Laser tears"
     },
-    "069": {
+    "69": {
         "name": "Chocolate Milk",
         "text": "Charge shots"
     },
-    "070": {
+    "70": {
         "dmg": 1,
         "name": "Growth Hormones",
         "speed": 0.4,
         "text": "Speed + DMG up"
     },
-    "071": {
+    "71": {
         "height": 1.5,
         "name": "Mini Mush",
         "range": -4.25,
         "speed": 0.3,
         "text": "Speed + range up"
     },
-    "072": {
+    "72": {
         "name": "Rosary",
         "soulhearts": 3,
         "text": "Faith up"
     },
-    "073": {
+    "73": {
         "name": "Cube of Meat",
         "text": "Gotta meat 'em all",
         "dmg": 7
     },
-    "074": {
+    "74": {
         "name": "A Quarter",
         "text": "+25 coins"
     },
-    "075": {
+    "75": {
         "name": "PhD",
         "text": "Better pills"
     },
-    "076": {
+    "76": {
         "name": "X-Ray Vision",
         "text": "I've seen everything"
     },
-    "077": {
+    "77": {
         "name": "My Little Unicorn",
         "text": "Temporary badass",
         "space": true,
         "dmg": 40
     },
-    "078": {
+    "78": {
         "name": "Book of Revelations",
         "text": "Reusable soul protection",
         "space": true
     },
-    "079": {
+    "79": {
         "dmg": 1,
         "name": "The Mark",
         "speed": 0.2,
         "soulhearts": 1,
         "text": "DMG up"
     },
-    "080": {
+    "80": {
         "dmg": 0.5,
         "name": "The Pact",
         "tears": 0.7,
         "soulhearts": 2,
         "text": "DMG + tears up"
     },
-    "081": {
+    "81": {
         "name": "Dead Cat",
         "guppy": true,
         "text": "9 lives"
     },
-    "082": {
+    "82": {
         "name": "Lord of the Pit",
         "speed": 0.3,
         "text": "Demon wings"
     },
-    "083": {
+    "83": {
         "dmg": 0.7,
         "name": "The Nail",
         "speed": -0.18,
         "text": "Temporary demon form",
         "space": true
     },
-    "084": {
+    "84": {
         "name": "We Need To Go Deeper",
         "text": "Reusable level skip",
         "space": true
     },
-    "085": {
+    "85": {
         "name": "Deck of Cards",
         "text": "Reusable card generator",
         "space": true
     },
-    "086": {
+    "86": {
         "name": "Monstro's Tooth",
         "text": "Summon Monstro",
         "space": true
     },
-    "087": {
+    "87": {
         "name": "Loki's Horns",
         "text": "Cross tears"
     },
-    "088": {
+    "88": {
         "name": "Little Chubby",
         "text": "Attack buddy"
     },
-    "089": {
+    "89": {
         "name": "Spider Bite",
         "text": "Slow effect"
     },
-    "090": {
+    "90": {
         "dmg": 1,
         "speed": -0.2,
         "tears": 0.2,
         "name": "The Small Rock",
         "text": "DMG up"
     },
-    "091": {
+    "91": {
         "name": "Spelunker Hat",
         "text": "See-through doors"
     },
-    "092": {
+    "92": {
         "health": 1,
         "name": "Super Bandage",
         "soulhearts": 2,
         "text": "+2 hearts"
     },
-    "093": {
+    "93": {
         "name": "The Gamekid",
         "text": "Temporary Man-Pac",
         "space": true
     },
-    "094": {
+    "94": {
         "name": "Sack of Pennies",
         "text": "Gives money"
     },
-    "095": {
+    "95": {
         "name": "Robo-Baby",
         "text": "Friends till the bbbbzzzzt"
     },
-    "096": {
+    "96": {
         "name": "Little C.H.A.D.",
         "text": "Gives kisses"
     },
-    "097": {
+    "97": {
         "name": "The Book of Sin",
         "text": "Reusable item generator",
         "space": true
     },
-    "098": {
+    "98": {
         "name": "The Relic",
         "text": "Soul generator"
     },
-    "099": {
+    "99": {
         "name": "Little Gish",
         "text": "Sticky friend"
     },
@@ -570,7 +570,7 @@
         "text": "HP up"
     },
     "120": {
-        "name": "Odd Mushroom (Thin)",
+        "name": "Odd Mushroom",
         "speed": 0.3,
         "tears": 1.7,
         "text": "Fire rate up"
@@ -579,7 +579,7 @@
         "dmg": 0.3,
         "health": 1,
         "height": 0.5,
-        "name": "Odd Mushroom (Thick)",
+        "name": "Odd Mushroom",
         "range": 0.25,
         "speed": -0.1,
         "text": "DMG up"
@@ -935,7 +935,7 @@
         "text": "DMG + HP up"
     },
     "194": {
-        "name": "Magic 8-Ball",
+        "name": "Magic 8 Ball",
         "shotspeed": 0.16,
         "text": "Shot speed up"
     },
