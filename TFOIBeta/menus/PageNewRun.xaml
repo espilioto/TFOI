@@ -9,6 +9,12 @@
       d:DesignHeight="540" d:DesignWidth="960" Background="White"
       Title="PageNewRun" >
 
+    <Page.Resources>
+        <DropShadowEffect x:Key="glowRed" ShadowDepth="0" Color="Red" Opacity="1" BlurRadius="20"/>
+        <DropShadowEffect x:Key="glowBlue" ShadowDepth="0" Color="Blue" Opacity="1" BlurRadius="20"/>
+        <DropShadowEffect x:Key="glowBlack" ShadowDepth="0" Color="Black" Opacity="1" BlurRadius="20"/>
+    </Page.Resources>
+
     <Grid Loaded="Grid_Loaded">
         <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOIBeta;component/Resources/BGNewRun.png"/>
 

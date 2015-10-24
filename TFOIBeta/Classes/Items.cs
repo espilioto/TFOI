@@ -61,6 +61,10 @@ namespace TFOIBeta
                 {
                     item.Guppy = jsonItem.First["guppy"];
                 }
+                if (jsonItem.First["flylord"] != null)
+                {
+                    item.FlyLord = jsonItem.First["flylord"];
+                }
 
                 if (jsonItem.First["delay"] != null)                                                             //float
                 {
@@ -181,6 +185,13 @@ namespace TFOIBeta
             get { return _guppy; }
             set { _guppy = value; }
         }
+        private bool _flyLord;
+        public bool FlyLord
+        {
+            get { return _flyLord; }
+            set { _flyLord = value; }
+        }
+
 
 
         private float _delay;                               //float
