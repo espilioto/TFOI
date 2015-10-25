@@ -23,7 +23,7 @@ Linux: Unfortunately, WPF didn't work with Wine last time I checked.
 * My friend, Eddy Pasterino, for beta testing (usually against his will).
 
 ### Development
-#### Todos
+#### *Todos*
 * New run 
   * Floor tracking
   * Curse tracking
@@ -40,10 +40,10 @@ Linux: Unfortunately, WPF didn't work with Wine last time I checked.
   * TBD
 
 
-#### Probably adding these
+#### *Probably adding these*
 * New Run mini mode (overlay for streams etc)
 
-#### Maybe / Luxury
+#### *Maybe / Luxury*
 * New Run 
   * Rebirth style pixelate menu transitions
 * Items
