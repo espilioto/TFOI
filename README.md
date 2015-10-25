@@ -51,7 +51,7 @@ Linux: Unfortunately, WPF didn't work with Wine last time I checked.
 
 
 #### Known bugs
-
+*Pretty sure this will fill up eventually*
  
 ### License
 #### [MIT]
