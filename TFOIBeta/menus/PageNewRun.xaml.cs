@@ -156,90 +156,90 @@ namespace TFOIBeta.menus
                                 }
                             }
                         }
-                        if (line.StartsWith("Game Over"))
-                        {
-                            Dispatcher.Invoke(new Action(() => txtRIP.Visibility = Visibility.Visible));
-                            Dispatcher.Invoke(new Action(() => txtRIP.Foreground = Brushes.DarkRed));
-                            Dispatcher.Invoke(new Action(() => txtRIP.Text = "RIP IN PEPPERONNIS M8"));
+                    }
+                    if (line.StartsWith("Game Over"))
+                    {
+                        Dispatcher.Invoke(new Action(() => txtRIP.Visibility = Visibility.Visible));
+                        Dispatcher.Invoke(new Action(() => txtRIP.Foreground = Brushes.DarkRed));
+                        Dispatcher.Invoke(new Action(() => txtRIP.Text = "RIP IN PEPPERONNIS M8"));
 
+                        if (run != null)
+                        {
+                            run.Dispose();
+                        }
+
+                    }
+                    if (line.StartsWith("playing cutscene"))
+                    {
+                        if (line.StartsWith("playing cutscene 1 (Intro).")) //don't match the intro cutscene that plays on every launch
+                        {
+                            ; ;
+                        }
+                        else
+                        {
                             if (run != null)
                             {
                                 run.Dispose();
                             }
 
+                            Dispatcher.Invoke(new Action(() => txtRIP.Visibility = Visibility.Visible));
+                            Dispatcher.Invoke(new Action(() => txtRIP.Foreground = Brushes.Goldenrod));
+                            Dispatcher.Invoke(new Action(() => txtRIP.Text = "VICTORY :D"));
+
+                            //TODO query stuff?
                         }
-                        if (line.StartsWith("playing cutscene"))
+                    }
+                    if (Regex.Match(line, (@"Room \d\.\d{4}")).Success) //regex boss room
+                    {
+                         var boss = Bosses.GetBossFromName(Regex.Match(line, @"\(([^()]+)").Groups[1].Value); //if miniboss or double trouble, var boss will remain null
+
+                        //if (boss == null)
+                        //    boss = Bosses.GetBossFromName(Regex.Match(line, @"\((.+)\)").Groups[1].Value);  //regex dual boss
+
+                        if (boss != null)           //safety net, boss name may be triggered by miniboss fight
                         {
-                            if (line.StartsWith("playing cutscene 1 (Intro).")) //don't match the intro cutscene that plays on every launch
+                            Application.Current.Dispatcher.Invoke((Action)delegate
                             {
-                                ; ;
-                            }
-                            else
-                            {
-                                if (run != null)
+                                if (run.AddBoss(boss))
                                 {
-                                    run.Dispose();
+                                    Image icon = new Image();
+                                    icon.Stretch = Stretch.None;
+                                    icon.ToolTip = boss.Name;
+                                    icon.Source = Stuff.BitmapToImageSource(boss.Icon);
+
+                                    Dispatcher.Invoke(new Action(() => bossPanel.Children.Add(icon)));
                                 }
-
-                                Dispatcher.Invoke(new Action(() => txtRIP.Visibility = Visibility.Visible));
-                                Dispatcher.Invoke(new Action(() => txtRIP.Foreground = Brushes.Goldenrod));
-                                Dispatcher.Invoke(new Action(() => txtRIP.Text = "VICTORY :D"));
-
-                                //TODO query stuff?
-                            }
+                            });
                         }
-                        if (Regex.Match(line, (@"Room \d\.\d{4}")).Success) //regex boss name
+                    }
+                    if (line.StartsWith("deathspawn_boss"))
+                    {
+                        //Application.Current.Dispatcher.Invoke((Action)delegate
+                        //{
+                        //    //TODO mark boss as defeated in the object and maybe add a visual marker
+
+                        //    Image icon = new Image();
+                        //    icon.Stretch = Stretch.None;
+
+                        //    icon.Source = Stuff.BitmapToImageSource(Properties.Resources.BossDefeated);
+                        //    bossDefeatedPanel.Children.Add(icon);
+                        //});
+                    }
+                    if (line.StartsWith("Mom clear time"))
+                    {
+                        var time = float.Parse(Regex.Match(line, @"\d+").Value);           //regex framecounter (30/sec. why not 60? no idea)
+                        TimeSpan timeSpan = TimeSpan.FromSeconds(time / 30);                   //get seconds
+                        string str = timeSpan.ToString(@"hh\:mm\:ss");
+
+                        Dispatcher.Invoke(new Action(() => txtTime.Text = "TIME: " + str));
+
+                        if (time < 36000)
                         {
-                            var boss = Bosses.GetBossFromName(Regex.Match(line, @"\(([^(]+)").Groups[1].Value.Trim(')')); //if miniboss or double trouble, var boss will remain null
-
-                            //if (boss == null)
-                            //    boss = Bosses.GetBossFromName(Regex.Match(line, @"\((.+)\)").Groups[1].Value);  //regex dual boss
-
-                            if (boss != null)           //safety net, boss name may be triggered by miniboss fight
-                            {
-                                Application.Current.Dispatcher.Invoke((Action)delegate
-                                {
-                                    if (run.AddBoss(boss))
-                                    {
-                                        Image icon = new Image();
-                                        icon.Stretch = Stretch.None;
-                                        icon.ToolTip = boss.Name;
-                                        icon.Source = Stuff.BitmapToImageSource(boss.Icon);
-
-                                        Dispatcher.Invoke(new Action(() => bossPanel.Children.Add(icon)));
-                                    }
-                                });
-                            }
+                            Dispatcher.Invoke(new Action(() => txtTime.Effect = glowActiveItem));
                         }
-                        if (line.StartsWith("deathspawn_boss"))
+                        else
                         {
-                            //Application.Current.Dispatcher.Invoke((Action)delegate
-                            //{
-                            //    //TODO mark boss as defeated in the object and maybe add a visual marker
-
-                            //    Image icon = new Image();
-                            //    icon.Stretch = Stretch.None;
-
-                            //    icon.Source = Stuff.BitmapToImageSource(Properties.Resources.BossDefeated);
-                            //    bossDefeatedPanel.Children.Add(icon);
-                            //});
-                        }
-                        if (line.StartsWith("Mom clear time"))
-                        {
-                            var time = float.Parse(Regex.Match(line, @"\d+").Value);           //regex framecounter (30/sec. why not 60? no idea)
-                            TimeSpan timeSpan = TimeSpan.FromSeconds(time / 30);                   //get seconds
-                            string str = timeSpan.ToString(@"hh\:mm\:ss");
-
-                            Dispatcher.Invoke(new Action(() => txtTime.Text = "TIME: " + str));
-
-                            if (time < 36000)
-                            {
-                                Dispatcher.Invoke(new Action(() => txtTime.Effect = glowActiveItem));
-                            }
-                            else
-                            {
-                                Dispatcher.Invoke(new Action(() => txtTime.Effect = null));
-                            }
+                            Dispatcher.Invoke(new Action(() => txtTime.Effect = null));
                         }
                     }
                 }
