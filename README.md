@@ -8,7 +8,7 @@ A run tracker and logger for The Binding of Isaac: Rebirth
 * Seed, character, item, floor + curse, boss and time identification for current run.
 * Run log analyzing every recent run (char, items, bosses, time etc).
 * Item collection displaying the icon, name, flavor text, detailed stats and run statistics for each one.
-* Character and boss collection displaying run statistics for each one.
+* Character and boss collections displaying run statistics for each one.
 
 #### Usage
 Windows: Just decompress and run. You may need to install the Microsoft .net Framework.  
