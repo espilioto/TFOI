@@ -34,6 +34,26 @@
 
 <p>A run tracker and logger for The Binding of Isaac: Rebirth</p>
 
+<h3>
+<a id="download-here" class="anchor" href="#download-here" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download <a href="https://github.com/espilioto/TFOI/releases">Here</a>
+</h3>
+
+<h3>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h3>
+
+<ul>
+<li>Seed, character, item, floor + curse, boss and time identification for current run.</li>
+<li>Run log analyzing every recent run (char, items, bosses, time etc).</li>
+<li>Item collection displaying the icon, name, flavor text, detailed stats and run statistics for each one.</li>
+<li>Character and boss collections displaying run statistics for each one.</li>
+</ul>
+
+<h4>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h4>
+
+<p>Windows: Just decompress and run. You may need to update the Microsoft .net Framework.<br>
+Linux: Unfortunately, WPF didn't work with Wine last time I checked.</p>
+
 <h4>
 <a id="backstory" class="anchor" href="#backstory" aria-hidden="true"><span class="octicon octicon-link"></span></a>Backstory</h4>
 
@@ -42,12 +62,6 @@ But that wasn't even remotely enough.<br>
 I then remembered a similar app existing for Hearthstone.
 Off I went to Google, and there it was, the <a href="https://github.com/Hyphen-ated/RebirthItemTracker">RebirthItemTracker</a>.<br>
 Having that as a base, I started developing TFOI (and using it as a reason to play more Isaac).</p>
-
-<h4>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h4>
-
-<p>Windows: Just decompress and run. You may need to install the Microsoft .net Framework.<br>
-Linux: Unfortunately, WPF didn't work with Wine last time I checked.</p>
 
 <h4>
 <a id="credits-and-thanks" class="anchor" href="#credits-and-thanks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Credits and thanks</h4>
@@ -63,6 +77,25 @@ Linux: Unfortunately, WPF didn't work with Wine last time I checked.</p>
 <h3>
 <a id="development" class="anchor" href="#development" aria-hidden="true"><span class="octicon octicon-link"></span></a>Development</h3>
 
+<p>This basically is a text parser that reads the game's log.
+It identifies certain events (like picking up an item) and presents them to the user, so that anyone can catch up with just a glance.</p>
+
+<blockquote>
+<p>When the run finishes, it inserts the run's data into a database.
+That data will be available to the user through various screens like: </p>
+
+<ul>
+<li>Run log</li>
+<li>Item-related data </li>
+<li>Boss-related data</li>
+<li>Character-related data
+^<br>
+</li>
+</ul>
+</blockquote>
+
+<p>Soon™</p>
+
 <h4>
 <a id="todos" class="anchor" href="#todos" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>Todos</em>
 </h4>
@@ -75,6 +108,7 @@ Linux: Unfortunately, WPF didn't work with Wine last time I checked.</p>
 <li>Curse tracking</li>
 <li>Died to boss </li>
 <li>Defeated boss marker</li>
+<li>! Database stuff !</li>
 <li>Confirm effects of D4 / D100 / dice rooms (must play more :D)</li>
 </ul>
 </li>
