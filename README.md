@@ -15,7 +15,7 @@ Windows: Just decompress and run. You may need to update the Microsoft .net Fram
 Linux: Unfortunately, WPF didn't work with Wine last time I checked.
 
 #### Backstory
-It all started when I realized that I had played hundreds of hours of Isaac, but had no info to compare or analyze, except for my achievements and the Stats screen of course.
+It all started when I realized that I had played hundreds of hours of Isaac, but had no way to compare or analyze my runs, except for my achievements and the Stats screen of course.
 But that wasn't even remotely enough.  
 I then remembered a similar app existing for Hearthstone.
 Off I went to Google, and there it was, the [RebirthItemTracker].  
