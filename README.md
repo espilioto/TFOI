@@ -54,7 +54,7 @@ Linux: Unfortunately, WPF didn't work with Wine last time I checked.
 *Pretty sure this will fill up eventually*
  
 ### License
-#### [MIT]
+[MIT]
 
 
 [NICALiS]: <http://nicalis.com>
