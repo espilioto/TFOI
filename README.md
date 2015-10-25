@@ -25,10 +25,10 @@ Linux: Unfortunately, WPF didn't work with Wine last time I checked.
 ### Development
 #### Todos
 * New run 
-  * floor tracking
-  * curse tracking
+  * Floor tracking
+  * Curse tracking
   * Died to boss 
-  * defeated boss marker
+  * Defeated boss marker
   * Confirm effects of D4 / D100 / dice rooms (must play more :D)
 * Items
   * Past run stats
