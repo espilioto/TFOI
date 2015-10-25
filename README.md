@@ -11,7 +11,7 @@ A run tracker and logger for The Binding of Isaac: Rebirth
 * Character and boss collections displaying run statistics for each one.
 
 #### Usage
-Windows: Just decompress and run. You may need to install the Microsoft .net Framework.  
+Windows: Just decompress and run. You may need to update the Microsoft .net Framework.  
 Linux: Unfortunately, WPF didn't work with Wine last time I checked.
 
 #### Backstory
