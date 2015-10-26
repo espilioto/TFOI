@@ -119,6 +119,14 @@ namespace TFOIBeta.menus
 
                                     if (item.Space)
                                     {
+                                        foreach (var child in itemPanel.Children.OfType<Image>())
+                                        {
+                                            if (child.Effect != null)
+                                            {
+                                                child.Effect = null;
+                                            }
+                                        }
+
                                         icon.Effect = glowActiveItem;
                                     }
                                     if (item.Guppy)
@@ -191,8 +199,8 @@ namespace TFOIBeta.menus
                     }
                     if (Regex.Match(line, (@"Room \d\.\d{4}")).Success) //regex boss room
                     {
-                         var boss = Bosses.GetBossFromName(Regex.Match(line, @"\(([^()]+)").Groups[1].Value); //if miniboss or double trouble, var boss will remain null
-
+                        var derp = Regex.Match(line, @"\(([^(()]+)[^ ]").Groups[1].Value.TrimEnd(' ');            //regex result tester
+                        var boss = Bosses.GetBossFromName(derp); //if miniboss or double trouble, var boss will remain null
                         //if (boss == null)
                         //    boss = Bosses.GetBossFromName(Regex.Match(line, @"\((.+)\)").Groups[1].Value);  //regex dual boss
 
