@@ -1,38 +1,122 @@
 {
     "1": {
-        "name": "Basement"
+        "name": "Basement I"
     },
     "2": {
-        "name": "Cellar"
+        "name": "Basement II"
     },
     "3": {
-        "name": "Caves"
+        "name": "Basement XL"
     },
     "4": {
-        "name": "Catacombs"
+        "name": "Cellar I"
     },
     "5": {
-        "name": "Depths"
+        "name": "Cellar II"
     },
     "6": {
-        "name": "Necropolis"
+        "name": "Cellar XL"
     },
     "7": {
-        "name": "Womb"
+        "name": "Burning Basement I"
     },
     "8": {
-        "name": "Utero"
+        "name": "Burning Basement II"
     },
     "9": {
-        "name": "Sheol"
+        "name": "Burning Basement XL"
     },
     "10": {
-        "name": "Cathedral"
+        "name": "Caves I"
     },
     "11": {
-        "name": "Dark Room"
+        "name": "Caves II"
     },
     "12": {
+        "name": "Caves XL"
+    },
+    "13": {
+        "name": "Catacombs I"
+    },
+    "14": {
+        "name": "Catacombs II"
+    },
+    "15": {
+        "name": "Catacombs XL"
+    },
+    "16": {
+        "name": "Flooded Caves I"
+    },
+    "17": {
+        "name": "Flooded Caves II"
+    },
+    "18": {
+        "name": "Flooded Caves XL"
+    },
+    "19": {
+        "name": "Depths I"
+    },
+    "20": {
+        "name": "Depths II"
+    },
+    "21": {
+        "name": "Depths XL"
+    },
+    "22": {
+        "name": "Necropolis I"
+    },
+    "23": {
+        "name": "Necropolis II"
+    },
+    "24": {
+        "name": "Necropolis XL"
+    },
+    "25": {
+        "name": "Dank Depths I"
+    },
+    "26": {
+        "name": "Dank Depths II"
+    },
+    "27": {
+        "name": "Dank Depths XL"
+    },
+    "28": {
+        "name": "Womb I"
+    },
+    "29": {
+        "name": "Womb II"
+    },
+    "30": {
+        "name": "Womb XL"
+    },
+    "31": {
+        "name": "Utero I"
+    },
+    "32": {
+        "name": "Utero II"
+    },
+    "33": {
+        "name": "Utero XL"
+    },
+    "34": {
+        "name": "Rotten Womb I"
+    },
+    "35": {
+        "name": "Rotten Womb II"
+    },
+    "36": {
+        "name": "Rotten Womb XL"
+    },
+    "37": {
+        "name": "Sheol"
+    },
+    "38": {
+        "name": "Cathedral"
+    },
+    "39": {
+        "name": "Dark Room"
+    },
+    "40": {
         "name": "Chest"
     }
 }

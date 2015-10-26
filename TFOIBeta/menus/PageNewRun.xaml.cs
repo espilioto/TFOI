@@ -34,6 +34,7 @@ namespace TFOIBeta.menus
         string line = "";
 
         Timer timer = new Timer(100);
+
         Run run;
 
         public PageNewRun()
@@ -86,6 +87,7 @@ namespace TFOIBeta.menus
 
                         Dispatcher.Invoke(new Action(() => itemPanel.Children.Clear()));
                         Dispatcher.Invoke(new Action(() => bossPanel.Children.Clear()));
+                        Dispatcher.Invoke(new Action(() => txtCurse.Text = ""));
 
                         Dispatcher.Invoke(new Action(() => txtRIP.Visibility = Visibility.Hidden));
 
@@ -196,6 +198,36 @@ namespace TFOIBeta.menus
 
                             //TODO query stuff?
                         }
+                    }
+                    if (line.StartsWith("Level::Init"))
+                    {
+                        var stage = Regex.Match(line, @"m_Stage (\d+)").Groups[1].Value;            //regex stage id
+                        var altStage = Regex.Match(line, @"m_AltStage (\d+)").Groups[1].Value;      //regex alt stage id
+
+                        var floor = Floors.GetFloorFromId(stage, altStage);
+
+                        if (floor != null)
+                        {
+                            run.AddFloor(floor);
+                            Dispatcher.Invoke(new Action(() => txtFloor.Text = floor.Name.ToUpper()));
+                        }
+                    }
+                    if (line.StartsWith("Curse of"))
+                    {
+                        if (line == "Curse of the Labyrinth!")                                      //if it's an XL floor
+                        {
+                            run.AddFloor(Floors.ConvertFloorToXL(run.RunFloors.Last()));            //add the equivalent XL floor to the list
+                            run.RunFloors[run.RunFloors.Count - 1].Curse = line;                                      //add the curse to the new floor
+                            run.RunFloors.RemoveAt(run.RunFloors.Count - 2);                        //and remove the old "regular" one from the list
+
+                            Dispatcher.Invoke(new Action(() => txtFloor.Text = run.RunFloors.Last().Name.ToUpper()));
+                        }
+                        else
+                        {
+                            run.RunFloors[run.RunFloors.Count - 1].Curse = line;
+                        }
+
+                        Dispatcher.Invoke(new Action(() => txtCurse.Text = run.RunFloors.Last().Curse.ToUpper()));
                     }
                     if (Regex.Match(line, (@"Room \d\.\d{4}")).Success) //regex boss room
                     {

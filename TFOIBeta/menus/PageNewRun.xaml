@@ -33,6 +33,9 @@
         </TextBlock>
 
         <TextBlock Name="txtTime" Margin="25,0,719,202" Text="TIME: " FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="34.667" Foreground="#FF53524E" VerticalAlignment="Bottom" Height="29"/>
+        
+        <TextBlock Name="txtFloor" Margin="25,343,682,144" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="26.667"/>
+        <TextBlock Name="txtCurse" Margin="25,391,616,106" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="26.667"/>
 
         <TextBlock Name="txtIsRunning" TextWrapping="Wrap" TextAlignment="Center" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" Margin="799,153,23,264" RenderTransformOrigin="0.5,0.5" FontSize="26.667" Foreground="#FF362F2D" >
             <TextBlock.RenderTransform>
