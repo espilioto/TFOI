@@ -87,6 +87,8 @@ namespace TFOIBeta.menus
 
                         Dispatcher.Invoke(new Action(() => itemPanel.Children.Clear()));
                         Dispatcher.Invoke(new Action(() => bossPanel.Children.Clear()));
+                        Dispatcher.Invoke(new Action(() => bossDefeatedPanel.Children.Clear()));
+                        Dispatcher.Invoke(new Action(() => txtTime.Text = ""));
                         Dispatcher.Invoke(new Action(() => txtCurse.Text = ""));
 
                         Dispatcher.Invoke(new Action(() => txtRIP.Visibility = Visibility.Hidden));
@@ -169,9 +171,16 @@ namespace TFOIBeta.menus
                     }
                     if (line.StartsWith("Game Over"))
                     {
+                        run.GameOver = true;
+
                         Dispatcher.Invoke(new Action(() => txtRIP.Visibility = Visibility.Visible));
                         Dispatcher.Invoke(new Action(() => txtRIP.Foreground = Brushes.DarkRed));
                         Dispatcher.Invoke(new Action(() => txtRIP.Text = "RIP IN PEPPERONNIS M8"));
+
+                        if (run.PlayerFightingBoss)
+                        {
+                            run.RunBosses.Last().KilledPlayer = true;          //if the player dies while fighting a boss, rip m8
+                        }
 
                         if (run != null)
                         {
@@ -187,9 +196,11 @@ namespace TFOIBeta.menus
                         }
                         else
                         {
-                            if (run != null)
+                            run.Victory = true;
+
+                            if (run.PlayerFightingBoss)
                             {
-                                run.Dispose();
+                                run.RunBosses.Last().KilledByPlayer = true;
                             }
 
                             Dispatcher.Invoke(new Action(() => txtRIP.Visibility = Visibility.Visible));
@@ -197,6 +208,11 @@ namespace TFOIBeta.menus
                             Dispatcher.Invoke(new Action(() => txtRIP.Text = "VICTORY :D"));
 
                             //TODO query stuff?
+
+                            if (run != null)
+                            {
+                                run.Dispose();
+                            }
                         }
                     }
                     if (line.StartsWith("Level::Init"))
@@ -232,9 +248,7 @@ namespace TFOIBeta.menus
                     if (Regex.Match(line, (@"Room \d\.\d{4}")).Success) //regex boss room
                     {
                         var derp = Regex.Match(line, @"\(([^(()]+)[^ ]").Groups[1].Value.TrimEnd(' ');            //regex result tester
-                        var boss = Bosses.GetBossFromName(derp); //if miniboss or double trouble, var boss will remain null
-                        //if (boss == null)
-                        //    boss = Bosses.GetBossFromName(Regex.Match(line, @"\((.+)\)").Groups[1].Value);  //regex dual boss
+                        var boss = Bosses.GetBossFromName(derp);                //if miniboss, var boss will remain null
 
                         if (boss != null)           //safety net, boss name may be triggered by miniboss fight
                         {
@@ -248,22 +262,31 @@ namespace TFOIBeta.menus
                                     icon.Source = Stuff.BitmapToImageSource(boss.Icon);
 
                                     Dispatcher.Invoke(new Action(() => bossPanel.Children.Add(icon)));
+
+                                    run.PlayerFightingBoss = true;
                                 }
                             });
                         }
                     }
                     if (line.StartsWith("deathspawn_boss"))
                     {
-                        //Application.Current.Dispatcher.Invoke((Action)delegate
-                        //{
-                        //    //TODO mark boss as defeated in the object and maybe add a visual marker
+                        Application.Current.Dispatcher.Invoke((Action)delegate
+                        {
+                            if (run.PlayerFightingBoss)
+                            {
+                                run.RunBosses.Last().KilledByPlayer = true;         //if the boss dies while fighting the player, good job!
+                            }
 
-                        //    Image icon = new Image();
-                        //    icon.Stretch = Stretch.None;
+                            Image icon = new Image();
+                            icon.Width = bossPanel.Children[bossPanel.Children.Count - 1].RenderSize.Width;
+                            icon.Height = bossPanel.Children[bossPanel.Children.Count - 1].RenderSize.Height;
+                            icon.Stretch = Stretch.Uniform;
 
-                        //    icon.Source = Stuff.BitmapToImageSource(Properties.Resources.BossDefeated);
-                        //    bossDefeatedPanel.Children.Add(icon);
-                        //});
+                            icon.Source = Stuff.BitmapToImageSource(Properties.Resources.BossDefeated);
+                            bossDefeatedPanel.Children.Add(icon);
+
+                            run.PlayerFightingBoss = false;
+                        });
                     }
                     if (line.StartsWith("Mom clear time"))
                     {

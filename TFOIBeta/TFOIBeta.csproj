@@ -272,10 +272,10 @@
     <Resource Include="Resources\icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\BossDefeated.png" />
+    <Resource Include="icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icon.ico" />
+    <Resource Include="Resources\BossDefeated.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions />

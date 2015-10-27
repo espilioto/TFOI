@@ -15,6 +15,9 @@ namespace TFOIBeta
 
         public float Time { get; set; }
         public string Seed { get; set; }
+        public bool PlayerFightingBoss { get; set; }
+        public bool Victory { get; set; }
+        public bool GameOver { get; set; }
         public Characters RunCharacter { get; set; }
         public List<Items> RunItems { get; set; }
         public List<Floors> RunFloors { get; set; }
@@ -48,27 +51,13 @@ namespace TFOIBeta
             //
             Time = 0;
             Seed = null;
+            PlayerFightingBoss = false;
             RunCharacter = null;
             RunItems = null;
             RunFloors = null;
             RunBosses = null;
 
-
             disposed = true;
-        }
-
-        private bool _gameOver = false;
-        public bool GameOver
-        {
-            get { return _gameOver; }
-            set { _gameOver = value; }
-        }
-
-        private bool _victory = false;
-        public bool Victory
-        {
-            get { return _victory; }
-            set { _victory = value; }
         }
 
         public static void Initialise()
