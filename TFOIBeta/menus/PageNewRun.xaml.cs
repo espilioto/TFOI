@@ -272,18 +272,19 @@ namespace TFOIBeta.menus
                     {
                         Application.Current.Dispatcher.Invoke((Action)delegate
                         {
-                            if (run.PlayerFightingBoss)
+                            if (run.PlayerFightingBoss)         //check if a bossfight is in progress, event may fire when defeating a miniboss or sth
                             {
                                 run.RunBosses.Last().KilledByPlayer = true;         //if the boss dies while fighting the player, good job!
+
+                                Image icon = new Image();
+                                icon.Width = bossPanel.Children[bossPanel.Children.Count - 1].RenderSize.Width;
+                                icon.Height = bossPanel.Children[bossPanel.Children.Count - 1].RenderSize.Height;
+                                icon.ToolTip = run.RunBosses.Last().Name + " - Defeated";
+                                icon.Stretch = Stretch.Uniform;
+
+                                icon.Source = Stuff.BitmapToImageSource(Properties.Resources.BossDefeated);
+                                bossDefeatedPanel.Children.Add(icon);
                             }
-
-                            Image icon = new Image();
-                            icon.Width = bossPanel.Children[bossPanel.Children.Count - 1].RenderSize.Width;
-                            icon.Height = bossPanel.Children[bossPanel.Children.Count - 1].RenderSize.Height;
-                            icon.Stretch = Stretch.Uniform;
-
-                            icon.Source = Stuff.BitmapToImageSource(Properties.Resources.BossDefeated);
-                            bossDefeatedPanel.Children.Add(icon);
 
                             run.PlayerFightingBoss = false;
                         });
