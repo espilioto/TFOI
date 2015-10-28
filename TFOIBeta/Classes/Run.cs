@@ -13,6 +13,8 @@ namespace TFOIBeta
         bool disposed = false;
         SafeHandle handle = new SafeFileHandle(IntPtr.Zero, true);
 
+        public int _cubeOfMeatLevel;
+        public int _ballOfBandagesLevel;
         public float Time { get; set; }
         public string Seed { get; set; }
         public bool PlayerFightingBoss { get; set; }
@@ -49,6 +51,8 @@ namespace TFOIBeta
             }
             // Free any unmanaged objects here.
             //
+            _cubeOfMeatLevel = 0;
+            _ballOfBandagesLevel = 0;
             Time = 0;
             Seed = null;
             PlayerFightingBoss = false;
@@ -71,7 +75,74 @@ namespace TFOIBeta
         }
         public bool AddItem(Items item)
         {
-            if (!RunItems.Contains(item))           //check if the player already has picked up this item
+            if (item.Id == "73")                            //if the item is cube of meat...
+            {
+                if (_cubeOfMeatLevel == 0)
+                {
+                    RunItems.Add(item);
+                    _cubeOfMeatLevel++;
+                    return true;
+                }
+                else if (_cubeOfMeatLevel == 1)
+                {
+                    RunItems.Add(Items.List.Find(com => com.Id == "73_2"));
+                    _cubeOfMeatLevel++;
+                    return true;
+                }
+                else if (_cubeOfMeatLevel == 2)
+                {
+                    RunItems.Add(Items.List.Find(com => com.Id == "73_3"));
+                    _cubeOfMeatLevel++;
+                    return true;
+                }
+                else if (_cubeOfMeatLevel == 3)
+                {
+                    RunItems.Add(Items.List.Find(com => com.Id == "73_4"));
+                    _cubeOfMeatLevel++;
+                    return true;
+                }
+                else
+                {
+                    RunItems.Add(item);
+                    _cubeOfMeatLevel = 1;
+                    return true;
+                }
+            }
+            else if (item.Id == "207")                      //...or ball of bandages, display upgrade instead of the lvl 1 orbital
+            {
+                if (_ballOfBandagesLevel == 0)
+                {
+                    RunItems.Add(item);
+                    _ballOfBandagesLevel++;
+                    return true;
+                }
+                else if (_ballOfBandagesLevel == 1)
+                {
+                        var asd = (Items.List.Find(bob => bob.Id == "207_2"));
+                    RunItems.Add(asd);
+                    _ballOfBandagesLevel++;
+                    return true;
+                }
+                else if (_ballOfBandagesLevel == 2)
+                {
+                    RunItems.Add(Items.List.Find(bob => bob.Id == "207_3"));
+                    _ballOfBandagesLevel++;
+                    return true;
+                }
+                else if (_ballOfBandagesLevel == 3)
+                {
+                    RunItems.Add(Items.List.Find(bob => bob.Id == "207_4"));
+                    _ballOfBandagesLevel++;
+                    return true;
+                }
+                else
+                {
+                    RunItems.Add(item);
+                    _ballOfBandagesLevel = 1;
+                    return true;
+                }
+            }
+            else if (!RunItems.Contains(item))               //check if the player already has picked up this item
             {
                 RunItems.Add(item);
                 return true;

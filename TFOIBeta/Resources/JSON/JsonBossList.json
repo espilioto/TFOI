@@ -236,7 +236,7 @@
   },
   "042": {
     "name": "Lokii",
-    "bossHP": "350 *2",
+    "bossHP": "350 PER SEGMENT",
     "text": "Lokii is a posthumous version of Loki that can be found in the The Womb and Utero."
   },
   "043": {
@@ -256,7 +256,7 @@
     "text": "Mom's Heart is the final boss in The Womb II or Utero II."
   },
   "046": {
-    "name": "It Lives",
+    "name": "It Lives!",
     "bossHP": "950",
     "text": "It Lives is an unlockable alternative form of Mom's Heart. After being unlocked, it will always appear as the boss of The Womb/Utero 2, permanently replacing Mom's Heart. It is a stronger version of Mom's Heart that summons bosses alongside regular Womb/Utero enemies."
   },
@@ -277,7 +277,7 @@
   },
   "050": {
     "name": "The Fallen",
-    "bossHP": "FIRST PHASE: 60, SECOND PHASE: 45*2",
+    "bossHP": "FIRST PHASE: 60, SECOND PHASE: 45 PER SEGMENT",
     "text": "The Fallen is a boss that, similarly to the The Headless Horseman, can appear as the boss of any floor before The Womb II, except The Depths II. He also can appear as a normal enemy on floors after The Womb, and will always spawn before the Satan battle."
   },
   "051": {
@@ -307,7 +307,7 @@
   },
   "056": {
     "name": "Krampus",
-    "bossHP": "FIRST PHASE: 60, SECOND PHASE: 45*2",
+    "bossHP": "FIRST PHASE: 60, SECOND PHASE: 45 PER SEGMENT",
     "text": "Krampus is a boss that occasionally appears inside of a Devil Room."
   },
   "057": {

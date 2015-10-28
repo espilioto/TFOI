@@ -114,10 +114,10 @@ namespace TFOIBeta.menus
                                 Application.Current.Dispatcher.Invoke((Action)delegate
                                 {
                                     icon = new Image();
-                                    icon.Name = "_" + item.Id;
+                                    icon.Name = "_" + run.RunItems.Last().Id;
                                     icon.Stretch = Stretch.None;
-                                    icon.ToolTip = item.Name + Environment.NewLine + item.Text;
-                                    icon.Source = Stuff.BitmapToImageSource(item.Icon);
+                                    icon.ToolTip = run.RunItems.Last().Name + Environment.NewLine + run.RunItems.Last().Text;
+                                    icon.Source = Stuff.BitmapToImageSource(run.RunItems.Last().Icon);
 
                                     itemPanel.Children.Add(icon);
 

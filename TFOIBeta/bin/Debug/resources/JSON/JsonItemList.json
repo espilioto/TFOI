@@ -350,6 +350,21 @@
         "text": "Gotta meat 'em all",
         "dmg": 7
     },
+	"73_2": {
+        "name": "Cube of Meat Lv.2",
+        "text": "Gotta meat 'em all",
+        "dmg": 3.5
+    },
+	"73_3": {
+        "name": "Meat Boy Jr.",
+        "text": "Gotta meat 'em all",
+        "dmg": 3.5
+    },
+	"73_4": {
+        "name": "Meat Boy",
+        "text": "Gotta meat 'em all",
+        "dmg": 5.5
+    },
     "74": {
         "name": "A Quarter",
         "text": "+25 coins"
@@ -1004,6 +1019,21 @@
     "207": {
         "dmg": 7,
         "name": "Ball of Bandages",
+        "text": "Gotta lick 'em all!"
+    },
+	"207_2": {
+        "dmg": 7,
+        "name": "Ball of Bandages Lv. 2",
+        "text": "Gotta lick 'em all!"
+    },
+	"207_3": {
+        "dmg": 3.5,
+        "name": "loli Bandage Girl",
+        "text": "Gotta lick 'em all!"
+    },
+	"207_4": {
+        "dmg": 5.5,
+        "name": "Bandage Girl",
         "text": "Gotta lick 'em all!"
     },
     "208": {
