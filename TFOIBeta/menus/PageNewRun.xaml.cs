@@ -34,6 +34,7 @@ namespace TFOIBeta.menus
         string line = "";
 
         Timer timer = new Timer(100);
+        StringBuilder stringBuilder;
 
         Run run;
 
@@ -99,6 +100,7 @@ namespace TFOIBeta.menus
                     if (line.StartsWith("Initialized player with"))
                     {
                         var character = Characters.GetCharFromId(Regex.Match(line, @"Subtype (\d)").Groups[1].Value); //regex character ID
+                        run.AddCharacter(character);
 
                         Dispatcher.Invoke(new Action(() => charIcon.ToolTip = character.Name));
                         Dispatcher.Invoke(new Action(() => charIcon.Source = Stuff.BitmapToImageSource(character.Icon)));
@@ -184,6 +186,7 @@ namespace TFOIBeta.menus
 
                         if (run != null)
                         {
+                            run.SubmitRunToDB();
                             run.Dispose();
                         }
 
@@ -207,10 +210,9 @@ namespace TFOIBeta.menus
                             Dispatcher.Invoke(new Action(() => txtRIP.Foreground = Brushes.Goldenrod));
                             Dispatcher.Invoke(new Action(() => txtRIP.Text = "VICTORY :D"));
 
-                            //TODO query stuff?
-
                             if (run != null)
                             {
+                                run.SubmitRunToDB();
                                 run.Dispose();
                             }
                         }

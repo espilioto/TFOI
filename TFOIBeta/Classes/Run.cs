@@ -10,6 +10,8 @@ namespace TFOIBeta
 {
     class Run : IDisposable
     {
+        string itemList = "", bossList = "";
+
         bool disposed = false;
         SafeHandle handle = new SafeFileHandle(IntPtr.Zero, true);
 
@@ -118,7 +120,7 @@ namespace TFOIBeta
                 }
                 else if (_ballOfBandagesLevel == 1)
                 {
-                        var asd = (Items.List.Find(bob => bob.Id == "207_2"));
+                    var asd = (Items.List.Find(bob => bob.Id == "207_2"));
                     RunItems.Add(asd);
                     _ballOfBandagesLevel++;
                     return true;
@@ -172,6 +174,23 @@ namespace TFOIBeta
             {
                 return false;
             }
+        }
+
+        public void SubmitRunToDB()
+        {
+
+            itemList = string.Join(",", RunItems.Select(x => x.Id));
+            bossList = string.Join(",", RunBosses.Select(x => x.Id));
+
+            if (GameOver)
+            {
+                Classes.Database.SubmitRun(Seed, DateTime.Now.ToString(), RunCharacter.Name, itemList, bossList, Time.ToString(), "Game Over");
+            }
+            else if (Victory)
+            {
+                Classes.Database.SubmitRun(Seed, DateTime.Now.ToString(), RunCharacter.Name, itemList, bossList, Time.ToString(), "Victory");
+            }
+
         }
 
     }

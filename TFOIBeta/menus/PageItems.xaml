@@ -19,6 +19,7 @@
         </ScrollViewer>
 
         <Label x:Name="textItemInfo" HorizontalAlignment="Left" Height="123" Margin="757,48,0,0" VerticalAlignment="Top" Width="196" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="21.333"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="276" Margin="150,220,0,0" VerticalAlignment="Top" Width="659" Background="{x:Null}" BorderBrush="#FF716F6A"/>
 
     </Grid>
 </Page>
