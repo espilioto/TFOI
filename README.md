@@ -2,7 +2,7 @@
 # The Finding Of Items
 A run tracker and logger for The Binding of Isaac: Rebirth
 
-### Download [Here]
+### Download [Here](https://github.com/espilioto/TFOI/releases>)
 
 ### Features
 * Seed, character, item, floor + curse, boss and time identification for current run.
@@ -24,7 +24,7 @@ Having that as a base, I started developing TFOI (and using it as a reason to pl
 #### Credits and thanks
 
 * [NICALiS] and [Edmund McMillen] for making this awesome game.
-* [This] project that really helped and inspired me.
+* [This](https://github.com/Hyphen-ated/RebirthItemTracker>) project that really helped and inspired me.
 * My friend, Eddy Pasterino, for beta testing (usually against his will).
 
 ### Development
@@ -38,16 +38,11 @@ It identifies certain events (like picking up an item) and presents them to the 
 > * Item-related data 
 > * Boss-related data
 > * Character-related data
-^  
 
-Soon™
+^ Soon™
 
 #### *Todos*
 * New run 
-  * Floor tracking
-  * Curse tracking
-  * Died to boss 
-  * Defeated boss marker
   * ! Database stuff !
   * Confirm effects of D4 / D100 / dice rooms (must play more :D)
 * Items
@@ -77,9 +72,8 @@ Soon™
 ### License
 [MIT]
 
-[Here]: <https://github.com/espilioto/TFOI/releases>
+
 [NICALiS]: <http://nicalis.com>
 [Edmund McMillen]: <https://twitter.com/edmundmcmillen>
-[This]: <https://github.com/Hyphen-ated/RebirthItemTracker>
 [RebirthItemTracker]: <https://github.com/Hyphen-ated/RebirthItemTracker>
 [MIT]:<http://choosealicense.com/licenses/mit/>
