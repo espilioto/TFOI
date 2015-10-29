@@ -34,7 +34,6 @@ namespace TFOIBeta.menus
         string line = "";
 
         Timer timer = new Timer(100);
-        StringBuilder stringBuilder;
 
         Run run;
 
@@ -89,7 +88,7 @@ namespace TFOIBeta.menus
                         Dispatcher.Invoke(new Action(() => itemPanel.Children.Clear()));
                         Dispatcher.Invoke(new Action(() => bossPanel.Children.Clear()));
                         Dispatcher.Invoke(new Action(() => bossDefeatedPanel.Children.Clear()));
-                        Dispatcher.Invoke(new Action(() => txtTime.Text = ""));
+                        Dispatcher.Invoke(new Action(() => txtTime.Text = "TIME:"));
                         Dispatcher.Invoke(new Action(() => txtCurse.Text = ""));
 
                         Dispatcher.Invoke(new Action(() => txtRIP.Visibility = Visibility.Hidden));
@@ -270,7 +269,7 @@ namespace TFOIBeta.menus
                             });
                         }
                     }
-                    if (line.StartsWith("deathspawn_boss"))
+                    if (line.StartsWith("deathspawn_boss") || line.StartsWith("TriggerBossDeath"))
                     {
                         Application.Current.Dispatcher.Invoke((Action)delegate
                         {

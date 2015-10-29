@@ -25,11 +25,11 @@ namespace TFOIBeta
             }
             else if (stage == "2" && altStage == "0")
             {
-                return Floors.List.Find(floor => floor.Name == "Cellar II");
+                return Floors.List.Find(floor => floor.Name == "Basement II");
             }
             else if (stage == "2" && altStage == "1")
             {
-                return Floors.List.Find(floor => floor.Name == "Basement II");
+                return Floors.List.Find(floor => floor.Name == "Cellar II");
             }
 
             else if (stage == "3" && altStage == "0")                                            //chapter 2

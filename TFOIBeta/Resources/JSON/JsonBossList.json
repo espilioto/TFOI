@@ -19,7 +19,7 @@
     "text": "Dingle is one of the bosses that can appear in The Basement. He can also appear in later chapters as a regular enemy."
   },
   "004": {
-    "name": " Larry Jr.",
+    "name": "Larry Jr.",
     "bossHP": "22 PER SEGMENT",
     "alts1": "GREEN: WILL OCCASIONALLY SHOOT A TEAR IN THE DIRECTION IT'S FACING, PAUSING MOMENTARILY AS IT DOES SO.",
     "alts2": "BLUE: IS LARGER AND HAS MORE HEALTH, BUT MOVES MORE SLOWLY AND DOES NOT LEAVE POOP BEHIND. THIS VERSION ALWAYS DROPS A SOUL HEART WHEN DEFEATED.",
@@ -321,7 +321,7 @@
     "text": "The Angel is a secret unlockable boss fight, accessible after defeating the The Lamb in the Dark Room or ??? in The Chest."
   },
   "059": {
-    "name": "The Headless Horseman",
+    "name": "Headless Horseman",
     "bossHP": "HEAD: 100, HORSE: 60, ROAMING HORSE: 30",
     "text": "This boss has a chance of replacing any other Horsemen Isaac could meet."
   }
