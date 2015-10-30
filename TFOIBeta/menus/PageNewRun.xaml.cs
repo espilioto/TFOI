@@ -124,9 +124,11 @@ namespace TFOIBeta.menus
 
                                     if (item.Space)
                                     {
+                                        icon.Tag = "space";
+
                                         foreach (var child in itemPanel.Children.OfType<Image>())
                                         {
-                                            if (child.Effect != null)
+                                            if ((string)child.Tag == "space")
                                             {
                                                 child.Effect = null;
                                             }
@@ -180,7 +182,7 @@ namespace TFOIBeta.menus
 
                         if (run.PlayerFightingBoss)
                         {
-                            run.RunBosses.Last().KilledPlayer = true;          //if the player dies while fighting a boss, rip m8
+                           run.RunKilledByBoss = run.RunBosses.Last();          //if the player dies while fighting a boss, rip m8
                         }
 
                         if (run != null)
@@ -296,6 +298,7 @@ namespace TFOIBeta.menus
                         TimeSpan timeSpan = TimeSpan.FromSeconds(time / 30);                   //get seconds
                         string str = timeSpan.ToString(@"hh\:mm\:ss");
 
+                        run.Time = str;
                         Dispatcher.Invoke(new Action(() => txtTime.Text = "TIME: " + str));
 
                         if (time < 36000)

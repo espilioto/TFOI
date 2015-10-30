@@ -47,13 +47,7 @@ namespace TFOIBeta
                 Bosses.List.Add(boss);
             }
         }
-        private bool _killedPlayer;                         //bool
-        public bool KilledPlayer
-        {
-            get { return _killedPlayer; }
-            set { _killedPlayer = value; }
-        }
-        private bool _killedByPlayer;
+        private bool _killedByPlayer;                       //bool
         public bool KilledByPlayer
         {
             get { return _killedByPlayer; }

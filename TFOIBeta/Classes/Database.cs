@@ -11,24 +11,24 @@ namespace TFOIBeta.Classes
     public class Database
     {
         static SQLiteConnection connection = new SQLiteConnection("Data Source=" + System.AppDomain.CurrentDomain.BaseDirectory + "resources\\isaac.db");
-        static SQLiteCommand command = null;
         static SQLiteDataReader reader = null;
         static SQLiteTransaction transaction;
         public static DataTable dataTable = new DataTable();
 
-        public static void SubmitRun(string seed, string timestamp, string charName, string itemIdList, string bossList, string time, string result)
+        public static void SubmitRun(string seed, string timestamp, string charName, string itemIdList, string bossList, string killedBy, string time, string result)
         {
-            string query = "INSERT INTO runs (Seed, Timestamp, CharName, Items, Bosses, Time, Result) VALUES";
-            query += "(@seed, @dateTime, @character, @itemIdList, @bossList, @result)";
+            string query = "INSERT INTO runs(Seed, TimeStamp, CharName, Items, Bosses, KilledBy, Time, Result) VALUES";
+            query += "(@seed, @timestamp, @charName, @itemIdList, @bossList, @killedBy,@time,  @result)";
 
             SQLiteCommand command = new SQLiteCommand(query, connection);
-            command.Parameters.AddWithValue("@Seed", seed);
-            command.Parameters.AddWithValue("@Timestamp", timestamp);
-            command.Parameters.AddWithValue("@CharName", charName);
-            command.Parameters.AddWithValue("@Items", itemIdList);
-            command.Parameters.AddWithValue("@Bosses", bossList);
-            command.Parameters.AddWithValue("@Time", time);
-            command.Parameters.AddWithValue("@Result", result);
+            command.Parameters.AddWithValue("@seed", seed);
+            command.Parameters.AddWithValue("@timestamp", timestamp);
+            command.Parameters.AddWithValue("@charName", charName);
+            command.Parameters.AddWithValue("@itemIdList", itemIdList);
+            command.Parameters.AddWithValue("@bossList", bossList);
+            command.Parameters.AddWithValue("@killedBy", killedBy);
+            command.Parameters.AddWithValue("@time", time);
+            command.Parameters.AddWithValue("@result", result);
 
             connection.Open();
             transaction = connection.BeginTransaction();

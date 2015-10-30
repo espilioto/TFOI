@@ -10,19 +10,18 @@ namespace TFOIBeta
 {
     class Run : IDisposable
     {
-        string itemList = "", bossList = "";
-
         bool disposed = false;
         SafeHandle handle = new SafeFileHandle(IntPtr.Zero, true);
 
         public int _cubeOfMeatLevel;
         public int _ballOfBandagesLevel;
-        public float Time { get; set; }
+        public string Time { get; set; }
         public string Seed { get; set; }
         public bool PlayerFightingBoss { get; set; }
         public bool Victory { get; set; }
         public bool GameOver { get; set; }
         public Characters RunCharacter { get; set; }
+        public Bosses RunKilledByBoss { get; set; }
         public List<Items> RunItems { get; set; }
         public List<Floors> RunFloors { get; set; }
         public List<Bosses> RunBosses { get; set; }
@@ -30,6 +29,7 @@ namespace TFOIBeta
         public Run()
         {
             RunCharacter = new Characters();
+            RunKilledByBoss = new Bosses();
             RunItems = new List<Items>();
             RunFloors = new List<Floors>();
             RunBosses = new List<Bosses>();
@@ -55,10 +55,11 @@ namespace TFOIBeta
             //
             _cubeOfMeatLevel = 0;
             _ballOfBandagesLevel = 0;
-            Time = 0;
+            Time = "";
             Seed = null;
             PlayerFightingBoss = false;
             RunCharacter = null;
+            RunKilledByBoss = null;
             RunItems = null;
             RunFloors = null;
             RunBosses = null;
@@ -179,16 +180,22 @@ namespace TFOIBeta
         public void SubmitRunToDB()
         {
 
-            itemList = string.Join(",", RunItems.Select(x => x.Id));
-            bossList = string.Join(",", RunBosses.Select(x => x.Id));
+            var itemList = string.Join(",", RunItems.Select(x => x.Id));
+            var bossList = string.Join(",", RunBosses.Select(x => x.Id));
+            string killedBy = "";
+
+            if (RunKilledByBoss.Id != null)
+            { 
+                killedBy = RunKilledByBoss.Id;
+            }
 
             if (GameOver)
             {
-                Classes.Database.SubmitRun(Seed, DateTime.Now.ToString(), RunCharacter.Name, itemList, bossList, Time.ToString(), "Game Over");
+                Classes.Database.SubmitRun(Seed, DateTime.Now.ToString(), RunCharacter.Name, itemList, bossList, killedBy, Time.ToString(), "Defeat");
             }
             else if (Victory)
             {
-                Classes.Database.SubmitRun(Seed, DateTime.Now.ToString(), RunCharacter.Name, itemList, bossList, Time.ToString(), "Victory");
+                Classes.Database.SubmitRun(Seed, DateTime.Now.ToString(), RunCharacter.Name, itemList, bossList, killedBy, Time.ToString(), "Victory");
             }
 
         }
