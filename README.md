@@ -25,6 +25,7 @@ Having that as a base, I started developing TFOI (and using it as a reason to pl
 
 * [NICALiS] and [Edmund McMillen] for making this awesome game.
 * [This](https://github.com/Hyphen-ated/RebirthItemTracker>) project that really helped and inspired me.
+* Rick and his [unpacker](http://svn.gib.me/builds/rebirth/).
 * My friend, Eddy Pasterino, for beta testing (usually against his will).
 
 ### Development
