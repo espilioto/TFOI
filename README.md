@@ -3,12 +3,13 @@
 A run tracker and logger for The Binding of Isaac: Rebirth
 
 ### Download [Here](https://github.com/espilioto/TFOI/releases>)
+*PROJECT MOSTLY ON HOLD TILL AFTERBIRTH ASSETS GET UNPACKED*
 
 ### Features
 * Seed, character, item, floor + curse, boss and time identification for current run.
-* Run log analyzing every recent run (char, items, bosses, time etc).
+* Run log analyzing every recent run (char, items, bosses, time etc). (Soon™)
 * Item collection displaying the icon, name, flavor text, detailed stats and run statistics for each one.
-* Character and boss collections displaying run statistics for each one.
+* Character and boss collections displaying run statistics for each one. (Soon™)
 
 #### Usage
 Windows: Just decompress and run. You may need to update the Microsoft .net Framework.  
@@ -57,11 +58,11 @@ It identifies certain events (like picking up an item) and presents them to the 
 
 
 #### *Probably adding these*
-* New Run mini mode (overlay for streams etc)
 
 #### *Maybe / Luxury*
 * New Run 
-  * Rebirth style pixelate menu transitions
+  * mini mode (overlay for streams etc) *maybe, afterbirth does that somewhat*
+* Rebirth style pixelate menu transitions
 * Items
   * MouseOver/click effect
   * tooltip formatting
