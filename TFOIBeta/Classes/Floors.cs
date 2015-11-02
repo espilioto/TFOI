@@ -210,7 +210,7 @@ namespace TFOIBeta
 
                 floor.Id = jsonFloor.Name;
                 floor.Name = jsonFloor.First["name"];
-                //character.Icon = new Bitmap(Environment.CurrentDirectory + "\\resources\\images\\chars\\bw\\" + character.Id + ".png");
+                //floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors+ floor.Id + ".png");
 
                 Floors.List.Add(floor);
             }

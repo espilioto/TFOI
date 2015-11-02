@@ -1,33 +1,33 @@
 {
-    "1": {
+    "1_1": {
         "name": "Basement I"
     },
-    "2": {
+    "1_2": {
         "name": "Basement II"
     },
-    "3": {
+    "1_3": {
         "name": "Basement XL"
     },
-    "4": {
+    "2_1": {
         "name": "Cellar I"
     },
-    "5": {
+    "2_2": {
         "name": "Cellar II"
     },
-    "6": {
+    "2_3": {
         "name": "Cellar XL"
     },
     "7": {
-        "name": "Caves I"
-    },
-    "8": {
         "name": "Burning Basement I"
     },
-    "9": {
+    "8": {
         "name": "Burning Basement II"
     },
-    "10": {
+    "9": {
         "name": "Burning Basement XL"
+    },
+    "10": {
+        "name": "Caves I"
     },
     "11": {
         "name": "Caves II"
@@ -99,13 +99,13 @@
         "name": "Utero XL"
     },
     "34": {
-        "name": "Rotten Womb I"
+        "name": "Scarred Womb I"
     },
     "35": {
-        "name": "Rotten Womb II"
+        "name": "Scarred Womb II"
     },
     "36": {
-        "name": "Rotten Womb XL"
+        "name": "Scarred Womb XL"
     },
     "37": {
         "name": "Sheol"
