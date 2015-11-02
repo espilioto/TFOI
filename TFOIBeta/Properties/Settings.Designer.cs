@@ -22,29 +22,5 @@ namespace TFOIBeta.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string LogPathRebirth {
-            get {
-                return ((string)(this["LogPathRebirth"]));
-            }
-            set {
-                this["LogPathRebirth"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string LogPathAfterbirth {
-            get {
-                return ((string)(this["LogPathAfterbirth"]));
-            }
-            set {
-                this["LogPathAfterbirth"] = value;
-            }
-        }
     }
 }

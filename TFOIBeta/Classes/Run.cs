@@ -69,7 +69,7 @@ namespace TFOIBeta
 
         public static void Initialise()
         {
-            Log.LoadPathFromSettings();
+            Log.LocateLogs();
         }
 
         public void AddCharacter(Characters character)
