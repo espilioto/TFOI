@@ -26,7 +26,7 @@ namespace TFOIBeta.menus
     /// </summary>
     public partial class PageNewRun : Page
     {
-        DropShadowEffect glowActiveItem, glowFlyLord, glowGuppy;
+        DropShadowEffect glowActiveItem, glowFlyLord, glowGuppy, glowSuperBum, glowMom, glowBob, glowShrooms, glowCthulhu, glowTumor, glowDrugs, glowAngel, glowPoop;
         Image icon;
 
         Stream stream;
@@ -44,20 +44,7 @@ namespace TFOIBeta.menus
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            glowActiveItem = new DropShadowEffect();
-            glowGuppy = new DropShadowEffect();
-            glowFlyLord = new DropShadowEffect();
-
-            glowActiveItem.ShadowDepth = 0;
-            glowGuppy.ShadowDepth = 0;
-            glowFlyLord.ShadowDepth = 0;
-            glowActiveItem.BlurRadius = 10;
-            glowGuppy.BlurRadius = 10;
-            glowFlyLord.BlurRadius = 10;
-            glowActiveItem.Color = Colors.Red;
-            glowGuppy.Color = Colors.Black;
-            glowFlyLord.Color = Colors.Blue;
-
+            GlowStuff();
             Run.Initialise();
 
             stream = File.Open(Log.path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
@@ -67,6 +54,7 @@ namespace TFOIBeta.menus
             timer.Enabled = true;
             timer.Start();
         }
+
 
         private void ReadLog(object sender, ElapsedEventArgs e)
         {
@@ -136,13 +124,49 @@ namespace TFOIBeta.menus
 
                                         icon.Effect = glowActiveItem;
                                     }
-                                    if (item.TformGuppy)
+                                    else if (item.TformGuppy)
                                     {
                                         icon.Effect = glowGuppy;
                                     }
-                                    if (item.TformFlyLord)
+                                    else if (item.TformFlyLord)
                                     {
                                         icon.Effect = glowFlyLord;
+                                    }
+                                    else if (item.TformSuperBum)        //new
+                                    {
+                                        icon.Effect = glowSuperBum;
+                                    }
+                                    else if (item.TformMom)
+                                    {
+                                        icon.Effect = glowMom;
+                                    }
+                                    else if (item.TformBob)
+                                    {
+                                        icon.Effect = glowBob;
+                                    }
+                                    else if (item.TformShrooms)
+                                    {
+                                        icon.Effect = glowShrooms;
+                                    }
+                                    else if (item.TformCthulhu)
+                                    {
+                                        icon.Effect = glowCthulhu;
+                                    }
+                                    else if (item.TformTumor)
+                                    {
+                                        icon.Effect = glowTumor;
+                                    }
+                                    else if (item.TformDrugs)
+                                    {
+                                        icon.Effect = glowDrugs;
+                                    }
+                                    else if (item.TformAngel)
+                                    {
+                                        icon.Effect = glowAngel;
+                                    }
+                                    else if (item.TformPoop)
+                                    {
+                                        icon.Effect = glowPoop;
                                     }
                                 });
                             }
@@ -182,7 +206,7 @@ namespace TFOIBeta.menus
 
                         if (run.PlayerFightingBoss)
                         {
-                           run.RunKilledByBoss = run.RunBosses.Last();          //if the player dies while fighting a boss, rip m8
+                            run.RunKilledByBoss = run.RunBosses.Last();          //if the player dies while fighting a boss, rip m8
                         }
 
                         if (run != null)
@@ -319,6 +343,106 @@ namespace TFOIBeta.menus
             }
         }
 
+        private void GlowStuff()
+        {
+            glowActiveItem = new DropShadowEffect();
+            glowGuppy = new DropShadowEffect();
+            glowFlyLord = new DropShadowEffect();   //new
+            glowSuperBum = new DropShadowEffect();
+            glowMom = new DropShadowEffect();
+            glowBob = new DropShadowEffect();
+            glowShrooms = new DropShadowEffect();
+            glowCthulhu = new DropShadowEffect();
+            glowTumor = new DropShadowEffect();
+            glowDrugs = new DropShadowEffect();
+            glowAngel = new DropShadowEffect();
+            glowPoop = new DropShadowEffect();
+
+            glowActiveItem.ShadowDepth = 0;
+            glowGuppy.ShadowDepth = 0;
+            glowFlyLord.ShadowDepth = 0;
+            glowSuperBum.ShadowDepth = 0;       //new
+            glowMom.ShadowDepth = 0;
+            glowBob.ShadowDepth = 0;
+            glowShrooms.ShadowDepth = 0;
+            glowCthulhu.ShadowDepth = 0;
+            glowTumor.ShadowDepth = 0;
+            glowDrugs.ShadowDepth = 0;
+            glowAngel.ShadowDepth = 0;
+            glowPoop.ShadowDepth = 0;
+
+            glowActiveItem.BlurRadius = 10;
+            glowGuppy.BlurRadius = 10;
+            glowFlyLord.BlurRadius = 10;
+            glowSuperBum.BlurRadius = 10;      //new
+            glowMom.BlurRadius = 10;
+            glowBob.BlurRadius = 10;
+            glowShrooms.BlurRadius = 10;
+            glowCthulhu.BlurRadius = 10;
+            glowTumor.BlurRadius = 10;
+            glowDrugs.BlurRadius = 10;
+            glowAngel.BlurRadius = 10;
+            glowPoop.BlurRadius = 10;
+
+            glowActiveItem.Color = Colors.Red;
+            glowGuppy.Color = Colors.Black;
+            glowFlyLord.Color = Colors.Blue;
+            glowSuperBum.Color = Colors.Yellow; //new
+            glowMom.Color = Colors.Pink;
+            glowBob.Color = Colors.Green;
+            glowShrooms.Color = Colors.Orange;
+            glowCthulhu.Color = Colors.Purple;
+            glowTumor.Color = Colors.BurlyWood;
+            glowAngel.Color = Colors.Gold;
+            glowPoop.Color = Colors.Brown;
+
+            Label activeItem = new Label();
+            activeItem.Content = "Active item";
+            activeItem.Effect = glowActiveItem;
+            Label guppy = new Label();
+            guppy.Effect = glowGuppy;
+            guppy.Content = "Guppy";
+            Label flyLord = new Label();
+            flyLord.Effect = glowFlyLord;
+            flyLord.Content = "Lord of the Flies";
+            Label superBum = new Label();
+            superBum.Effect = glowSuperBum;
+            superBum.Content = "Super Bum";
+            Label mom = new Label();
+            mom.Effect = glowMom;
+            mom.Content = "Mom";
+            Label bob = new Label();
+            bob.Effect = glowBob;
+            bob.Content = "Bob";
+            Label shrooms = new Label();
+            shrooms.Effect = glowShrooms;
+            shrooms.Content = "Mushroom";
+            Label cthulhu = new Label();
+            cthulhu.Effect = glowCthulhu;
+            cthulhu.Content = "Cthulhu";
+            Label tumor = new Label();
+            tumor.Effect = glowTumor;
+            tumor.Content = "Tumor";
+            Label angel = new Label();
+            angel.Effect = glowAngel;
+            angel.Content = "Angel";
+            Label poop = new Label();
+            poop.Effect = glowPoop;
+            poop.Content = "Poop";
+
+            txtHelp.Children.Add(activeItem);
+            txtHelp.Children.Add(guppy);
+            txtHelp.Children.Add(flyLord);
+            txtHelp.Children.Add(superBum);
+            txtHelp.Children.Add(mom);
+            txtHelp.Children.Add(bob);
+            txtHelp.Children.Add(shrooms);
+            txtHelp.Children.Add(cthulhu);
+            txtHelp.Children.Add(tumor);
+            txtHelp.Children.Add(angel);
+            txtHelp.Children.Add(poop);
+        }
+
         #region menu stuff
         private void back_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -331,6 +455,15 @@ namespace TFOIBeta.menus
         private void back_MouseLeave(object sender, MouseEventArgs e)
         {
             back_.Visibility = Visibility.Hidden;
+        }
+
+        private void Border_MouseLeave(object sender, MouseEventArgs e)
+        {
+            txtHelp.Visibility = Visibility.Hidden;
+        }
+        private void Border_MouseEnter(object sender, MouseEventArgs e)
+        {
+            txtHelp.Visibility = Visibility.Visible;
         }
         #endregion
     }
