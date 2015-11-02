@@ -23,6 +23,10 @@ namespace TFOIBeta
             {
                 return Floors.List.Find(floor => floor.Name == "Cellar I");
             }
+            else if (stage == "1" && altStage == "2")
+            {
+                return Floors.List.Find(floor => floor.Name == "Burning Basement II");
+            }
             else if (stage == "2" && altStage == "0")
             {
                 return Floors.List.Find(floor => floor.Name == "Basement II");
@@ -30,6 +34,10 @@ namespace TFOIBeta
             else if (stage == "2" && altStage == "1")
             {
                 return Floors.List.Find(floor => floor.Name == "Cellar II");
+            }
+            else if (stage == "2" && altStage == "2")
+            {
+                return Floors.List.Find(floor => floor.Name == "Burning Basement II");
             }
 
             else if (stage == "3" && altStage == "0")                                            //chapter 2
@@ -40,6 +48,10 @@ namespace TFOIBeta
             {
                 return Floors.List.Find(floor => floor.Name == "Catacombs I");
             }
+            else if (stage == "3" && altStage == "2")
+            {
+                return Floors.List.Find(floor => floor.Name == "Flooded Caves I");
+            }
             else if (stage == "4" && altStage == "0")
             {
                 return Floors.List.Find(floor => floor.Name == "Caves II");
@@ -48,6 +60,10 @@ namespace TFOIBeta
             {
                 return Floors.List.Find(floor => floor.Name == "Catacombs II");
             }
+            else if (stage == "4" && altStage == "2")
+            {
+                return Floors.List.Find(floor => floor.Name == "Flooded Caves II");
+            }
 
             else if (stage == "5" && altStage == "0")                                            //chapter 3
             {
@@ -55,15 +71,23 @@ namespace TFOIBeta
             }
             else if (stage == "5" && altStage == "1")
             {
-                return Floors.List.Find(floor => floor.Name == "Necropolis II");
+                return Floors.List.Find(floor => floor.Name == "Necropolis I");
+            }
+            else if (stage == "5" && altStage == "2")
+            {
+                return Floors.List.Find(floor => floor.Name == "Dank Depths I");
             }
             else if (stage == "6" && altStage == "0")
             {
-                return Floors.List.Find(floor => floor.Name == "Caves II");
+                return Floors.List.Find(floor => floor.Name == "Depths II");
             }
             else if (stage == "6" && altStage == "1")
             {
                 return Floors.List.Find(floor => floor.Name == "Necropolis II");
+            }
+            else if (stage == "6" && altStage == "2")
+            {
+                return Floors.List.Find(floor => floor.Name == "Dank Depths II");
             }
 
             else if (stage == "7" && altStage == "0")                                            //chapter 4
@@ -74,6 +98,10 @@ namespace TFOIBeta
             {
                 return Floors.List.Find(floor => floor.Name == "Utero I");
             }
+            else if (stage == "7" && altStage == "2")
+            {
+                return Floors.List.Find(floor => floor.Name == "Scarred Womb  I");
+            }
             else if (stage == "8" && altStage == "0")
             {
                 return Floors.List.Find(floor => floor.Name == "Womb II");
@@ -81,6 +109,10 @@ namespace TFOIBeta
             else if (stage == "8" && altStage == "1")
             {
                 return Floors.List.Find(floor => floor.Name == "Utero II");
+            }
+            else if (stage == "8" && altStage == "2")
+            {
+                return Floors.List.Find(floor => floor.Name == "Scarred Womb  II");
             }
 
             else if (stage == "9" && altStage == "0")                                            //chapter 5
@@ -90,6 +122,10 @@ namespace TFOIBeta
             else if (stage == "9" && altStage == "1")
             {
                 return Floors.List.Find(floor => floor.Name == "Cathedral");
+            }
+            else if (stage == "9" && altStage == "2")                                            //chapter 5
+            {
+                return Floors.List.Find(floor => floor.Name == "Blue Womb");
             }
 
             else if (stage == "10" && altStage == "0")                                           //chapter 6

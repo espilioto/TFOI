@@ -26,12 +26,24 @@ namespace TFOIBeta.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string LogPath {
+        public string LogPathRebirth {
             get {
-                return ((string)(this["LogPath"]));
+                return ((string)(this["LogPathRebirth"]));
             }
             set {
-                this["LogPath"] = value;
+                this["LogPathRebirth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LogPathAfterbirth {
+            get {
+                return ((string)(this["LogPathAfterbirth"]));
+            }
+            set {
+                this["LogPathAfterbirth"] = value;
             }
         }
     }

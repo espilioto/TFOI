@@ -18,15 +18,15 @@ namespace TFOIBeta
         /// </summary>
         public static void LoadPathFromSettings()
         {
-            if (string.IsNullOrEmpty(Properties.Settings.Default.LogPath)) //this should be null the first time you run TFOI
+            if (string.IsNullOrEmpty(Properties.Settings.Default.LogPathRebirth)) //this should be null the first time you run TFOI
             {
                 if (File.Exists(Environment.ExpandEnvironmentVariables("%userprofile%") + @"\Documents\My Games\Binding of Isaac Rebirth\log.txt"))
                 {
-                    path = Properties.Settings.Default.LogPath = Environment.ExpandEnvironmentVariables("%userprofile%") + @"\Documents\My Games\Binding of Isaac Rebirth\log.txt";
+                    path = Properties.Settings.Default.LogPathRebirth = Environment.ExpandEnvironmentVariables("%userprofile%") + @"\Documents\My Games\Binding of Isaac Rebirth\log.txt";
                 }
                 else if (File.Exists("C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Binding of Isaac Rebirth\\Documents\\My Games\\Binding of Isaac Rebirth\\log.txt"))
                 {
-                    path = Properties.Settings.Default.LogPath = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Binding of Isaac Rebirth\\Documents\\My Games\\Binding of Isaac Rebirth\\log.txt";
+                    path = Properties.Settings.Default.LogPathRebirth = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Binding of Isaac Rebirth\\Documents\\My Games\\Binding of Isaac Rebirth\\log.txt";
                 }
                 else
                 {
@@ -35,15 +35,15 @@ namespace TFOIBeta
                     openFileDialog.Filter = "Isaac log file | *.txt";
                     openFileDialog.ShowDialog();
                     path = openFileDialog.FileName;
-                    Properties.Settings.Default.LogPath = path;
+                    Properties.Settings.Default.LogPathRebirth = path;
                     Properties.Settings.Default.Save();
                 }
             }
             else
             {
-                if (File.Exists(Properties.Settings.Default.LogPath))
+                if (File.Exists(Properties.Settings.Default.LogPathRebirth))
                 {
-                    path = Properties.Settings.Default.LogPath;
+                    path = Properties.Settings.Default.LogPathRebirth;
                 }
             }
         }
@@ -55,11 +55,11 @@ namespace TFOIBeta
         {
             if (File.Exists(Environment.ExpandEnvironmentVariables("%userprofile%") + @"\Documents\My Games\Binding of Isaac Rebirth\log.txt"))
             {
-                Properties.Settings.Default.LogPath = Environment.ExpandEnvironmentVariables("%userprofile%") + @"\Documents\My Games\Binding of Isaac Rebirth\log.txt";
+                Properties.Settings.Default.LogPathRebirth = Environment.ExpandEnvironmentVariables("%userprofile%") + @"\Documents\My Games\Binding of Isaac Rebirth\log.txt";
             }
             else if (File.Exists("C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Binding of Isaac Rebirth\\Documents\\My Games\\Binding of Isaac Rebirth\\log.txt"))
             {
-                Properties.Settings.Default.LogPath = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Binding of Isaac Rebirth\\Documents\\My Games\\Binding of Isaac Rebirth\\log.txt";
+                Properties.Settings.Default.LogPathRebirth = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\The Binding of Isaac Rebirth\\Documents\\My Games\\Binding of Isaac Rebirth\\log.txt";
             }
             else
             {
@@ -68,7 +68,7 @@ namespace TFOIBeta
                 openFileDialog.Filter = "Isaac log file | *.txt";
                 openFileDialog.ShowDialog();
                 path = openFileDialog.FileName;
-                Properties.Settings.Default.LogPath = path;
+                Properties.Settings.Default.LogPathRebirth = path;
                 Properties.Settings.Default.Save();
             }
         }
