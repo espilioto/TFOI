@@ -12,8 +12,15 @@ using System.Windows.Media.Imaging;
 
 namespace TFOIBeta
 {
-    class Stuff
+    public class Image : System.Windows.Controls.Image
     {
+        public string ObjectName { get; set; }
+        public string ObjectDescription { get; set; }
+        public string ObjectMisc { get; set; }
+    }
+
+    class Stuff
+    { 
 
         public static ImageSource BitmapToImageSource(Bitmap bitmap)
         {

@@ -50,20 +50,56 @@ namespace TFOIBeta
                 }
 
                 if (jsonItem.First["healthOnly"] != null)                                                        //bool
-                { 
+                {
                     item.HealthOnly = jsonItem.First["healthOnly"];
                 }
                 if (jsonItem.First["space"] != null)
                 {
                     item.Space = jsonItem.First["space"];
                 }
-                if (jsonItem.First["guppy"] != null)
+                if (jsonItem.First["TformGuppy"] != null)                                                       //transformations
                 {
-                    item.Guppy = jsonItem.First["guppy"];
+                    item.TformGuppy = jsonItem.First["TformGuppy"];
                 }
-                if (jsonItem.First["flylord"] != null)
+                if (jsonItem.First["TformFlyLord"] != null)
                 {
-                    item.FlyLord = jsonItem.First["flylord"];
+                    item.TformFlyLord = jsonItem.First["TformFlyLord"];
+                }
+                if (jsonItem.First["TformSuperBum"] != null)
+                {
+                    item.TformFlyLord = jsonItem.First["TformSuperBum"];
+                }
+                if (jsonItem.First["TformMom"] != null)
+                {
+                    item.TformFlyLord = jsonItem.First["TformMom"];
+                }
+                if (jsonItem.First["TformBob"] != null)
+                {
+                    item.TformFlyLord = jsonItem.First["TformBob"];
+                }
+                if (jsonItem.First["TformShrooms"] != null)
+                {
+                    item.TformFlyLord = jsonItem.First["TformShrooms"];
+                }
+                if (jsonItem.First["TformCthulhu"] != null)
+                {
+                    item.TformFlyLord = jsonItem.First["TformCthulhu"];
+                }
+                if (jsonItem.First["TformTumor"] != null)
+                {
+                    item.TformFlyLord = jsonItem.First["TformTumor"];
+                }
+                if (jsonItem.First["TformDrugs"] != null)
+                {
+                    item.TformFlyLord = jsonItem.First["TformDrugs"];
+                }
+                if (jsonItem.First["TformAngel"] != null)
+                {
+                    item.TformFlyLord = jsonItem.First["TformAngel"];
+                }
+                if (jsonItem.First["TformPoop"] != null)
+                {
+                    item.TformFlyLord = jsonItem.First["TformPoop"];
                 }
 
                 if (jsonItem.First["delay"] != null)                                                             //float
@@ -114,7 +150,7 @@ namespace TFOIBeta
 
                 if (!string.IsNullOrEmpty(item.DetailsString))
                     if (item.DetailsString.EndsWith(Environment.NewLine))
-                        item.DetailsString  = item.DetailsString.TrimEnd(Environment.NewLine.ToCharArray());
+                        item.DetailsString = item.DetailsString.TrimEnd(Environment.NewLine.ToCharArray());
 
                 Items.List.Add(item);
             }
@@ -122,139 +158,42 @@ namespace TFOIBeta
 
 
 
-        private string _id;                                 //string
-        public string Id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
-        private string _name;
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
-        }
-        private string _text;
-        public string Text
-        {
-            get { return _text; }
-            set { _text = value; }
-        }
-        private string _detailsString;
-        public string DetailsString
-        {
-            get { return _detailsString; }
-            set { _detailsString = value; }
-        }
+        public string Id { get; set; }                              //string
+        public string Name { get; set; }
+        public string Text { get; set; }
+        public string DetailsString { get; set; }
 
-
-        private int _health;                                //int
-        public int Health
-        {
-            get { return _health; }
-            set { _health = value; }
-        }
-        private int _soulHearts;
-        public int SoulHearts
-        {
-            get { return _soulHearts; }
-            set { _soulHearts = value; }
-        }
+        public int Health { get; set; }                             //int
+        public int SoulHearts { get; set; }
+        public int SinHearts { get; set; }
         private int _sinHearts;
-        public int SinHearts
-        {
-            get { return _sinHearts; }
-            set { _sinHearts = value; }
-        }
 
-        private bool _healthOnly;                           //bool
-        public bool HealthOnly
-        {
-            get { return _healthOnly; }
-            set { _healthOnly = value; }
-        }
+        public bool HealthOnly { get; set; }                        //bool
+        public bool Space { get; set; }
         private bool _space;
-        public bool Space
-        {
-            get { return _space; }
-            set { _space = value; }
-        }
-        private bool _guppy;
-        public bool Guppy
-        {
-            get { return _guppy; }
-            set { _guppy = value; }
-        }
-        private bool _flyLord;
-        public bool FlyLord
-        {
-            get { return _flyLord; }
-            set { _flyLord = value; }
-        }
 
+        public bool TformGuppy { get; set; }                        //transformations
+        public bool TformFlyLord { get; set; }
+        public bool TformSuperBum { get; set; }
+        public bool TformMom { get; set; }
+        public bool TformBob { get; set; }
+        public bool TformShrooms { get; set; }
+        public bool TformCthulhu { get; set; }
+        public bool TformTumor { get; set; }
+        public bool TformDrugs { get; set; }
+        public bool TformAngel { get; set; }
+        public bool TformPoop { get; set; }
 
+        public float Delay { get; set; }                            //float
+        public float DelayX { get; set; }
+        public float Damage { get; set; }
+        public float DamageX { get; set; }
+        public float Range { get; set; }
+        public float Tears { get; set; }
+        public float TearHeight { get; set; }
+        public float ShotSpeed { get; set; }
+        public float Speed { get; set; }
 
-        private float _delay;                               //float
-        public float Delay
-        {
-            get { return _delay; }
-            set { _delay = value; }
-        }
-        private float _delayX;
-        public float DelayX
-        {
-            get { return _delayX; }
-            set { _delayX = value; }
-        }
-        private float _dmg;
-        public float Damage
-        {
-            get { return _dmg; }
-            set { _dmg = value; }
-        }
-        private float _dmgX;
-        public float DamageX
-        {
-            get { return _dmgX; }
-            set { _dmgX = value; }
-        }
-        private float _range;
-        public float Range
-        {
-            get { return _range; }
-            set { _range = value; }
-        }
-        private float _tears;
-        public float Tears
-        {
-            get { return _tears; }
-            set { _tears = value; }
-        }
-        private float _tearHeight;
-        public float TearHeight
-        {
-            get { return _tearHeight; }
-            set { _tearHeight = value; }
-        }
-        private float _shotSpeed;
-        public float ShotSpeed
-        {
-            get { return _shotSpeed; }
-            set { _shotSpeed = value; }
-        }
-        private float _speed;
-        public float Speed
-        {
-            get { return _speed; }
-            set { _speed = value; }
-        }
-
-        private Bitmap _icon;                               //icon
-        public Bitmap Icon
-        {
-            get { return _icon; }
-            set { _icon = value; }
-        }
-
+        public Bitmap Icon { get; set; }                    //icon   
     }
 }

@@ -18,7 +18,10 @@
             <WrapPanel  x:Name="itemPanel" Height="717" Width="531" Orientation="Horizontal" VerticalAlignment="Center"/>
         </ScrollViewer>
 
-        <Label x:Name="textItemInfo" HorizontalAlignment="Left" Height="123" Margin="757,48,0,0" VerticalAlignment="Top" Width="196" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="21.333"/>
+        <TextBlock Name="textItemName" TextWrapping="Wrap" HorizontalAlignment="Left" Height="43" Margin="13,56,0,0" VerticalAlignment="Top" Width="182" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="21.333" />
+        <TextBlock Name="textItemDescription" TextWrapping="Wrap" HorizontalAlignment="Left" Height="72" Margin="11,98,0,0" VerticalAlignment="Top" Width="178" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="21.333" Foreground="#FF362F2D" />
+        <Label x:Name="textItemStats" HorizontalAlignment="Left" Height="123" Margin="755,47,0,0" VerticalAlignment="Top" Width="196" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="21.333" />
+
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="276" Margin="147,220,0,0" VerticalAlignment="Top" Width="646" Background="{x:Null}" BorderBrush="#FF716F6A"/>
 
     </Grid>

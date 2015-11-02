@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -32,9 +31,11 @@ namespace TFOIBeta.menus
         {
             foreach (var item in Items.List)
             {
-                var icon = new System.Windows.Controls.Image();
-                icon.ToolTip = item.Name + Environment.NewLine + item.Text;
-                icon.Tag = item.DetailsString;
+                var icon = new Image();
+                icon.Name = "_" + item.Id;
+                icon.ObjectName = item.Name;
+                icon.ObjectDescription = item.Text;
+                icon.ObjectMisc = item.DetailsString;
                 icon.Stretch = Stretch.None;
                 icon.Source = Stuff.BitmapToImageSource(item.Icon);
 
@@ -45,8 +46,10 @@ namespace TFOIBeta.menus
 
         private void icon_MouseLeftButtonDown(object sender, RoutedEventArgs e)
         {
-            System.Windows.Controls.Image image = sender as System.Windows.Controls.Image;
-            textItemInfo.Content = image.Tag;
+            Image image = sender as Image;
+            textItemName.Text = image.ObjectName.ToUpper();
+            textItemDescription.Text = image.ObjectDescription.ToUpper();
+            textItemStats.Content = image.ObjectMisc;
         }
 
         private void back_MouseDown(object sender, MouseButtonEventArgs e)

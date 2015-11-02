@@ -201,10 +201,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <Resource Include="Resources\JSON\JsonBossList.json" />
-    <Resource Include="Resources\JSON\JsonCharList.json" />
-    <Resource Include="Resources\JSON\JsonFloorList.json" />
-    <Resource Include="Resources\JSON\JsonItemList.json" />
     <Resource Include="Resources\TeamMeatFontBOLD.ttf" />
   </ItemGroup>
   <ItemGroup>
@@ -212,6 +208,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\resources\images\" />
+    <Folder Include="Resources\JSON\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\arrow.png" />

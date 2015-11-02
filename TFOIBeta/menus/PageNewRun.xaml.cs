@@ -70,7 +70,7 @@ namespace TFOIBeta.menus
 
         private void ReadLog(object sender, ElapsedEventArgs e)
         {
-            if (System.Diagnostics.Process.GetProcessesByName("isaac-ng").Length > 0)
+            if (true)
             {
                 Dispatcher.Invoke(new Action(() => txtIsRunning.Foreground = Brushes.ForestGreen));
                 Dispatcher.Invoke(new Action(() => txtIsRunning.Text = "GAME IS RUNNING"));
@@ -136,11 +136,11 @@ namespace TFOIBeta.menus
 
                                         icon.Effect = glowActiveItem;
                                     }
-                                    if (item.Guppy)
+                                    if (item.TformGuppy)
                                     {
                                         icon.Effect = glowGuppy;
                                     }
-                                    if (item.FlyLord)
+                                    if (item.TformFlyLord)
                                     {
                                         icon.Effect = glowFlyLord;
                                     }
