@@ -1,20 +1,20 @@
 {
-    "1_1": {
+    "1": {
         "name": "Basement I"
     },
-    "1_2": {
+    "2": {
         "name": "Basement II"
     },
-    "1_3": {
+    "3": {
         "name": "Basement XL"
     },
-    "2_1": {
+    "4": {
         "name": "Cellar I"
     },
-    "2_2": {
+    "5": {
         "name": "Cellar II"
     },
-    "2_3": {
+    "6": {
         "name": "Cellar XL"
     },
     "7": {
@@ -118,5 +118,11 @@
     },
     "40": {
         "name": "Chest"
+    },
+	"41": {
+        "name": "???"
+    },
+	"42": {
+        "name": "Special Rooms (Greed)"
     }
 }

@@ -49,10 +49,10 @@ namespace TFOIBeta
             {
                 handle.Dispose();
                 // Free any other managed objects here.
-                //
+                
             }
             // Free any unmanaged objects here.
-            //
+            
             _cubeOfMeatLevel = 0;
             _ballOfBandagesLevel = 0;
             Time = "";

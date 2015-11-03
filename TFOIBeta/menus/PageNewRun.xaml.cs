@@ -77,6 +77,7 @@ namespace TFOIBeta.menus
                         Dispatcher.Invoke(new Action(() => itemPanel.Children.Clear()));
                         Dispatcher.Invoke(new Action(() => bossPanel.Children.Clear()));
                         Dispatcher.Invoke(new Action(() => bossDefeatedPanel.Children.Clear()));
+                        Dispatcher.Invoke(new Action(() => floorPanel.Source = null));
                         Dispatcher.Invoke(new Action(() => txtTime.Text = "TIME:"));
                         Dispatcher.Invoke(new Action(() => txtCurse.Text = ""));
 
@@ -286,6 +287,9 @@ namespace TFOIBeta.menus
                         {
                             run.AddFloor(floor);
                             Dispatcher.Invoke(new Action(() => txtFloor.Text = floor.Name.ToUpper()));
+
+                            Dispatcher.Invoke(new Action(() => floorPanel.ToolTip = run.RunFloors.Last().Name));
+                            Dispatcher.Invoke(new Action(() => floorPanel.Source = Stuff.BitmapToImageSource(run.RunFloors.Last().Icon)));
                         }
                     }
                     if (line.StartsWith("Curse of"))

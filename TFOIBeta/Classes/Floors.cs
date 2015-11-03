@@ -123,7 +123,7 @@ namespace TFOIBeta
             {
                 return Floors.List.Find(floor => floor.Name == "Cathedral");
             }
-            else if (stage == "9" && altStage == "2")                                            //chapter 5
+            else if (stage == "9" && altStage == "2")                                            
             {
                 return Floors.List.Find(floor => floor.Name == "Blue Womb");
             }
@@ -210,32 +210,88 @@ namespace TFOIBeta
 
                 floor.Id = jsonFloor.Name;
                 floor.Name = jsonFloor.First["name"];
-                //floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors+ floor.Id + ".png");
+
+                if (floor.Name.Contains("Basement"))
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\1.png");
+                }
+                else if (floor.Name.Contains("Cellar"))
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\2.png");
+                }
+                else if (floor.Name.Contains("Burning"))
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\13.png");
+                }
+                else if (floor.Name == "Caves")
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\3.png");
+                }
+                else if (floor.Name.Contains("Catacombs"))
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\4.png");
+                }
+                else if (floor.Name.Contains("Flooded"))
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\14.png");
+                }
+                else if (floor.Name.Contains("Depths"))
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\5.png");
+                }
+                else if (floor.Name.Contains("Necropolis"))
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\6.png");
+                }
+                else if (floor.Name.Contains("Dank"))
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\15.png");
+                }
+                else if (floor.Name.Contains("Womb"))
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\7.png");
+                }
+                else if (floor.Name.Contains("Utero"))
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\8.png");
+                }
+                else if (floor.Name.Contains("Scarred"))
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\16.png");
+                }
+                else if (floor.Name.Contains("Sheol"))
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\9.png");
+                }
+                else if (floor.Name.Contains("Cathedral"))
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\10.png");
+                }
+                else if (floor.Name.Contains("Chest"))
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\11.png");
+                }
+                else if (floor.Name.Contains("Room"))
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\12.png");
+                }
+                else if (floor.Name.Contains("???"))
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\17.png");
+                }
+                else if (floor.Name.Contains("Special"))
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\18.png");
+                }
 
                 Floors.List.Add(floor);
             }
         }
 
-        private string _id;
-        public string Id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public string Curse { get; set; }
 
-        private string _name;
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
-        }
-
-        private string _curse;
-        public string Curse
-        {
-            get { return _curse; }
-            set { _curse = value; }
-        }
-
+        public Bitmap Icon { get; set; }
     }
 }
