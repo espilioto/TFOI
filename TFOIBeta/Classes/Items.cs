@@ -21,7 +21,7 @@ namespace TFOIBeta
 
         public static void ParseJsonItemList()
         {
-            string json = File.ReadAllText(Environment.CurrentDirectory + @"\Resources\JSON\JsonItemList.json");
+            string json = File.ReadAllText(Environment.CurrentDirectory + @"\resources\JSON\JsonItemList.json");
             dynamic deserializedItems = JsonConvert.DeserializeObject(json);
 
             foreach (var jsonItem in deserializedItems)
@@ -57,49 +57,10 @@ namespace TFOIBeta
                 {
                     item.Space = jsonItem.First["space"];
                 }
-                if (jsonItem.First["TformGuppy"] != null)                                                       //transformations
+
+                if (jsonItem.First["Tform"] != null)                                                            //transformations
                 {
-                    item.TformGuppy = jsonItem.First["TformGuppy"];
-                }
-                if (jsonItem.First["TformFlyLord"] != null)
-                {
-                    item.TformFlyLord = jsonItem.First["TformFlyLord"];
-                }
-                if (jsonItem.First["TformSuperBum"] != null)
-                {
-                    item.TformFlyLord = jsonItem.First["TformSuperBum"];
-                }
-                if (jsonItem.First["TformMom"] != null)
-                {
-                    item.TformFlyLord = jsonItem.First["TformMom"];
-                }
-                if (jsonItem.First["TformBob"] != null)
-                {
-                    item.TformFlyLord = jsonItem.First["TformBob"];
-                }
-                if (jsonItem.First["TformShrooms"] != null)
-                {
-                    item.TformFlyLord = jsonItem.First["TformShrooms"];
-                }
-                if (jsonItem.First["TformCthulhu"] != null)
-                {
-                    item.TformFlyLord = jsonItem.First["TformCthulhu"];
-                }
-                if (jsonItem.First["TformTumor"] != null)
-                {
-                    item.TformFlyLord = jsonItem.First["TformTumor"];
-                }
-                if (jsonItem.First["TformDrugs"] != null)
-                {
-                    item.TformFlyLord = jsonItem.First["TformDrugs"];
-                }
-                if (jsonItem.First["TformAngel"] != null)
-                {
-                    item.TformFlyLord = jsonItem.First["TformAngel"];
-                }
-                if (jsonItem.First["TformPoop"] != null)
-                {
-                    item.TformFlyLord = jsonItem.First["TformPoop"];
+                    item.Tform = jsonItem.First["Tform"];
                 }
 
                 if (jsonItem.First["delay"] != null)                                                             //float
@@ -162,27 +123,14 @@ namespace TFOIBeta
         public string Name { get; set; }
         public string Text { get; set; }
         public string DetailsString { get; set; }
+        public string Tform { get; set; }
 
         public int Health { get; set; }                             //int
         public int SoulHearts { get; set; }
         public int SinHearts { get; set; }
-        private int _sinHearts;
 
         public bool HealthOnly { get; set; }                        //bool
         public bool Space { get; set; }
-        private bool _space;
-
-        public bool TformGuppy { get; set; }                        //transformations
-        public bool TformFlyLord { get; set; }
-        public bool TformSuperBum { get; set; }
-        public bool TformMom { get; set; }
-        public bool TformBob { get; set; }
-        public bool TformShrooms { get; set; }
-        public bool TformCthulhu { get; set; }
-        public bool TformTumor { get; set; }
-        public bool TformDrugs { get; set; }
-        public bool TformAngel { get; set; }
-        public bool TformPoop { get; set; }
 
         public float Delay { get; set; }                            //float
         public float DelayX { get; set; }

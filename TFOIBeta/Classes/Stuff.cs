@@ -17,6 +17,7 @@ namespace TFOIBeta
         public string ObjectName { get; set; }
         public string ObjectDescription { get; set; }
         public string ObjectMisc { get; set; }
+        public string Tag2 { get; set; }
     }
 
     class Stuff

@@ -58,7 +58,8 @@ namespace TFOIBeta.menus
 
         private void ReadLog(object sender, ElapsedEventArgs e)
         {
-            if (true)
+            //if (true)                                                                               //just for testing purposes
+            if (System.Diagnostics.Process.GetProcessesByName("isaac-ng").Length > 0)
             {
                 Dispatcher.Invoke(new Action(() => txtIsRunning.Foreground = Brushes.ForestGreen));
                 Dispatcher.Invoke(new Action(() => txtIsRunning.Text = "GAME IS RUNNING"));
@@ -98,7 +99,7 @@ namespace TFOIBeta.menus
 
                         if (item != null)               //can't be too careful
                         {
-                            if (run.AddItem(item))
+                            if (run.AddItem(item))      //if this item hasn't been picked up before
                             {
                                 Application.Current.Dispatcher.Invoke((Action)delegate
                                 {
@@ -110,89 +111,121 @@ namespace TFOIBeta.menus
 
                                     itemPanel.Children.Add(icon);
 
-                                    if (item.Space)
-                                    {
-                                        icon.Tag = "space";
+                                    //if (item.Space)
+                                    //{
+                                    //    icon.Tag = "space";
 
-                                        foreach (var child in itemPanel.Children.OfType<Image>())
-                                        {
-                                            if ((string)child.Tag == "space")
-                                            {
-                                                child.Effect = null;
-                                            }
-                                        }
+                                    //    foreach (var child in itemPanel.Children.OfType<Image>())
+                                    //    {
+                                    //        if ((string)child.Tag == "space")
+                                    //        {
+                                    //            child.Effect = null;
+                                    //        }
+                                    //    }
 
-                                        icon.Effect = glowActiveItem;
-                                    }
-                                    else if (item.TformGuppy)
+                                    //    icon.Effect = glowActiveItem;
+                                    //    return;
+                                    //}
+                                     if (item.Tform == "Guppy")
                                     {
+                                        icon.Tag2 = "Guppy";
                                         icon.Effect = glowGuppy;
                                     }
-                                    else if (item.TformFlyLord)
+                                    else if (item.Tform == "FlyLord")
                                     {
                                         icon.Effect = glowFlyLord;
+                                        icon.Tag2 = "FlyLord";
                                     }
-                                    else if (item.TformSuperBum)        //new
+                                    else if (item.Tform == "SuperBum")
                                     {
                                         icon.Effect = glowSuperBum;
+                                        icon.Tag2 = "SuperBum";
                                     }
-                                    else if (item.TformMom)
+                                    else if (item.Tform == "Mom")
                                     {
                                         icon.Effect = glowMom;
+                                        icon.Tag2 = "Mom";
                                     }
-                                    else if (item.TformBob)
+                                    else if (item.Tform == "Bob")
                                     {
                                         icon.Effect = glowBob;
+                                        icon.Tag2 = "Bob";
                                     }
-                                    else if (item.TformShrooms)
+                                    else if (item.Tform == "Shrooms")
                                     {
                                         icon.Effect = glowShrooms;
+                                        icon.Tag2 = "Shrooms";
                                     }
-                                    else if (item.TformCthulhu)
+                                    else if (item.Tform == "Cthulhu")
                                     {
                                         icon.Effect = glowCthulhu;
+                                        icon.Tag2 = "Cthulhu";
                                     }
-                                    else if (item.TformTumor)
+                                    else if (item.Tform == "Tumor")
                                     {
                                         icon.Effect = glowTumor;
+                                        icon.Tag2 = "Tumor";
                                     }
-                                    else if (item.TformDrugs)
+                                    else if (item.Tform == "Drugs")
                                     {
                                         icon.Effect = glowDrugs;
+                                        icon.Tag2 = "Drugs";
                                     }
-                                    else if (item.TformAngel)
+                                    else if (item.Tform == "Angel")
                                     {
                                         icon.Effect = glowAngel;
+                                        icon.Tag2 = "Angel";
                                     }
-                                    else if (item.TformPoop)
+                                    else if (item.Tform == "Poop")
                                     {
                                         icon.Effect = glowPoop;
+                                        icon.Tag2 = "Poop";
                                     }
                                 });
                             }
                             else
                             {
-                                if (item.Space)
+                                Application.Current.Dispatcher.Invoke((Action)delegate
                                 {
-                                    Application.Current.Dispatcher.Invoke((Action)delegate
+                                    if (item.Space)
                                     {
                                         foreach (var child in itemPanel.Children.OfType<Image>())
                                         {
-                                            if (child.Effect != null)
-                                            {
-                                                child.Effect = null;
-                                            }
-                                        }
+                                            //if ((string)child.Tag == "space")
+                                            //{
+                                            //    child.Effect = null;
+                                            //}
 
-                                        foreach (var child in itemPanel.Children.OfType<Image>())
-                                        {
-                                            if ((child.Name.TrimStart('_') == item.Id))
+                                            if (child.Tag2 == "Guppy")
+                                                child.Effect = glowGuppy;
+                                            else if (child.Tag2 == "FlyLord")
+                                                child.Effect = glowFlyLord;
+                                            else if (child.Tag2 == "SuperBum")
+                                                child.Effect = glowSuperBum;
+                                            else if (child.Tag2 == "Mom")
+                                                child.Effect = glowMom;
+                                            else if (child.Tag2 == "Bob")
+                                                child.Effect = glowBob;
+                                            else if (child.Tag2 == "Shrooms")
+                                                child.Effect = glowShrooms;
+                                            else if (child.Tag2 == "Cthulhu")
+                                                child.Effect = glowCthulhu;
+                                            else if (child.Tag2 == "Tumor")
+                                                child.Effect = glowTumor;
+                                            else if (child.Tag2 == "Drugs")
+                                                child.Effect = glowDrugs;
+                                            else if (child.Tag2 == "Angel")
+                                                child.Effect = glowAngel;
+                                            else if (child.Tag2 == "Poop")
+                                                child.Effect = glowPoop;
+
+                                            if (child.Name.Contains(item.Id))
                                             {
                                                 child.Effect = glowActiveItem;
                                             }
                                         }
-                                    });
-                                }
+                                    }
+                                });
                             }
                         }
                     }
@@ -245,7 +278,7 @@ namespace TFOIBeta.menus
                     if (line.StartsWith("Level::Init"))
                     {
                         var stage = Regex.Match(line, @"m_Stage (\d+)").Groups[1].Value;            //regex stage id
-                        var altStage = Regex.Match(line, @"m_AltStage (\d+)").Groups[1].Value;      //regex alt stage id
+                        var altStage = Regex.Match(line, @"m_StageType (\d+)").Groups[1].Value;      //regex alt stage id
 
                         var floor = Floors.GetFloorFromId(stage, altStage);
 
@@ -371,18 +404,18 @@ namespace TFOIBeta.menus
             glowAngel.ShadowDepth = 0;
             glowPoop.ShadowDepth = 0;
 
-            glowActiveItem.BlurRadius = 10;
-            glowGuppy.BlurRadius = 10;
-            glowFlyLord.BlurRadius = 10;
-            glowSuperBum.BlurRadius = 10;      //new
-            glowMom.BlurRadius = 10;
-            glowBob.BlurRadius = 10;
-            glowShrooms.BlurRadius = 10;
-            glowCthulhu.BlurRadius = 10;
-            glowTumor.BlurRadius = 10;
-            glowDrugs.BlurRadius = 10;
-            glowAngel.BlurRadius = 10;
-            glowPoop.BlurRadius = 10;
+            glowActiveItem.BlurRadius = 15;
+            glowGuppy.BlurRadius = 15;
+            glowFlyLord.BlurRadius = 15;
+            glowSuperBum.BlurRadius = 15;      //new
+            glowMom.BlurRadius = 15;
+            glowBob.BlurRadius = 15;
+            glowShrooms.BlurRadius = 15;
+            glowCthulhu.BlurRadius = 15;
+            glowTumor.BlurRadius = 15;
+            glowDrugs.BlurRadius = 15;
+            glowAngel.BlurRadius = 15;
+            glowPoop.BlurRadius = 15;
 
             glowActiveItem.Color = Colors.Red;
             glowGuppy.Color = Colors.Black;
@@ -391,8 +424,8 @@ namespace TFOIBeta.menus
             glowMom.Color = Colors.Pink;
             glowBob.Color = Colors.Green;
             glowShrooms.Color = Colors.Orange;
-            glowCthulhu.Color = Colors.Purple;
-            glowTumor.Color = Colors.BurlyWood;
+            glowCthulhu.Color = Colors.MediumPurple;
+            glowTumor.Color = Colors.Aqua;
             glowAngel.Color = Colors.Gold;
             glowPoop.Color = Colors.Brown;
 
