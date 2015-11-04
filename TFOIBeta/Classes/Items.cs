@@ -33,6 +33,12 @@ namespace TFOIBeta
                 item.Text = jsonItem.First["text"];
                 item.Icon = new Bitmap(Environment.CurrentDirectory + @"\Resources\images\collectibles\" + item.Id + ".png");
 
+                if (jsonItem.First["details"] != null)                                                              //string
+                {
+                    item.Details = jsonItem.First["details"];
+                    item.DetailsString += item.Details.ToUpper() + Environment.NewLine;
+                }
+
                 if (jsonItem.First["health"] != null)                                                              //int
                 {
                     item.Health = jsonItem.First["health"];
@@ -58,9 +64,9 @@ namespace TFOIBeta
                     item.Space = jsonItem.First["space"];
                 }
 
-                if (jsonItem.First["Tform"] != null)                                                            //transformations
+                if (jsonItem.First["tform"] != null)                                                            //transformations
                 {
-                    item.Tform = jsonItem.First["Tform"];
+                    item.Tform = jsonItem.First["tform"];
                 }
 
                 if (jsonItem.First["delay"] != null)                                                             //float
@@ -86,14 +92,14 @@ namespace TFOIBeta
                 if (jsonItem.First["range"] != null)
                 {
                     item.Range = jsonItem.First["range"];
-                    item.DetailsString += "TEAR RANGE: " + item.Range.ToString() + Environment.NewLine;
+                    item.DetailsString += "RANGE: " + item.Range.ToString() + Environment.NewLine;
                 }
                 if (jsonItem.First["tears"] != null)
                 {
                     item.Tears = jsonItem.First["tears"];
                     item.DetailsString += "TEARS: " + item.Tears.ToString() + Environment.NewLine;
                 }
-                if (jsonItem.First["tearHeight"] != null)
+                if (jsonItem.First["height"] != null)
                 {
                     item.TearHeight = jsonItem.First["height"];
                     item.DetailsString += "TEAR HEIGHT: " + item.TearHeight.ToString() + Environment.NewLine;
@@ -122,6 +128,7 @@ namespace TFOIBeta
         public string Id { get; set; }                              //string
         public string Name { get; set; }
         public string Text { get; set; }
+        public string Details { get; set; }
         public string DetailsString { get; set; }
         public string Tform { get; set; }
 

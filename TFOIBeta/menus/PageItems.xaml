@@ -14,13 +14,13 @@
         <Image x:Name="back" Source="/TFOIBeta;component/Resources/back.png" Margin="25,439,847,60" RenderOptions.BitmapScalingMode="NearestNeighbor" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave"/>
         <Image x:Name="back_" Source="/TFOIBeta;component/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Margin="10,470,832,44" RenderTransformOrigin="0.5,0.5" Width="87"/>
 
-        <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="212,86,217,371" >
-            <WrapPanel  x:Name="itemPanel" Height="717" Width="531" Orientation="Horizontal" VerticalAlignment="Center"/>
+        <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="212,73,217,371" >
+            <WrapPanel  x:Name="itemPanel" Height="866" Width="531" Orientation="Horizontal" VerticalAlignment="Center"/>
         </ScrollViewer>
 
         <TextBlock Name="textItemName" TextWrapping="Wrap" HorizontalAlignment="Left" Height="43" Margin="13,56,0,0" VerticalAlignment="Top" Width="182" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="21.333" />
         <TextBlock Name="textItemDescription" TextWrapping="Wrap" HorizontalAlignment="Left" Height="72" Margin="11,98,0,0" VerticalAlignment="Top" Width="178" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="21.333" Foreground="#FF362F2D" />
-        <Label x:Name="textItemStats" HorizontalAlignment="Left" Height="123" Margin="755,47,0,0" VerticalAlignment="Top" Width="196" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="21.333" />
+        <TextBlock Name="textItemStats" TextWrapping="Wrap" HorizontalAlignment="Left" Height="161" Margin="759,33,0,0" VerticalAlignment="Top" Width="174" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="21.333" />
 
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="276" Margin="147,220,0,0" VerticalAlignment="Top" Width="646" Background="{x:Null}" BorderBrush="#FF716F6A"/>
 

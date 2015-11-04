@@ -41,22 +41,22 @@
    "8":{
       "name":"Brother Bobby",
       "text":"Friends 'till the end",
-      "Tform":"Tumor"
+      "tform":"Tumor"
    },
    "9":{
       "name":"Skatole",
       "text":"Fly love",
-      "Tform":"FlyLord"
+      "tform":"FlyLord"
    },
    "10":{
       "name":"Halo of Flies",
       "text":"Projectile protection",
-      "Tform":"FlyLord"
+      "tform":"FlyLord"
    },
    "11":{
       "name":"1UP",
       "text":"Extra life",
-      "Tform":"Shrooms"
+      "tform":"Shrooms"
    },
    "12":{
       "dmg":0.3,
@@ -67,13 +67,13 @@
       "range":5.25,
       "speed":0.3,
       "text":"All stats up!",
-      "Tform":"Shrooms"
+      "tform":"Shrooms"
    },
    "13":{
       "name":"The Virus",
       "speed":-0.1,
       "text":"Poison touch",
-      "Tform":"Drugs"
+      "tform":"Drugs"
    },
    "14":{
       "height":0.5,
@@ -81,7 +81,7 @@
       "range":5.25,
       "speed":0.6,
       "text":"Speed and range up",
-      "Tform":"Drugs"
+      "tform":"Drugs"
    },
    "15":{
       "health":1,
@@ -153,21 +153,21 @@
       "name":"Mom's Underwear",
       "range":5.25,
       "text":"Range up",
-      "Tform":"Mom"
+      "tform":"Mom"
    },
    "30":{
       "height":0.5,
       "name":"Mom's Heels",
       "range":5.25,
       "text":"Range up",
-      "Tform":"Mom"
+      "tform":"Mom"
    },
    "31":{
       "height":0.5,
       "name":"Mom's Lipstick",
       "range":5.25,
       "text":"Range up",
-      "Tform":"Mom"
+      "tform":"Mom"
    },
    "32":{
       "name":"Wire Coat Hanger",
@@ -178,27 +178,31 @@
       "name":"The Bible",
       "text":"Temporary flight",
       "space":true,
-      "Tform":"Angel"
+      "tform":"Angel"
    },
    "34":{
       "name":"The Book of Belial",
       "text":"Temporary DMG up",
+	  "details":"+50% / 1.5 times Damage Multiplier if you also have Blood of the Martyr",
+	  "dmg":2,
       "space":true
    },
    "35":{
       "name":"The Necronomicon",
       "text":"Mass room damage",
-      "space":true
+      "space":true,
+	  "dmg":40
    },
    "36":{
       "name":"The Poop",
       "text":"Plop!",
       "space":true,
-      "Tform":"Poop"
+      "tform":"Poop"
    },
    "37":{
       "name":"Mr. Boom",
       "text":"Reusable bomb buddy",
+	  "dmg":110,
       "space":true
    },
    "38":{
@@ -210,7 +214,7 @@
       "name":"Mom's Bra",
       "text":"Mass fear",
       "space":true,
-      "Tform":"Mom"
+      "tform":"Mom"
    },
    "40":{
       "name":"Kamikaze!",
@@ -221,13 +225,13 @@
       "name":"Mom's Pad",
       "text":"Gross...",
       "space":true,
-      "Tform":"Mom"
+      "tform":"Mom"
    },
    "42":{
       "name":"Bob's Rotten Head",
       "text":"Reusable ranged bomb",
       "space":true,
-      "Tform":"Bob"
+      "tform":"Bob"
    },
    "44":{
       "name":"Teleport",
@@ -256,6 +260,7 @@
    "49":{
       "name":"Shoop Da Whoop",
       "text":"BLLLARRRRGGG",
+	  "details":"Laser damage is based on your damage stat. One full laser deals your tear damage * 7",
       "space":true
    },
    "50":{
@@ -267,7 +272,7 @@
       "dmg":1,
       "name":"Pentagram",
       "text":"DMG up",
-      "Tform":"Cthulhu"
+      "tform":"Cthulhu"
    },
    "52":{
       "delayx":2.5,
@@ -286,7 +291,7 @@
    "55":{
       "name":"Mom's Eye",
       "text":"Eye in the back of your head",
-      "Tform":"Mom"
+      "tform":"Mom"
    },
    "56":{
       "name":"Lemon Mishap",
@@ -297,7 +302,7 @@
       "dmg":5,
       "name":"Distant Admiration",
       "text":"Attack fly",
-      "Tform":"FlyLord"
+      "tform":"FlyLord"
    },
    "58":{
       "name":"Book of Shadows",
@@ -333,7 +338,7 @@
    "67":{
       "name":"Sister Maggy",
       "text":"Friends 'till the end",
-      "Tform":"Tumor"
+      "tform":"Tumor"
    },
    "68":{
       "name":"Technology",
@@ -348,7 +353,7 @@
       "name":"Growth Hormones",
       "speed":0.4,
       "text":"Speed + DMG up",
-      "Tform":"Drugs"
+      "tform":"Drugs"
    },
    "71":{
       "height":1.5,
@@ -356,13 +361,13 @@
       "range":-4.25,
       "speed":0.3,
       "text":"Speed + range up",
-      "Tform":"Shrooms"
+      "tform":"Shrooms"
    },
    "72":{
       "name":"Rosary",
       "soulhearts":3,
       "text":"Faith up",
-      "Tform":"Angel"
+      "tform":"Angel"
    },
    "73":{
       "name":"Cube of Meat",
@@ -413,7 +418,7 @@
       "speed":0.2,
       "soulhearts":1,
       "text":"DMG up",
-      "Tform":"Cthulhu"
+      "tform":"Cthulhu"
    },
    "80":{
       "dmg":0.5,
@@ -421,18 +426,18 @@
       "tears":0.7,
       "soulhearts":2,
       "text":"DMG + tears up",
-      "Tform":"Cthulhu"
+      "tform":"Cthulhu"
    },
    "81":{
       "name":"Dead Cat",
-      "Tform":"Guppy",
+      "tform":"Guppy",
       "text":"9 lives"
    },
    "82":{
       "name":"Lord of the Pit",
       "speed":0.3,
       "text":"Demon wings",
-      "Tform":"Cthulhu"
+      "tform":"Cthulhu"
    },
    "83":{
       "dmg":0.7,
@@ -440,7 +445,7 @@
       "speed":-0.18,
       "text":"Temporary demon form",
       "space":true,
-      "Tform":"Cthulhu"
+      "tform":"Cthulhu"
    },
    "84":{
       "name":"We Need To Go Deeper",
@@ -497,7 +502,8 @@
    },
    "95":{
       "name":"Robo-Baby",
-      "text":"Friends till the bbbbzzzzt"
+      "text":"Friends till the bbbbzzzzt",
+	  "dmg":3.5
    },
    "96":{
       "name":"Little C.H.A.D.",
@@ -514,12 +520,13 @@
    },
    "99":{
       "name":"Little Gish",
-      "text":"Sticky friend"
+      "text":"Sticky friend",
+	  "dmg":3.5
    },
    "100":{
       "name":"Little Steven",
       "text":"Psychic friend",
-      "Tform":"Tumor"
+      "tform":"Tumor"
    },
    "101":{
       "dmg":0.3,
@@ -530,13 +537,13 @@
       "speed":0.3,
       "tears":0.2,
       "text":"All stats up",
-      "Tform":"Angel"
+      "tform":"Angel"
    },
    "102":{
       "name":"Mom's Bottle of Pills",
       "text":"Reusable pill generator",
       "space":true,
-      "Tform":"Mom"
+      "tform":"Mom"
    },
    "103":{
       "name":"The Common Cold",
@@ -571,7 +578,7 @@
       "name":"Mom's Contacts",
       "range":0.25,
       "text":"Freeze effect",
-      "Tform":"Mom"
+      "tform":"Mom"
    },
    "111":{
       "name":"The Bean",
@@ -590,7 +597,7 @@
    "114":{
       "name":"Mom's Knife",
       "text":"Stab stab stab",
-      "Tform":"Mom"
+      "tform":"Mom"
    },
    "115":{
       "name":"Ouija Board",
@@ -608,7 +615,7 @@
       "delayx":3,
       "name":"Brimstone",
       "text":"Blood laser barrage",
-      "Tform":"Cthulhu"
+      "tform":"Cthulhu"
    },
    "119":{
       "health":1,
@@ -621,7 +628,7 @@
       "speed":0.3,
       "tears":1.7,
       "text":"Fire rate up",
-      "Tform":"Shrooms"
+      "tform":"Shrooms"
    },
    "121":{
       "dmg":0.3,
@@ -631,7 +638,7 @@
       "range":0.25,
       "speed":-0.1,
       "text":"DMG up",
-      "Tform":"Shrooms"
+      "tform":"Shrooms"
    },
    "122":{
       "dmg":1.5,
@@ -667,7 +674,7 @@
       "name":"Forever Alone",
       "text":"Attack fly",
       "dmg":2,
-      "Tform":"FlyLord"
+      "tform":"FlyLord"
    },
    "129":{
       "health":"2",
@@ -686,17 +693,18 @@
    },
    "132":{
       "name":"A Lump of Coal",
-      "text":"My Xmas present"
+      "text":"My Xmas present",
+	  "details":"The length of a room roughly gives +6 damage, but this can be higher with double rooms or Tiny Planet"
    },
    "133":{
       "name":"Guppy's Paw",
-      "Tform":"Guppy",
+      "tform":"Guppy",
       "text":"Soul converter",
       "space":true
    },
    "134":{
       "name":"Guppy's Tail",
-      "Tform":"Guppy",
+      "tform":"Guppy",
       "text":"Cursed?"
    },
    "135":{
@@ -722,12 +730,12 @@
    "139":{
       "name":"Mom's Purse",
       "text":"More trinket room",
-      "Tform":"Mom"
+      "tform":"Mom"
    },
    "140":{
       "name":"Bob's Curse",
       "text":"+5 poison bombs",
-      "Tform":"Bob"
+      "tform":"Bob"
    },
    "141":{
       "name":"Pageant Boy",
@@ -735,23 +743,24 @@
    },
    "142":{
       "name":"Scapular",
-      "text":"You have been blessed"
+      "text":"You have been blessed",
+	  "details":"Once per room when you are damaged down to half a heart, you gain 1 soul heart"
    },
    "143":{
       "name":"Speed Ball",
       "shotspeed":0.2,
       "speed":0.3,
       "text":"Speed + shot speed up",
-      "Tform":"Drugs"
+      "tform":"Drugs"
    },
    "144":{
       "name":"Bum Friend",
       "text":"He's greedy",
-      "Tform":"SuperBum"
+      "tform":"SuperBum"
    },
    "145":{
       "name":"Guppy's Head",
-      "Tform":"Guppy",
+      "tform":"Guppy",
       "space":true,
       "text":"Reusable fly hive"
    },
@@ -766,14 +775,15 @@
    "148":{
       "name":"Infestation",
       "text":"They grow inside",
-      "Tform":"FlyLord"
+      "tform":"FlyLord"
    },
    "149":{
       "delay":10,
       "delayx":2,
       "height":13,
       "name":"Ipecac",
-      "text":"Explosive shots"
+      "text":"Explosive shots",
+	  "tform":"Bob"
    },
    "150":{
       "name":"Tough Love",
@@ -782,7 +792,7 @@
    "151":{
       "name":"The Mulligan",
       "text":"They grow inside",
-      "Tform":"FlyLord"
+      "tform":"FlyLord"
    },
    "152":{
       "dmgx":0.65,
@@ -806,7 +816,7 @@
    "156":{
       "name":"Habit",
       "text":"Item martyr",
-      "Tform":"Angel"
+      "tform":"Angel"
    },
    "157":{
       "name":"Bloody Lust",
@@ -820,7 +830,7 @@
    "159":{
       "name":"Spirit of the Night",
       "text":"Scary",
-      "Tform":"Cthulhu"
+      "tform":"Cthulhu"
    },
    "160":{
       "name":"Crack The Sky",
@@ -858,7 +868,7 @@
    "167":{
       "name":"Harlequin Baby",
       "text":"Double shot buddy",
-      "Tform":"Tumor"
+      "tform":"Tumor"
    },
    "168":{
       "name":"Epic Fetus",
@@ -951,7 +961,7 @@
    "185":{
       "name":"Dead Dove",
       "text":"Flight, spectral tears",
-      "Tform":"Angel"
+      "tform":"Angel"
    },
    "186":{
       "name":"Blood Rights",
@@ -960,7 +970,7 @@
    },
    "187":{
       "name":"Guppy's Hairball",
-      "Tform":"Guppy",
+      "tform":"Guppy",
       "text":"Swing it"
    },
    "188":{
@@ -1004,7 +1014,7 @@
    "195":{
       "name":"Mom's Coin Purse",
       "text":"What's all this...",
-      "Tform":"Mom"
+      "tform":"Mom"
    },
    "196":{
       "name":"Mr. Squeezy",
@@ -1026,12 +1036,12 @@
    "199":{
       "name":"Mom's Key",
       "text":"Less is now more +2 keys",
-      "Tform":"Mom"
+      "tform":"Mom"
    },
    "200":{
       "name":"Mom's Eyeshadow",
       "text":"Charm tears",
-      "Tform":"Mom"
+      "tform":"Mom"
    },
    "201":{
       "dmg":0.3,
@@ -1062,11 +1072,13 @@
    },
    "207":{
       "dmg":7,
+	  "details":"It does not block enemy shots",
       "name":"Ball of Bandages",
       "text":"Gotta lick 'em all!"
    },
    "207_2":{
       "dmg":7,
+	  "details":"Has a chance to charm enemies",
       "name":"Ball of Bandages Lv. 2",
       "text":"Gotta lick 'em all!"
    },
@@ -1087,7 +1099,8 @@
    },
    "209":{
       "name":"Butt Bombs",
-      "text":"Toxic blast +5 bombs"
+      "text":"Toxic blast +5 bombs",
+	  "tform":"Poop"
    },
    "210":{
       "name":"Gnawed Leaf",
@@ -1099,7 +1112,7 @@
    },
    "212":{
       "name":"Guppy's Collar",
-      "Tform":"Guppy",
+      "tform":"Guppy",
       "text":"Eternal life?"
    },
    "213":{
@@ -1125,7 +1138,7 @@
    "217":{
       "name":"Mom's Wig",
       "text":"You feel itchy...",
-      "Tform":"Mom"
+      "tform":"Mom"
    },
    "218":{
       "health":1,
@@ -1179,7 +1192,7 @@
       "name":"Mom's Perfume",
       "delay":-1,
       "text":"Fear shot",
-      "Tform":"Mom"
+      "tform":"Mom"
    },
    "229":{
       "name":"Monstro's Lung",
@@ -1191,7 +1204,7 @@
       "name":"Abaddon",
       "speed":0.2,
       "text":"Evil + DMG up + fear shot",
-      "Tform":"Cthulhu"
+      "tform":"Cthulhu"
    },
    "231":{
       "name":"Ball of Tar",
@@ -1214,7 +1227,7 @@
    "236":{
       "name":"E. Coli",
       "text":"Turdy touch",
-      "Tform":"Poop"
+      "tform":"Poop"
    },
    "237":{
       "dmg":1.5,
@@ -1233,7 +1246,7 @@
    "240":{
       "name":"Experimental Treatment",
       "text":"All stats up... then shuffled",
-      "Tform":"Drugs"
+      "tform":"Drugs"
    },
    "241":{
       "name":"Contract From Below",
@@ -1266,7 +1279,7 @@
    "248":{
       "name":"Hive Mind",
       "text":"Giant spiders and flies",
-      "Tform":"FlyLord"
+      "tform":"FlyLord"
    },
    "249":{
       "name":"There's Options",
@@ -1334,11 +1347,12 @@
    "264":{
       "name":"Smart Fly",
       "text":"Revenge fly",
-      "Tform":"FlyLord"
+      "tform":"FlyLord"
    },
    "265":{
       "name":"Dry Baby",
-      "text":"Immortal friend"
+      "text":"Immortal friend",
+	  "dmg":40
    },
    "266":{
       "name":"Juicy Sack",
@@ -1346,17 +1360,18 @@
    },
    "267":{
       "name":"Robo-Baby 2.0",
-      "text":"We worked out all the kinks"
+      "text":"We worked out all the kinks",
+	  "dmg":3.5
    },
    "268":{
       "name":"Rotten Baby",
       "text":"Infested friend",
-      "Tform":"Tumor"
+      "tform":"Tumor"
    },
    "269":{
       "name":"Headless Baby",
       "text":"Bloody friend",
-      "Tform":"Tumor"
+      "tform":"Tumor"
    },
    "270":{
       "name":"Leech",
@@ -1369,21 +1384,22 @@
    "272":{
       "name":"BBF",
       "text":"Big Beautiful Fly",
-      "Tform":"FlyLord"
+      "tform":"FlyLord"
    },
    "273":{
       "name":"Bob's Brain",
       "text":"Explosive thoughts",
-      "Tform":"Bob"
+      "tform":"Bob"
    },
    "274":{
       "name":"Best Bud",
       "text":"Sworn protector",
-      "Tform":"FlyLord"
+      "tform":"FlyLord"
    },
    "275":{
       "name":"Lil' Brimstone",
-      "text":"Evil friend"
+      "text":"Evil friend",
+	  "dmg":31.5
    },
    "276":{
       "name":"Isaac's Heart",
@@ -1396,13 +1412,13 @@
    "278":{
       "name":"Dark Bum",
       "text":"He wants to take your life",
-      "Tform":"SuperBum"
+      "tform":"SuperBum"
    },
    "279":{
       "name":"Big Fan",
       "text":"Fat protector",
       "dmg":2,
-      "Tform":"FlyLord"
+      "tform":"FlyLord"
    },
    "280":{
       "name":"Sissy Long Legs",
@@ -1461,7 +1477,7 @@
       "name":"FLUSH!",
       "text":"...",
       "space":true,
-      "Tform":"Poop"
+      "tform":"Poop"
    },
    "292":{
       "name":"The Satanic Bible",
@@ -1571,7 +1587,7 @@
    "313":{
       "name":"Holy Mantle",
       "text":"Holy shield",
-      "Tform":"Angel"
+      "tform":"Angel"
    },
    "314":{
       "health":1,
@@ -1603,7 +1619,7 @@
    "320":{
       "name":"???'s Only Friend",
       "text":"Controlled friend",
-      "Tform":"FlyLord"
+      "tform":"FlyLord"
    },
    "321":{
       "name":"Samson's Chains",
@@ -1612,7 +1628,7 @@
    "322":{
       "name":"Mongo Baby",
       "text":"Mongo friend",
-      "Tform":"Tumor"
+      "tform":"Tumor"
    },
    "323":{
       "name":"Isaac's Tears",
@@ -1721,7 +1737,7 @@
       "shotspeed":-0.16,
       "tears":0.7,
       "text":"HP + tears up + shot speed down",
-      "Tform":"Shrooms"
+      "tform":"Shrooms"
    },
    "343":{
       "luck":1,
@@ -1740,7 +1756,7 @@
       "name":"Synthoil",
       "range":5.25,
       "text":"DMG + range up",
-      "Tform":"Drugs"
+      "tform":"Drugs"
    },
    "346":{
       "health":1,
@@ -1748,143 +1764,348 @@
       "text":"HP up"
    },
    "347":{
-	   "name":,
-	   "text":
+      "name":"Diplopia",
+      "text":"Double item vision",
+      "space":true
    },
    "348":{
-	   "name":,
-	   "text":
+      "name":"Placebo",
+      "text":"Pill mimic",
+      "space":true
    },
    "349":{
-	   "name":,
-	   "text":
-   },
-   "350":{
-	   "name":,
-	   "text":
-   },
-   "351":{
-	   "name":,
-	   "text":
+      "name":"Wooden Nickel",
+      "text":"Flip a coin",
+      "space":true
    },
    "352":{
-	   "name":,
-	   "text":
+      "name":"Glass Cannon",
+      "text":"Be gentle...",
+      "space":true
    },
    "353":{
-	   "name":,
-	   "text":
+      "name":"Explosive blast!",
+      "text":"Bomber Boy"
    },
    "354":{
-	   "name":,
-	   "text":
+      "name":"Crack Jacks",
+      "text":"Don't swallow the prize!",
+      "health":1
    },
    "355":{
-	   "name":,
-	   "text":
+      "name":"Mom's Pearls",
+      "text":"Range + luck up",
+      "range":1.25,
+      "height":0.5,
+      "luck":1,
+	  "tform":"Mom"
    },
    "356":{
-	   "name":,
-	   "text":
+      "name":"Car Battery",
+      "text":"Double charge!"
    },
    "357":{
-	   "name":,
-	   "text":
+      "name":"Box of Friends",
+      "text":"Double your friends",
+      "space":true
    },
    "358":{
-	   "name":,
-	   "text":
+      "name":"The Wiz",
+      "text":"Double wiz shot!"
    },
    "359":{
-	   "name":,
-	   "text":
+      "name":"8 Inch Nails",
+      "text":"Stick it to 'em!",
+      "dmg":1.5
    },
    "360":{
-	   "name":,
-	   "text":
+      "name":"Incubus",
+      "text":"Dark friend"
    },
    "361":{
-	   "name":,
-	   "text":
+      "name":"Fate's Reward",
+      "text":"Your fate beside you"
    },
    "362":{
-	   "name":,
-	   "text":
+      "name":"Lil Chest",
+      "text":"What's in the box?"
    },
    "363":{
-	   "name":,
-	   "text":
+      "name":"Sworn Protector",
+      "text":"Protective friend",
+      "dmg":7
    },
    "364":{
-	   "name":,
-	   "text":
-   },
-   "365":{
-	   "name":,
-	   "text":
+      "name":"Friend Zone",
+      "text":"Friendly fly",
+      "dmg":3
    },
    "366":{
-	   "name":,
-	   "text":
-   },
-   "367":{
-	   "name":,
-	   "text":
+      "name":"Scatter Bombs",
+      "text":"We put bombs in your bombs!"
    },
    "368":{
-	   "name":,
-	   "text":
+      "name":"Epiphora",
+      "text":"Intensifying tears"
    },
    "369":{
-	   "name":,
-	   "text":
+      "name":"Continuum",
+      "text":"Transcendent tears",
+      "range":2.25,
+      "height":1.5
    },
    "370":{
-	   "name":,
-	   "text":
-   },
-   "371":{
-	   "name":,
-	   "text":
+      "name":"Mr. Dolly",
+      "text":"Range + tears up",
+      "tears":0.7,
+      "range":5.25,
+      "height":0.5
    },
    "372":{
-	   "name":,
-	   "text":
+      "name":"Charged Baby",
+      "text":"Bbbzzzzzt!"
    },
    "373":{
-	   "name":,
-	   "text":
+      "name":"Dead Eye",
+      "text":"Accuracy brings power!"
    },
    "374":{
-	   "name":,
-	   "text":
+      "name":"Holy Light!",
+      "text":"Holy shot!"
    },
    "375":{
-	   "name":,
-	   "text":
-   }
+      "name":"Host Hat",
+      "text":"Nice hat!"
+   },
    "376":{
-	   "name":,
-	   "text":
+      "name":"Restock",
+      "text":"Never ending stores!"
    },
    "377":{
-	   "name":,
-	   "text":
-   },
-   "378":{
-	   "name":,
-	   "text":
+      "name":"Bursting Sack",
+      "text":"Spider love"
    },
    "379":{
-	   "name":,
-	   "text":
+      "name":"Pupula Duplex",
+      "text":"Wide shot"
    },
    "380":{
-	   "name":,
-	   "text":
+      "name":"Pay To Play",
+      "text":"Money talks"
    },
    "381":{
-	   "name":,
-	   "text":
+      "name":"Eden's Blessing",
+      "text":"Your future shines brighter",
+      "tears":0.7
+   },
+   "382":{
+      "name":"Friendly Ball",
+      "text":"Gotta fetch 'em all!",
+      "space":true
+   },
+   "383":{
+      "name":"Tear Detonator",
+      "text":"Remote tear detonation",
+      "space":true
+   },
+   "384":{
+      "name":"Lil Gurdy",
+      "text":"A guard of your own!"
+   },
+   "386":{
+      "name":"D12",
+      "text":"Rerolls rocks",
+      "space":true
+   },
+   "387":{
+      "name":"Censer",
+      "text":"Peace be with you"
+   },
+   "388":{
+      "name":"Key Bum",
+      "text":"He wants your keys!",
+      "tform":"SuperBum"
+   },
+   "389":{
+      "name":"Rune Bag",
+      "text":"Rune generator"
+   },
+   "391":{
+      "name":"Betrayal",
+      "text":"Turn your enemy"
+   },
+   "392":{
+      "name":"Zodiac",
+      "text":"The heavens will change you"
+   },
+   "393":{
+      "name":"Serpent's Kiss",
+      "text":"The kiss of death"
+   },
+   "394":{
+      "name":"Marked",
+      "text":"Directed tears",
+      "height":0.3
+   },
+   "395":{
+      "name":"Tech X",
+      "text":"Laser ring tears"
+   },
+   "396":{
+      "name":"Ventricle Razor",
+      "text":"Short cutter",
+      "space":true
+   },
+   "397":{
+      "name":"Tractor Beam",
+      "text":"Controlled tears",
+      "tears":0.5,
+      "range":5.25,
+      "shotspeed":0.16,
+      "height":0.5
+   },
+   "399":{
+      "name":"Maw of The Void",
+      "text":"Consume thy enemy!",
+      "dmg":1,
+      "height":0.5,
+	  "tform":"Cthulhu"
+   },
+   "400":{
+      "name":"Spear of Destiny",
+      "text":"Your destiny"
+   },
+   "401":{
+      "name":"Explosivo",
+      "text":"Sticky bomb shot!",
+      "dmg":60
+   },
+   "402":{
+      "name":"Chaos",
+      "text":"!!!"
+   },
+   "404":{
+      "name":"Farting Baby",
+      "text":"He farts!"
+   },
+   "405":{
+      "name":"GB Bug",
+      "text":"Game breaking bug, right away!"
+   },
+   "406":{
+      "name":"D8",
+      "text":"Reroll stats",
+      "space":true
+   },
+   "407":{
+      "name":"Purity",
+      "text":"Aura stat boost",
+      "details":"Red = +4.0 Damage  Blue = -4 Tear Delay  Yellow = +0.5 Speed Up  Orange = +7.5 Range Up"
+   },
+   "408":{
+      "name":"Athame",
+      "text":"Call to the void"
+   },
+   "409":{
+      "name":"Empty Vessel",
+      "text":"I reward an empty vessel",
+      "sinhearts":2
+   },
+   "410":{
+      "name":"Evil Eye",
+      "text":"Eye shot!"
+   },
+   "411":{
+      "name":"Lusty Blood",
+      "text":"Their blood brings rage!",
+      "details":"Each subsequent kill will stack further damage up to a maximum of +5 Damage Up after 9 kills"
+   },
+   "412":{
+      "name":"Cambion Conception",
+      "text":"Feed them hate"
+   },
+   "413":{
+      "name":"Immaculate Conception",
+      "text":"Feed them love"
+   },
+   "414":{
+      "name":"More Options",
+      "text":"There are even more options!"
+   },
+   "417":{
+      "name":"Succubus",
+      "text":"Damage booster"
+   },
+   "418":{
+      "name":"Fruit Cake",
+      "text":"Rainbow effects!"
+   },
+   "421":{
+      "name":"Kidney Bean",
+      "text":"Love toots!",
+      "space":true
+   },
+   "422":{
+      "name":"Glowing Hour Glass",
+      "text":"Turn back time",
+      "space":true
+   },
+   "423":{
+      "name":"Circle of Protection",
+      "text":"Protect me from myself"
+   },
+   "424":{
+      "name":"Sack Head",
+      "text":"More sacks!"
+   },
+   "425":{
+      "name":"Night Light",
+      "text":"Sacred of the dark?"
+   },
+   "427":{
+      "name":"Mine Crafter",
+      "text":"Booom!",
+      "space":true
+   },
+   "428":{
+      "name":"PJs",
+      "text":"You feel cozy",
+      "soulhearts":4,
+      "details":"Fully restores your red health"
+   },
+   "431":{
+      "name":"Multidimensional Baby",
+      "text":"ydduB Buddy"
+   },
+   "432":{
+      "name":"Glitter Bombs",
+      "text":"Prize bombs!"
+   },
+   "433":{
+      "name":"My Shadow",
+      "text":"Me! And my shaaaadow!"
+   },
+   "434":{
+      "name":"Jar of Flies",
+      "text":"Gotta catch 'em all?",
+      "space":true
+   },
+   "437":{
+      "name":"D7",
+      "text":"Reroll rewards!",
+      "space":true
+   },
+   "438":{
+      "name":"Binky",
+      "text":"Memories...",
+      "soulhearts":1,
+      "tears":0.7
+   },
+   "440":{
+      "name":"Kidney Stone",
+      "text":"Matt's kidney stone",
+      "speed":-0.2,
+      "range":-15,
+      "height":2
    }
 }

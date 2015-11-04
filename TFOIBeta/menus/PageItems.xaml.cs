@@ -49,7 +49,7 @@ namespace TFOIBeta.menus
             Image image = sender as Image;
             textItemName.Text = image.ObjectName.ToUpper();
             textItemDescription.Text = image.ObjectDescription.ToUpper();
-            textItemStats.Content = image.ObjectMisc;
+            textItemStats.Text = image.ObjectMisc;
         }
 
         private void back_MouseDown(object sender, MouseButtonEventArgs e)
