@@ -351,11 +351,16 @@
       "text":"Hush is the boss of the Blue Womb."
    },
    "067":{
+      "name":"Dangle",
+      "bossHP":"375",
+      "text":"Dangle is the corny variant of Dingle. It can be found as a boss itself and after defeating Brownie."
+   },
+   "068":{
       "name":"Turdlings",
       "bossHP":"50",
       "text":"Turdlings are a boss that can appear in The Basement and are a poop-themed variant of the Gurglings."
    },
-   "068":{
+   "069":{
       "name":"The Frail",
       "bossHP":"200",
       "text":"The Frail is the posthumous version of Pin."

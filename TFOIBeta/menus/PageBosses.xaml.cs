@@ -29,8 +29,9 @@ namespace TFOIBeta.menus
         {
             foreach (var boss in Bosses.List)
             {
-                var icon = new System.Windows.Controls.Image();
+                var icon = new Image();
                 icon.ToolTip = boss.Name + Environment.NewLine + boss.Text;
+                icon.Name = "_" + boss.Id;
                 icon.Tag = "HP: " + boss.HP;
                 icon.Stretch = Stretch.None;
                 icon.Source = Stuff.BitmapToImageSource(boss.Icon);
@@ -45,6 +46,8 @@ namespace TFOIBeta.menus
         {
             System.Windows.Controls.Image image = sender as System.Windows.Controls.Image;
             textBossInfo.Text = image.Tag.ToString();
+
+            bossNameLogo.Source = Stuff.BitmapToImageSource(Bosses.List.Find(x => x.Id == image.Name.TrimStart('_')).NameLogo);
         }
 
         private void back_MouseDown(object sender, MouseButtonEventArgs e)

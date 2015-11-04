@@ -44,64 +44,22 @@ namespace TFOIBeta
                     boss.DetailsString += boss.Alts2 + Environment.NewLine;
                 }
 
+                boss.NameLogo = new Bitmap(Environment.CurrentDirectory + @"\resources\images\bosses\" + boss.Id + "_2.png");
+
                 Bosses.List.Add(boss);
             }
         }
-        private bool _killedByPlayer;                       //bool
-        public bool KilledByPlayer
-        {
-            get { return _killedByPlayer; }
-            set { _killedByPlayer = value; }
-        }
+        public bool KilledByPlayer { get; set; }                //bool
 
-        private string _id;                                 //string
-        public string Id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
-        private string _name;
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
-        }
-        private string _HP;
-        public string HP
-        {
-            get { return _HP; }
-            set { _HP = value; }
-        }
-        private string _alts1;
-        public string Alts1
-        {
-            get { return _alts1; }
-            set { _alts1 = value; }
-        }
-        private string _alts2;
-        public string Alts2
-        {
-            get { return _alts2; }
-            set { _alts2 = value; }
-        }
-        private string _text;
-        public string Text
-        {
-            get { return _text; }
-            set { _text = value; }
-        }
-        private string _detailsString;
-        public string DetailsString
-        {
-            get { return _detailsString; }
-            set { _detailsString = value; }
-        }
+        public string Id { get; set; }                          //string
+        public string Name { get; set; }
+        public string HP { get; set; }
+        public string Alts1 { get; set; }
+        public string Alts2 { get; set; }
+        public string Text { get; set; }
+        public string DetailsString { get; set; }
 
-        private Bitmap _icon;                           //icon
-        public Bitmap Icon
-        {
-            get { return _icon; }
-            set { _icon = value; }
-        }
+        public Bitmap Icon { get; set; }                        //icon
+        public Bitmap NameLogo { get; set; }
     }
 }
