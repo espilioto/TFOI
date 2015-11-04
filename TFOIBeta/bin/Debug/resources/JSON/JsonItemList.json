@@ -183,15 +183,15 @@
    "34":{
       "name":"The Book of Belial",
       "text":"Temporary DMG up",
-	  "details":"+50% / 1.5 times Damage Multiplier if you also have Blood of the Martyr",
-	  "dmg":2,
+      "details":"+50% / 1.5 times Damage Multiplier if you also have Blood of the Martyr",
+      "dmg":2,
       "space":true
    },
    "35":{
       "name":"The Necronomicon",
       "text":"Mass room damage",
       "space":true,
-	  "dmg":40
+      "dmg":40
    },
    "36":{
       "name":"The Poop",
@@ -202,7 +202,7 @@
    "37":{
       "name":"Mr. Boom",
       "text":"Reusable bomb buddy",
-	  "dmg":110,
+      "dmg":110,
       "space":true
    },
    "38":{
@@ -260,7 +260,7 @@
    "49":{
       "name":"Shoop Da Whoop",
       "text":"BLLLARRRRGGG",
-	  "details":"Laser damage is based on your damage stat. One full laser deals your tear damage * 7",
+      "details":"Laser damage is based on your damage stat. One full laser deals your tear damage * 7",
       "space":true
    },
    "50":{
@@ -503,7 +503,7 @@
    "95":{
       "name":"Robo-Baby",
       "text":"Friends till the bbbbzzzzt",
-	  "dmg":3.5
+      "dmg":3.5
    },
    "96":{
       "name":"Little C.H.A.D.",
@@ -521,7 +521,7 @@
    "99":{
       "name":"Little Gish",
       "text":"Sticky friend",
-	  "dmg":3.5
+      "dmg":3.5
    },
    "100":{
       "name":"Little Steven",
@@ -694,7 +694,7 @@
    "132":{
       "name":"A Lump of Coal",
       "text":"My Xmas present",
-	  "details":"The length of a room roughly gives +6 damage, but this can be higher with double rooms or Tiny Planet"
+      "details":"The length of a room roughly gives +6 damage, but this can be higher with double rooms or Tiny Planet"
    },
    "133":{
       "name":"Guppy's Paw",
@@ -744,7 +744,7 @@
    "142":{
       "name":"Scapular",
       "text":"You have been blessed",
-	  "details":"Once per room when you are damaged down to half a heart, you gain 1 soul heart"
+      "details":"Once per room when you are damaged down to half a heart, you gain 1 soul heart"
    },
    "143":{
       "name":"Speed Ball",
@@ -783,7 +783,7 @@
       "height":13,
       "name":"Ipecac",
       "text":"Explosive shots",
-	  "tform":"Bob"
+      "tform":"Bob"
    },
    "150":{
       "name":"Tough Love",
@@ -1072,13 +1072,13 @@
    },
    "207":{
       "dmg":7,
-	  "details":"It does not block enemy shots",
+      "details":"It does not block enemy shots",
       "name":"Ball of Bandages",
       "text":"Gotta lick 'em all!"
    },
    "207_2":{
       "dmg":7,
-	  "details":"Has a chance to charm enemies",
+      "details":"Has a chance to charm enemies",
       "name":"Ball of Bandages Lv. 2",
       "text":"Gotta lick 'em all!"
    },
@@ -1100,7 +1100,7 @@
    "209":{
       "name":"Butt Bombs",
       "text":"Toxic blast +5 bombs",
-	  "tform":"Poop"
+      "tform":"Poop"
    },
    "210":{
       "name":"Gnawed Leaf",
@@ -1352,7 +1352,7 @@
    "265":{
       "name":"Dry Baby",
       "text":"Immortal friend",
-	  "dmg":40
+      "dmg":40
    },
    "266":{
       "name":"Juicy Sack",
@@ -1361,7 +1361,7 @@
    "267":{
       "name":"Robo-Baby 2.0",
       "text":"We worked out all the kinks",
-	  "dmg":3.5
+      "dmg":3.5
    },
    "268":{
       "name":"Rotten Baby",
@@ -1399,7 +1399,7 @@
    "275":{
       "name":"Lil' Brimstone",
       "text":"Evil friend",
-	  "dmg":31.5
+      "dmg":31.5
    },
    "276":{
       "name":"Isaac's Heart",
@@ -1778,6 +1778,14 @@
       "text":"Flip a coin",
       "space":true
    },
+   "350":{
+      "name":"Toxic Shock",
+      "text":"Mass poison"
+   },
+   "351":{
+      "name":"Mega Bean",
+      "text":"Giga fart!"
+   },
    "352":{
       "name":"Glass Cannon",
       "text":"Be gentle...",
@@ -1798,7 +1806,7 @@
       "range":1.25,
       "height":0.5,
       "luck":1,
-	  "tform":"Mom"
+      "tform":"Mom"
    },
    "356":{
       "name":"Car Battery",
@@ -1844,6 +1852,10 @@
       "name":"Scatter Bombs",
       "text":"We put bombs in your bombs!"
    },
+   "367":{
+      "name":"Sticky Bombs",
+      "text":"Egg sack bombs!"
+   },
    "368":{
       "name":"Epiphora",
       "text":"Intensifying tears"
@@ -1860,6 +1872,10 @@
       "tears":0.7,
       "range":5.25,
       "height":0.5
+   },
+   "371":{
+      "name":"Curse of The Tower",
+      "text":"You feel cursed..."
    },
    "372":{
       "name":"Charged Baby",
@@ -1882,6 +1898,10 @@
       "text":"Never ending stores!"
    },
    "377":{
+      "name":"No. 2",
+      "text":"Uh oh..."
+   },
+   "378":{
       "name":"Bursting Sack",
       "text":"Spider love"
    },
@@ -1912,6 +1932,10 @@
       "name":"Lil Gurdy",
       "text":"A guard of your own!"
    },
+   "385":{
+      "name":"Bumbo",
+      "text":"Bumbo want coin!"
+   },
    "386":{
       "name":"D12",
       "text":"Rerolls rocks",
@@ -1929,6 +1953,11 @@
    "389":{
       "name":"Rune Bag",
       "text":"Rune generator"
+   },
+   "390":{
+      "name":"Seraphim",
+      "text":"Sworn friend",
+      "dmg":10
    },
    "391":{
       "name":"Betrayal",
@@ -1964,12 +1993,16 @@
       "shotspeed":0.16,
       "height":0.5
    },
+   "398":{
+      "name":"God's Flesh",
+      "text":"Shrink shot!"
+   },
    "399":{
       "name":"Maw of The Void",
       "text":"Consume thy enemy!",
       "dmg":1,
       "height":0.5,
-	  "tform":"Cthulhu"
+      "tform":"Cthulhu"
    },
    "400":{
       "name":"Spear of Destiny",
@@ -1983,6 +2016,10 @@
    "402":{
       "name":"Chaos",
       "text":"!!!"
+   },
+   "403":{
+      "name":"Spider Mod",
+      "text":"Mod buddy!"
    },
    "404":{
       "name":"Farting Baby",
@@ -2032,6 +2069,11 @@
       "name":"More Options",
       "text":"There are even more options!"
    },
+   "415":{
+      "name":"Crown of Light",
+      "text":"The untainted gain power",
+      "details":"Double damage while not having any empty red heart containers and not taking damage."
+   },
    "417":{
       "name":"Succubus",
       "text":"Damage booster"
@@ -2039,6 +2081,15 @@
    "418":{
       "name":"Fruit Cake",
       "text":"Rainbow effects!"
+   },
+   "419":{
+      "name":"Teleport 2.0",
+      "text":"I-teleport!"
+   },
+   "420":{
+      "name":"Black Powder",
+      "text":"Spin the black circle!",
+      "details":"10 damage per tick"
    },
    "421":{
       "name":"Kidney Bean",
@@ -2062,6 +2113,10 @@
       "name":"Night Light",
       "text":"Sacred of the dark?"
    },
+   "426":{
+      "name":"Obsessed Fan",
+      "text":"Follows my every move..."
+   },
    "427":{
       "name":"Mine Crafter",
       "text":"Booom!",
@@ -2072,6 +2127,14 @@
       "text":"You feel cozy",
       "soulhearts":4,
       "details":"Fully restores your red health"
+   },
+   "429":{
+      "name":"Head of the Keeper",
+      "text":"Penny tears!"
+   },
+   "430":{
+      "name":"Papa Fly",
+      "text":"Turret follower"
    },
    "431":{
       "name":"Multidimensional Baby",
@@ -2090,6 +2153,14 @@
       "text":"Gotta catch 'em all?",
       "space":true
    },
+   "435":{
+      "name":"Lil Loki",
+      "text":"4-way buddy!"
+   },
+   "436":{
+      "name":"Milk!",
+      "text":"Dont cry over it..."
+   },
    "437":{
       "name":"D7",
       "text":"Reroll rewards!",
@@ -2100,6 +2171,10 @@
       "text":"Memories...",
       "soulhearts":1,
       "tears":0.7
+   },
+   "439":{
+      "name":"Mom's Box",
+      "text":"What's inside?"
    },
    "440":{
       "name":"Kidney Stone",

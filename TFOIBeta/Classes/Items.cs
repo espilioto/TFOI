@@ -31,7 +31,15 @@ namespace TFOIBeta
                 item.Id = jsonItem.Name;                                     //these four properties (should) exist for every item
                 item.Name = jsonItem.First["name"];
                 item.Text = jsonItem.First["text"];
-                item.Icon = new Bitmap(Environment.CurrentDirectory + @"\Resources\images\collectibles\" + item.Id + ".png");
+
+                if (File.Exists(Environment.CurrentDirectory + @"\Resources\images\collectibles\" + item.Id + ".png"))
+                {
+                    item.Icon = new Bitmap(Environment.CurrentDirectory + @"\Resources\images\collectibles\" + item.Id + ".png");
+                }
+                else
+                {
+                    item.Icon = new Bitmap(Environment.CurrentDirectory + @"\Resources\images\collectibles\qm.png");
+                }
 
                 if (jsonItem.First["details"] != null)                                                              //string
                 {

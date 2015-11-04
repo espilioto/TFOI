@@ -13,7 +13,8 @@
         <Image Name="back" Source="/TFOIBeta;component/Resources/back.png" Margin="25,439,847,60" RenderOptions.BitmapScalingMode="NearestNeighbor" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave" Stretch="Fill"/>
         <Image Name="back_" Source="/TFOIBeta;component/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Margin="10,470,832,44" RenderTransformOrigin="0.5,0.5"/>
 
-        <WrapPanel  Name="charPanel" Margin="202,97,205,377" HorizontalAlignment="Center"/>
+        <WrapPanel Name="charPanel" Margin="198,87,201,397" RenderTransformOrigin="0.5,0.5" Width="561"/>
+
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="278" Margin="147,218,0,0" VerticalAlignment="Top" Width="646" Background="{x:Null}" BorderBrush="#FF716F6A"/>
     </Grid>
 </Page>
