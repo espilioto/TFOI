@@ -112,25 +112,16 @@ namespace TFOIBeta.menus
 
                                     itemPanel.Children.Add(icon);
 
-                                    //if (item.Space)
-                                    //{
-                                    //    icon.Tag = "space";
-
-                                    //    foreach (var child in itemPanel.Children.OfType<Image>())
-                                    //    {
-                                    //        if ((string)child.Tag == "space")
-                                    //        {
-                                    //            child.Effect = null;
-                                    //        }
-                                    //    }
-
-                                    //    icon.Effect = glowActiveItem;
-                                    //    return;
-                                    //}
-                                     if (item.Tform == "Guppy")
+                                    if (item.Space)
                                     {
-                                        icon.Tag2 = "Guppy";
+                                        run.RunActiveItem = item;
+                                        icon.Effect = glowActiveItem;
+                                        icon.Tag = "space";
+                                    }
+                                    if (item.Tform == "Guppy")
+                                    {
                                         icon.Effect = glowGuppy;
+                                        icon.Tag2 = "Guppy";
                                     }
                                     else if (item.Tform == "FlyLord")
                                     {
@@ -181,22 +172,19 @@ namespace TFOIBeta.menus
                                     {
                                         icon.Effect = glowPoop;
                                         icon.Tag2 = "Poop";
-                                    }
+                                    }                                     
                                 });
                             }
                             else
                             {
-                                Application.Current.Dispatcher.Invoke((Action)delegate
+                                if (item.Space)
                                 {
-                                    if (item.Space)
+                                    Application.Current.Dispatcher.Invoke((Action)delegate
                                     {
                                         foreach (var child in itemPanel.Children.OfType<Image>())
                                         {
-                                            //if ((string)child.Tag == "space")
-                                            //{
-                                            //    child.Effect = null;
-                                            //}
-
+                                            if (child.Tag == "space")
+                                                child.Effect = null;
                                             if (child.Tag2 == "Guppy")
                                                 child.Effect = glowGuppy;
                                             else if (child.Tag2 == "FlyLord")
@@ -220,13 +208,13 @@ namespace TFOIBeta.menus
                                             else if (child.Tag2 == "Poop")
                                                 child.Effect = glowPoop;
 
-                                            if (child.Name.Contains(item.Id))
+                                            if (child.Name.Contains(run.RunActiveItem.Id))
                                             {
                                                 child.Effect = glowActiveItem;
                                             }
                                         }
-                                    }
-                                });
+                                    });
+                                }
                             }
                         }
                     }
@@ -421,15 +409,15 @@ namespace TFOIBeta.menus
             glowAngel.BlurRadius = 15;
             glowPoop.BlurRadius = 15;
 
-            glowActiveItem.Color = Colors.Red;
+            glowActiveItem.Color = Colors.Aqua;
             glowGuppy.Color = Colors.Black;
             glowFlyLord.Color = Colors.Blue;
-            glowSuperBum.Color = Colors.Yellow; //new
+            glowSuperBum.Color = Colors.Yellow; //new 
             glowMom.Color = Colors.Pink;
             glowBob.Color = Colors.Green;
             glowShrooms.Color = Colors.Orange;
-            glowCthulhu.Color = Colors.MediumPurple;
-            glowTumor.Color = Colors.Aqua;
+            glowCthulhu.Color = Colors.Red;
+            glowTumor.Color = Colors.MediumSpringGreen;
             glowAngel.Color = Colors.Gold;
             glowPoop.Color = Colors.Brown;
 
@@ -456,7 +444,7 @@ namespace TFOIBeta.menus
             shrooms.Content = "Mushroom";
             Label cthulhu = new Label();
             cthulhu.Effect = glowCthulhu;
-            cthulhu.Content = "Cthulhu";
+            cthulhu.Content = "Evil Angel";
             Label tumor = new Label();
             tumor.Effect = glowTumor;
             tumor.Content = "Tumor";

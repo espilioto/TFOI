@@ -45,9 +45,9 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <Image x:Name="floorPanel" Margin="296,138,219,326" Stretch="None"/>
+        <Image x:Name="floorPanel" Margin="296,130,219,319" Stretch="None"/>
 
-        <Image Name="charIcon" Margin="296,138,219,326" Stretch="None"/>
+        <Image Name="charIcon" Margin="296,139,219,326" Stretch="None"/>
         <TextBlock Name="txtRIP" TextAlignment="Center" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" Margin="296,165,219,331" FontSize="42.667" Visibility="Hidden" />
 
         <WrapPanel Name="itemPanel" HorizontalAlignment="Left" Height="108" Margin="296,214,0,0" VerticalAlignment="Top" Width="445"/>

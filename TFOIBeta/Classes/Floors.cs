@@ -115,15 +115,15 @@ namespace TFOIBeta
                 return Floors.List.Find(floor => floor.Name == "Scarred Womb  II");
             }
 
-            else if (stage == "9" && altStage == "0")                                            //chapter 5
+            else if (stage == "10" && altStage == "0")                                            //chapter 5
             {
                 return Floors.List.Find(floor => floor.Name == "Sheol");
             }
-            else if (stage == "9" && altStage == "1")
+            else if (stage == "11" && altStage == "1")
             {
                 return Floors.List.Find(floor => floor.Name == "Cathedral");
             }
-            else if (stage == "9" && altStage == "2")                                            
+            else if (stage == "11" && altStage == "2")
             {
                 return Floors.List.Find(floor => floor.Name == "Blue Womb");
             }
@@ -134,8 +134,9 @@ namespace TFOIBeta
             }
             else if (stage == "10" && altStage == "1")
             {
-                return Floors.List.Find(floor => floor.Name == "Chest");
+                return Floors.List.Find(floor => floor.Name == "Cathedral");
             }
+
             else
             {
                 return null;

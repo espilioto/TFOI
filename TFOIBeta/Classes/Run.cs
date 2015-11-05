@@ -22,12 +22,14 @@ namespace TFOIBeta
         public bool GameOver { get; set; }
         public Characters RunCharacter { get; set; }
         public Bosses RunKilledByBoss { get; set; }
+        public Items RunActiveItem { get; set; }
         public List<Items> RunItems { get; set; }
         public List<Floors> RunFloors { get; set; }
         public List<Bosses> RunBosses { get; set; }
 
         public Run()
         {
+            RunActiveItem = new Items();
             RunCharacter = new Characters();
             RunKilledByBoss = new Bosses();
             RunItems = new List<Items>();
@@ -60,6 +62,7 @@ namespace TFOIBeta
             PlayerFightingBoss = false;
             RunCharacter = null;
             RunKilledByBoss = null;
+            RunActiveItem = null;
             RunItems = null;
             RunFloors = null;
             RunBosses = null;
