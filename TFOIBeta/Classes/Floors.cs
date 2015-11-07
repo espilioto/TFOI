@@ -119,22 +119,22 @@ namespace TFOIBeta
             {
                 return Floors.List.Find(floor => floor.Name == "Sheol");
             }
-            else if (stage == "11" && altStage == "1")
+            else if (stage == "10" && altStage == "1")
             {
                 return Floors.List.Find(floor => floor.Name == "Cathedral");
             }
-            else if (stage == "11" && altStage == "2")
+            else if (stage == "10" && altStage == "2")
             {
                 return Floors.List.Find(floor => floor.Name == "Blue Womb");
             }
 
-            else if (stage == "10" && altStage == "0")                                           //chapter 6
+            else if (stage == "11" && altStage == "0")                                           //chapter 6
             {
                 return Floors.List.Find(floor => floor.Name == "Dark Room");
             }
-            else if (stage == "10" && altStage == "1")
+            else if (stage == "11" && altStage == "1")
             {
-                return Floors.List.Find(floor => floor.Name == "Cathedral");
+                return Floors.List.Find(floor => floor.Name == "Chest");
             }
 
             else
@@ -212,17 +212,29 @@ namespace TFOIBeta
                 floor.Id = jsonFloor.Name;
                 floor.Name = jsonFloor.First["name"];
 
-                if (floor.Name.Contains("Basement"))
+                if (floor.Name.Contains("Burning"))
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\13.png");
+                }
+                else if (floor.Name.Contains("Flooded"))
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\14.png");
+                }
+                else if (floor.Name.Contains("Dank"))
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\15.png");
+                }
+                else if (floor.Name.Contains("Scarred"))
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\16.png");
+                }
+                else if (floor.Name.Contains("Basement"))
                 {
                     floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\1.png");
                 }
                 else if (floor.Name.Contains("Cellar"))
                 {
                     floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\2.png");
-                }
-                else if (floor.Name.Contains("Burning"))
-                {
-                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\13.png");
                 }
                 else if (floor.Name == "Caves")
                 {
@@ -232,10 +244,6 @@ namespace TFOIBeta
                 {
                     floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\4.png");
                 }
-                else if (floor.Name.Contains("Flooded"))
-                {
-                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\14.png");
-                }
                 else if (floor.Name.Contains("Depths"))
                 {
                     floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\5.png");
@@ -244,10 +252,6 @@ namespace TFOIBeta
                 {
                     floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\6.png");
                 }
-                else if (floor.Name.Contains("Dank"))
-                {
-                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\15.png");
-                }
                 else if (floor.Name.Contains("Womb"))
                 {
                     floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\7.png");
@@ -255,10 +259,6 @@ namespace TFOIBeta
                 else if (floor.Name.Contains("Utero"))
                 {
                     floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\8.png");
-                }
-                else if (floor.Name.Contains("Scarred"))
-                {
-                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\16.png");
                 }
                 else if (floor.Name.Contains("Sheol"))
                 {

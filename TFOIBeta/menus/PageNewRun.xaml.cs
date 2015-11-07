@@ -112,12 +112,6 @@ namespace TFOIBeta.menus
 
                                     itemPanel.Children.Add(icon);
 
-                                    if (item.Space)
-                                    {
-                                        run.RunActiveItem = item;
-                                        icon.Effect = glowActiveItem;
-                                        icon.Tag = "space";
-                                    }
                                     if (item.Tform == "Guppy")
                                     {
                                         icon.Effect = glowGuppy;
@@ -172,7 +166,13 @@ namespace TFOIBeta.menus
                                     {
                                         icon.Effect = glowPoop;
                                         icon.Tag2 = "Poop";
-                                    }                                     
+                                    }
+                                    if (item.Space)
+                                    {
+                                        run.RunActiveItem = item;
+                                        icon.Effect = glowActiveItem;
+                                        icon.Tag = "space";
+                                    }
                                 });
                             }
                             else
@@ -208,7 +208,7 @@ namespace TFOIBeta.menus
                                             else if (child.Tag2 == "Poop")
                                                 child.Effect = glowPoop;
 
-                                            if (child.Name.Contains(run.RunActiveItem.Id))
+                                            if (child.Name.Contains(item.Id))
                                             {
                                                 child.Effect = glowActiveItem;
                                             }
