@@ -112,6 +112,16 @@ namespace TFOIBeta.menus
 
                                     itemPanel.Children.Add(icon);
 
+                                    if (item.Space)
+                                    {
+                                        foreach (var child in itemPanel.Children.OfType<Image>())
+                                        {
+                                            if (child.Tag == "space")
+                                            {
+                                                child.Effect = null;
+                                            }
+                                        }
+                                    }
                                     if (item.Tform == "Guppy")
                                     {
                                         icon.Effect = glowGuppy;
@@ -167,12 +177,14 @@ namespace TFOIBeta.menus
                                         icon.Effect = glowPoop;
                                         icon.Tag2 = "Poop";
                                     }
+
                                     if (item.Space)
                                     {
                                         run.RunActiveItem = item;
                                         icon.Effect = glowActiveItem;
                                         icon.Tag = "space";
                                     }
+
                                 });
                             }
                             else
@@ -268,6 +280,11 @@ namespace TFOIBeta.menus
                     {
                         var stage = Regex.Match(line, @"m_Stage (\d+)").Groups[1].Value;            //regex stage id
                         var altStage = Regex.Match(line, @"m_StageType (\d+)").Groups[1].Value;      //regex alt stage id
+
+                        if (altStage == null)
+                        {
+                            altStage = Regex.Match(line, @"m_AltStage (\d+)").Groups[1].Value;      //rebirth floor detection fix
+                        }
 
                         var floor = Floors.GetFloorFromId(stage, altStage);
 
@@ -413,11 +430,12 @@ namespace TFOIBeta.menus
             glowGuppy.Color = Colors.Black;
             glowFlyLord.Color = Colors.Blue;
             glowSuperBum.Color = Colors.Yellow; //new 
-            glowMom.Color = Colors.Pink;
+            glowMom.Color = Colors.DeepPink;
             glowBob.Color = Colors.Green;
             glowShrooms.Color = Colors.Orange;
             glowCthulhu.Color = Colors.Red;
             glowTumor.Color = Colors.MediumSpringGreen;
+            glowDrugs.Color = Colors.DeepSkyBlue;
             glowAngel.Color = Colors.Gold;
             glowPoop.Color = Colors.Brown;
 
@@ -451,6 +469,9 @@ namespace TFOIBeta.menus
             Label angel = new Label();
             angel.Effect = glowAngel;
             angel.Content = "Angel";
+            Label drugs = new Label();
+            drugs.Effect = glowDrugs;
+            drugs.Content = "Drugs";
             Label poop = new Label();
             poop.Effect = glowPoop;
             poop.Content = "Poop";
@@ -465,6 +486,7 @@ namespace TFOIBeta.menus
             txtHelp.Children.Add(cthulhu);
             txtHelp.Children.Add(tumor);
             txtHelp.Children.Add(angel);
+            txtHelp.Children.Add(drugs);
             txtHelp.Children.Add(poop);
         }
 

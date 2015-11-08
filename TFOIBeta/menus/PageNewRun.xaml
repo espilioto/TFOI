@@ -57,7 +57,7 @@
 
         <TextBlock Name="txtTime" Margin="25,0,719,202" Text="TIME: " FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="34.667" Foreground="#FF53524E" VerticalAlignment="Bottom" Height="29"/>
 
-        <WrapPanel Name="txtHelp" Visibility="Hidden" HorizontalAlignment="Left" Height="153" Margin="809,317,0,0" VerticalAlignment="Top" Width="141"/>
+        <WrapPanel Name="txtHelp" Visibility="Hidden" HorizontalAlignment="Left" Height="176" Margin="809,294,0,0" VerticalAlignment="Top" Width="141"/>
         <Label Name="helpIcon" HorizontalAlignment="Left" Height="32" Margin="909,488,0,0" VerticalAlignment="Top" Width="25" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Background="#01000000" BorderBrush="{x:Null}" Foreground="{x:Null}" />
 
     </Grid>
