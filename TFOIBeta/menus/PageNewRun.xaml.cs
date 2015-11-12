@@ -32,6 +32,7 @@ namespace TFOIBeta.menus
         Stream stream;
         StreamReader streamReader;
         string line = "";
+        int frames = 0;
 
         Timer timer = new Timer(100);
 
@@ -73,6 +74,7 @@ namespace TFOIBeta.menus
                             run.Dispose();
                         }
                         run = new Run();
+                        run.RunStarted = true;
 
                         Dispatcher.Invoke(new Action(() => itemPanel.Children.Clear()));
                         Dispatcher.Invoke(new Action(() => bossPanel.Children.Clear()));
@@ -80,6 +82,7 @@ namespace TFOIBeta.menus
                         Dispatcher.Invoke(new Action(() => floorPanel.Source = null));
                         Dispatcher.Invoke(new Action(() => txtTime.Text = "TIME:"));
                         Dispatcher.Invoke(new Action(() => txtCurse.Text = ""));
+                        frames = 0;
 
                         Dispatcher.Invoke(new Action(() => txtRIP.Visibility = Visibility.Hidden));
 
@@ -283,7 +286,7 @@ namespace TFOIBeta.menus
 
                         if (altStage == null)
                         {
-                            altStage = Regex.Match(line, @"m_AltStage (\d+)").Groups[1].Value;      //rebirth floor detection fix
+                            altStage = Regex.Match(line, @"m_AltStage (\d+)").Groups[1].Value;      //floor detection fix for Rebirth
                         }
 
                         var floor = Floors.GetFloorFromId(stage, altStage);
@@ -291,7 +294,6 @@ namespace TFOIBeta.menus
                         if (floor != null)
                         {
                             run.AddFloor(floor);
-                            Dispatcher.Invoke(new Action(() => txtFloor.Text = floor.Name.ToUpper()));
 
                             Dispatcher.Invoke(new Action(() => floorPanel.ToolTip = run.RunFloors.Last().Name));
                             Dispatcher.Invoke(new Action(() => floorPanel.Source = Stuff.BitmapToImageSource(run.RunFloors.Last().Icon)));
@@ -302,22 +304,31 @@ namespace TFOIBeta.menus
                         if (line == "Curse of the Labyrinth!")                                      //if it's an XL floor
                         {
                             run.AddFloor(Floors.ConvertFloorToXL(run.RunFloors.Last()));            //add the equivalent XL floor to the list
-                            run.RunFloors[run.RunFloors.Count - 1].Curse = line;                                      //add the curse to the new floor
+                            run.RunFloors[run.RunFloors.Count - 1].Curse = line;                    //add the curse to the new floor
                             run.RunFloors.RemoveAt(run.RunFloors.Count - 2);                        //and remove the old "regular" one from the list
 
-                            Dispatcher.Invoke(new Action(() => txtFloor.Text = run.RunFloors.Last().Name.ToUpper()));
+                            Dispatcher.Invoke(new Action(() => curseIcon.Visibility = Visibility.Visible));
+                            Dispatcher.Invoke(new Action(() => txtCurse.Visibility = Visibility.Visible));
                         }
                         else
                         {
                             run.RunFloors[run.RunFloors.Count - 1].Curse = line;
+
+                            Dispatcher.Invoke(new Action(() => curseIcon.Visibility = Visibility.Visible));
+                            Dispatcher.Invoke(new Action(() => txtCurse.Visibility = Visibility.Visible));
                         }
 
                         Dispatcher.Invoke(new Action(() => txtCurse.Text = run.RunFloors.Last().Curse.ToUpper()));
                     }
+                    if (run.RunFloors.Last().Curse == null)
+                    {
+                        Dispatcher.Invoke(new Action(() => curseIcon.Visibility = Visibility.Hidden));
+                        Dispatcher.Invoke(new Action(() => txtCurse.Visibility = Visibility.Hidden));
+                    }
                     if (Regex.Match(line, (@"Room \d\.\d{4}")).Success) //regex boss room
                     {
                         var derp = Regex.Match(line, @"\(([^(()]+)[^ ]").Groups[1].Value.TrimEnd(' ');            //regex result tester
-                        var boss = Bosses.GetBossFromName(derp);                //if miniboss, var boss will remain null
+                        var boss = Bosses.GetBossFromName(derp);                                    //if miniboss, var boss will remain null
 
                         if (boss != null)           //safety net, boss name may be triggered by miniboss fight
                         {
@@ -358,24 +369,37 @@ namespace TFOIBeta.menus
                             run.PlayerFightingBoss = false;
                         });
                     }
-                    if (line.StartsWith("Mom clear time"))
-                    {
-                        var time = float.Parse(Regex.Match(line, @"\d+").Value);           //regex framecounter (30/sec. why not 60? no idea)
-                        TimeSpan timeSpan = TimeSpan.FromSeconds(time / 30);                   //get seconds
-                        string str = timeSpan.ToString(@"hh\:mm\:ss");
+                    //if (line.StartsWith("Mom clear time")) //RIP THIS. AFTERBIRTH.
+                    //{
+                    //    var time = float.Parse(Regex.Match(line, @"\d+").Value);           //regex framecounter (30/sec. why not 60? no idea)
+                    //    TimeSpan timeSpan = TimeSpan.FromSeconds(time / 30);                   //get seconds
+                    //    string str = timeSpan.ToString(@"hh\:mm\:ss");
 
-                        run.Time = str;
-                        Dispatcher.Invoke(new Action(() => txtTime.Text = "TIME: " + str));
+                    //    run.Time = str;
+                    //    Dispatcher.Invoke(new Action(() => txtTime.Text = "TIME: " + str));
 
-                        if (time < 36000)
-                        {
-                            Dispatcher.Invoke(new Action(() => txtTime.Effect = glowActiveItem));
-                        }
-                        else
-                        {
-                            Dispatcher.Invoke(new Action(() => txtTime.Effect = null));
-                        }
-                    }
+                    //    if (time < 36000)
+                    //    {
+                    //        Dispatcher.Invoke(new Action(() => txtTime.Effect = glowActiveItem));
+                    //    }
+                    //    else
+                    //    {
+                    //        Dispatcher.Invoke(new Action(() => txtTime.Effect = null));
+                    //    }
+                    //}
+                    //if (!line.StartsWith("Total entity spawn time") || !line.StartsWith("Total ANM2 loading time") || !line.StartsWith("AnmCache memory"))
+                    //{
+                       
+
+                    //    if (frames < 36000)                         //bossrush
+                    //    {
+                    //        Dispatcher.Invoke(new Action(() => txtTime.Effect = glowCthulhu));
+                    //    }
+                    //    else
+                    //    {
+                    //        Dispatcher.Invoke(new Action(() => txtTime.Effect = null));
+                    //    }
+                    //}
                 }
             }
             else

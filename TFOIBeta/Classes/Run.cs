@@ -15,8 +15,9 @@ namespace TFOIBeta
 
         public int _cubeOfMeatLevel;
         public int _ballOfBandagesLevel;
-        public string Time { get; set; }
+        public TimeSpan Time { get; set; }
         public string Seed { get; set; }
+        public bool RunStarted { get; set; }
         public bool PlayerFightingBoss { get; set; }
         public bool Victory { get; set; }
         public bool GameOver { get; set; }
@@ -57,12 +58,11 @@ namespace TFOIBeta
             
             _cubeOfMeatLevel = 0;
             _ballOfBandagesLevel = 0;
-            Time = "";
+            Time = TimeSpan.Zero;
             Seed = null;
             PlayerFightingBoss = false;
             RunCharacter = null;
             RunKilledByBoss = null;
-            RunActiveItem = null;
             RunItems = null;
             RunFloors = null;
             RunBosses = null;

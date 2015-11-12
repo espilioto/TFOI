@@ -8,15 +8,11 @@
       mc:Ignorable="d" 
       d:DesignHeight="540" d:DesignWidth="960" Background="White"
       Title="PageNewRun" >
-
-    <Page.Resources>
-        <DropShadowEffect x:Key="glowRed" ShadowDepth="0" Color="Red" Opacity="1" BlurRadius="20"/>
-        <DropShadowEffect x:Key="glowBlue" ShadowDepth="0" Color="Blue" Opacity="1" BlurRadius="20"/>
-        <DropShadowEffect x:Key="glowBlack" ShadowDepth="0" Color="Black" Opacity="1" BlurRadius="20"/>
-    </Page.Resources>
-
+    
     <Grid Loaded="Grid_Loaded">
         <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOIBeta;component/Resources/BGNewRun.png"/>
+
+        <Image Name="curseIcon" Visibility="Visible" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOIBeta;component/Resources/cursepaper.png" Margin="257,57,339,383"/>
 
         <Image Name="back" Source="/TFOIBeta;component/Resources/back.png" Margin="25,439,847,60" RenderOptions.BitmapScalingMode="NearestNeighbor" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave" Stretch="Fill"/>
         <Image Name="back_" Source="/TFOIBeta;component/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Margin="10,470,832,44" RenderTransformOrigin="0.5,0.5"/>
@@ -31,9 +27,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-
-        <TextBlock Name="txtFloor" Margin="25,343,682,144" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="26.667"/>
-        <TextBlock Name="txtCurse" Margin="25,391,616,106" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="26.667"/>
+        <TextBlock Name="txtCurse" Visibility="Hidden" RenderOptions.BitmapScalingMode="NearestNeighbor" Margin="290,86,351,412" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="26.667"/>
 
         <TextBlock Name="txtIsRunning" TextWrapping="Wrap" TextAlignment="Center" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" Margin="799,153,23,264" RenderTransformOrigin="0.5,0.5" FontSize="26.667" Foreground="#FF362F2D" >
             <TextBlock.RenderTransform>
@@ -45,9 +39,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <Image x:Name="floorPanel" Margin="296,130,219,319" Stretch="None"/>
-
-        <Image Name="charIcon" Margin="296,139,219,326" Stretch="None"/>
+        <Image Name="floorPanel" Margin="296,116,219,333" Stretch="None"/>
         <TextBlock Name="txtRIP" TextAlignment="Center" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" Margin="296,165,219,331" FontSize="42.667" Visibility="Hidden" />
 
         <WrapPanel Name="itemPanel" HorizontalAlignment="Left" Height="108" Margin="296,214,0,0" VerticalAlignment="Top" Width="445"/>
@@ -59,6 +51,7 @@
 
         <WrapPanel Name="txtHelp" Visibility="Hidden" HorizontalAlignment="Left" Height="176" Margin="809,294,0,0" VerticalAlignment="Top" Width="141"/>
         <Label Name="helpIcon" HorizontalAlignment="Left" Height="32" Margin="909,488,0,0" VerticalAlignment="Top" Width="25" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Background="#01000000" BorderBrush="{x:Null}" Foreground="{x:Null}" />
+        <Image Name="charIcon" Margin="296,139,219,326" Stretch="None"/>
 
     </Grid>
 </Page>
