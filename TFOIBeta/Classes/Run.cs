@@ -17,7 +17,6 @@ namespace TFOIBeta
         public int _ballOfBandagesLevel;
         public TimeSpan Time { get; set; }
         public string Seed { get; set; }
-        public bool RunStarted { get; set; }
         public bool PlayerFightingBoss { get; set; }
         public bool Victory { get; set; }
         public bool GameOver { get; set; }

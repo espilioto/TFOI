@@ -18,6 +18,7 @@ using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace TFOIBeta.menus
 {
@@ -32,9 +33,9 @@ namespace TFOIBeta.menus
         Stream stream;
         StreamReader streamReader;
         string line = "";
-        int frames = 0;
 
         Timer timer = new Timer(100);
+        Timer runTimer = new Timer(1000);
 
         Run run;
 
@@ -51,11 +52,12 @@ namespace TFOIBeta.menus
             stream = File.Open(Log.path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
             streamReader = new StreamReader(stream);
 
+            runTimer.Elapsed += RunTimer_Tick;
+
             timer.Elapsed += ReadLog;
             timer.Enabled = true;
             timer.Start();
         }
-
 
         private void ReadLog(object sender, ElapsedEventArgs e)
         {
@@ -74,7 +76,9 @@ namespace TFOIBeta.menus
                             run.Dispose();
                         }
                         run = new Run();
-                        run.RunStarted = true;
+
+                        runTimer.Enabled = true;
+                        runTimer.Start();
 
                         Dispatcher.Invoke(new Action(() => itemPanel.Children.Clear()));
                         Dispatcher.Invoke(new Action(() => bossPanel.Children.Clear()));
@@ -82,7 +86,6 @@ namespace TFOIBeta.menus
                         Dispatcher.Invoke(new Action(() => floorPanel.Source = null));
                         Dispatcher.Invoke(new Action(() => txtTime.Text = "TIME:"));
                         Dispatcher.Invoke(new Action(() => txtCurse.Text = ""));
-                        frames = 0;
 
                         Dispatcher.Invoke(new Action(() => txtRIP.Visibility = Visibility.Hidden));
 
@@ -119,7 +122,7 @@ namespace TFOIBeta.menus
                                     {
                                         foreach (var child in itemPanel.Children.OfType<Image>())
                                         {
-                                            if (child.Tag == "space")
+                                            if ((string)child.Tag == "space")
                                             {
                                                 child.Effect = null;
                                             }
@@ -198,7 +201,7 @@ namespace TFOIBeta.menus
                                     {
                                         foreach (var child in itemPanel.Children.OfType<Image>())
                                         {
-                                            if (child.Tag == "space")
+                                            if ((string)child.Tag == "space")
                                                 child.Effect = null;
                                             if (child.Tag2 == "Guppy")
                                                 child.Effect = glowGuppy;
@@ -235,6 +238,9 @@ namespace TFOIBeta.menus
                     }
                     if (line.StartsWith("Game Over"))
                     {
+                        runTimer.Stop();
+                        runTimer.Enabled = false;
+
                         run.GameOver = true;
 
                         Dispatcher.Invoke(new Action(() => txtRIP.Visibility = Visibility.Visible));
@@ -267,7 +273,8 @@ namespace TFOIBeta.menus
                             {
                                 run.RunBosses.Last().KilledByPlayer = true;
                             }
-
+                            runTimer.Stop();
+                            runTimer.Enabled = false;
                             Dispatcher.Invoke(new Action(() => txtRIP.Visibility = Visibility.Visible));
                             Dispatcher.Invoke(new Action(() => txtRIP.Foreground = Brushes.Goldenrod));
                             Dispatcher.Invoke(new Action(() => txtRIP.Text = "VICTORY :D"));
@@ -389,16 +396,12 @@ namespace TFOIBeta.menus
                     //}
                     //if (!line.StartsWith("Total entity spawn time") || !line.StartsWith("Total ANM2 loading time") || !line.StartsWith("AnmCache memory"))
                     //{
-                       
+                    //    runTimer.Stop();
+                    //}
+                    //else
+                    //{
 
-                    //    if (frames < 36000)                         //bossrush
-                    //    {
-                    //        Dispatcher.Invoke(new Action(() => txtTime.Effect = glowCthulhu));
-                    //    }
-                    //    else
-                    //    {
-                    //        Dispatcher.Invoke(new Action(() => txtTime.Effect = null));
-                    //    }
+                    //    runTimer.Start();
                     //}
                 }
             }
@@ -406,6 +409,21 @@ namespace TFOIBeta.menus
             {
                 Dispatcher.Invoke(new Action(() => txtIsRunning.Foreground = Brushes.DarkRed));
                 Dispatcher.Invoke(new Action(() => txtIsRunning.Text = "GAME IS NOT RUNNING"));
+            }
+        }
+
+        private void RunTimer_Tick(object sender, EventArgs e)
+        {
+            run.Time = run.Time.Add(TimeSpan.FromSeconds(1));
+            Dispatcher.Invoke(new Action(() => txtTime.Text = "TIME: " + run.Time.ToString()));
+
+            if (run.Time < TimeSpan.FromMinutes(20))                         //bossrush
+            {
+                Dispatcher.Invoke(new Action(() => txtTime.Effect = glowCthulhu));
+            }
+            else
+            {
+                Dispatcher.Invoke(new Action(() => txtTime.Effect = null));
             }
         }
 

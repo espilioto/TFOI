@@ -12,7 +12,7 @@
     <Grid Loaded="Grid_Loaded">
         <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOIBeta;component/Resources/BGNewRun.png"/>
 
-        <Image Name="curseIcon" Visibility="Visible" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOIBeta;component/Resources/cursepaper.png" Margin="257,57,339,383"/>
+        <Image Name="curseIcon" Visibility="Hidden" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOIBeta;component/Resources/cursepaper.png" Margin="257,57,339,383"/>
 
         <Image Name="back" Source="/TFOIBeta;component/Resources/back.png" Margin="25,439,847,60" RenderOptions.BitmapScalingMode="NearestNeighbor" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave" Stretch="Fill"/>
         <Image Name="back_" Source="/TFOIBeta;component/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Margin="10,470,832,44" RenderTransformOrigin="0.5,0.5"/>
@@ -27,7 +27,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <TextBlock Name="txtCurse" Visibility="Hidden" RenderOptions.BitmapScalingMode="NearestNeighbor" Margin="290,86,351,412" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="26.667"/>
+        <TextBlock Name="txtCurse" Visibility="Hidden" RenderOptions.BitmapScalingMode="NearestNeighbor" Margin="290,86,351,412" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="26.667" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
         <TextBlock Name="txtIsRunning" TextWrapping="Wrap" TextAlignment="Center" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" Margin="799,153,23,264" RenderTransformOrigin="0.5,0.5" FontSize="26.667" Foreground="#FF362F2D" >
             <TextBlock.RenderTransform>
@@ -48,7 +48,8 @@
         <WrapPanel Name="bossDefeatedPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="296,327,0,0" Height="143" Width="445"/>
 
         <TextBlock Name="txtTime" Margin="25,0,719,202" Text="TIME: " FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="34.667" Foreground="#FF53524E" VerticalAlignment="Bottom" Height="29"/>
-
+        
+        
         <WrapPanel Name="txtHelp" Visibility="Hidden" HorizontalAlignment="Left" Height="176" Margin="809,294,0,0" VerticalAlignment="Top" Width="141"/>
         <Label Name="helpIcon" HorizontalAlignment="Left" Height="32" Margin="909,488,0,0" VerticalAlignment="Top" Width="25" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Background="#01000000" BorderBrush="{x:Null}" Foreground="{x:Null}" />
         <Image Name="charIcon" Margin="296,139,219,326" Stretch="None"/>

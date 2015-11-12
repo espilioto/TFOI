@@ -115,6 +115,11 @@ namespace TFOIBeta
                 return Floors.List.Find(floor => floor.Name == "Scarred Womb  II");
             }
 
+            else if (stage == "9" && altStage == "0")
+            {
+                return Floors.List.Find(floor => floor.Name == "Blue Womb");
+            }
+
             else if (stage == "10" && altStage == "0")                                            //chapter 5
             {
                 return Floors.List.Find(floor => floor.Name == "Sheol");
@@ -122,10 +127,6 @@ namespace TFOIBeta
             else if (stage == "10" && altStage == "1")
             {
                 return Floors.List.Find(floor => floor.Name == "Cathedral");
-            }
-            else if (stage == "10" && altStage == "2")
-            {
-                return Floors.List.Find(floor => floor.Name == "Blue Womb");
             }
 
             else if (stage == "11" && altStage == "0")                                           //chapter 6
@@ -228,6 +229,10 @@ namespace TFOIBeta
                 {
                     floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\16.png");
                 }
+                else if (floor.Name.Contains("Blue"))
+                {
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\18.png");
+                }
                 else if (floor.Name.Contains("Basement"))
                 {
                     floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\1.png");
@@ -279,10 +284,6 @@ namespace TFOIBeta
                 else if (floor.Name.Contains("???"))
                 {
                     floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\17.png");
-                }
-                else if (floor.Name.Contains("Special"))
-                {
-                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\18.png");
                 }
 
                 Floors.List.Add(floor);

@@ -107,22 +107,25 @@
     "36": {
         "name": "Scarred Womb XL"
     },
-    "37": {
-        "name": "Sheol"
+	"37": {
+        "name": "Blue Womb"
     },
     "38": {
-        "name": "Cathedral"
+        "name": "Sheol"
     },
     "39": {
-        "name": "Dark Room"
+        "name": "Cathedral"
     },
     "40": {
+        "name": "Dark Room"
+    },
+    "41": {
         "name": "Chest"
     },
-	"41": {
+	"42": {
         "name": "???"
     },
-	"42": {
+	"43": {
         "name": "Special Rooms (Greed)"
     }
 }
