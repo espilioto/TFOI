@@ -254,6 +254,8 @@ namespace TFOIBeta.menus
 
                         if (run != null)
                         {
+                            runTimer.Stop();
+
                             run.SubmitRunToDB();
                             run.Dispose();
                         }
@@ -281,6 +283,8 @@ namespace TFOIBeta.menus
 
                             if (run != null)
                             {
+                                runTimer.Stop();
+
                                 run.SubmitRunToDB();
                                 run.Dispose();
                             }
@@ -308,24 +312,59 @@ namespace TFOIBeta.menus
                     }
                     if (line.StartsWith("Curse of"))
                     {
-                        if (line == "Curse of the Labyrinth!")                                      //if it's an XL floor
+                        string curse = "";
+
+                        if (line.Contains("Maze"))
                         {
+                            curse = "Curse of the Maze";
+                            run.RunFloors.Last().Curse = curse;
+                        }
+                        else if (line.Contains("Blind"))
+                        {
+                            curse = "Curse of the Blind";
+                            run.RunFloors.Last().Curse = curse;
+                        }
+                        else if (line.Contains("Lost"))
+                        {
+                            curse = "Curse of the Lost!";
+                            run.RunFloors.Last().Curse = curse;
+                        }
+                        else if (line.Contains("Unknown"))
+                        {
+                            curse = "Curse of the Unknown";
+                            run.RunFloors.Last().Curse = curse;
+                        }
+                        else if (line.Contains("Darkness"))
+                        {
+                            curse = "Curse of Darkness";
+                            run.RunFloors.Last().Curse = curse;
+                        }
+                        else if (line.Contains("Labyrinth"))                                        //if it's an XL floor
+                        {
+                            curse = "Curse of the Labyrinth";
+
                             run.AddFloor(Floors.ConvertFloorToXL(run.RunFloors.Last()));            //add the equivalent XL floor to the list
-                            run.RunFloors[run.RunFloors.Count - 1].Curse = line;                    //add the curse to the new floor
+                            run.RunFloors[run.RunFloors.Count - 1].Curse = curse;                   //add the curse to the new floor
                             run.RunFloors.RemoveAt(run.RunFloors.Count - 2);                        //and remove the old "regular" one from the list
 
-                            Dispatcher.Invoke(new Action(() => curseIcon.Visibility = Visibility.Visible));
-                            Dispatcher.Invoke(new Action(() => txtCurse.Visibility = Visibility.Visible));
+                            Dispatcher.Invoke(new Action(() => floorPanel.ToolTip = run.RunFloors.Last().Name)); //update the tooltip
+                        }
+
+                        if (string.IsNullOrWhiteSpace(curse))
+                        {
+                            Dispatcher.Invoke(new Action(() => curseIcon.Visibility = Visibility.Hidden));
+                            Dispatcher.Invoke(new Action(() => txtCurse.Visibility = Visibility.Hidden));
                         }
                         else
                         {
-                            run.RunFloors[run.RunFloors.Count - 1].Curse = line;
+                            Dispatcher.Invoke(new Action(() => txtCurse.Text = curse.ToUpper()));
 
                             Dispatcher.Invoke(new Action(() => curseIcon.Visibility = Visibility.Visible));
                             Dispatcher.Invoke(new Action(() => txtCurse.Visibility = Visibility.Visible));
                         }
 
-                        Dispatcher.Invoke(new Action(() => txtCurse.Text = run.RunFloors.Last().Curse.ToUpper()));
+
+                        curse = "";                                           //empty the string so it doesnt trigger when you go to the next floor
                     }
                     if (run.RunFloors.Last().Curse == null)
                     {
@@ -414,16 +453,31 @@ namespace TFOIBeta.menus
 
         private void RunTimer_Tick(object sender, EventArgs e)
         {
-            run.Time = run.Time.Add(TimeSpan.FromSeconds(1));
-            Dispatcher.Invoke(new Action(() => txtTime.Text = "TIME: " + run.Time.ToString()));
+            if (!string.IsNullOrEmpty(line))
+            {
+                if (line.StartsWith("Total entity spawn time") || line.StartsWith("Total ANM2 loading time") || line.StartsWith("AnmCache memory"))
+                {
+                    run.Time = run.Time.Add(TimeSpan.FromSeconds(0));
+                }
+                else
+                {
+                    run.Time = run.Time.Add(TimeSpan.FromSeconds(1));
+                }
 
-            if (run.Time < TimeSpan.FromMinutes(20))                         //bossrush
-            {
-                Dispatcher.Invoke(new Action(() => txtTime.Effect = glowCthulhu));
-            }
-            else
-            {
-                Dispatcher.Invoke(new Action(() => txtTime.Effect = null));
+                Dispatcher.Invoke(new Action(() => txtTime.Text = "TIME: " + run.Time.ToString()));
+
+                if (run.Time < TimeSpan.FromMinutes(20))                         //bossrush
+                {
+                    Dispatcher.Invoke(new Action(() => txtTime.Effect = glowCthulhu));
+                }
+                else if (run.Time < TimeSpan.FromMinutes(30))                   //hush
+                {
+                    Dispatcher.Invoke(new Action(() => txtTime.Effect = glowFlyLord));
+                }
+                else
+                {
+                    Dispatcher.Invoke(new Action(() => txtTime.Effect = null));
+                }
             }
         }
 

@@ -117,7 +117,7 @@ namespace TFOIBeta
 
             else if (stage == "9" && altStage == "0")
             {
-                return Floors.List.Find(floor => floor.Name == "Blue Womb");
+                return Floors.List.Find(floor => floor.Name == "???");
             }
 
             else if (stage == "10" && altStage == "0")                                            //chapter 5
@@ -146,17 +146,29 @@ namespace TFOIBeta
 
         public static Floors ConvertFloorToXL(Floors floor)
         {
-            if (floor.Name.Contains("Basement"))
+            if (floor.Name.Contains("Burning Basement"))
+            {
+                return Floors.List.Find(asd => asd.Name == "Burning Basement XL");
+            }
+            else if (floor.Name.Contains("Flooded Caves"))
+            {
+                return Floors.List.Find(asd => asd.Name == "Flooded Caves XL");
+            }
+            else if (floor.Name.Contains("Dank Depths"))
+            {
+                return Floors.List.Find(asd => asd.Name == "Dank Depths XL");
+            }
+            else if (floor.Name.Contains("Scarred Womb"))
+            {
+                return Floors.List.Find(asd => asd.Name == "Scarred Womb XL");
+            }
+            else if (floor.Name.Contains("Basement"))
             {
                 return Floors.List.Find(asd => asd.Name == "Basement XL");
             }
             else if (floor.Name.Contains("Cellar"))
             {
                 return Floors.List.Find(asd => asd.Name == "Cellar XL");
-            }
-            else if (floor.Name.Contains("Burning"))
-            {
-                return Floors.List.Find(asd => asd.Name == "Burning Basement XL");
             }
             else if (floor.Name.Contains("Caves"))
             {
@@ -166,10 +178,6 @@ namespace TFOIBeta
             {
                 return Floors.List.Find(asd => asd.Name == "Catacombs XL");
             }
-            else if (floor.Name.Contains("Flooded"))
-            {
-                return Floors.List.Find(asd => asd.Name == "Flooded Caves XL");
-            }
             else if (floor.Name.Contains("Depths"))
             {
                 return Floors.List.Find(asd => asd.Name == "Depths XL");
@@ -178,10 +186,6 @@ namespace TFOIBeta
             {
                 return Floors.List.Find(asd => asd.Name == "Necropolis XL");
             }
-            else if (floor.Name.Contains("Dank"))
-            {
-                return Floors.List.Find(asd => asd.Name == "Dank Depths XL");
-            }
             else if (floor.Name.Contains("Womb"))
             {
                 return Floors.List.Find(asd => asd.Name == "Womb XL");
@@ -189,10 +193,6 @@ namespace TFOIBeta
             else if (floor.Name.Contains("Utero"))
             {
                 return Floors.List.Find(asd => asd.Name == "Utero XL");
-            }
-            else if (floor.Name.Contains("Rotten"))
-            {
-                return Floors.List.Find(asd => asd.Name == "Rotten Womb XL");
             }
             else
             {
@@ -228,10 +228,6 @@ namespace TFOIBeta
                 else if (floor.Name.Contains("Scarred"))
                 {
                     floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\16.png");
-                }
-                else if (floor.Name.Contains("Blue"))
-                {
-                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\18.png");
                 }
                 else if (floor.Name.Contains("Basement"))
                 {
@@ -283,7 +279,7 @@ namespace TFOIBeta
                 }
                 else if (floor.Name.Contains("???"))
                 {
-                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\17.png");
+                    floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\18.png");
                 }
 
                 Floors.List.Add(floor);
