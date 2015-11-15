@@ -41,10 +41,10 @@
         <Image Name="floorPanel" Margin="296,116,219,333" Stretch="None"/>
         <TextBlock Name="txtRIP" TextAlignment="Center" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" Margin="296,165,219,331" FontSize="42.667" Visibility="Hidden" />
 
-        <WrapPanel Name="itemPanel" HorizontalAlignment="Left" Height="108" Margin="296,214,0,0" VerticalAlignment="Top" Width="445"/>
+        <WrapPanel Name="itemPanel" HorizontalAlignment="Left" Height="136" Margin="296,214,0,0" VerticalAlignment="Top" Width="445"/>
 
-        <WrapPanel Name="bossPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="296,327,0,0" Height="143" Width="445"/>
-        <WrapPanel Name="bossDefeatedPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="296,327,0,0" Height="143" Width="445"/>
+        <WrapPanel Name="bossPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="296,350,0,0" Height="143" Width="445"/>
+        <WrapPanel Name="bossDefeatedPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="296,350,0,0" Height="143" Width="445"/>
 
         <TextBlock Name="txtTime" Margin="25,0,719,202" Text="TIME: " FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="34.667" Foreground="#FF53524E" VerticalAlignment="Bottom" Height="29"/>
 

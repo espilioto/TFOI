@@ -34,8 +34,8 @@ namespace TFOIBeta.menus
         StreamReader streamReader;
         string line = "";
 
-        Timer timer = new Timer(100);
         Timer runTimer = new Timer(1000);
+        Timer timer = new Timer(100);
 
         Run run;
 
@@ -52,7 +52,7 @@ namespace TFOIBeta.menus
             stream = File.Open(Log.path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
             streamReader = new StreamReader(stream);
 
-            runTimer.Elapsed += RunTimer_Tick;
+            runTimer.Elapsed += RunTimer_Elapsed;
 
             timer.Elapsed += ReadLog;
             timer.Enabled = true;
@@ -75,10 +75,8 @@ namespace TFOIBeta.menus
                         {
                             run.Dispose();
                         }
-                        run = new Run();
 
-                        runTimer.Enabled = true;
-                        runTimer.Start();
+                        run = new Run();
 
                         Dispatcher.Invoke(new Action(() => itemPanel.Children.Clear()));
                         Dispatcher.Invoke(new Action(() => bossPanel.Children.Clear()));
@@ -92,7 +90,7 @@ namespace TFOIBeta.menus
                         Dispatcher.Invoke(new Action(() => run.Seed = Regex.Match(line, @"(\w{4} \w{4}) ").Value)); //regex seed
                         Dispatcher.Invoke(new Action(() => txtSeed.Text = run.Seed));
                     }
-                    if (line.StartsWith("Initialized player with"))
+                    else if (line.StartsWith("Initialized player with"))
                     {
                         var character = Characters.GetCharFromId(Regex.Match(line, @"Subtype (\d)").Groups[1].Value); //regex character ID
                         run.AddCharacter(character);
@@ -100,7 +98,7 @@ namespace TFOIBeta.menus
                         Dispatcher.Invoke(new Action(() => charIcon.ToolTip = character.Name));
                         Dispatcher.Invoke(new Action(() => charIcon.Source = Stuff.BitmapToImageSource(character.Icon)));
                     }
-                    if (line.StartsWith("Adding collectible "))
+                    else if (line.StartsWith("Adding collectible "))
                     {
                         var item = Items.GetItemFromId(Regex.Match(line, @"(\d+)").Groups[1].Value); //regex item id
 
@@ -236,9 +234,8 @@ namespace TFOIBeta.menus
                             }
                         }
                     }
-                    if (line.StartsWith("Game Over"))
+                    else if (line.StartsWith("Game Over"))
                     {
-                        runTimer.Stop();
                         runTimer.Enabled = false;
 
                         run.GameOver = true;
@@ -254,14 +251,12 @@ namespace TFOIBeta.menus
 
                         if (run != null)
                         {
-                            runTimer.Stop();
-
                             run.SubmitRunToDB();
                             run.Dispose();
                         }
 
                     }
-                    if (line.StartsWith("playing cutscene"))
+                    else if (line.StartsWith("playing cutscene"))
                     {
                         if (line.StartsWith("playing cutscene 1 (Intro).")) //don't match the intro cutscene that plays on every launch
                         {
@@ -269,29 +264,30 @@ namespace TFOIBeta.menus
                         }
                         else
                         {
+                            runTimer.Enabled = false;
+
                             run.Victory = true;
 
                             if (run.PlayerFightingBoss)
                             {
                                 run.RunBosses.Last().KilledByPlayer = true;
                             }
-                            runTimer.Stop();
-                            runTimer.Enabled = false;
                             Dispatcher.Invoke(new Action(() => txtRIP.Visibility = Visibility.Visible));
                             Dispatcher.Invoke(new Action(() => txtRIP.Foreground = Brushes.Goldenrod));
                             Dispatcher.Invoke(new Action(() => txtRIP.Text = "VICTORY :D"));
 
                             if (run != null)
                             {
-                                runTimer.Stop();
-
                                 run.SubmitRunToDB();
                                 run.Dispose();
                             }
                         }
                     }
-                    if (line.StartsWith("Level::Init"))
+                    else if (line.StartsWith("Level::Init"))
                     {
+                        Dispatcher.Invoke(new Action(() => curseIcon.Visibility = Visibility.Hidden));      //we don't know if the new floor is gonna have a curse
+                        Dispatcher.Invoke(new Action(() => txtCurse.Visibility = Visibility.Hidden));       //so let's hide the curse stuff for now
+
                         var stage = Regex.Match(line, @"m_Stage (\d+)").Groups[1].Value;            //regex stage id
                         var altStage = Regex.Match(line, @"m_StageType (\d+)").Groups[1].Value;      //regex alt stage id
 
@@ -309,8 +305,10 @@ namespace TFOIBeta.menus
                             Dispatcher.Invoke(new Action(() => floorPanel.ToolTip = run.RunFloors.Last().Name));
                             Dispatcher.Invoke(new Action(() => floorPanel.Source = Stuff.BitmapToImageSource(run.RunFloors.Last().Icon)));
                         }
+
+                        runTimer.Start();        //delay the timer as long as possible
                     }
-                    if (line.StartsWith("Curse of"))
+                    else if (line.StartsWith("Curse of"))
                     {
                         string curse = "";
 
@@ -366,12 +364,7 @@ namespace TFOIBeta.menus
 
                         curse = "";                                           //empty the string so it doesnt trigger when you go to the next floor
                     }
-                    if (run.RunFloors.Last().Curse == null)
-                    {
-                        Dispatcher.Invoke(new Action(() => curseIcon.Visibility = Visibility.Hidden));
-                        Dispatcher.Invoke(new Action(() => txtCurse.Visibility = Visibility.Hidden));
-                    }
-                    if (Regex.Match(line, (@"Room \d\.\d{4}")).Success) //regex boss room
+                    else if (Regex.Match(line, (@"Room \d\.\d{4}")).Success) //regex boss room
                     {
                         var derp = Regex.Match(line, @"\(([^(()]+)[^ ]").Groups[1].Value.TrimEnd(' ');            //regex result tester
                         var boss = Bosses.GetBossFromName(derp);                                    //if miniboss, var boss will remain null
@@ -394,7 +387,7 @@ namespace TFOIBeta.menus
                             });
                         }
                     }
-                    if (line.StartsWith("deathspawn_boss") || line.StartsWith("TriggerBossDeath"))
+                    else if (line.StartsWith("deathspawn_boss") || line.StartsWith("TriggerBossDeath")) //boss died
                     {
                         Application.Current.Dispatcher.Invoke((Action)delegate
                         {
@@ -433,15 +426,14 @@ namespace TFOIBeta.menus
                     //        Dispatcher.Invoke(new Action(() => txtTime.Effect = null));
                     //    }
                     //}
-                    //if (!line.StartsWith("Total entity spawn time") || !line.StartsWith("Total ANM2 loading time") || !line.StartsWith("AnmCache memory"))
-                    //{
-                    //    runTimer.Stop();
-                    //}
-                    //else
-                    //{
-
-                    //    runTimer.Start();
-                    //}
+                    if (line.StartsWith("Total entity spawn time") || line.StartsWith("Total ANM2 loading time") || line.StartsWith("AnmCache memory"))
+                    {
+                        runTimer.Stop();
+                    }
+                    else
+                    {
+                        runTimer.Start();
+                    }
                 }
             }
             else
@@ -451,33 +443,23 @@ namespace TFOIBeta.menus
             }
         }
 
-        private void RunTimer_Tick(object sender, EventArgs e)
+        private void RunTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(line))
+            run.Time = run.Time.Add(TimeSpan.FromMilliseconds(900));
+
+            Dispatcher.Invoke(new Action(() => txtTime.Text = "TIME: " + run.Time.ToString(@"hh\:mm\:ss")));
+
+            if (run.Time < TimeSpan.FromMinutes(20))                         //bossrush
             {
-                if (line.StartsWith("Total entity spawn time") || line.StartsWith("Total ANM2 loading time") || line.StartsWith("AnmCache memory"))
-                {
-                    run.Time = run.Time.Add(TimeSpan.FromSeconds(0));
-                }
-                else
-                {
-                    run.Time = run.Time.Add(TimeSpan.FromSeconds(1));
-                }
-
-                Dispatcher.Invoke(new Action(() => txtTime.Text = "TIME: " + run.Time.ToString()));
-
-                if (run.Time < TimeSpan.FromMinutes(20))                         //bossrush
-                {
-                    Dispatcher.Invoke(new Action(() => txtTime.Effect = glowCthulhu));
-                }
-                else if (run.Time < TimeSpan.FromMinutes(30))                   //hush
-                {
-                    Dispatcher.Invoke(new Action(() => txtTime.Effect = glowFlyLord));
-                }
-                else
-                {
-                    Dispatcher.Invoke(new Action(() => txtTime.Effect = null));
-                }
+                Dispatcher.Invoke(new Action(() => txtTime.Effect = glowCthulhu));
+            }
+            else if (run.Time < TimeSpan.FromMinutes(30))                   //hush
+            {
+                Dispatcher.Invoke(new Action(() => txtTime.Effect = glowFlyLord));
+            }
+            else
+            {
+                Dispatcher.Invoke(new Action(() => txtTime.Effect = null));
             }
         }
 

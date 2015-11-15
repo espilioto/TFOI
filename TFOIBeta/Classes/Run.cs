@@ -13,8 +13,8 @@ namespace TFOIBeta
         bool disposed = false;
         SafeHandle handle = new SafeFileHandle(IntPtr.Zero, true);
 
-        public int _cubeOfMeatLevel;
-        public int _ballOfBandagesLevel;
+        int _cubeOfMeatLevel;
+        int _ballOfBandagesLevel;
         public TimeSpan Time { get; set; }
         public string Seed { get; set; }
         public bool PlayerFightingBoss { get; set; }
