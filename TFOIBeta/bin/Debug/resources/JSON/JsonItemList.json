@@ -1543,7 +1543,8 @@
    },
    "305":{
       "name":"Scorpio",
-      "text":"Poison tears"
+      "text":"Poison tears",
+	  "details":"4 or 6 damage per tick"
    },
    "306":{
       "name":"Sagittarius",
@@ -2006,7 +2007,8 @@
    },
    "400":{
       "name":"Spear of Destiny",
-      "text":"Your destiny"
+      "text":"Your destiny",
+	  "details":"Contact damage =  2x tear damage"
    },
    "401":{
       "name":"Explosivo",

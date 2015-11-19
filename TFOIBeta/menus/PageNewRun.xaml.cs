@@ -71,10 +71,10 @@ namespace TFOIBeta.menus
                 {
                     if (line.StartsWith("RNG Start Seed:"))
                     {
-                        if (run != null)
-                        {
-                            run.Dispose();
-                        }
+                        //if (run != null)
+                        //{
+                        //    run.Dispose();
+                        //}
 
                         run = new Run();
 
@@ -236,6 +236,7 @@ namespace TFOIBeta.menus
                     }
                     else if (line.StartsWith("Game Over"))
                     {
+                        runTimer.Stop();
                         runTimer.Enabled = false;
 
                         run.GameOver = true;
@@ -252,7 +253,7 @@ namespace TFOIBeta.menus
                         if (run != null)
                         {
                             run.SubmitRunToDB();
-                            run.Dispose();
+                            //run.Dispose();
                         }
 
                     }
@@ -264,6 +265,7 @@ namespace TFOIBeta.menus
                         }
                         else
                         {
+                            runTimer.Stop();
                             runTimer.Enabled = false;
 
                             run.Victory = true;
@@ -279,7 +281,7 @@ namespace TFOIBeta.menus
                             if (run != null)
                             {
                                 run.SubmitRunToDB();
-                                run.Dispose();
+                                //run.Dispose();
                             }
                         }
                     }
