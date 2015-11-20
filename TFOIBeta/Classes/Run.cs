@@ -183,6 +183,7 @@ namespace TFOIBeta
         {
 
             var itemList = string.Join(",", RunItems.Select(x => x.Id));
+            var floorList = string.Join(",", RunFloors.Select(x => x.Id));
             var bossList = string.Join(",", RunBosses.Select(x => x.Id));
             string killedBy = "";
 
@@ -193,11 +194,11 @@ namespace TFOIBeta
 
             if (GameOver)
             {
-                Classes.Database.SubmitRun(Seed, DateTime.Now.ToString(), RunCharacter.Name, itemList, bossList, killedBy, Time.ToString(), "Defeat");
+                Classes.Database.SubmitRun(Seed, DateTime.Now.ToString(), RunCharacter.Name.ToUpper(), itemList, floorList, bossList, killedBy, Time.ToString(@"hh\:mm\:ss"), "DEFEAT");
             }
             else if (Victory)
             {
-                Classes.Database.SubmitRun(Seed, DateTime.Now.ToString(), RunCharacter.Name, itemList, bossList, killedBy, Time.ToString(), "Victory");
+                Classes.Database.SubmitRun(Seed, DateTime.Now.ToString(), RunCharacter.Name.ToUpper(), itemList, floorList, bossList, killedBy, Time.ToString(@"hh\:mm\:ss"), "VICTORY");
             }
 
         }

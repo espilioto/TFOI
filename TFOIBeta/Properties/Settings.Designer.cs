@@ -22,5 +22,16 @@ namespace TFOIBeta.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("data source=\"C:\\Users\\SouLSLayeR\\Documents\\Visual Studio 2015\\Projects\\TFOIBeta\\T" +
+            "FOIBeta\\bin\\Debug\\resources\\isaac.db\";base schema name=isaacDB")]
+        public string isaacConnectionString {
+            get {
+                return ((string)(this["isaacConnectionString"]));
+            }
+        }
     }
 }

@@ -25,6 +25,12 @@ namespace TFOIBeta.menus
             InitializeComponent();
         }
 
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            Classes.Database.CreateFloorsColumn();
+            Classes.Database.SelectAll(dataGrid);
+        }
+
         private void back_MouseDown(object sender, MouseButtonEventArgs e)
         {
             MainWindow.mainWindow.mainWindowFrame.GoBack();

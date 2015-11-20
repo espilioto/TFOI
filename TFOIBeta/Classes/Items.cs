@@ -157,6 +157,7 @@ namespace TFOIBeta
         public float ShotSpeed { get; set; }
         public float Speed { get; set; }
 
+        public Floors FloorPickedUp { get; set; }
         public Bitmap Icon { get; set; }                    //icon   
     }
 }

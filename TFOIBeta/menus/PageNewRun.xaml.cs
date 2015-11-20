@@ -104,6 +104,8 @@ namespace TFOIBeta.menus
 
                         if (item != null)               //can't be too careful
                         {
+                            item.FloorPickedUp = run.RunFloors.Last();
+
                             if (run.AddItem(item))      //if this item hasn't been picked up before
                             {
                                 Application.Current.Dispatcher.Invoke((Action)delegate
