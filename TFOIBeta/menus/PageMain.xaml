@@ -67,7 +67,7 @@
                 <TransformGroup>
                     <ScaleTransform ScaleY="1"/>
                     <SkewTransform AngleY="0"/>
-                    <RotateTransform Angle="-4"/>
+                    <RotateTransform Angle="-5.647"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Image.RenderTransform>
@@ -78,7 +78,7 @@
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="-4"/>
+                    <RotateTransform Angle="-6.352"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Image.RenderTransform>
@@ -89,7 +89,7 @@
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="-4"/>
+                    <RotateTransform Angle="-6.554"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Image.RenderTransform>
@@ -100,7 +100,7 @@
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="-4"/>
+                    <RotateTransform Angle="-5.924"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Image.RenderTransform>

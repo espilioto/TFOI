@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SQLite;
 using System.Windows.Controls;
+using System.Globalization;
 
-namespace TFOIBeta.Classes
+namespace TFOIBeta
 {
     public class Database
     {
+        public static List<ArchivedRun> ArchivedRuns = new List<ArchivedRun>();
+        static ArchivedRun archivedRun;
+
         static SQLiteConnection connection = new SQLiteConnection("Data Source=" + System.AppDomain.CurrentDomain.BaseDirectory + "resources\\isaac.db");
         static SQLiteCommand command;
         static SQLiteDataReader reader = null;
@@ -18,7 +22,7 @@ namespace TFOIBeta.Classes
         static SQLiteTransaction transaction;
         public static DataTable dataTable = new DataTable();
 
-        public static bool CheckIfColumnExists(string tableName, string columnName)
+        private static bool CheckIfColumnExists(string tableName, string columnName)
         {
             connection.Open();
             command = connection.CreateCommand();
@@ -102,7 +106,6 @@ namespace TFOIBeta.Classes
         public static void SelectAll(DataGrid dg)
         {
             string query = "SELECT * FROM 'runs'";
-
             try
             {
                 connection.Open();
@@ -110,13 +113,47 @@ namespace TFOIBeta.Classes
                 dataAdapter = new SQLiteDataAdapter(command);
 
                 dataAdapter.Fill(dataTable);
-
                 dg.ItemsSource = dataTable.DefaultView;
             }
             finally
             {
                 command.Dispose();
                 connection.Close();
+            }
+        }
+        public static void DeserializeRunsFromDB()
+         {
+            string items = "", floors = "", bosses = "";
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                archivedRun = new ArchivedRun();
+
+                archivedRun.Id = row.ItemArray[0].ToString();
+                archivedRun.Seed = row.ItemArray[1].ToString();
+                archivedRun.Timestamp = row.ItemArray[2].ToString();
+                archivedRun.Character = Characters.GetCharFromName(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(row.ItemArray[3].ToString().ToLower()));
+                items = row.ItemArray[4].ToString();
+                bosses = row.ItemArray[5].ToString();
+                archivedRun.KilledBy = Bosses.GetBossFromId(row.ItemArray[6].ToString());
+                archivedRun.Time = row.ItemArray[7].ToString();
+                archivedRun.Result = row.ItemArray[8].ToString();
+                floors = row.ItemArray[9].ToString();
+
+                foreach (string item in items.Split(','))
+                {
+                    archivedRun.Items.Add(Items.GetItemFromId(item));
+                }
+                foreach (string boss in bosses.Split(','))
+                {
+                    archivedRun.Bosses.Add(Bosses.GetBossFromId(boss));
+                }
+                foreach (string floor in floors.Split(','))
+                {
+                    archivedRun.Floors.Add(Floors.GetFloorFromId(floor));
+                }
+
+                ArchivedRuns.Add(archivedRun);
             }
         }
         public static void SelectItem(DataGrid dg, string ItemID)

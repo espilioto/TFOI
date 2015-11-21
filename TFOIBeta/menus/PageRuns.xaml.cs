@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,8 +28,52 @@ namespace TFOIBeta.menus
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            Classes.Database.CreateFloorsColumn();
-            Classes.Database.SelectAll(dataGrid);
+            Database.SelectAll(dataGrid);
+            Database.DeserializeRunsFromDB();
+        }
+
+        private void dataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            if (dataGrid.SelectedItems.Count > 0)
+                for (int i = 0; i < dataGrid.SelectedItems.Count; i++)
+                {
+                    System.Data.DataRowView selectedFile = (System.Data.DataRowView)dataGrid.SelectedItems[i];
+                    recreateArchivedRun(selectedFile.Row.ItemArray[0].ToString());
+                }
+        }
+
+        private void recreateArchivedRun(string entryId)
+        {
+            selectedRunBosses.Children.Clear();
+            selectedRunItems.Children.Clear();
+
+            ArchivedRun run = Database.ArchivedRuns.Find(asd => asd.Id == entryId);
+
+            selectedRunSeed.Text = run.Seed;
+            selectedRunTime.Text = run.Time;
+
+            selectedRunCharIcon.Source = Stuff.BitmapToImageSource(run.Character.Icon);
+
+            foreach (var item in run.Items)
+            {
+                var icon = new Image();
+                icon.ToolTip = item.Name + Environment.NewLine + item.Text;
+                icon.Stretch = Stretch.None;
+                icon.Source = Stuff.BitmapToImageSource(item.Icon);
+
+                selectedRunItems.Children.Add(icon);
+            }
+            foreach (var boss in run.Bosses)
+            {
+                var icon = new Image();
+                icon.ToolTip = boss.Name;
+                icon.Stretch = Stretch.None;
+                icon.Source = Stuff.BitmapToImageSource(boss.Icon);
+
+                selectedRunBosses.Children.Add(icon);
+            }
+
+
         }
 
         private void back_MouseDown(object sender, MouseButtonEventArgs e)
@@ -43,5 +88,6 @@ namespace TFOIBeta.menus
         {
             back_.Visibility = Visibility.Hidden;
         }
+
     }
 }

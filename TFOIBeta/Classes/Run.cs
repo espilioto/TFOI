@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TFOIBeta
 {
-    class Run : IDisposable
+    public class Run : IDisposable
     {
         bool disposed = false;
         SafeHandle handle = new SafeFileHandle(IntPtr.Zero, true);
@@ -22,14 +22,12 @@ namespace TFOIBeta
         public bool GameOver { get; set; }
         public Characters RunCharacter { get; set; }
         public Bosses RunKilledByBoss { get; set; }
-        public Items RunActiveItem { get; set; }
         public List<Items> RunItems { get; set; }
         public List<Floors> RunFloors { get; set; }
         public List<Bosses> RunBosses { get; set; }
         
         public Run()
         {
-            RunActiveItem = new Items();
             RunCharacter = new Characters();
             RunKilledByBoss = new Bosses();
             RunItems = new List<Items>();
@@ -194,11 +192,11 @@ namespace TFOIBeta
 
             if (GameOver)
             {
-                Classes.Database.SubmitRun(Seed, DateTime.Now.ToString(), RunCharacter.Name.ToUpper(), itemList, floorList, bossList, killedBy, Time.ToString(@"hh\:mm\:ss"), "DEFEAT");
+                Database.SubmitRun(Seed, DateTime.Now.ToString("HH:mm"), RunCharacter.Name.ToUpper(), itemList, bossList, killedBy, Time.ToString(@"hh\:mm\:ss"), "DEFEAT", floorList);
             }
             else if (Victory)
             {
-                Classes.Database.SubmitRun(Seed, DateTime.Now.ToString(), RunCharacter.Name.ToUpper(), itemList, floorList, bossList, killedBy, Time.ToString(@"hh\:mm\:ss"), "VICTORY");
+                Database.SubmitRun(Seed, DateTime.Now.ToString("HH:mm"), RunCharacter.Name.ToUpper(), itemList, bossList, killedBy, Time.ToString(@"hh\:mm\:ss"), "VICTORY", floorList);
             }
 
         }

@@ -9,13 +9,17 @@ using System.IO;
 
 namespace TFOIBeta
 {
-    class Bosses
+    public class Bosses
     {
         public static List<Bosses> List = new List<Bosses>();
 
         public static Bosses GetBossFromName(string bossName)
         {
             return Bosses.List.Find(boss => boss.Name == bossName);
+        }
+        public static Bosses GetBossFromId(string bossId)
+        {
+            return Bosses.List.Find(boss => boss.Id == bossId);
         }
 
         public static void ParseJsonBossList()

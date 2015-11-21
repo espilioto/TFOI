@@ -36,6 +36,8 @@ namespace TFOIBeta
             mainWindow = this;
             mainWindowFrame.NavigationService.Navigate(new menus.PageMain());
 
+            Database.CreateFloorsColumn();      // create a Floors column in the database if it doesn't exist.
+
             Items.ParseJsonItemList();
             Bosses.ParseJsonBossList();
             Characters.ParseJsonCharList();

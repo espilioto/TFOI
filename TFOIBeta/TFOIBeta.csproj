@@ -106,6 +106,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\ArchivedRun.cs" />
     <Compile Include="Classes\Characters.cs" />
     <Compile Include="Classes\Database.cs" />
     <Compile Include="Classes\Floors.cs" />

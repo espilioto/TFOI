@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace TFOIBeta
 {
-    class Characters
+    public class Characters
     {
         public static List<Characters> List = new List<Characters>();
 
@@ -17,6 +17,12 @@ namespace TFOIBeta
         {
             return Characters.List.Find(character => character.Id == charId);
         }
+
+        public static Characters GetCharFromName(string charName)
+        {
+            return Characters.List.Find(character => character.Name == charName);
+        }
+
 
         public static void ParseJsonCharList()
         {

@@ -10,7 +10,7 @@ using System.Collections;
 
 namespace TFOIBeta
 {
-    class Items
+    public class Items
     {
         public static List<Items> List = new List<Items>();
 

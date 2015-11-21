@@ -14,19 +14,27 @@
         <Image Name="back" Source="/TFOIBeta;component/Resources/back.png" Margin="25,439,847,60" RenderOptions.BitmapScalingMode="NearestNeighbor" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave"/>
         <Image Name="back_" Source="/TFOIBeta;component/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Margin="10,470,832,44" RenderTransformOrigin="0.5,0.5" Width="87"/>
 
-        <DataGrid Name="dataGrid" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="340" Margin="150,156,0,0" VerticalAlignment="Top" Width="759" Background="#FFCAC5BD" BorderBrush="#FFCAC5BD" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="16" OpacityMask="#FF362F2D" Foreground="#FF362F2D">
+        <DataGrid Name="dataGrid" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="232" Margin="150,264,0,0" VerticalAlignment="Top" Width="759" Background="#FFE7DDDC" BorderBrush="#FFE7DDDC" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="18.667" OpacityMask="#FFE7DDDC" Foreground="#FF362F2D" AlternatingRowBackground="#FFCAC5BD" RowBackground="#FFE7DDDC" BorderThickness="0" GridLinesVisibility="None" SelectedCellsChanged="dataGrid_SelectedCellsChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Timestamp}" Header="TIMESTAMP" Width="119"/>
+                <DataGridTextColumn Binding="{Binding Timestamp}" Header="DATE" Width="137"/>
                 <DataGridTextColumn Binding="{Binding Seed}" Header="SEED"/>
                 <DataGridTextColumn Binding="{Binding CharName}" Header="CHARACTER" />
-                <DataGridTextColumn Binding="{Binding Items}" Header="ITEMS"/>
-                <DataGridTextColumn Binding="{Binding Floors}" Header="FLOORS"/>
-                <DataGridTextColumn Binding="{Binding Bosses}" Header="BOSSES"/>
+                <!--<DataGridTextColumn Binding="{Binding Items}" Header="ITEMS"/>-->
+                <!--<DataGridTextColumn Binding="{Binding Floors}" Header="FLOORS"/>-->
+                <!--<DataGridTextColumn Binding="{Binding Bosses}" Header="BOSSES"/>-->
                 <DataGridTextColumn Binding="{Binding Time}" Header="TIME"/>
                 <DataGridTextColumn Binding="{Binding Result}" Header="RESULT"/>
-                <DataGridTextColumn Binding="{Binding KilledBy}" Header="KILLED BY"/>
+                <!--<DataGridTextColumn Binding="{Binding KilledBy}" Header="KILLED BY"/>-->
             </DataGrid.Columns>
         </DataGrid>
+
+        <Canvas Name="selectedRun" HorizontalAlignment="Left" Height="236" Margin="0,10,0,0" VerticalAlignment="Top" Width="960">
+            <Image Name="selectedRunCharIcon" Height="44" Width="45" Canvas.Left="489" Canvas.Top="1"/>
+            <TextBlock Name="selectedRunSeed" TextWrapping="Wrap" Width="150" Height="114" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="48" Foreground="#FF362F2D" Canvas.Top="22"/>
+            <TextBlock Name="selectedRunTime" Width="150" Height="45" Canvas.Top="141" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="48" Foreground="#FF362F2D"/>
+            <WrapPanel Name="selectedRunItems" Height="96" Width="710" Canvas.Top="45" Canvas.Left="155"/>
+            <WrapPanel Name="selectedRunBosses" Height="95" Width="760" Canvas.Top="141" Canvas.Left="155"/>
+        </Canvas>
 
     </Grid>
 </Page>

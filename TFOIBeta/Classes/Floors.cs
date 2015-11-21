@@ -9,11 +9,16 @@ using System.Threading.Tasks;
 
 namespace TFOIBeta
 {
-    class Floors
+    public class Floors
     {
         public static List<Floors> List = new List<Floors>();
 
-        public static Floors GetFloorFromId(string stage, string altStage)
+        public static Floors GetFloorFromId(string floorId)
+        {
+            return Floors.List.Find(floor => floor.Id == floorId);
+        }
+
+        public static Floors GetFloorFromStageCodes(string stage, string altStage)
         {
             if (stage == "1" && altStage == "0")                                                //chapter 1
             {

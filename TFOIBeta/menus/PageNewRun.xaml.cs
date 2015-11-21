@@ -186,7 +186,6 @@ namespace TFOIBeta.menus
 
                                     if (item.Space)
                                     {
-                                        run.RunActiveItem = item;
                                         icon.Effect = glowActiveItem;
                                         icon.Tag = "space";
                                     }
@@ -300,7 +299,7 @@ namespace TFOIBeta.menus
                             altStage = Regex.Match(line, @"m_AltStage (\d+)").Groups[1].Value;      //floor detection fix for Rebirth
                         }
 
-                        var floor = Floors.GetFloorFromId(stage, altStage);
+                        var floor = Floors.GetFloorFromStageCodes(stage, altStage);
 
                         if (floor != null)
                         {
