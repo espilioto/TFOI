@@ -44,16 +44,43 @@ namespace TFOIBeta.menus
 
         private void recreateArchivedRun(string entryId)
         {
-            selectedRunBosses.Children.Clear();
+            selectedRunFloors.Children.Clear();
             selectedRunItems.Children.Clear();
+            selectedRunBosses.Children.Clear();
 
             ArchivedRun run = Database.ArchivedRuns.Find(asd => asd.Id == entryId);
 
             selectedRunSeed.Text = run.Seed;
             selectedRunTime.Text = run.Time;
 
+            if (run.Result == "Victory")
+                selectedRunResult.Foreground = Brushes.Gold;
+            else
+                selectedRunResult.Foreground = Brushes.DarkRed;
+
+            selectedRunResult.Text = run.Result;
+
+            selectedRunCharIcon.ToolTip = run.Character.Name;
             selectedRunCharIcon.Source = Stuff.BitmapToImageSource(run.Character.Icon);
 
+            foreach (var floor in run.Floors)
+            {
+                var icon = new Image();
+                if (!string.IsNullOrEmpty(floor.Curse))
+                {
+                    icon.ToolTip = floor.Name + Environment.NewLine + floor.Curse;
+                }
+                else
+                {
+                    icon.ToolTip = floor.Name;
+                }
+                icon.Height = 35;
+                icon.Stretch = Stretch.Uniform;
+                icon.Source = Stuff.BitmapToImageSource(floor.Icon);
+
+                selectedRunFloors.Children.Add(icon);
+                
+            }
             foreach (var item in run.Items)
             {
                 var icon = new Image();

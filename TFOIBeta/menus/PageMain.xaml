@@ -51,7 +51,7 @@
             </Image.RenderTransform>
         </Image>
         <Image Name="runs_" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/arrow.png" Margin="328,279,541,224" Visibility="Hidden"/>
-        <Image Name="runs"  Source="/Resources/RUNS.png" Margin="335,269,396,222" MouseEnter="runs_MouseEnter" MouseLeave="runs_MouseLeave" MouseDown="runs_MouseDown">
+        <Image Name="runs"  Source="/Resources/RUNS.png" Margin="345,269,386,222" MouseEnter="runs_MouseEnter" MouseLeave="runs_MouseLeave" MouseDown="runs_MouseDown">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

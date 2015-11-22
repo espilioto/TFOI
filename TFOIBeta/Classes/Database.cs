@@ -68,7 +68,7 @@ namespace TFOIBeta
             }
         }
 
-        public static void SubmitRun(string seed, string timestamp, string charName, string itemIdList, string floorList, string bossList, string killedBy, string time, string result)
+        public static void SubmitRun(string seed, string timestamp, string charName, string itemIdList, string bossList, string killedBy, string time, string result, string floorList)
         {
             string query = "INSERT INTO runs(Seed, TimeStamp, CharName, Items, Floors, Bosses, KilledBy, Time, Result) VALUES";
             query += "(@seed, @timestamp, @charName, @itemIdList, @floorList, @bossList, @killedBy,@time,  @result)";
@@ -112,6 +112,7 @@ namespace TFOIBeta
                 command = new SQLiteCommand(query, connection);
                 dataAdapter = new SQLiteDataAdapter(command);
 
+                dataTable.Clear();
                 dataAdapter.Fill(dataTable);
                 dg.ItemsSource = dataTable.DefaultView;
             }

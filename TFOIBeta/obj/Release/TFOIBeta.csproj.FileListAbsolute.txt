@@ -62,5 +62,11 @@ C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\obj\
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\obj\Release\TFOIBeta.exe
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\bin\Release\WpfAnimatedGif.dll
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\bin\Release\WpfAnimatedGif.xml
-C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\obj\Release\menus\PageWaiting.g.cs
-C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\obj\Release\menus\PageWaiting.baml
+C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\bin\Release\EntityFramework.dll
+C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\bin\Release\System.Data.SQLite.dll
+C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\bin\Release\System.Data.SQLite.EF6.dll
+C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\bin\Release\System.Data.SQLite.Linq.dll
+C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\bin\Release\EntityFramework.xml
+C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOIBeta\TFOIBeta\bin\Release\System.Data.SQLite.xml

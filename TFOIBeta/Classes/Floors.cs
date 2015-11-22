@@ -242,7 +242,7 @@ namespace TFOIBeta
                 {
                     floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\2.png");
                 }
-                else if (floor.Name == "Caves")
+                else if (floor.Name.Contains("Caves"))
                 {
                     floor.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\floors\3.png");
                 }

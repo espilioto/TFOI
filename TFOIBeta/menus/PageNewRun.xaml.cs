@@ -448,7 +448,7 @@ namespace TFOIBeta.menus
 
         private void RunTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            run.Time = run.Time.Add(TimeSpan.FromMilliseconds(900));
+            run.Time = run.Time.Add(TimeSpan.FromSeconds(1));
 
             Dispatcher.Invoke(new Action(() => txtTime.Text = "TIME: " + run.Time.ToString(@"hh\:mm\:ss")));
 
