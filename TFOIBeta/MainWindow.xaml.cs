@@ -36,8 +36,9 @@ namespace TFOIBeta
             mainWindow = this;
             mainWindowFrame.NavigationService.Navigate(new menus.PageMain());
 
-            Database.CreateFloorsColumn();      // create a Floors column in the database if it doesn't exist.
-
+            Database.CreateDatabaseFile();      //why the heck didnt i make this sooner and distribute the .db file with the release like an idiot
+            Database.CreateFloorsColumn();      //if you got the old TFOI version (along with the old database), create a Floors column in it
+        
             Items.ParseJsonItemList();
             Bosses.ParseJsonBossList();
             Characters.ParseJsonCharList();

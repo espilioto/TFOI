@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.Windows.Controls;
 using System.Globalization;
+using System.IO;
 
 namespace TFOIBeta
 {
@@ -15,12 +16,44 @@ namespace TFOIBeta
         public static List<ArchivedRun> ArchivedRuns = new List<ArchivedRun>();
         static ArchivedRun archivedRun;
 
-        static SQLiteConnection connection = new SQLiteConnection("Data Source=" + System.AppDomain.CurrentDomain.BaseDirectory + "resources\\isaac.db");
+        static SQLiteConnection connection = new SQLiteConnection("Data Source=" + System.AppDomain.CurrentDomain.BaseDirectory + @"resources\isaac.db");
         static SQLiteCommand command;
         static SQLiteDataReader reader = null;
         static SQLiteDataAdapter dataAdapter;
         static SQLiteTransaction transaction;
         public static DataTable dataTable = new DataTable();
+
+        private static bool DatabaseFileExists()
+        {
+            if (File.Exists(System.AppDomain.CurrentDomain.BaseDirectory + @"resources\isaac.db"))
+                return true;
+            else
+                return false;
+        }
+        public static void CreateDatabaseFile()
+        {
+            string query = "CREATE TABLE [runs] ([Id] integer PRIMARY KEY AUTOINCREMENT NOT NULL, [Seed] text, [Timestamp] text, [CharName] text, [Items] text, [Bosses] text, [KilledBy] text, [Time] text, [Result] text, [Floors] text)";
+            if (!DatabaseFileExists())
+            {
+                try
+                {
+                    SQLiteConnection.CreateFile(System.AppDomain.CurrentDomain.BaseDirectory + @"resources\isaac.db");
+
+                    connection.Open();
+                    command = new SQLiteCommand(query, connection);
+                    command.ExecuteNonQuery();
+                }
+                catch (SQLiteException)
+                {
+                    transaction.Rollback();
+                }
+                finally
+                {
+                    command.Dispose();
+                    connection.Close();
+                }
+            }
+        }
 
         private static bool CheckIfColumnExists(string tableName, string columnName)
         {
@@ -49,7 +82,6 @@ namespace TFOIBeta
             connection.Close();
             return false;
         }
-
         public static void CreateFloorsColumn()
         {
             if (!CheckIfColumnExists("runs", "Floors"))
@@ -123,7 +155,7 @@ namespace TFOIBeta
             }
         }
         public static void DeserializeRunsFromDB()
-         {
+        {
             string items = "", floors = "", bosses = "";
 
             foreach (DataRow row in dataTable.Rows)
