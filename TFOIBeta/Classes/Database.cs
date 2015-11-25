@@ -8,6 +8,7 @@ using System.Data.SQLite;
 using System.Windows.Controls;
 using System.Globalization;
 using System.IO;
+using System.Windows;
 
 namespace TFOIBeta
 {
@@ -84,19 +85,24 @@ namespace TFOIBeta
         }
         public static void CreateFloorsColumn()
         {
-            if (!CheckIfColumnExists("runs", "Floors"))
+            string query = "ALTER TABLE runs ADD COLUMN Floors TEXT;";
+            try
             {
-                try
+                if (!CheckIfColumnExists("runs", "Floors"))
                 {
+                    command = new SQLiteCommand(query, connection);
                     connection.Open();
-                    command.CommandText = "ALTER TABLE runs ADD COLUMN Floors TEXT;";
                     command.ExecuteNonQuery();
                 }
-                finally
-                {
-                    command.Dispose();
-                    connection.Close();
-                }
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show(ex.Message + Environment.NewLine + ex.Data);
+            }
+            finally
+            {
+                command.Dispose();
+                connection.Close();
             }
         }
 
@@ -105,7 +111,7 @@ namespace TFOIBeta
             string query = "INSERT INTO runs(Seed, TimeStamp, CharName, Items, Floors, Bosses, KilledBy, Time, Result) VALUES";
             query += "(@seed, @timestamp, @charName, @itemIdList, @floorList, @bossList, @killedBy,@time,  @result)";
 
-            SQLiteCommand command = new SQLiteCommand(query, connection);
+            command = new SQLiteCommand(query, connection);
             command.Parameters.AddWithValue("@seed", seed);
             command.Parameters.AddWithValue("@timestamp", timestamp);
             command.Parameters.AddWithValue("@charName", charName);
