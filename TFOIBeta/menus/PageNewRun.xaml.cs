@@ -71,10 +71,6 @@ namespace TFOIBeta.menus
                 {
                     if (line.StartsWith("RNG Start Seed:"))
                     {
-                        //if (run != null)
-                        //{
-                        //    run.Dispose();
-                        //}
 
                         run = new Run();
 

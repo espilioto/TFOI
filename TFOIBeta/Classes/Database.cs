@@ -143,7 +143,7 @@ namespace TFOIBeta
 
         public static void SelectAll(DataGrid dg)
         {
-            string query = "SELECT * FROM 'runs'";
+            string query = "SELECT * FROM runs";
             try
             {
                 connection.Open();
@@ -197,7 +197,7 @@ namespace TFOIBeta
         }
         public static void SelectItem(DataGrid dg, string ItemID)
         {
-            string query = "SELECT * FROM 'runs' WHERE Items = " + ItemID;
+            string query = "SELECT * FROM runs WHERE Items = " + ItemID + "\"";
 
             try
             {
@@ -205,8 +205,8 @@ namespace TFOIBeta
                 command = new SQLiteCommand(query, connection);
                 dataAdapter = new SQLiteDataAdapter(command);
 
+                dataTable.Clear();
                 dataAdapter.Fill(dataTable);
-
                 dg.ItemsSource = dataTable.DefaultView;
             }
             finally
@@ -217,16 +217,17 @@ namespace TFOIBeta
         }
         public static void SelectChar(DataGrid dg, string CharName)
         {
-            string query = "SELECT * FROM 'runs' WHERE CharName = " + CharName;
+            string query = "SELECT * FROM runs WHERE CharName = @CharName";
 
             try
             {
                 connection.Open();
                 command = new SQLiteCommand(query, connection);
+                command.Parameters.AddWithValue("@CharName", CharName);
                 dataAdapter = new SQLiteDataAdapter(command);
 
+                dataTable.Clear();
                 dataAdapter.Fill(dataTable);
-
                 dg.ItemsSource = dataTable.DefaultView;
             }
             finally
@@ -237,7 +238,7 @@ namespace TFOIBeta
         }
         public static void SelectBoss(DataGrid dg, string BossID)
         {
-            string query = "SELECT * FROM 'runs' WHERE Items = " + BossID;
+            string query = "SELECT * FROM runs WHERE Bosses = " + BossID + "\"";
 
             try
             {
@@ -245,8 +246,8 @@ namespace TFOIBeta
                 command = new SQLiteCommand(query, connection);
                 dataAdapter = new SQLiteDataAdapter(command);
 
+                dataTable.Clear();
                 dataAdapter.Fill(dataTable);
-
                 dg.ItemsSource = dataTable.DefaultView;
             }
             finally

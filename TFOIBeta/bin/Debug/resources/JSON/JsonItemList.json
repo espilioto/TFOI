@@ -526,7 +526,8 @@
    "100":{
       "name":"Little Steven",
       "text":"Psychic friend",
-      "tform":"Tumor"
+      "tform":"Tumor",
+      "dmg":3.5
    },
    "101":{
       "dmg":0.3,
@@ -560,7 +561,8 @@
    },
    "106":{
       "name":"Mr. Mega",
-      "text":"Blast damage"
+      "text":"Blast damage",
+      "details":"+5 Bombs. Bombs now do 110 damage (+60, up from 50) and have a larger blast radius"
    },
    "107":{
       "name":"Pinking Shears",
@@ -572,7 +574,8 @@
    },
    "109":{
       "name":"Money = Power",
-      "text":"$$$ = DMG"
+      "text":"$$$ = DMG",
+      "details":"+0.04 Damage for every coin you currently have. At 99 coins this item gives +3.96 Damage"
    },
    "110":{
       "name":"Mom's Contacts",
@@ -1337,7 +1340,8 @@
    },
    "261":{
       "name":"Proptosis",
-      "text":"Short range mega tears"
+      "text":"Short range mega tears",
+      "details":"Tear damage starts at +100% and decreases over range to roughly +30%"
    },
    "262":{
       "name":"Missing Page 2",
@@ -1544,7 +1548,7 @@
    "305":{
       "name":"Scorpio",
       "text":"Poison tears",
-	  "details":"4 or 6 damage per tick"
+      "details":"4 or 6 damage per tick"
    },
    "306":{
       "name":"Sagittarius",
@@ -1903,7 +1907,7 @@
       "text":"Spider love"
    },
    "378":{
-	  "name":"No. 2",
+      "name":"No. 2",
       "text":"Uh oh..."
    },
    "379":{
@@ -2008,7 +2012,7 @@
    "400":{
       "name":"Spear of Destiny",
       "text":"Your destiny",
-	  "details":"Contact damage =  2x tear damage"
+      "details":"Contact damage =  2x tear damage"
    },
    "401":{
       "name":"Explosivo",
@@ -2177,7 +2181,7 @@
    "439":{
       "name":"Mom's Box",
       "text":"What's inside?",
-	  "space":true
+      "space":true
    },
    "440":{
       "name":"Kidney Stone",

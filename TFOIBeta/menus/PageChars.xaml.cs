@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,7 +36,14 @@ namespace TFOIBeta.menus
 
                 icon.Source = Stuff.BitmapToImageSource(character.Icon);
                 charPanel.Children.Add(icon);
+                icon.MouseLeftButtonDown += Icon_MouseLeftButtonDown;
             }
+        }
+
+        private void Icon_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Image image = sender as Image;
+            Database.SelectChar(dataGrid, image.ToolTip.ToString().ToUpper());
         }
 
         private void back_MouseDown(object sender, MouseButtonEventArgs e)

@@ -1,125 +1,166 @@
 {
-    "1": {
-        "name": "Basement I"
-    },
-    "2": {
-        "name": "Basement II"
-    },
-    "3": {
-        "name": "Basement XL"
-    },
-    "4": {
-        "name": "Cellar I"
-    },
-    "5": {
-        "name": "Cellar II"
-    },
-    "6": {
-        "name": "Cellar XL"
-    },
-    "7": {
-        "name": "Burning Basement I"
-    },
-    "8": {
-        "name": "Burning Basement II"
-    },
-    "9": {
-        "name": "Burning Basement XL"
-    },
-    "10": {
-        "name": "Caves I"
-    },
-    "11": {
-        "name": "Caves II"
-    },
-    "12": {
-        "name": "Caves XL"
-    },
-    "13": {
-        "name": "Catacombs I"
-    },
-    "14": {
-        "name": "Catacombs II"
-    },
-    "15": {
-        "name": "Catacombs XL"
-    },
-    "16": {
-        "name": "Flooded Caves I"
-    },
-    "17": {
-        "name": "Flooded Caves II"
-    },
-    "18": {
-        "name": "Flooded Caves XL"
-    },
-    "19": {
-        "name": "Depths I"
-    },
-    "20": {
-        "name": "Depths II"
-    },
-    "21": {
-        "name": "Depths XL"
-    },
-    "22": {
-        "name": "Necropolis I"
-    },
-    "23": {
-        "name": "Necropolis II"
-    },
-    "24": {
-        "name": "Necropolis XL"
-    },
-    "25": {
-        "name": "Dank Depths I"
-    },
-    "26": {
-        "name": "Dank Depths II"
-    },
-    "27": {
-        "name": "Dank Depths XL"
-    },
-    "28": {
-        "name": "Womb I"
-    },
-    "29": {
-        "name": "Womb II"
-    },
-    "30": {
-        "name": "Womb XL"
-    },
-    "31": {
-        "name": "Utero I"
-    },
-    "32": {
-        "name": "Utero II"
-    },
-    "33": {
-        "name": "Utero XL"
-    },
-    "34": {
-        "name": "Scarred Womb I"
-    },
-    "35": {
-        "name": "Scarred Womb II"
-    },
-    "36": {
-        "name": "Scarred Womb XL"
-    },
-	"37": {
-        "name": "???"
-    },
-    "38": {
-        "name": "Sheol"
-    },
-    "39": {
-        "name": "Cathedral"
-    },
-    "40": {
-        "name": "Dark Room"
-    },
-    "41": {
-        "name": "Chest"
-    }
+   "1":{
+      "name":"Basement I",
+      "shortName":"BAS1"
+   },
+   "2":{
+      "name":"Basement II",
+      "shortName":"BAS2"
+   },
+   "3":{
+      "name":"Basement XL",
+      "shortName":"BAXL"
+   },
+   "4":{
+      "name":"Cellar I",
+      "shortName":"CEL1"
+   },
+   "5":{
+      "name":"Cellar II",
+      "shortName":"CEL2"
+   },
+   "6":{
+      "name":"Cellar XL",
+      "shortName":"CELXL"
+   },
+   "7":{
+      "name":"Burning Basement I",
+      "shortName":"BBA1"
+   },
+   "8":{
+      "name":"Burning Basement II",
+      "shortName":"BBA2"
+   },
+   "9":{
+      "name":"Burning Basement XL",
+      "shortName":"BBAXL"
+   },
+   "10":{
+      "name":"Caves I",
+      "shortName":"CAV1"
+   },
+   "11":{
+      "name":"Caves II",
+      "shortName":"CAV2"
+   },
+   "12":{
+      "name":"Caves XL",
+      "shortName":"CAVXL"
+   },
+   "13":{
+      "name":"Catacombs I",
+      "shortName":"CAT1"
+   },
+   "14":{
+      "name":"Catacombs II",
+      "shortName":"CAT2"
+   },
+   "15":{
+      "name":"Catacombs XL",
+      "shortName":"CATXL"
+   },
+   "16":{
+      "name":"Flooded Caves I",
+      "shortName":"FCAV1"
+   },
+   "17":{
+      "name":"Flooded Caves II",
+      "shortName":"FCAV2"
+   },
+   "18":{
+      "name":"Flooded Caves XL",
+      "shortName":"FCAVXL"
+   },
+   "19":{
+      "name":"Depths I",
+      "shortName":"DEP1"
+   },
+   "20":{
+      "name":"Depths II",
+      "shortName":"DEP2"
+   },
+   "21":{
+      "name":"Depths XL",
+      "shortName":"DEPXL"
+   },
+   "22":{
+      "name":"Necropolis I",
+      "shortName":"NECR1"
+   },
+   "23":{
+      "name":"Necropolis II",
+      "shortName":"NECR2"
+   },
+   "24":{
+      "name":"Necropolis XL",
+      "shortName":"NECRXL"
+   },
+   "25":{
+      "name":"Dank Depths I",
+      "shortName":"DDEP1"
+   },
+   "26":{
+      "name":"Dank Depths II",
+      "shortName":"DDEP2"
+   },
+   "27":{
+      "name":"Dank Depths XL",
+      "shortName":"DDEPXL"
+   },
+   "28":{
+      "name":"Womb I",
+      "shortName":"WMB1"
+   },
+   "29":{
+      "name":"Womb II",
+      "shortName":"WMB2"
+   },
+   "30":{
+      "name":"Womb XL",
+      "shortName":"WMBXL"
+   },
+   "31":{
+      "name":"Utero I",
+      "shortName":"UTR1"
+   },
+   "32":{
+      "name":"Utero II",
+      "shortName":"UTR2"
+   },
+   "33":{
+      "name":"Utero XL",
+      "shortName":"UTRXL"
+   },
+   "34":{
+      "name":"Scarred Womb I",
+      "shortName":"SWMB1"
+   },
+   "35":{
+      "name":"Scarred Womb II",
+      "shortName":"SWMB2"
+   },
+   "36":{
+      "name":"Scarred Womb XL",
+      "shortName":"SWMBXL"
+   },
+   "37":{
+      "name":"???",
+      "shortName":"???"
+   },
+   "38":{
+      "name":"Sheol",
+      "shortName":"SHEOL"
+   },
+   "39":{
+      "name":"Cathedral",
+      "shortName":"CATH"
+   },
+   "40":{
+      "name":"Dark Room",
+      "shortName":"DARK"
+   },
+   "41":{
+      "name":"Chest",
+      "shortName":"CHST"
+   }
 }

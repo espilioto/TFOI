@@ -217,6 +217,7 @@ namespace TFOIBeta
 
                 floor.Id = jsonFloor.Name;
                 floor.Name = jsonFloor.First["name"];
+                floor.ShortName = jsonFloor.First["shortName"]; 
 
                 if (floor.Name.Contains("Burning"))
                 {
@@ -293,6 +294,7 @@ namespace TFOIBeta
 
         public string Id { get; set; }
         public string Name { get; set; }
+        public string ShortName { get; set; }
         public string Curse { get; set; }
 
         public Bitmap Icon { get; set; }
