@@ -14,7 +14,7 @@
         <Image Name="back" Source="/TFOIBeta;component/Resources/back.png" Margin="25,439,847,60" RenderOptions.BitmapScalingMode="NearestNeighbor" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave"/>
         <Image Name="back_" Source="/TFOIBeta;component/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Margin="10,470,832,44" RenderTransformOrigin="0.5,0.5" Width="87"/>
 
-        <DataGrid Name="dataGrid" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="232" Margin="150,264,0,0" VerticalAlignment="Top" Width="759" Background="#FFE7DDDC" BorderBrush="#FFE7DDDC" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="18.667" OpacityMask="#FFE7DDDC" Foreground="#FF362F2D" AlternatingRowBackground="#FFCAC5BD" RowBackground="#FFE7DDDC" BorderThickness="0" GridLinesVisibility="None" SelectedCellsChanged="dataGrid_SelectedCellsChanged">
+        <DataGrid Name="dataGrid" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="232" Margin="150,264,0,0" VerticalAlignment="Top" Width="759" Background="#FFE7DDDC" BorderBrush="#FFE7DDDC" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="18.667" OpacityMask="#FFE7DDDC" Foreground="#FF362F2D" AlternatingRowBackground="#FFCAC5BD" RowBackground="#FFE7DDDC" BorderThickness="0" GridLinesVisibility="None" SelectedCellsChanged="dataGrid_SelectedCellsChanged" IsReadOnly="True" CanUserResizeRows="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Timestamp}" Header="DATE" Width="137"/>
                 <DataGridTextColumn Binding="{Binding Seed}" Header="SEED"/>

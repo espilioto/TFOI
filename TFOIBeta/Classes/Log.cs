@@ -11,7 +11,7 @@ namespace TFOIBeta
 {
     class Log
     {
-        public static string path = "";
+        public static string path = string.Empty;
 
         /// <summary>
         /// Tries to locate the log in the default dirs, Afterbirth having priority over Rebirth (why even have separate directories, no idea. I blame Ed.).

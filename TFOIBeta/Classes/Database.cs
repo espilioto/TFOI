@@ -162,7 +162,7 @@ namespace TFOIBeta
         }
         public static void DeserializeRunsFromDB()
         {
-            string items = "", floors = "", bosses = "";
+            string items = string.Empty, floors = string.Empty, bosses = string.Empty;
 
             foreach (DataRow row in dataTable.Rows)
             {

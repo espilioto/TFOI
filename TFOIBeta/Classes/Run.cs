@@ -183,7 +183,7 @@ namespace TFOIBeta
             var itemList = string.Join(",", RunItems.Select(x => x.Id));
             var floorList = string.Join(",", RunFloors.Select(x => x.Id));
             var bossList = string.Join(",", RunBosses.Select(x => x.Id));
-            string killedBy = "";
+            string killedBy = string.Empty;
 
             if (RunKilledByBoss.Id != null)
             { 

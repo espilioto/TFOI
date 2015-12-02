@@ -32,7 +32,7 @@ namespace TFOIBeta.menus
 
         Stream stream;
         StreamReader streamReader;
-        string line = "";
+        string line = string.Empty;
 
         Timer runTimer = new Timer(1000);
         Timer timer = new Timer(100);
@@ -309,7 +309,7 @@ namespace TFOIBeta.menus
                     }
                     else if (line.StartsWith("Curse of"))
                     {
-                        string curse = "";
+                        string curse = string.Empty;
 
                         if (line.Contains("Maze"))
                         {
@@ -361,7 +361,7 @@ namespace TFOIBeta.menus
                         }
 
 
-                        curse = "";                                           //empty the string so it doesnt trigger when you go to the next floor
+                        curse = string.Empty;                                           //empty the string so it doesnt trigger when you go to the next floor
                     }
                     else if (Regex.Match(line, (@"Room \d\.\d{4}")).Success) //regex boss room
                     {
