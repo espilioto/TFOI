@@ -143,6 +143,7 @@ namespace TFOIBeta
         public int Health { get; set; }                             //int
         public int SoulHearts { get; set; }
         public int SinHearts { get; set; }
+        public int TimesCollected { get; set; }
 
         public bool HealthOnly { get; set; }                        //bool
         public bool Space { get; set; }

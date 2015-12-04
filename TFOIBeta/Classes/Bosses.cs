@@ -63,6 +63,8 @@ namespace TFOIBeta
         public string Text { get; set; }
         public string DetailsString { get; set; }
 
+        public int TimesFought { get; set; }                    //int
+
         public Bitmap Icon { get; set; }                        //icon
         public Bitmap NameLogo { get; set; }
     }

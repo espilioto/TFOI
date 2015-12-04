@@ -9,20 +9,25 @@
       Title="PageChars" Loaded="Page_Loaded">
 
     <Grid>
+        <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOIBeta;component/Resources/itemPanel.png" Margin="19,92,860,102" />
+
         <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/BGChars.png"/>
-        <Image Name="back" Source="/TFOIBeta;component/Resources/back.png" Margin="25,439,847,60" RenderOptions.BitmapScalingMode="NearestNeighbor" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave" Stretch="Fill"/>
-        <Image Name="back_" Source="/TFOIBeta;component/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Margin="10,470,832,44" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name="back" Source="/TFOIBeta;component/Resources/back.png" Margin="25,439,847,60" RenderOptions.BitmapScalingMode="NearestNeighbor" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave" Stretch="Fill"/>
+        <Image x:Name="back_" Source="/TFOIBeta;component/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Margin="10,470,832,44" RenderTransformOrigin="0.5,0.5"/>
 
-        <WrapPanel Name="charPanel" Margin="187,75,154,403" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" Width="619"/>
+        <WrapPanel x:Name="charPanel" Margin="187,75,154,403" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" Width="619"/>
 
-        <TextBlock Text="TOP 10 ITEMS" TextAlignment="Center" TextWrapping="Wrap" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="32" Margin="0,32,860,403" Foreground="#FF362F2D"/>
-        <WrapPanel Name="top10Items" Margin="0,98,832,171" />
-        <TextBlock Text="TOP 10 BOSSES" TextAlignment="Center" TextWrapping="Wrap" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="32" Margin="856,32,4,403" Foreground="#FF362F2D"/>
-        <WrapPanel Name="top10Bosses" Margin="828,98,0,0" />
-        
-        <TextBlock Name="charStats" Margin="133,150,150,340" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="26.667" Foreground="#FF362F2D"/>
+        <TextBlock Text="TOP 10 ITEMS" TextAlignment="Center" TextWrapping="Wrap" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="32" Margin="0,32,847,403" Foreground="#FF362F2D"/>
+        <Image  Source="/TFOIBeta;component/Resources/itemPanel.png" Margin="19,90,860,104" />
+        <StackPanel x:Name="top10Items" Margin="34,98,876,122" Width="50" Height="320" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Image Source="/TFOIBeta;component/Resources/bossPanel.png" Margin="822,109,0,95" Stretch="Fill" />
 
-        <DataGrid Name="dataGrid" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="270" Margin="145,221,0,0" VerticalAlignment="Top" Width="648" Background="#FFE7DDDC" BorderBrush="#FFE7DDDC" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="18.667" OpacityMask="#FFE7DDDC" Foreground="#FF362F2D" AlternatingRowBackground="#FFCAC5BD" RowBackground="#FFE7DDDC" BorderThickness="0" GridLinesVisibility="None">
+        <TextBlock Text="TOP 5 BOSSES" TextAlignment="Center" TextWrapping="Wrap" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="32" Margin="822,32,10,403" Foreground="#FF362F2D"/>
+        <StackPanel x:Name="top5Bosses" Margin="815,120,0,0" />
+
+        <TextBlock x:Name="charStats" TextAlignment="Center" Margin="133,150,150,340" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="26.667" Foreground="#FF362F2D"/>
+
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="270" Margin="145,221,0,0" VerticalAlignment="Top" Width="648" Background="#FFE7DDDC" BorderBrush="#FFE7DDDC" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="18.667" OpacityMask="#FFE7DDDC" Foreground="#FF362F2D" AlternatingRowBackground="#FFCAC5BD" RowBackground="#FFE7DDDC" BorderThickness="0" GridLinesVisibility="None">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Timestamp}" Header="DATE" Width="137"/>
                 <DataGridTextColumn Binding="{Binding Seed}" Header="SEED"/>
