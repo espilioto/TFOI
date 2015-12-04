@@ -192,11 +192,11 @@ namespace TFOIBeta
 
             if (GameOver)
             {
-                Database.SubmitRun(Seed, DateTime.Now.ToString("dd/mm/yy HH:mm"), RunCharacter.Name.ToUpper(), itemList, bossList, killedBy, Time.ToString(@"hh\:mm\:ss"), "DEFEAT", floorList);
+                Database.SubmitRun(Seed, DateTime.Now.ToString("dd/MM/yy HH:mm"), RunCharacter.Name.ToUpper(), itemList, bossList, killedBy, Time.ToString(@"hh\:mm\:ss"), "DEFEAT", floorList);
             }
             else if (Victory)
             {
-                Database.SubmitRun(Seed, DateTime.Now.ToString("dd/mm/yy HH:mm"), RunCharacter.Name.ToUpper(), itemList, bossList, killedBy, Time.ToString(@"hh\:mm\:ss"), "VICTORY", floorList);
+                Database.SubmitRun(Seed, DateTime.Now.ToString("dd/MM/yy HH:mm"), RunCharacter.Name.ToUpper(), itemList, bossList, killedBy, Time.ToString(@"hh\:mm\:ss"), "VICTORY", floorList);
             }
 
         }
