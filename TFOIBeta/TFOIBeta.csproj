@@ -317,9 +317,6 @@
     <None Include="Resources\waitingBG.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\BGBosses.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\BGOptions.png" />
   </ItemGroup>
   <ItemGroup>
@@ -345,6 +342,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\bossPanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BGBosses.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions />

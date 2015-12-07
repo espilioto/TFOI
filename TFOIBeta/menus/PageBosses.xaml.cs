@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,18 +37,46 @@ namespace TFOIBeta.menus
                 icon.Stretch = Stretch.None;
                 icon.Source = Stuff.BitmapToImageSource(boss.Icon);
 
-
                 bossPanel.Children.Add(icon);
                 icon.MouseLeftButtonDown += new MouseButtonEventHandler(icon_MouseLeftButtonDown);
             }
+
+            PopulateStats();
         }
 
         private void icon_MouseLeftButtonDown(object sender, RoutedEventArgs e)
         {
-            System.Windows.Controls.Image image = sender as System.Windows.Controls.Image;
-            textBossInfo.Text = image.Tag.ToString();
+            string s = string.Empty;
+            string bossList = string.Empty;
 
+            //var words = new Dictionary<string, int>(StringComparer.CurrentCultureIgnoreCase);
+
+            System.Windows.Controls.Image image = sender as System.Windows.Controls.Image;      //boss logo stuff
+            textBossInfo.Text = image.Tag.ToString();
             bossNameLogo.Source = Stuff.BitmapToImageSource(Bosses.List.Find(x => x.Id == image.Name.TrimStart('_')).NameLogo);
+
+            //words.Clear();
+
+            Database.SelectBoss(dataGrid, image.Name.TrimStart('_'));
+
+            if (Database.dataTable.Rows.Count == 1)
+                timesFought.Text = "FOUGHT " + Database.dataTable.Rows.Count.ToString() + " TIME";
+            else
+                timesFought.Text = "FOUGHT " + Database.dataTable.Rows.Count.ToString() + " TIMES";
+        }
+
+        private void PopulateStats()
+        {
+            float winrate = 0;
+            string bossListDefeated = string.Empty;
+            string bossListNemeses = string.Empty;
+
+            Database.SelectAll();
+
+            foreach (DataRow value in Database.dataTable.Rows)  //TODO calculate win% and top5
+            {
+
+            }
         }
 
         private void back_MouseDown(object sender, MouseButtonEventArgs e)

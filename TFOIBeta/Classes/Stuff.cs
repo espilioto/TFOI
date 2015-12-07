@@ -50,8 +50,11 @@ namespace TFOIBeta
 
             foreach (var item in words)
             {
-                itemList.Add(Items.GetItemFromId(item.Key));
-                itemList.Last().TimesCollected = item.Value;
+                if (itemList.Count < 10)
+                {
+                    itemList.Add(Items.GetItemFromId(item.Key));
+                    itemList.Last().TimesCollected = item.Value;
+                }
             }
 
             return itemList;
@@ -75,8 +78,11 @@ namespace TFOIBeta
 
             foreach (var boss in words)
             {
-                bossList.Add(Bosses.GetBossFromId(boss.Key));
-                bossList.Last().TimesFought = boss.Value;
+                if (bossList.Count < 5)
+                {
+                    bossList.Add(Bosses.GetBossFromId(boss.Key));
+                    bossList.Last().TimesFought = boss.Value;
+                }
             }
 
             return bossList;

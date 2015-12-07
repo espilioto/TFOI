@@ -23,6 +23,7 @@ namespace TFOIBeta
         static SQLiteDataAdapter dataAdapter;
         static SQLiteTransaction transaction;
         public static DataTable dataTable = new DataTable();
+        public static DataTable dataTable2 = new DataTable();
 
         private static bool DatabaseFileExists()
         {
@@ -141,6 +142,27 @@ namespace TFOIBeta
             }
         }
 
+        /// <summary>
+        /// This query fills datatable2. Use it to calculate global run stats etc.  
+        /// </summary>
+        public static void SelectAll()
+        {
+            string query = "SELECT * FROM runs";
+            try
+            {
+                connection.Open();
+                command = new SQLiteCommand(query, connection);
+                dataAdapter = new SQLiteDataAdapter(command);
+
+                dataTable.Clear();
+                dataAdapter.Fill(dataTable2);
+            }
+            finally
+            {
+                command.Dispose();
+                connection.Close();
+            }
+        }
         public static void SelectAll(DataGrid dg)
         {
             string query = "SELECT * FROM runs";
@@ -195,14 +217,15 @@ namespace TFOIBeta
                 ArchivedRuns.Add(archivedRun);
             }
         }
-        public static void SelectItem(DataGrid dg, string ItemID)
+        public static void SelectItem(DataGrid dg, string ItemId)
         {
-            string query = "SELECT * FROM runs WHERE Items = " + ItemID + "\"";
+            string query = "SELECT * FROM runs WHERE Items = @ItemId";
 
             try
             {
                 connection.Open();
                 command = new SQLiteCommand(query, connection);
+                command.Parameters.AddWithValue("@ItemId", ItemId);
                 dataAdapter = new SQLiteDataAdapter(command);
 
                 dataTable.Clear();
@@ -236,14 +259,15 @@ namespace TFOIBeta
                 connection.Close();
             }
         }
-        public static void SelectBoss(DataGrid dg, string BossID)
+        public static void SelectBoss(DataGrid dg, string BossId)
         {
-            string query = "SELECT * FROM runs WHERE Bosses = " + BossID + "\"";
+            string query = "SELECT * FROM runs WHERE instr(Bosses, '" + BossId + "')";
 
             try
             {
                 connection.Open();
                 command = new SQLiteCommand(query, connection);
+                //command.Parameters.AddWithValue("@BossId", BossId);
                 dataAdapter = new SQLiteDataAdapter(command);
 
                 dataTable.Clear();

@@ -179,7 +179,6 @@ namespace TFOIBeta
 
         public void SubmitRunToDB()
         {
-
             var itemList = string.Join(",", RunItems.Select(x => x.Id));
             var floorList = string.Join(",", RunFloors.Select(x => x.Id));
             var bossList = string.Join(",", RunBosses.Select(x => x.Id));
@@ -198,7 +197,6 @@ namespace TFOIBeta
             {
                 Database.SubmitRun(Seed, DateTime.Now.ToString("dd/MM/yy HH:mm"), RunCharacter.Name.ToUpper(), itemList, bossList, killedBy, Time.ToString(@"hh\:mm\:ss"), "VICTORY", floorList);
             }
-
         }
 
     }

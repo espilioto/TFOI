@@ -83,16 +83,6 @@ namespace TFOIBeta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap BGBosses {
-            get {
-                object obj = ResourceManager.GetObject("BGBosses", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap BGChars {
             get {
                 object obj = ResourceManager.GetObject("BGChars", resourceCulture);

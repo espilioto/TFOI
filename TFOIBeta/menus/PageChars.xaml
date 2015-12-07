@@ -20,7 +20,7 @@
         <TextBlock Text="TOP 10 ITEMS" TextAlignment="Center" TextWrapping="Wrap" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="32" Margin="0,32,847,403" Foreground="#FF362F2D"/>
         <Image  Source="/TFOIBeta;component/Resources/itemPanel.png" Margin="19,90,860,104" />
         <StackPanel x:Name="top10Items" Margin="34,98,876,122" Width="50" Height="320" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <Image Source="/TFOIBeta;component/Resources/bossPanel.png" Margin="822,109,0,95" Stretch="Fill" />
+        <Image Source="/TFOIBeta;component/Resources/bossPanel.png" Margin="826,109,6,149" Stretch="Fill" />
 
         <TextBlock Text="TOP 5 BOSSES" TextAlignment="Center" TextWrapping="Wrap" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="32" Margin="822,32,10,403" Foreground="#FF362F2D"/>
         <StackPanel x:Name="top5Bosses" Margin="815,120,0,0" />
