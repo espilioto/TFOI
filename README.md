@@ -2,7 +2,7 @@
 # The Finding Of Items
 A run tracker and logger for The Binding of Isaac: Afterbirth
 
-### Download [Here](https://github.com/espilioto/TFOI/releases>)
+### Download [Here](http://moddingofisaac.com/mod/900/thefindingofitems)
 
 ### Features
 * Seed, character, item, floor + curse, boss and time identification for current run.
