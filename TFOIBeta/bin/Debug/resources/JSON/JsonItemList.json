@@ -1853,6 +1853,11 @@
       "text":"Friendly fly",
       "dmg":3
    },
+   "365":{
+      "name":"Lost Fly",
+      "text":"Lost protector",
+	  "details":"7 contact damage per tick"
+   },
    "366":{
       "name":"Scatter Bombs",
       "text":"We put bombs in your bombs!"
