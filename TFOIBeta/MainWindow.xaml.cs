@@ -38,9 +38,9 @@ namespace TFOIBeta
 
             AppDomain.CurrentDomain.UnhandledException += (senderr, ee) => MessageBox.Show(ee.ExceptionObject.ToString());
 
-            Database.CreateDatabaseFile();      //why the heck didnt i make this sooner and distribute the .db file with the release like an idiot
+            Database.CreateDatabaseFile();      //why the heck didnt i make this sooner and distributed the .db file with the release like an idiot
             Database.CreateFloorsColumn();      //if you got the old TFOI version (along with the old database), create a Floors column in it
-        
+
             Items.ParseJsonItemList();
             Bosses.ParseJsonBossList();
             Characters.ParseJsonCharList();

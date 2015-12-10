@@ -65,21 +65,23 @@ namespace TFOIBeta.menus
 
             foreach (var floor in run.Floors)
             {
-                var icon = new Image();
-                if (!string.IsNullOrEmpty(floor.Curse))
+                if (floor != null)      //gotta check because an old TFOI version entry without floors might exist in the db
                 {
-                    icon.ToolTip = floor.Name + Environment.NewLine + floor.Curse;
-                }
-                else
-                {
-                    icon.ToolTip = floor.Name;
-                }
-                icon.Height = 35;
-                icon.Stretch = Stretch.Uniform;
-                icon.Source = Stuff.BitmapToImageSource(floor.Icon);
+                    var icon = new Image();
+                    if (!string.IsNullOrEmpty(floor.Curse))
+                    {
+                        icon.ToolTip = floor.Name + Environment.NewLine + floor.Curse;
+                    }
+                    else
+                    {
+                        icon.ToolTip = floor.Name;
+                    }
+                    icon.Height = 35;
+                    icon.Stretch = Stretch.Uniform;
+                    icon.Source = Stuff.BitmapToImageSource(floor.Icon);
 
-                selectedRunFloors.Children.Add(icon);
-                
+                    selectedRunFloors.Children.Add(icon);
+                }
             }
             foreach (var item in run.Items)
             {

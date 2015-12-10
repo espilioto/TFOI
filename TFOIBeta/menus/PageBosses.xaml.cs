@@ -26,6 +26,8 @@ namespace TFOIBeta.menus
             InitializeComponent();
         }
 
+        string selectedBoss;
+
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             foreach (var boss in Bosses.List)
@@ -41,42 +43,56 @@ namespace TFOIBeta.menus
                 icon.MouseLeftButtonDown += new MouseButtonEventHandler(icon_MouseLeftButtonDown);
             }
 
-            PopulateStats();
+            PopulateStats();        //query the db every time to refresh the stats
         }
 
         private void icon_MouseLeftButtonDown(object sender, RoutedEventArgs e)
         {
-            string s = string.Empty;
-            string bossList = string.Empty;
-
-            //var words = new Dictionary<string, int>(StringComparer.CurrentCultureIgnoreCase);
+            int timesDefeatedByBoss = 0;
 
             System.Windows.Controls.Image image = sender as System.Windows.Controls.Image;      //boss logo stuff
             textBossInfo.Text = image.Tag.ToString();
             bossNameLogo.Source = Stuff.BitmapToImageSource(Bosses.List.Find(x => x.Id == image.Name.TrimStart('_')).NameLogo);
 
-            //words.Clear();
-
-            Database.SelectBoss(dataGrid, image.Name.TrimStart('_'));
+            selectedBoss = image.Name.TrimStart('_');                               //get the boss id
+            Database.SelectBoss(dataGrid, selectedBoss);                            //and run the query with it
 
             if (Database.dataTable.Rows.Count == 1)
                 timesFought.Text = "FOUGHT " + Database.dataTable.Rows.Count.ToString() + " TIME";
             else
                 timesFought.Text = "FOUGHT " + Database.dataTable.Rows.Count.ToString() + " TIMES";
+
+            foreach (DataRow value in Database.dataTable2.Rows)                     ////////// THIS IS THE UTILITY DATATABLE ////////// 
+            {
+                if (value != null)                                                      //shit happens
+                    if (!string.IsNullOrEmpty((string)value.ItemArray[6]))              //KilledBy
+                        if ((string)value.ItemArray[6] == selectedBoss)                 //defeated by the selected boss in that run?
+                            timesDefeatedByBoss++;
+            }
+
+            if (timesDefeatedByBoss == 0 && Database.dataTable.Rows.Count > 0)
+                winRate.Text = "100% WINRATE!";
+            else if (Database.dataTable.Rows.Count == 0)
+                winRate.Text = string.Empty;
+            else
+                winRate.Text = (((float)(Database.dataTable.Rows.Count - timesDefeatedByBoss) / Database.dataTable.Rows.Count) * 100).ToString("0") + "% WIN RATE"; //(encounters-defeats=wins)/encounters=win rate
         }
 
         private void PopulateStats()
         {
-            float winrate = 0;
+            string s = string.Empty;
             string bossListDefeated = string.Empty;
             string bossListNemeses = string.Empty;
+            var words = new Dictionary<string, int>(StringComparer.CurrentCultureIgnoreCase);
 
             Database.SelectAll();
 
-            foreach (DataRow value in Database.dataTable.Rows)  //TODO calculate win% and top5
+            foreach (DataRow value in Database.dataTable.Rows)
             {
-
+                if (!string.IsNullOrEmpty((string)value.ItemArray[6]))          //bosses
+                    s += (string)value.ItemArray[5] + ',';
             }
+
         }
 
         private void back_MouseDown(object sender, MouseButtonEventArgs e)

@@ -48,7 +48,7 @@ namespace TFOIBeta
                 words[match.Value] = currentCount;
             }
 
-            foreach (var item in words)
+            foreach (var item in words.OrderByDescending(i => i.Value))
             {
                 if (itemList.Count < 10)
                 {
@@ -76,7 +76,7 @@ namespace TFOIBeta
                 words[match.Value] = currentCount;
             }
 
-            foreach (var boss in words)
+            foreach (var boss in words.OrderByDescending(i => i.Value))
             {
                 if (bossList.Count < 5)
                 {

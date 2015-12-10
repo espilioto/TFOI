@@ -143,7 +143,7 @@ namespace TFOIBeta
         }
 
         /// <summary>
-        /// This query fills datatable2. Use it to calculate global run stats etc.  
+        /// This query fills Database.datatable2. Use it to calculate global run stats etc.  
         /// </summary>
         public static void SelectAll()
         {
