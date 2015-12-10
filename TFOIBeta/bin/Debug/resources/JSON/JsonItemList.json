@@ -591,7 +591,8 @@
    "112":{
       "name":"Guardian Angel",
       "text":"Extra protection",
-      "dmg":7
+      "dmg":7,
+      "tform":"Angel"
    },
    "113":{
       "name":"Demon Baby",
@@ -959,7 +960,8 @@
    "184":{
       "health":1,
       "name":"Holy Grail",
-      "text":"Flight + HP up"
+      "text":"Flight + HP up",
+	  "tform":"Angel"
    },
    "185":{
       "name":"Dead Dove",
@@ -1102,8 +1104,7 @@
    },
    "209":{
       "name":"Butt Bombs",
-      "text":"Toxic blast +5 bombs",
-      "tform":"Poop"
+      "text":"Toxic blast +5 bombs"
    },
    "210":{
       "name":"Gnawed Leaf",
@@ -1846,17 +1847,20 @@
    "363":{
       "name":"Sworn Protector",
       "text":"Protective friend",
-      "dmg":7
+      "dmg":7,
+      "tform":"Angel"
    },
    "364":{
       "name":"Friend Zone",
       "text":"Friendly fly",
-      "dmg":3
+      "dmg":3,
+      "tform":"FlyLord"
    },
    "365":{
       "name":"Lost Fly",
       "text":"Lost protector",
-	  "details":"7 contact damage per tick"
+	  "details":"7 contact damage per tick",
+      "tform":"FlyLord"
    },
    "366":{
       "name":"Scatter Bombs",
@@ -2005,7 +2009,8 @@
    },
    "398":{
       "name":"God's Flesh",
-      "text":"Shrink shot!"
+      "text":"Shrink shot!",
+      "tform":"Shrooms"
    },
    "399":{
       "name":"Maw of The Void",
@@ -2126,7 +2131,8 @@
    },
    "426":{
       "name":"Obsessed Fan",
-      "text":"Follows my every move..."
+      "text":"Follows my every move...",
+      "tform":"FlyLord"
    },
    "427":{
       "name":"Mine Crafter",
@@ -2145,7 +2151,8 @@
    },
    "430":{
       "name":"Papa Fly",
-      "text":"Turret follower"
+      "text":"Turret follower",
+      "tform":"FlyLord"
    },
    "431":{
       "name":"Multidimensional Baby",
