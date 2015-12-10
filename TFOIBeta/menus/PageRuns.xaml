@@ -26,7 +26,7 @@
 
         <Canvas Name="selectedRun" HorizontalAlignment="Left" Height="236" Margin="0,10,0,0" VerticalAlignment="Top" Width="960">
             <Image Name="selectedRunCharIcon" Height="44" Width="45" Canvas.Left="865" Canvas.Top="19"/>
-            <WrapPanel Name="selectedRunFloors" Height="67" Width="705" Canvas.Left="155" Canvas.Top="5"/>
+            <WrapPanel Name="selectedRunFloors" Height="74" Width="705" Canvas.Left="155" Canvas.Top="3"/>
             <TextBlock Name="selectedRunSeed" Text="asdd addd" TextWrapping="Wrap" Width="130" Height="89" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="48" Foreground="#FF362F2D" Canvas.Top="10" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="20"/>
             <TextBlock Name="selectedRunTime" Width="150" Height="45" Canvas.Top="118" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="48" Foreground="#FF362F2D"/>
             <TextBlock Name="selectedRunResult" Canvas.Left="10" Canvas.Top="184" Height="42" Width="140" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="40" Foreground="#FF362F2D" />

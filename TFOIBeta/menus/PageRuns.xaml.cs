@@ -68,14 +68,12 @@ namespace TFOIBeta.menus
                 if (floor != null)      //gotta check because an old TFOI version entry without floors might exist in the db
                 {
                     var icon = new Image();
+
                     if (!string.IsNullOrEmpty(floor.Curse))
-                    {
                         icon.ToolTip = floor.Name + Environment.NewLine + floor.Curse;
-                    }
                     else
-                    {
                         icon.ToolTip = floor.Name;
-                    }
+
                     icon.Height = 35;
                     icon.Stretch = Stretch.Uniform;
                     icon.Source = Stuff.BitmapToImageSource(floor.Icon);
@@ -85,21 +83,27 @@ namespace TFOIBeta.menus
             }
             foreach (var item in run.Items)
             {
-                var icon = new Image();
-                icon.ToolTip = item.Name + Environment.NewLine + item.Text;
-                icon.Stretch = Stretch.None;
-                icon.Source = Stuff.BitmapToImageSource(item.Icon);
+                if (item != null)
+                {
+                    var icon = new Image();
+                    icon.ToolTip = item.Name + Environment.NewLine + item.Text;
+                    icon.Stretch = Stretch.None;
+                    icon.Source = Stuff.BitmapToImageSource(item.Icon);
 
-                selectedRunItems.Children.Add(icon);
+                    selectedRunItems.Children.Add(icon);
+                }
             }
             foreach (var boss in run.Bosses)
             {
-                var icon = new Image();
-                icon.ToolTip = boss.Name;
-                icon.Stretch = Stretch.None;
-                icon.Source = Stuff.BitmapToImageSource(boss.Icon);
+                if (boss != null)
+                {
+                    var icon = new Image();
+                    icon.ToolTip = boss.Name;
+                    icon.Stretch = Stretch.None;
+                    icon.Source = Stuff.BitmapToImageSource(boss.Icon);
 
-                selectedRunBosses.Children.Add(icon);
+                    selectedRunBosses.Children.Add(icon);
+                }
             }
 
 
