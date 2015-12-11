@@ -43,7 +43,7 @@ namespace TFOIBeta.menus
                 icon.MouseLeftButtonDown += new MouseButtonEventHandler(icon_MouseLeftButtonDown);
             }
 
-            PopulateStats();        //query the db every time to refresh the stats
+            PopulateStats();        //query the db every time you navigate to the page to refresh the stats
         }
 
         private void icon_MouseLeftButtonDown(object sender, RoutedEventArgs e)
@@ -80,19 +80,42 @@ namespace TFOIBeta.menus
 
         private void PopulateStats()
         {
-            string s = string.Empty;
             string bossListDefeated = string.Empty;
             string bossListNemeses = string.Empty;
             var words = new Dictionary<string, int>(StringComparer.CurrentCultureIgnoreCase);
 
             Database.SelectAll();
 
-            foreach (DataRow value in Database.dataTable.Rows)
+            foreach (DataRow value in Database.dataTable2.Rows)
             {
-                if (!string.IsNullOrEmpty((string)value.ItemArray[6]))          //bosses
-                    s += (string)value.ItemArray[5] + ',';
+                if (!string.IsNullOrEmpty((string)value.ItemArray[5]))          //bosses
+                    bossListDefeated += (string)value.ItemArray[5] + ',';
+
+                if (!string.IsNullOrEmpty((string)value.ItemArray[6]))          //nemeses
+                    bossListNemeses += (string)value.ItemArray[6] + ',';
             }
 
+            var top5DefeatedList = Stuff.SortTop5Bosses(bossListDefeated, words);
+            foreach (var boss in top5DefeatedList)
+            {
+                var icon = new Image();
+                icon.Stretch = Stretch.None;
+                icon.ToolTip = boss.Name + Environment.NewLine + "Times fought: " + boss.TimesFought.ToString();
+                icon.Source = Stuff.BitmapToImageSource(boss.Icon);
+                top5Defeated.Children.Add(icon);
+            }
+
+            words.Clear();
+
+            var top5NemesesList = Stuff.SortTop5Bosses(bossListNemeses, words);
+            foreach (var boss in top5NemesesList)
+            {
+                var icon = new Image();
+                icon.Stretch = Stretch.None;
+                icon.ToolTip = boss.Name + Environment.NewLine + "Times you GIT REK: " + boss.TimesFought.ToString();
+                icon.Source = Stuff.BitmapToImageSource(boss.Icon);
+                top5Nemeses.Children.Add(icon);
+            }
         }
 
         private void back_MouseDown(object sender, MouseButtonEventArgs e)
