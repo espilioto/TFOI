@@ -16,11 +16,11 @@
 
         <Image Name="bossNameLogo" Margin="0,0,730,379" OpacityMask="Black" Stretch="None"/>
 
-        <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="212,37,206,365" >
+        <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="211,37,208,365" >
             <WrapPanel  Name="bossPanel" Height="347" Width="530" Orientation="Horizontal" VerticalAlignment="Center"/>
         </ScrollViewer>
 
-        <TextBlock Name="textBossInfo" TextWrapping="Wrap" HorizontalAlignment="Left" Height="123" Margin="763,48,0,0" VerticalAlignment="Top" Width="171" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="21.333"/>
+        <TextBlock Name="textBossInfo" TextWrapping="Wrap" HorizontalAlignment="Left" Height="123" Margin="763,48,0,0" VerticalAlignment="Top" Width="171" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="21.333" Foreground="#FF362F2D"/>
 
         <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="270" Margin="145,221,0,0" VerticalAlignment="Top" Width="460" Background="#FFE7DDDC" BorderBrush="#FFE7DDDC" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="18.667" OpacityMask="#FFE7DDDC" Foreground="#FF362F2D" AlternatingRowBackground="#FFCAC5BD" RowBackground="#FFE7DDDC" BorderThickness="0" GridLinesVisibility="None">
             <DataGrid.Columns>
@@ -36,11 +36,11 @@
         <TextBlock Name="winRate" TextAlignment="Center" TextWrapping="Wrap" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="30.667" Margin="2,326,820,137" Foreground="#FF362F2D"/>
         <Image Source="/TFOIBeta;component/Resources/bossPanel.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Margin="632,256,200,2" Stretch="Fill" />
 
-        <TextBlock Text="GLOBAL TOP 5" TextAlignment="Center" TextWrapping="Wrap" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="32" Margin="687,190,74,289" Foreground="#FF362F2D"/>
+        <TextBlock Text="GLOBAL TOP 5" TextAlignment="Center" TextWrapping="Wrap" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="32" Margin="681,190,71,289" Foreground="#FF362F2D"/>
         <TextBlock Text="NEMESES" TextAlignment="Center" TextWrapping="Wrap" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="32" Margin="624,220,198,259" Foreground="#FF362F2D"/>
         <StackPanel x:Name="top5Nemeses" Margin="623,262,192,6" />
 
-        <TextBlock Text="DEFEATED" TextAlignment="Center" TextWrapping="Wrap" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="32" Margin="785,220,0,258" Foreground="#FF362F2D"/>
+        <TextBlock Text="DEFEATED" TextAlignment="Center" TextWrapping="Wrap" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="32" Margin="783,220,2,258" Foreground="#FF362F2D"/>
         <Image Source="/TFOIBeta;component/Resources/bossPanel.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Margin="809,255,23,3" Stretch="Fill" RenderTransformOrigin="0.5,0.5" >
             <Image.RenderTransform>
                 <TransformGroup>

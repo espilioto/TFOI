@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -27,9 +28,15 @@ namespace TFOIBeta.menus
         }
 
         string selectedBoss;
+        DropShadowEffect glowSelected;
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
+            glowSelected = new DropShadowEffect();
+            glowSelected.ShadowDepth = 0;
+            glowSelected.BlurRadius = 15;
+            glowSelected.Color = Colors.Red;
+
             foreach (var boss in Bosses.List)
             {
                 var icon = new Image();
@@ -53,6 +60,11 @@ namespace TFOIBeta.menus
             System.Windows.Controls.Image image = sender as System.Windows.Controls.Image;      //boss logo stuff
             textBossInfo.Text = image.Tag.ToString();
             bossNameLogo.Source = Stuff.BitmapToImageSource(Bosses.List.Find(x => x.Id == image.Name.TrimStart('_')).NameLogo);
+
+            foreach (Image boss in bossPanel.Children)
+                boss.Effect = null;
+
+            image.Effect = glowSelected;
 
             selectedBoss = image.Name.TrimStart('_');                               //get the boss id
             Database.SelectBoss(dataGrid, selectedBoss);                            //and run the query with it

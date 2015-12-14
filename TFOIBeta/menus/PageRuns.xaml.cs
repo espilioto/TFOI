@@ -30,6 +30,8 @@ namespace TFOIBeta.menus
         {
             Database.SelectAll(dataGrid);
             Database.DeserializeRunsFromDB();
+
+            dataGrid.SelectedIndex = 0;
         }
 
         private void dataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)

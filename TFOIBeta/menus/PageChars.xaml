@@ -15,15 +15,15 @@
         <Image x:Name="back" Source="/TFOIBeta;component/Resources/back.png" Margin="25,439,847,60" RenderOptions.BitmapScalingMode="NearestNeighbor" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave" Stretch="Fill"/>
         <Image x:Name="back_" Source="/TFOIBeta;component/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Margin="10,470,832,44" RenderTransformOrigin="0.5,0.5"/>
 
-        <WrapPanel x:Name="charPanel" Margin="187,75,154,403" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" Width="619"/>
+        <WrapPanel x:Name="charPanel" Margin="171,0,161,403" RenderTransformOrigin="0.5,0.5" Height="54" VerticalAlignment="Bottom"/>
 
         <TextBlock Text="TOP 10 ITEMS" TextAlignment="Center" TextWrapping="Wrap" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="32" Margin="0,32,847,403" Foreground="#FF362F2D"/>
-        <Image  Source="/TFOIBeta;component/Resources/itemPanel.png" Margin="19,90,860,104" />
-        <StackPanel x:Name="top10Items" Margin="34,98,876,122" Width="50" Height="320" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Image  Source="/TFOIBeta;component/Resources/itemPanel.png" Margin="19,90,860,104" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <StackPanel x:Name="top10Items" Margin="26,98,870,101" />
         <Image Source="/TFOIBeta;component/Resources/bossPanel.png" Margin="826,109,6,149" Stretch="Fill" />
 
         <TextBlock Text="TOP 5 BOSSES" TextAlignment="Center" TextWrapping="Wrap" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="32" Margin="822,32,10,403" Foreground="#FF362F2D"/>
-        <StackPanel x:Name="top5Bosses" Margin="815,120,0,0" />
+        <StackPanel x:Name="top5Bosses" Margin="815,121,0,158" />
 
         <TextBlock x:Name="charStats" TextAlignment="Center" Margin="133,150,150,340" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="26.667" Foreground="#FF362F2D"/>
 

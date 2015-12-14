@@ -11,6 +11,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -27,8 +28,15 @@ namespace TFOIBeta.menus
             InitializeComponent();
         }
 
+        DropShadowEffect glowSelected;
+
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            glowSelected = new DropShadowEffect();
+            glowSelected.ShadowDepth = 0;
+            glowSelected.BlurRadius = 15;
+            glowSelected.Color = Colors.Red;
+
             foreach (var character in Characters.List)
             {
                 var icon = new Image();
@@ -57,6 +65,10 @@ namespace TFOIBeta.menus
 
             Image image = sender as Image;
             Database.SelectChar(dataGrid, image.ToolTip.ToString().ToUpper());
+
+            foreach (Image character in charPanel.Children)
+                character.Effect = null;
+            image.Effect = glowSelected;
 
             foreach (DataRow value in Database.dataTable.Rows)
             {
