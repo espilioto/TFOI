@@ -22,7 +22,19 @@
         <TextBlock Name="textItemDescription" TextWrapping="Wrap" HorizontalAlignment="Left" Height="72" Margin="11,98,0,0" VerticalAlignment="Top" Width="178" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="21.333" Foreground="#FF362F2D" />
         <TextBlock Name="textItemStats" TextWrapping="Wrap" HorizontalAlignment="Left" Height="161" Margin="759,33,0,0" VerticalAlignment="Top" Width="174" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="21.333" />
 
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="276" Margin="147,220,0,0" VerticalAlignment="Top" Width="646" Background="{x:Null}" BorderBrush="#FF716F6A"/>
+        <TextBlock Text="GLOBAL TOP 20 ITEMS" TextAlignment="Center" TextWrapping="Wrap" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="32" Margin="786,214,0,221" Foreground="#FF362F2D"/>
+        <Image  Source="/TFOIBeta;component/Resources/bossPanel.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Margin="790,282,10,10" VerticalAlignment="Center" HorizontalAlignment="Center" Width="160" Height="248" Stretch="Fill" />
+        <StackPanel x:Name="top10Items" Margin="786,282,10,10" />
+
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="231" Margin="155,260,0,0" VerticalAlignment="Top" Width="588" Background="#FFE7DDDC" BorderBrush="#FFE7DDDC" FontFamily="/TFOIBeta;component/Resources/#TeamMeatFontBOLD" FontSize="18.667" OpacityMask="#FFE7DDDC" Foreground="#FF362F2D" AlternatingRowBackground="#FFCAC5BD" RowBackground="#FFE7DDDC" BorderThickness="0" GridLinesVisibility="None">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Timestamp}" Header="DATE" Width="137"/>
+                <DataGridTextColumn Binding="{Binding Seed}" Header="SEED"/>
+                <DataGridTextColumn Binding="{Binding CharName}" Header="CHARACTER" />
+                <DataGridTextColumn Binding="{Binding Time}" Header="TIME"/>
+                <DataGridTextColumn Binding="{Binding Result}" Header="RESULT"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Page>

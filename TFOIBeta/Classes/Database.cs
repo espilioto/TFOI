@@ -219,7 +219,7 @@ namespace TFOIBeta
         }
         public static void SelectItem(DataGrid dg, string ItemId)
         {
-            string query = "SELECT * FROM runs WHERE Items = @ItemId";
+            string query = "SELECT * FROM runs WHERE instr(Items, '" + ItemId +"')";
 
             try
             {

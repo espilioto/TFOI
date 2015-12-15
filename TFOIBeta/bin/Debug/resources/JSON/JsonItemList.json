@@ -601,7 +601,8 @@
    "114":{
       "name":"Mom's Knife",
       "text":"Stab stab stab",
-      "tform":"Mom"
+      "tform":"Mom",
+	  "details":"When used as a melee weapon, Mom's Knife deals your tear damage * 2 per tick"
    },
    "115":{
       "name":"Ouija Board",
@@ -613,13 +614,15 @@
    },
    "117":{
       "name":"Dead Bird",
-      "text":"Protective buddy"
+      "text":"Protective buddy",
+	  "details":"2 damage per tick"
    },
    "118":{
       "delayx":3,
       "name":"Brimstone",
       "text":"Blood laser barrage",
-      "tform":"Cthulhu"
+      "tform":"Cthulhu",
+	  "details":"Hits 13times*damage per charge. Every hit spawns guppy flies."
    },
    "119":{
       "health":1,

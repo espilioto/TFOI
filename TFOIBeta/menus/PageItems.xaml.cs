@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -27,8 +28,15 @@ namespace TFOIBeta.menus
             InitializeComponent();
         }
 
+        DropShadowEffect glowSelected;
+
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            glowSelected = new DropShadowEffect();
+            glowSelected.ShadowDepth = 0;
+            glowSelected.BlurRadius = 15;
+            glowSelected.Color = Colors.Red;
+
             foreach (var item in Items.List)
             {
                 var icon = new Image();
@@ -46,10 +54,26 @@ namespace TFOIBeta.menus
 
         private void icon_MouseLeftButtonDown(object sender, RoutedEventArgs e)
         {
+            string s = string.Empty;
+            var words = new Dictionary<string, int>(StringComparer.CurrentCultureIgnoreCase);
+
             Image image = sender as Image;
             textItemName.Text = image.ObjectName.ToUpper();
             textItemDescription.Text = image.ObjectDescription.ToUpper();
             textItemStats.Text = image.ObjectMisc;
+
+            Database.SelectItem(dataGrid, image.Name.TrimStart('_'));
+
+
+            //todo fix font 
+            foreach (DataRow run in Database.dataTable.Rows)
+            {
+
+            }
+
+            foreach (Image item in itemPanel.Children)
+                item.Effect = null;
+            image.Effect = glowSelected;
         }
 
         private void back_MouseDown(object sender, MouseButtonEventArgs e)
