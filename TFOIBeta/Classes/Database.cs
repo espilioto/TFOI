@@ -154,7 +154,7 @@ namespace TFOIBeta
                 command = new SQLiteCommand(query, connection);
                 dataAdapter = new SQLiteDataAdapter(command);
 
-                dataTable.Clear();
+                dataTable2.Clear();
                 dataAdapter.Fill(dataTable2);
             }
             finally
