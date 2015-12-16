@@ -33,31 +33,23 @@ Having that as a base, I started developing TFOI (and using it as a reason to pl
 This basically is a text parser that reads the game's log.
 It identifies certain events (like picking up an item) and presents them to the user, so that anyone can catch up with just a glance.
 
-> When the run finishes, it inserts the run's data into a database.
-> That data will be available to the user through various screens like: 
-> * Run log
-> * Item-related data 
-> * Boss-related data
-> * Character-related data
-
-^ Soon™
+When the run finishes, it inserts the run's data into a database.
+That data will be available to the user through various screens like: 
+* Run log
+* Item-related data 
+* Boss-related data
+* Character-related data
 
 #### *Todos*
+*Global
+  *DB manipulation tools
+  *
 * New run 
-  * ! Database stuff !
   * Confirm effects of D4 / D100 / dice rooms (must play more :D)
-* Items
-  * Past run stats
-* Chars 
-  * Past run stats
-* Bosses
-  * Past run stats
+  * Fix the timer so it doesn't restart when a run is done
+  * Fix the timer so you can freely navigate the pages without it resetting
 * Options
-  * TBD
-
-
-#### *Probably adding these*
-
+  * DB backup option
 #### *Maybe / Luxury*
 * New Run 
   * mini mode (overlay for streams etc) *maybe, afterbirth does that somewhat*
