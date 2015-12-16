@@ -50,26 +50,51 @@ namespace TFOIBeta.menus
                 itemPanel.Children.Add(icon);
                 icon.MouseLeftButtonDown += new MouseButtonEventHandler(icon_MouseLeftButtonDown);
             }
+
+            PopulateTop20();
+        }
+
+        private void PopulateTop20()
+        {
+            string itemList = string.Empty;
+
+            Database.SelectAll();
+
+            foreach (DataRow run in Database.dataTable2.Rows)
+            {
+                if (!string.IsNullOrEmpty((string)run.ItemArray[4]))          //items
+                    itemList += (string)run.ItemArray[4] + ',';
+            }
+
+            var top30ItemList = Stuff.SortTopItems(itemList, 30);
+            foreach (var item in top30ItemList)
+            {
+                var icon = new Image();
+                icon.Stretch = Stretch.None;
+                icon.ToolTip = item.Name + Environment.NewLine + item.Text + Environment.NewLine + "Times collected: " + item.TimesCollected.ToString();
+                icon.Source = Stuff.BitmapToImageSource(item.Icon);
+                top30ItemsPanel.Children.Add(icon);
+            }
         }
 
         private void icon_MouseLeftButtonDown(object sender, RoutedEventArgs e)
         {
-            string s = string.Empty;
-            var words = new Dictionary<string, int>(StringComparer.CurrentCultureIgnoreCase);
+            float winrate = 0;
 
             Image image = sender as Image;
             textItemName.Text = image.ObjectName.ToUpper();
             textItemDescription.Text = image.ObjectDescription.ToUpper();
-            textItemStats.Text = image.ObjectMisc;
+            textItemDetails.Text = image.ObjectMisc;
 
             Database.SelectItem(dataGrid, image.Name.TrimStart('_'));
 
-
-            //todo fix font 
             foreach (DataRow run in Database.dataTable.Rows)
             {
-
+                if ((string)run.ItemArray[8] == "VICTORY")                    //win %
+                    winrate++;
             }
+
+            itemStats.Text = "TIMES FOUND: " + Database.dataTable.Rows.Count + " WIN: " + ((winrate / Database.dataTable.Rows.Count) * 100).ToString() + "% ";
 
             foreach (Image item in itemPanel.Children)
                 item.Effect = null;

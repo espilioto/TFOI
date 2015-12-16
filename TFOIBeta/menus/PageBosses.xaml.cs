@@ -87,14 +87,13 @@ namespace TFOIBeta.menus
             else if (Database.dataTable.Rows.Count == 0)
                 winRate.Text = string.Empty;
             else
-                winRate.Text = (((float)(Database.dataTable.Rows.Count - timesDefeatedByBoss) / Database.dataTable.Rows.Count) * 100).ToString("0") + "% WIN RATE"; //(encounters-defeats=wins)/encounters=win rate
+                winRate.Text = (((Database.dataTable.Rows.Count - timesDefeatedByBoss) / Database.dataTable.Rows.Count) * 100f).ToString("0") + "% WIN RATE"; //(encounters-defeats=wins)/encounters=win rate
         }
 
         private void PopulateStats()
         {
             string bossListDefeated = string.Empty;
             string bossListNemeses = string.Empty;
-            var words = new Dictionary<string, int>(StringComparer.CurrentCultureIgnoreCase);
 
             Database.SelectAll();
 
@@ -107,7 +106,7 @@ namespace TFOIBeta.menus
                     bossListNemeses += (string)value.ItemArray[6] + ',';
             }
 
-            var top5DefeatedList = Stuff.SortTop5Bosses(bossListDefeated, words);
+            var top5DefeatedList = Stuff.SortTopBosses(bossListDefeated, 5);
             foreach (var boss in top5DefeatedList)
             {
                 var icon = new Image();
@@ -117,9 +116,7 @@ namespace TFOIBeta.menus
                 top5Defeated.Children.Add(icon);
             }
 
-            words.Clear();
-
-            var top5NemesesList = Stuff.SortTop5Bosses(bossListNemeses, words);
+            var top5NemesesList = Stuff.SortTopBosses(bossListNemeses, 5);
             foreach (var boss in top5NemesesList)
             {
                 var icon = new Image();

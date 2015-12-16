@@ -56,11 +56,9 @@ namespace TFOIBeta.menus
             string bossList = string.Empty;
             string s = string.Empty;
             TimeSpan averageRunTime = TimeSpan.Zero;
-            var words = new Dictionary<string, int>(StringComparer.CurrentCultureIgnoreCase);
 
-            words.Clear();
             charStats.Text = string.Empty;
-            top10Items.Children.Clear();
+            top20Items.Children.Clear();
             top5Bosses.Children.Clear();
 
             Image image = sender as Image;
@@ -90,20 +88,19 @@ namespace TFOIBeta.menus
             }
 
 
-            var top10ItemList = Stuff.SortTop10Items(itemList, words);
-            foreach (var item in top10ItemList)
+            var top20ItemList = Stuff.SortTopItems(itemList, 20);
+            foreach (var item in top20ItemList)
             {
                 var icon = new Image();
                 icon.Stretch = Stretch.None;
                 icon.ToolTip = item.Name + Environment.NewLine + item.Text + Environment.NewLine + "Times collected: " + item.TimesCollected.ToString();
                 icon.Source = Stuff.BitmapToImageSource(item.Icon);
                 //top10Items.Text += (i + 1).ToString() + ": " + top10ItemList[i].Name.ToUpper() + Environment.NewLine;
-                top10Items.Children.Add(icon);
+                top20Items.Children.Add(icon);
             }
 
-            words.Clear();
 
-            var top5BossList = Stuff.SortTop5Bosses(bossList, words);
+            var top5BossList = Stuff.SortTopBosses(bossList, 5);
             foreach (var boss in top5BossList)
             {
                 var icon = new Image();
@@ -115,7 +112,7 @@ namespace TFOIBeta.menus
             }
 
             if (winrate > 0)
-                winrate = Database.dataTable.Rows.Count / winrate;
+                winrate = (winrate / Database.dataTable.Rows.Count) * 100;
             if (averageRunTime.Ticks > 0)
                 averageRunTime = TimeSpan.FromTicks(averageRunTime.Ticks / Database.dataTable.Rows.Count);
 

@@ -244,7 +244,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <Resource Include="Resources\TeamMeatFontBOLD.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -314,6 +313,7 @@
     <Resource Include="Resources\waitingGif.gif" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\TeamMeatFontBOLD.ttf" />
     <None Include="Resources\waitingBG.png" />
   </ItemGroup>
   <ItemGroup>
@@ -345,9 +345,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\BGBosses.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Top10Items.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions />

@@ -24,6 +24,7 @@ namespace TFOIBeta
 
     class Stuff
     {
+        static Dictionary<string,int> words = new Dictionary<string, int>(StringComparer.CurrentCultureIgnoreCase);
 
         public static ImageSource BitmapToImageSource(Bitmap bitmap)
         {
@@ -31,13 +32,18 @@ namespace TFOIBeta
         }
 
         // credit: https://stackoverflow.com/questions/9929279/to-count-the-frequency-of-each-word
+
         /// <summary>
         /// Returns a list that contains the top 10 items picked up from the string given.
         /// </summary>
-        public static List<Items> SortTop10Items(string objectList, Dictionary<string, int> words)
+        /// <param name="objectList">The itemID string</param>
+        /// <param name="count">The size of the list that will be returned</param>
+        /// <param name="words">The dictionary that will be used to count and sort the objects</param>
+        public static List<Items> SortTopItems(string objectList, int count)
         {
             var itemList = new List<Items>();
             var wordPattern = new Regex(@"\d+");
+            words.Clear();
 
             foreach (Match match in wordPattern.Matches(objectList))
             {
@@ -50,7 +56,7 @@ namespace TFOIBeta
 
             foreach (var item in words.OrderByDescending(i => i.Value))
             {
-                if (itemList.Count < 10)
+                if (itemList.Count < count)
                 {
                     itemList.Add(Items.GetItemFromId(item.Key));
                     itemList.Last().TimesCollected = item.Value;
@@ -62,10 +68,14 @@ namespace TFOIBeta
         /// <summary>
         /// Returns a list that contains the top 5 bosses fought from the string given.
         /// </summary>
-        public static List<Bosses> SortTop5Bosses(string objectList, Dictionary<string, int> words)
+        /// <param name="objectList">The itemID string</param>
+        /// <param name="count">The size of the list that will be returned</param>
+        /// <param name="words">The dictionary that will be used to count and sort the objects</param>
+        public static List<Bosses> SortTopBosses(string objectList, int count)
         {
             var bossList = new List<Bosses>();
             var wordPattern = new Regex(@"\d+");
+            words.Clear();
 
             foreach (Match match in wordPattern.Matches(objectList))
             {
@@ -78,7 +88,7 @@ namespace TFOIBeta
 
             foreach (var boss in words.OrderByDescending(i => i.Value))
             {
-                if (bossList.Count < 5)
+                if (bossList.Count < count)
                 {
                     bossList.Add(Bosses.GetBossFromId(boss.Key));
                     bossList.Last().TimesFought = boss.Value;
