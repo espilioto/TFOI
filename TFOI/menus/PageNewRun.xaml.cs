@@ -71,7 +71,6 @@ namespace TFOI.menus
                 {
                     if (line.StartsWith("RNG Start Seed:"))
                     {
-
                         run = new Run();
 
                         Dispatcher.Invoke(new Action(() => itemPanel.Children.Clear()));

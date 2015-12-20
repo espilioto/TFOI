@@ -281,5 +281,23 @@ namespace TFOI
             }
         }
 
+        public static void DeleteRun(string id)
+        {
+            string query = "DELETE FROM runs WHERE Id = @id";
+
+            try
+            {
+                connection.Open();
+                command = new SQLiteCommand(query, connection);
+                command.Parameters.AddWithValue("@id", id);
+                dataAdapter = new SQLiteDataAdapter(command);
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                command.Dispose();
+                connection.Close();
+            }
+        }
     }
 }

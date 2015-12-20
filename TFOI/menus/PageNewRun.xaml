@@ -10,14 +10,21 @@
       Title="PageNewRun" >
 
     <Grid Loaded="Grid_Loaded">
+
         <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOI;component/Resources/BGNewRun.png"/>
 
-        <Image Name="curseIcon" Visibility="Hidden" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOI;component/Resources/cursepaper.png" Margin="0,338,679,125"/>
+        <Image x:Name="curseIcon" Visibility="Hidden" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOI;component/Resources/cursepaper.png" Margin="0,338,679,125"/>
 
-        <Image Name="back" Source="/TFOI;component/Resources/back.png" Margin="25,439,847,60" RenderOptions.BitmapScalingMode="NearestNeighbor" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave" Stretch="Fill"/>
-        <Image Name="back_" Source="/TFOI;component/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Margin="10,470,832,44" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name="back" Source="/TFOI;component/Resources/back.png" Margin="25,439,847,60" RenderOptions.BitmapScalingMode="NearestNeighbor" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave" Stretch="Fill"/>
+        <Image x:Name="back_" Source="/TFOI;component/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Margin="10,470,832,44" RenderTransformOrigin="0.5,0.5"/>
 
-        <TextBlock Name="txtSeed" Text="GIT  REK" Foreground="#F84F4E4A" Margin="33,145,723,242" RenderTransformOrigin="0.5,0.5" TextWrapping="Wrap" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="60" LineStackingStrategy="BlockLineHeight" >
+        <WrapPanel x:Name="bossPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="296,350,0,0" Height="143" Width="445"/>
+
+        <WrapPanel x:Name="txtHelp" Visibility="Hidden" HorizontalAlignment="Left" Height="176" Margin="809,294,0,0" VerticalAlignment="Top" Width="141"/>
+        <Label x:Name="helpIcon" HorizontalAlignment="Left" Height="32" Margin="909,488,0,0" VerticalAlignment="Top" Width="25" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Background="#01000000" BorderBrush="{x:Null}" Foreground="{x:Null}" />
+        <TextBlock x:Name="txtCurse" Visibility="Hidden" RenderOptions.BitmapScalingMode="NearestNeighbor" Margin="35,358,664,157" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="18.667" Width="261" Height="25"/>
+        <TextBlock x:Name="txtTime" Margin="25,0,719,202" Text="TIME: " FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="34.667" Foreground="#FF53524E" VerticalAlignment="Bottom" Height="29"/>
+        <TextBlock x:Name="txtSeed" Text="GIT  REK" Foreground="#F84F4E4A" Margin="33,145,723,242" RenderTransformOrigin="0.5,0.5" TextWrapping="Wrap" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="60" LineStackingStrategy="BlockLineHeight" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -27,8 +34,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-
-        <TextBlock Name="txtIsRunning" TextWrapping="Wrap" TextAlignment="Center" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" Margin="799,153,23,264" RenderTransformOrigin="0.5,0.5" FontSize="26.667" Foreground="#FF362F2D" >
+        <TextBlock x:Name="txtIsRunning" TextWrapping="Wrap" TextAlignment="Center" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" Margin="799,153,23,264" RenderTransformOrigin="0.5,0.5" FontSize="26.667" Foreground="#FF362F2D" >
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -38,21 +44,11 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <Image Name="floorPanel" Margin="296,116,219,333" Stretch="None"/>
-        <TextBlock Name="txtRIP" TextAlignment="Center" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" Margin="296,165,219,331" FontSize="42.667" Visibility="Hidden" />
-
-        <WrapPanel Name="itemPanel" HorizontalAlignment="Left" Height="136" Margin="296,214,0,0" VerticalAlignment="Top" Width="445"/>
-
-        <WrapPanel Name="bossPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="296,350,0,0" Height="143" Width="445"/>
-        <WrapPanel Name="bossDefeatedPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="296,350,0,0" Height="143" Width="445"/>
-
-        <TextBlock Name="txtTime" Margin="25,0,719,202" Text="TIME: " FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="34.667" Foreground="#FF53524E" VerticalAlignment="Bottom" Height="29"/>
-
-
-        <WrapPanel Name="txtHelp" Visibility="Hidden" HorizontalAlignment="Left" Height="176" Margin="809,294,0,0" VerticalAlignment="Top" Width="141"/>
-        <Label Name="helpIcon" HorizontalAlignment="Left" Height="32" Margin="909,488,0,0" VerticalAlignment="Top" Width="25" MouseEnter="Border_MouseEnter" MouseLeave="Border_MouseLeave" Background="#01000000" BorderBrush="{x:Null}" Foreground="{x:Null}" />
-        <Image Name="charIcon" Margin="296,139,219,326" Stretch="None"/>
-        <TextBlock Name="txtCurse" Visibility="Hidden" RenderOptions.BitmapScalingMode="NearestNeighbor" Margin="35,358,664,157" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="18.667" Width="261" Height="25"/>
+        <WrapPanel x:Name="bossDefeatedPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="296,350,0,0" Height="143" Width="445"/>
+        <Image x:Name="floorPanel" Margin="296,116,219,333" Stretch="None"/>
+        <WrapPanel x:Name="itemPanel" HorizontalAlignment="Left" Height="136" Margin="296,214,0,0" VerticalAlignment="Top" Width="445"/>
+        <Image x:Name="charIcon" Margin="296,139,219,326" Stretch="None"/>
+        <TextBlock x:Name="txtRIP" TextAlignment="Center" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" Margin="296,165,219,331" FontSize="42.667" Visibility="Hidden" />
 
     </Grid>
 </Page>

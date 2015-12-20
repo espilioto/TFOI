@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -26,8 +27,16 @@ namespace TFOI.menus
             InitializeComponent();
         }
 
+        DropShadowEffect glowSelected;
+        string selectedRunId = string.Empty;
+
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
+            glowSelected = new DropShadowEffect();
+            glowSelected.ShadowDepth = 0;
+            glowSelected.BlurRadius = 15;
+            glowSelected.Color = Colors.Red;
+
             Database.SelectAll(dataGrid);
             Database.DeserializeRunsFromDB();
 
@@ -40,7 +49,9 @@ namespace TFOI.menus
                 for (int i = 0; i < dataGrid.SelectedItems.Count; i++)
                 {
                     System.Data.DataRowView selectedFile = (System.Data.DataRowView)dataGrid.SelectedItems[i];
-                    recreateArchivedRun(selectedFile.Row.ItemArray[0].ToString());
+                    selectedRunId = selectedFile.Row.ItemArray[0].ToString();
+
+                    recreateArchivedRun(selectedRunId);
                 }
         }
 
@@ -111,6 +122,7 @@ namespace TFOI.menus
 
         }
 
+        #region button stuff
         private void back_MouseDown(object sender, MouseButtonEventArgs e)
         {
             MainWindow.mainWindow.mainWindowFrame.GoBack();
@@ -123,6 +135,28 @@ namespace TFOI.menus
         {
             back_.Visibility = Visibility.Hidden;
         }
+        private void btnDeleteRun_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to delete this run entry?", "You want me to die?", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                Database.DeleteRun(selectedRunId);      //delete the run
+                Database.SelectAll(dataGrid);           //refresh the grid
 
+                selectedRunFloors.Children.Clear();     //flush the ui
+                selectedRunItems.Children.Clear();
+                selectedRunBosses.Children.Clear();
+                selectedRunCharIcon.Source = null;
+            }
+
+        }
+        private void btnDeleteRun_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnDeleteRun.Effect = glowSelected;
+        }
+        private void btnDeleteRun_MouseLeave(object sender, MouseEventArgs e)
+        {
+            btnDeleteRun.Effect = null;
+        }
+        #endregion
     }
 }
