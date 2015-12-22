@@ -40,6 +40,8 @@ namespace TFOI.menus
             Database.SelectAll(dataGrid);
             Database.DeserializeRunsFromDB();
 
+            totalRuns.Text = "Total runs: " + Database.dataTable.Rows.Count.ToString();
+
             dataGrid.SelectedIndex = 0;
         }
 
@@ -146,6 +148,8 @@ namespace TFOI.menus
                 selectedRunItems.Children.Clear();
                 selectedRunBosses.Children.Clear();
                 selectedRunCharIcon.Source = null;
+
+                Database.Backup();
             }
 
         }

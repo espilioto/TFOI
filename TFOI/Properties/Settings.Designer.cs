@@ -33,5 +33,41 @@ namespace TFOI.Properties {
                 return ((string)(this["isaacConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int refreshSpeed {
+            get {
+                return ((int)(this["refreshSpeed"]));
+            }
+            set {
+                this["refreshSpeed"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string backupPath {
+            get {
+                return ((string)(this["backupPath"]));
+            }
+            set {
+                this["backupPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool backupEnabled {
+            get {
+                return ((bool)(this["backupEnabled"]));
+            }
+            set {
+                this["backupEnabled"] = value;
+            }
+        }
     }
 }

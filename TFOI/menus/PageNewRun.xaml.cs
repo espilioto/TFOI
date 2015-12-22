@@ -249,7 +249,7 @@ namespace TFOI.menus
                         if (run != null)
                         {
                             run.SubmitRunToDB();
-                            //run.Dispose();
+                            Database.Backup();
                         }
 
                     }
@@ -277,7 +277,7 @@ namespace TFOI.menus
                             if (run != null)
                             {
                                 run.SubmitRunToDB();
-                                //run.Dispose();
+                                Database.Backup();
                             }
                         }
                     }

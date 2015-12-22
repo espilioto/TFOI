@@ -38,6 +38,11 @@ namespace TFOI
 
             AppDomain.CurrentDomain.UnhandledException += (senderr, ee) => MessageBox.Show(ee.ExceptionObject.ToString());
 
+            if (string.IsNullOrEmpty(Properties.Settings.Default.backupPath))
+            {
+                Properties.Settings.Default.backupPath = @"C:\isaac.db";
+            }
+
             Database.CreateDatabaseFile();      //why the heck didnt i make this sooner and distributed the .db file with the release like an idiot
             Database.CreateFloorsColumn();      //if you got the old TFOI version (along with the old database), create a Floors column in it
 
@@ -46,9 +51,5 @@ namespace TFOI
             Characters.ParseJsonCharList();
             Floors.ParseJsonFloorList();
         }
-
-        
-
-
     }
 }

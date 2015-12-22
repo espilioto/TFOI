@@ -25,6 +25,14 @@ namespace TFOI
         public static DataTable dataTable = new DataTable();
         public static DataTable dataTable2 = new DataTable();
 
+        public static void Backup()
+        {
+            if (Properties.Settings.Default.backupEnabled)
+            {
+                File.Copy(System.AppDomain.CurrentDomain.BaseDirectory + @"resources\isaac.db", Properties.Settings.Default.backupPath, true);
+            }
+        }
+
         private static bool DatabaseFileExists()
         {
             if (File.Exists(System.AppDomain.CurrentDomain.BaseDirectory + @"resources\isaac.db"))
@@ -219,7 +227,7 @@ namespace TFOI
         }
         public static void SelectItem(DataGrid dg, string ItemId)
         {
-            string query = "SELECT * FROM runs WHERE instr(Items, '" + ItemId +"')";
+            string query = "SELECT * FROM runs WHERE instr(Items, '" + ItemId + "')";
 
             try
             {
@@ -267,7 +275,6 @@ namespace TFOI
             {
                 connection.Open();
                 command = new SQLiteCommand(query, connection);
-                //command.Parameters.AddWithValue("@BossId", BossId);
                 dataAdapter = new SQLiteDataAdapter(command);
 
                 dataTable.Clear();

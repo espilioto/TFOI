@@ -11,30 +11,31 @@
     <Grid Loaded="Grid_Loaded">
         <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOI;component/Resources/BGRuns.png"/>
 
-        <Image Name="btnDeleteRun" Source="/TFOI;component/Resources/delete.png" Margin="10,306,817,159" MouseDown="btnDeleteRun_MouseDown" MouseEnter="btnDeleteRun_MouseEnter" MouseLeave="btnDeleteRun_MouseLeave"/>
+        <Image Name="btnDeleteRun" Source="/TFOI;component/Resources/delete.png" Margin="10,366,817,99" MouseDown="btnDeleteRun_MouseDown" MouseEnter="btnDeleteRun_MouseEnter" MouseLeave="btnDeleteRun_MouseLeave"/>
 
         <Image Name="back" Source="/TFOI;component/Resources/back.png" Margin="25,439,847,60" RenderOptions.BitmapScalingMode="NearestNeighbor" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave"/>
         <Image Name="back_" Source="/TFOI;component/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Margin="10,470,832,44" RenderTransformOrigin="0.5,0.5" Width="87"/>
 
         <DataGrid Name="dataGrid" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="232" Margin="150,264,0,0" VerticalAlignment="Top" Width="759" Background="#FFE7DDDC" BorderBrush="#FFE7DDDC" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="18.667" OpacityMask="#FFE7DDDC" Foreground="#FF362F2D" AlternatingRowBackground="#FFCAC5BD" RowBackground="#FFE7DDDC" BorderThickness="0" GridLinesVisibility="None" SelectedCellsChanged="dataGrid_SelectedCellsChanged" IsReadOnly="True" CanUserResizeRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Timestamp}" Header="DATE" Width="137"/>
-                <DataGridTextColumn Binding="{Binding Seed}" Header="SEED"/>
-                <DataGridTextColumn Binding="{Binding CharName}" Header="CHARACTER" />
-                <DataGridTextColumn Binding="{Binding Time}" Header="TIME"/>
-                <DataGridTextColumn Binding="{Binding Result}" Header="RESULT"/>
+                <DataGridTextColumn Binding="{Binding Timestamp}" Header="Date" Width="137"/>
+                <DataGridTextColumn Binding="{Binding Seed}" Header="Seed"/>
+                <DataGridTextColumn Binding="{Binding CharName}" Header="Character" />
+                <DataGridTextColumn Binding="{Binding Time}" Header="Time"/>
+                <DataGridTextColumn Binding="{Binding Result}" Header="Result"/>
             </DataGrid.Columns>
         </DataGrid>
 
         <Canvas Name="selectedRun" HorizontalAlignment="Left" Height="236" Margin="0,10,0,0" VerticalAlignment="Top" Width="960">
             <Image Name="selectedRunCharIcon" Height="44" Width="45" Canvas.Left="865" Canvas.Top="19"/>
             <WrapPanel Name="selectedRunFloors" Height="74" Width="705" Canvas.Left="155" Canvas.Top="3"/>
-            <TextBlock Name="selectedRunSeed" Text="asdd addd" TextWrapping="Wrap" Width="130" Height="89" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="48" Foreground="#FF362F2D" Canvas.Top="10" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="20"/>
-            <TextBlock Name="selectedRunTime" Width="150" Height="45" Canvas.Top="118" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="48" Foreground="#FF362F2D"/>
+            <TextBlock Name="selectedRunSeed" TextWrapping="Wrap" Width="130" Height="89" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="48" Foreground="#FF362F2D" Canvas.Top="10" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="20"/>
+            <TextBlock Name="selectedRunTime" Width="150" Height="45" Canvas.Top="118" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="48" Foreground="#FF362F2D" Canvas.Left="2"/>
             <TextBlock Name="selectedRunResult" Canvas.Left="10" Canvas.Top="184" Height="42" Width="140" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="40" Foreground="#FF362F2D" />
             <WrapPanel Name="selectedRunItems" Height="64" Width="710" Canvas.Top="77" Canvas.Left="155"/>
             <WrapPanel Name="selectedRunBosses" Height="95" Width="760" Canvas.Top="141" Canvas.Left="155"/>
         </Canvas>
+        <TextBlock x:Name="totalRuns" Text="total runs: 22" TextWrapping="Wrap" TextAlignment="Center" Height="63" Canvas.Top="118" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="24" Foreground="#FF362F2D" Margin="4,251,818,226"/>
 
     </Grid>
 </Page>

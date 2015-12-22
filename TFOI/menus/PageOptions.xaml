@@ -8,8 +8,12 @@
       d:DesignHeight="540" d:DesignWidth="960" Background="White"
       Title="PageOptions">
 
-    <Grid>
+    <Grid Loaded="Grid_Loaded">
         <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOI;component/Resources/BGOptions.png"/>
+
+        <CheckBox Name="backupEnabled" IsChecked="{Binding BackupEnabled}" Content="Enable automatic database backup" Margin="279,120,309,391" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="18.667" Foreground="#FF362F2D" VerticalAlignment="Top" HorizontalAlignment="Left" Checked="backupEnabled_Changed" Unchecked="backupEnabled_Changed" />
+        <TextBox Name="backupPath" Margin="279,0,350,368" Background="#FFE7DDDC" Foreground="#FF362F2D" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" BorderBrush="#FF362F2D" BorderThickness="2" FontSize="18.667" VerticalAlignment="Bottom" Height="27" Text="&#xD;&#xA;" />
+        <Button Name="backupBtnBrowse" Margin="597,137,268,370" Content="Browse..." FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="18.667" HorizontalAlignment="Center" VerticalAlignment="Center" Height="33" Width="95" BorderThickness="2" Background="#FFC3BBBA" BorderBrush="#FF362F2D" Foreground="#FF362F2D" Click="backupBtnBrowse_Click" />
 
         <Image Name="back" Source="/TFOI;component/Resources/back.png" Margin="25,439,847,60" RenderOptions.BitmapScalingMode="NearestNeighbor" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave"/>
         <Image Name="back_" Source="/TFOI;component/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Margin="10,470,832,44" RenderTransformOrigin="0.5,0.5" Width="87"/>
