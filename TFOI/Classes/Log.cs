@@ -1,11 +1,10 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Windows;
+using System.Windows.Forms;
 
 namespace TFOI
 {
@@ -40,8 +39,12 @@ namespace TFOI
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.FileName = "log";
                 openFileDialog.Filter = "Isaac log file | *.txt";
-                openFileDialog.ShowDialog();
-                path = openFileDialog.FileName;
+
+                if (openFileDialog.ShowDialog() == DialogResult.Yes)
+                {
+					path = openFileDialog.FileName;
+                }
+                
             }
         }
     }

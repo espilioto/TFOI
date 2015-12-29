@@ -102,5 +102,5 @@ namespace TFOI
 ///TODOS
 ///
 ///try to WPF-ise UI stuff
-///add a saved! message or sth in OPTIONS
+///add a fade in effect to the saved! message in OPTIONS
 

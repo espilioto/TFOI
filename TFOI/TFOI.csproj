@@ -345,14 +345,14 @@
     <Resource Include="Resources\BGBosses.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\optionsOFF.png" />
-    <Resource Include="Resources\optionsON.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\helpIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnDelete.png" />
+    <Resource Include="Resources\btnSave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnBrowse.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions />

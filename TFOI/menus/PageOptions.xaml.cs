@@ -40,17 +40,18 @@ namespace TFOI.menus
             backupBtnBrowse.IsEnabled = BackupEnabled;
 
             slider.Value = Properties.Settings.Default.timerRefreshSpeed;
-            
+            txtSaved.Visibility = Visibility.Hidden;
         }
 
         private void backupBtnBrowse_Click(object sender, RoutedEventArgs e)
         {
             var folderBrowseDialog = new FolderBrowserDialog();
-            folderBrowseDialog.RootFolder = Environment.SpecialFolder.UserProfile;
+            folderBrowseDialog.RootFolder = Environment.SpecialFolder.Desktop;
 
-            folderBrowseDialog.ShowDialog();
-
-            Properties.Settings.Default.backupPath = folderBrowseDialog.SelectedPath + "\\isaac.db"; 
+            if (folderBrowseDialog.ShowDialog() == DialogResult.OK)
+            {
+                Properties.Settings.Default.backupPath = folderBrowseDialog.SelectedPath + "\\isaac.db";
+            }
             backupPath.Text = Properties.Settings.Default.backupPath;
             Properties.Settings.Default.Save();
         }
@@ -90,6 +91,8 @@ namespace TFOI.menus
         {
             Properties.Settings.Default.timerRefreshSpeed = slider.Value;
             Properties.Settings.Default.Save();
+
+            txtSaved.Visibility = Visibility.Visible;
         }
     }
 }
