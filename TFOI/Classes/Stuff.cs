@@ -99,3 +99,8 @@ namespace TFOI
         }
     }
 }
+///TODOS
+///
+///try to WPF-ise UI stuff
+///add a saved! message or sth in OPTIONS
+

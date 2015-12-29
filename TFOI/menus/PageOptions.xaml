@@ -17,5 +17,12 @@
 
         <Image Name="back" Source="/TFOI;component/Resources/back.png" Margin="25,439,847,60" RenderOptions.BitmapScalingMode="NearestNeighbor" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave"/>
         <Image Name="back_" Source="/TFOI;component/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Margin="10,470,832,44" RenderTransformOrigin="0.5,0.5" Width="87"/>
+
+        <TextBlock Text="Log file read speed" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="18.667" Margin="279,242,373,248" Foreground="#FF42312D"/>
+        <Slider Name="slider" IsSnapToTickEnabled="True" HorizontalAlignment="Left" Margin="279,262,0,0" VerticalAlignment="Top" Width="299" Minimum="100" SmallChange="100" Value="100" TickPlacement="Both" LargeChange="200" AutoToolTipPlacement="BottomRight" IsDirectionReversed="True" Maximum="1000" TickFrequency="100"/>
+        <Image ToolTip="The interval (in milliseconds) at which TFOI will read the log file. Increase this if you see TFOI using much CPU time." RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOI;component/Resources/helpIcon.png" Margin="563,234,368,262" RenderTransformOrigin="3.69,-2.214" />
+        <Image ToolTip="Enable to copy your database file to the specified location after any modification happens(new run inserted, run deleted etc)" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOI;component/Resources/helpIcon.png" Margin="644,93,287,403" RenderTransformOrigin="3.69,-2.214" />
+        <Button Name="btnSave" Margin="625,447,240,60" Content="Save" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="18.667" HorizontalAlignment="Center" VerticalAlignment="Center" Height="33" Width="95" BorderThickness="2" Background="#FFC3BBBA" BorderBrush="#FF362F2D" Foreground="#FF362F2D" Click="btnSave_Click"/>
+        <TextBlock Name="sliderValue" Text="{Binding ElementName=slider, Path=Value}"  FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="32" Margin="596,267,0,0" Foreground="#FF42312D" VerticalAlignment="Top" HorizontalAlignment="Left" Width="144" Height="39"/>
     </Grid>
 </Page>

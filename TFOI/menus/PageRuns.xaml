@@ -35,7 +35,7 @@
             <WrapPanel Name="selectedRunItems" Height="64" Width="710" Canvas.Top="77" Canvas.Left="155"/>
             <WrapPanel Name="selectedRunBosses" Height="95" Width="760" Canvas.Top="141" Canvas.Left="155"/>
         </Canvas>
-        <TextBlock x:Name="totalRuns" Text="total runs: 22" TextWrapping="Wrap" TextAlignment="Center" Height="63" Canvas.Top="118" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="24" Foreground="#FF362F2D" Margin="4,251,818,226"/>
+        <TextBlock x:Name="totalRuns" TextWrapping="Wrap" TextAlignment="Center" Height="63" Canvas.Top="118" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="24" Foreground="#FF362F2D" Margin="4,251,818,226"/>
 
     </Grid>
 </Page>

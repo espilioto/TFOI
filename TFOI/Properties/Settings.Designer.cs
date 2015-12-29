@@ -36,18 +36,6 @@ namespace TFOI.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("100")]
-        public int refreshSpeed {
-            get {
-                return ((int)(this["refreshSpeed"]));
-            }
-            set {
-                this["refreshSpeed"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string backupPath {
             get {
@@ -60,13 +48,25 @@ namespace TFOI.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool backupEnabled {
             get {
                 return ((bool)(this["backupEnabled"]));
             }
             set {
                 this["backupEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public double timerRefreshSpeed {
+            get {
+                return ((double)(this["timerRefreshSpeed"]));
+            }
+            set {
+                this["timerRefreshSpeed"] = value;
             }
         }
     }

@@ -1896,19 +1896,23 @@
    },
    "372":{
       "name":"Charged Baby",
-      "text":"Bbbzzzzzt!"
+      "text":"Bbbzzzzzt!",
+	  "details":"Random chance to drop a battery pickup/freeze all enemies in the room/add one charge to your spacebar item"
    },
    "373":{
       "name":"Dead Eye",
-      "text":"Accuracy brings power!"
+      "text":"Accuracy brings power!",
+	  "details":"+12.5% damage per tear that hits an enemy(max +100%). Each shot you miss = chance to lose the damage bonus"
    },
    "374":{
       "name":"Holy Light!",
-      "text":"Holy shot!"
+      "text":"Holy shot!",
+	  "details":"Random chance to fire a Holy tear that hits the enemy with a 3x tear damage Holy Light beam."
    },
    "375":{
       "name":"Host Hat",
-      "text":"Nice hat!"
+      "text":"Nice hat!",
+	  "details":"Random chance to deflect some tears. You also become immune to explosions"
    },
    "376":{
       "name":"Restock",
@@ -1916,11 +1920,13 @@
    },
    "377":{
       "name":"Bursting Sack",
-      "text":"Spider love"
+      "text":"Spider love",
+	  "details":"Spiders no longer target or deal contact damage to you."
    },
    "378":{
       "name":"No. 2",
-      "text":"Uh oh..."
+      "text":"Uh oh...",
+	  "details":"Continuously firing or charging tears for 3 seconds causes you to drop a Butt Bomb"
    },
    "379":{
       "name":"Pupula Duplex",
@@ -1960,7 +1966,8 @@
    },
    "387":{
       "name":"Censer",
-      "text":"Peace be with you"
+      "text":"Peace be with you",
+	  "details":"A familiar which creates a huge aura of light that slows down any enemies inside it"
    },
    "388":{
       "name":"Key Bum",
@@ -1974,7 +1981,7 @@
    "390":{
       "name":"Seraphim",
       "text":"Sworn friend",
-      "dmg":10
+      "details":"10 damage at -25% shot speed and a reduced fire rate"
    },
    "391":{
       "name":"Betrayal",
@@ -1986,12 +1993,15 @@
    },
    "393":{
       "name":"Serpent's Kiss",
-      "text":"The kiss of death"
+      "text":"The kiss of death",
+	  "details":"4 or 6 damage per tick. Poisoned enemies have a chance to drop a black heart when killed"
    },
    "394":{
       "name":"Marked",
       "text":"Directed tears",
-      "height":0.3
+      "height":0.3,
+	  "tears":0.7,
+	  "range":3.15
    },
    "395":{
       "name":"Tech X",
@@ -2034,7 +2044,8 @@
    },
    "402":{
       "name":"Chaos",
-      "text":"!!!"
+      "text":"!!!",
+	  "details":"Shuffles item pools"
    },
    "403":{
       "name":"Spider Mod",
@@ -2074,28 +2085,32 @@
    "411":{
       "name":"Lusty Blood",
       "text":"Their blood brings rage!",
-      "details":"Each subsequent kill will stack further damage up to a maximum of +5 Damage Up after 9 kills"
+      "details":"Each subsequent kill will stack further damage up to a maximum of +5 Damage (9 kills). Lasts for the current room"
    },
    "412":{
       "name":"Cambion Conception",
-      "text":"Feed them hate"
+      "text":"Feed them hate",
+	  "details":"After taking enough damage you will gain a permanent demon familiar"
    },
    "413":{
       "name":"Immaculate Conception",
-      "text":"Feed them love"
+      "text":"Feed them love",
+	  "details":"After picking up enough hearts, Isaac gains a permanent angelic familiar"
    },
    "414":{
       "name":"More Options",
-      "text":"There are even more options!"
+      "text":"There are even more options!",
+	  "details":"Two items now spawn in each of your item roomss, however only one can be taken"
    },
    "415":{
       "name":"Crown of Light",
       "text":"The untainted gain power",
-      "details":"Double damage while not having any empty red heart containers and not taking damage."
+      "details":"Double damage while not having any empty red heart containers and not taking damage"
    },
    "417":{
       "name":"Succubus",
-      "text":"Damage booster"
+      "text":"Damage booster",
+	  "details":"Within black aura: enemies take damage, 1.5x damage for you(stacks)"
    },
    "418":{
       "name":"Fruit Cake",
@@ -2196,6 +2211,7 @@
    "439":{
       "name":"Mom's Box",
       "text":"What's inside?",
+	  "details":"While held: doubles the effect of trinkets which make sense to be doubled and gives +1 luck",
       "space":true
    },
    "440":{

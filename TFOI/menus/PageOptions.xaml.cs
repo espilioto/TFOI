@@ -38,6 +38,9 @@ namespace TFOI.menus
 
             backupPath.IsEnabled = BackupEnabled;
             backupBtnBrowse.IsEnabled = BackupEnabled;
+
+            slider.Value = Properties.Settings.Default.timerRefreshSpeed;
+            
         }
 
         private void backupBtnBrowse_Click(object sender, RoutedEventArgs e)
@@ -83,5 +86,10 @@ namespace TFOI.menus
             }
         }
 
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.timerRefreshSpeed = slider.Value;
+            Properties.Settings.Default.Save();
+        }
     }
 }

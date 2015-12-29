@@ -144,3 +144,4 @@ C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOI\TFOI\obj\Debug\TF
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOI\TFOI\obj\Debug\TFOI.csproj.GenerateResource.Cache
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOI\TFOI\obj\Debug\TFOI.exe
 C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOI\TFOI\obj\Debug\TFOI.pdb
+C:\Users\SouLSLayeR\Documents\Visual Studio 2015\Projects\TFOI\TFOI\obj\Debug\TFOI.csprojResolveAssemblyReference.cache

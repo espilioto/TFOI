@@ -35,7 +35,7 @@ namespace TFOI.menus
         string line = string.Empty;
 
         Timer runTimer = new Timer(1000);
-        Timer timer = new Timer(100);
+        Timer timer = new Timer(Properties.Settings.Default.timerRefreshSpeed);
 
         Run run;
 
