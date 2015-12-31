@@ -11,6 +11,7 @@ using System.Windows.Documents;
 using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -28,22 +29,28 @@ namespace TFOI.menus
         }
 
         public bool BackupEnabled { get; set; }
+        DropShadowEffect glowSelected;
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
+            glowSelected = new DropShadowEffect();
+            glowSelected.ShadowDepth = 0;
+            glowSelected.BlurRadius = 15;
+            glowSelected.Color = Colors.Red;
+
             this.DataContext = this;
 
             BackupEnabled = Properties.Settings.Default.backupEnabled;
             backupPath.Text = Properties.Settings.Default.backupPath;
 
             backupPath.IsEnabled = BackupEnabled;
-            backupBtnBrowse.IsEnabled = BackupEnabled;
+            btnBrowse.IsEnabled = BackupEnabled;
 
             slider.Value = Properties.Settings.Default.timerRefreshSpeed;
             txtSaved.Visibility = Visibility.Hidden;
         }
 
-        private void backupBtnBrowse_Click(object sender, RoutedEventArgs e)
+        private void btnBrowse_Click(object sender, RoutedEventArgs e)
         {
             var folderBrowseDialog = new FolderBrowserDialog();
             folderBrowseDialog.RootFolder = Environment.SpecialFolder.Desktop;
@@ -54,6 +61,32 @@ namespace TFOI.menus
             }
             backupPath.Text = Properties.Settings.Default.backupPath;
             Properties.Settings.Default.Save();
+        }
+
+        private void backupEnabled_Changed(object sender, RoutedEventArgs e)
+        {
+            if (BackupEnabled)
+            {
+                backupPath.IsEnabled = true;
+                btnBrowse.IsEnabled = true;
+
+                Properties.Settings.Default.backupEnabled = true;
+            }
+            else
+            {
+                backupPath.IsEnabled = false;
+                btnBrowse.IsEnabled = false;
+
+                Properties.Settings.Default.backupEnabled = false;
+            }
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.timerRefreshSpeed = slider.Value;
+            Properties.Settings.Default.Save();
+
+            txtSaved.Visibility = Visibility.Visible;
         }
 
         private void back_MouseDown(object sender, MouseButtonEventArgs e)
@@ -68,31 +101,21 @@ namespace TFOI.menus
         {
             back_.Visibility = Visibility.Hidden;
         }
-
-        private void backupEnabled_Changed(object sender, RoutedEventArgs e)
+        private void btnSave_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
-            if (BackupEnabled)
-            {
-                backupPath.IsEnabled = true;
-                backupBtnBrowse.IsEnabled = true;
-
-                Properties.Settings.Default.backupEnabled = true;
-            }
-            else
-            {
-                backupPath.IsEnabled = false;
-                backupBtnBrowse.IsEnabled = false;
-
-                Properties.Settings.Default.backupEnabled = false;
-            }
+            btnSave.Effect = glowSelected;
         }
-
-        private void btnSave_Click(object sender, RoutedEventArgs e)
+        private void btnSave_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
-            Properties.Settings.Default.timerRefreshSpeed = slider.Value;
-            Properties.Settings.Default.Save();
-
-            txtSaved.Visibility = Visibility.Visible;
+            btnSave.Effect = null;
+        }
+        private void btnBrowse_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            btnBrowse.Effect = glowSelected;
+        }
+        private void btnBrowse_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            btnBrowse.Effect = null;
         }
     }
 }

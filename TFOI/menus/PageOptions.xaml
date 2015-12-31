@@ -7,34 +7,26 @@
       mc:Ignorable="d" 
       d:DesignHeight="540" d:DesignWidth="960" Background="White"
       Title="PageOptions">
-    <Page.Resources>
-        <Storyboard x:Key="OnMouseDown1"/>
-    </Page.Resources>
-    <Page.Triggers>
-        <EventTrigger RoutedEvent="UIElement.MouseDown" SourceName="btnSave">
-            <BeginStoryboard Storyboard="{StaticResource OnMouseDown1}"/>
-        </EventTrigger>
-    </Page.Triggers>
 
     <Grid Loaded="Grid_Loaded">
         <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOI;component/Resources/BGOptions.png"/>
 
-        <CheckBox Name="backupEnabled" IsChecked="{Binding BackupEnabled}" Content="Enable automatic database backup" Margin="287,126,0,0" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="18.667" Foreground="#FF362F2D" VerticalAlignment="Top" HorizontalAlignment="Left" Checked="backupEnabled_Changed" Unchecked="backupEnabled_Changed" />
-        <TextBox Name="backupPath" Margin="287,0,342,348" Background="#FFE7DDDC" Foreground="#FF362F2D" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" BorderBrush="#FF362F2D" BorderThickness="2" FontSize="18.667" VerticalAlignment="Bottom" Height="27" Text="&#xD;&#xA;" />
-        <Image Name="backupBtnBrowse" Margin="613,155,0,0" Height="34" Width="74" MouseDown="backupBtnBrowse_Click" Source="/TFOI;component/Resources/btnBrowse.png" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <GroupBox Name="groupBoxBackup" Header="Database Backup" HorizontalAlignment="Left" Height="99" Margin="272,97,0,0" VerticalAlignment="Top" Width="420" BorderBrush="#FF362F2D" Foreground="#FF362F2D" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD"/>
+        <CheckBox Name="backupEnabled" IsChecked="{Binding BackupEnabled}" Content="Enable automatic database backup" Margin="279,126,0,0" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="18.667" Foreground="#FF362F2D" VerticalAlignment="Top" HorizontalAlignment="Left" Checked="backupEnabled_Changed" Unchecked="backupEnabled_Changed" />
+        <TextBox Name="backupPath" Margin="279,0,350,348" Background="#FFE7DDDC" Foreground="#FF362F2D" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" BorderBrush="#FF362F2D" BorderThickness="2" FontSize="18.667" VerticalAlignment="Bottom" Height="27" Text="&#xD;&#xA;" />
+        <Image Name="btnBrowse" Margin="605,155,0,0" Height="34" Width="74" MouseEnter="btnBrowse_MouseEnter" MouseLeave="btnBrowse_MouseLeave" MouseDown="btnBrowse_Click" Source="/TFOI;component/Resources/btnBrowse.png" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Image Name="backupHelp" ToolTip="Enable to copy your database file to the specified location if a modification happens(a new run is inserted, a run is deleted etc)" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOI;component/Resources/helpIcon.png" Margin="663,108,268,388" RenderTransformOrigin="3.69,-2.214" />
 
         <Image Name="back" Source="/TFOI;component/Resources/back.png" Margin="25,439,847,60" RenderOptions.BitmapScalingMode="NearestNeighbor" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave"/>
         <Image Name="back_" Source="/TFOI;component/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Margin="10,470,832,44" RenderTransformOrigin="0.5,0.5" Width="87"/>
 
-        <TextBlock Text="Log file read speed" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="18.667" Margin="287,235,365,255" Foreground="#FF42312D"/>
-        <Slider Name="slider" IsSnapToTickEnabled="True" HorizontalAlignment="Left" Margin="287,269,0,0" VerticalAlignment="Top" Width="358" Minimum="100" SmallChange="100" Value="100" TickPlacement="Both" LargeChange="200" AutoToolTipPlacement="BottomRight" IsDirectionReversed="True" Maximum="1000" TickFrequency="100" Foreground="#FF362F2D" BorderBrush="#FF362F2D" Background="#FFD2CDC5"/>
-        <Image Name="performanceHelp" ToolTip="The interval (in milliseconds) at which TFOI will read the log file. Increase this if you see TFOI using much CPU time." RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOI;component/Resources/helpIcon.png" Margin="671,223,260,273" RenderTransformOrigin="3.69,-2.214" />
-        <Image Name="backupHelp" ToolTip="Enable to copy your database file to the specified location if a modification happens(a new run is inserted, a run is deleted etc)" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOI;component/Resources/helpIcon.png" Margin="671,108,260,388" RenderTransformOrigin="3.69,-2.214" />
-        <Image Name="btnSave" Margin="785,408,50,74" Source="/TFOI;component/Resources/btnSave.png" MouseDown="btnSave_Click"/>
-        <TextBlock Name="sliderValue" Text="{Binding ElementName=slider, Path=Value}"  FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="32" Margin="650,272,0,0" Foreground="#FF42312D" VerticalAlignment="Top" HorizontalAlignment="Left" Width="144" Height="39"/>
-        <GroupBox Name="groupBoxBackup" Header="Database Backup" HorizontalAlignment="Left" Height="99" Margin="280,97,0,0" VerticalAlignment="Top" Width="420" BorderBrush="#FF362F2D" Foreground="#FF362F2D" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD"/>
-        <GroupBox Name="groupBoxPerformance" Header="Performance" HorizontalAlignment="Left" Height="99" Margin="280,211,0,0" VerticalAlignment="Top" Width="420" BorderBrush="#FF362F2D" Foreground="#FF362F2D" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD"/>
+        <GroupBox Name="groupBoxPerformance" Header="Performance" HorizontalAlignment="Left" Height="99" Margin="272,211,0,0" VerticalAlignment="Top" Width="420" BorderBrush="#FF362F2D" Foreground="#FF362F2D" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD"/>
+        <TextBlock Text="Log file read speed" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="18.667" Margin="279,235,373,255" Foreground="#FF42312D"/>
+        <Slider Name="slider" IsSnapToTickEnabled="True" HorizontalAlignment="Left" Margin="279,269,0,0" VerticalAlignment="Top" Width="358" Minimum="100" SmallChange="100" Value="100" TickPlacement="Both" LargeChange="200" Maximum="1000" TickFrequency="100" Foreground="#FF362F2D" BorderBrush="#FF362F2D" Background="#FFD2CDC5"/>
+        <Image Name="performanceHelp" ToolTip="The interval (in milliseconds) at which TFOI will read the log file. Increase this if you see TFOI using much CPU time." RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOI;component/Resources/helpIcon.png" Margin="663,223,268,273" RenderTransformOrigin="3.69,-2.214" />
+        <TextBlock Name="sliderValue" Text="{Binding ElementName=slider, Path=Value}"  FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="32" Margin="642,272,0,0" Foreground="#FF42312D" VerticalAlignment="Top" HorizontalAlignment="Left" Width="144" Height="39"/>
 
+        <Image Name="btnSave" Margin="785,408,50,74" Source="/TFOI;component/Resources/btnSave.png" MouseDown="btnSave_Click" MouseEnter="btnSave_MouseEnter" MouseLeave="btnSave_MouseLeave"/>
         <TextBlock Name="txtSaved" Text="Settings saved!" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="29.333" Margin="0,0,-100,20" Foreground="#FF362F2D" HorizontalAlignment="Right" Height="50" VerticalAlignment="Bottom" Width="308"/>
     </Grid>
 </Page>
