@@ -18,21 +18,13 @@ namespace TFOI
         public static void LocateLogs()
         {
 
-            if (File.Exists(Environment.ExpandEnvironmentVariables("%userprofile%") + @"\Documents\My Games\Binding of Isaac Afterbirth\log.txt"))
+            if (File.Exists(Environment.ExpandEnvironmentVariables("%userprofile%") + @"\Documents\My Games\Binding of Isaac Afterbirth+\log.txt"))
             {
-                path = Environment.ExpandEnvironmentVariables("%userprofile%") + @"\Documents\My Games\Binding of Isaac Afterbirth\log.txt";
+                path = Environment.ExpandEnvironmentVariables("%userprofile%") + @"\Documents\My Games\Binding of Isaac Afterbirth+\log.txt";
             }
-            else if (File.Exists(Environment.ExpandEnvironmentVariables("%userprofile%") + @"\Documents\My Games\Binding of Isaac Rebirth\log.txt"))
+            else if (File.Exists(@"C:\Program Files (x86)\Steam\steamapps\common\The Binding of Isaac Rebirth\Documents\My Games\Binding of Isaac Afterbirth+\log.txt"))
             {
-                path = Environment.ExpandEnvironmentVariables("%userprofile%") + @"\Documents\My Games\Binding of Isaac Rebirth\log.txt";
-            }
-            else if (File.Exists(@"C:\Program Files (x86)\Steam\steamapps\common\The Binding of Isaac Rebirth\Documents\My Games\Binding of Isaac Afterbirth\log.txt"))
-            {
-                path = @"C:\Program Files (x86)\Steam\steamapps\common\The Binding of Isaac Rebirth\Documents\My Games\Binding of Isaac Afterbirth\log.txt";
-            }
-            else if (File.Exists(@"C:\Program Files (x86)\Steam\steamapps\common\The Binding of Isaac Rebirth\Documents\My Games\Binding of Isaac Rebirth\log.txt"))
-            {
-                path = @"C:\Program Files (x86)\Steam\steamapps\common\The Binding of Isaac Rebirth\Documents\My Games\Binding of Isaac Rebirth\log.txt";
+                path = @"C:\Program Files (x86)\Steam\steamapps\common\The Binding of Isaac Rebirth\Documents\My Games\Binding of Isaac Afterbirth+\log.txt";
             }
             else
             {

@@ -69,7 +69,7 @@ namespace TFOI.menus
 
                 while ((line = streamReader.ReadLine()) != null)
                 {
-                    if (line.StartsWith("RNG Start Seed:"))
+                    if (line.StartsWith("[INFO] - RNG Start Seed:"))
                     {
                         run = new Run();
 
@@ -85,7 +85,7 @@ namespace TFOI.menus
                         Dispatcher.Invoke(new Action(() => run.Seed = Regex.Match(line, @"(\w{4} \w{4}) ").Value)); //regex seed
                         Dispatcher.Invoke(new Action(() => txtSeed.Text = run.Seed));
                     }
-                    else if (line.StartsWith("Initialized player with"))
+                    else if (line.StartsWith("[INFO] - Initialized player with"))
                     {
                         var character = Characters.GetCharFromId(Regex.Match(line, @"Subtype (\d)").Groups[1].Value); //regex character ID
                         run.AddCharacter(character);
@@ -93,7 +93,7 @@ namespace TFOI.menus
                         Dispatcher.Invoke(new Action(() => charIcon.ToolTip = character.Name));
                         Dispatcher.Invoke(new Action(() => charIcon.Source = Stuff.BitmapToImageSource(character.Icon)));
                     }
-                    else if (line.StartsWith("Adding collectible "))
+                    else if (line.StartsWith("[INFO] - Adding collectible "))
                     {
                         var item = Items.GetItemFromId(Regex.Match(line, @"(\d+)").Groups[1].Value); //regex item id
 
@@ -230,7 +230,7 @@ namespace TFOI.menus
                             }
                         }
                     }
-                    else if (line.StartsWith("Game Over"))
+                    else if (line.StartsWith("[INFO] - Game Over"))
                     {
                         runTimer.Stop();
                         runTimer.Enabled = false;
@@ -281,7 +281,7 @@ namespace TFOI.menus
                             }
                         }
                     }
-                    else if (line.StartsWith("Level::Init"))
+                    else if (line.StartsWith("[INFO] - Level::Init"))
                     {
                         Dispatcher.Invoke(new Action(() => curseIcon.Visibility = Visibility.Hidden));      //we don't know if the new floor is gonna have a curse
                         Dispatcher.Invoke(new Action(() => txtCurse.Visibility = Visibility.Hidden));       //so let's hide the curse stuff for now
@@ -306,7 +306,7 @@ namespace TFOI.menus
 
                         runTimer.Start();        //delay the timer as long as possible
                     }
-                    else if (line.StartsWith("Curse of"))
+                    else if (line.StartsWith("[INFO] - Curse of"))
                     {
                         string curse = string.Empty;
 
@@ -424,7 +424,7 @@ namespace TFOI.menus
                     //        Dispatcher.Invoke(new Action(() => txtTime.Effect = null));
                     //    }
                     //}
-                    if (line.StartsWith("Total entity spawn time") || line.StartsWith("Total ANM2 loading time") || line.StartsWith("AnmCache memory"))
+                    if (line.StartsWith("[INFO] - Total entity spawn time") || line.StartsWith("[INFO] - Total ANM2 loading time") || line.StartsWith("[INFO] - AnmCache memory"))
                     {
                         runTimer.Stop();
                     }

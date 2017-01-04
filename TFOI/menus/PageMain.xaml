@@ -24,7 +24,7 @@
     </Page.Triggers>
 
     <Grid>
-        <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/BGMainMenu.png"/>
+        <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOI;component/Resources/BGMainMenu.png"/>
         <Image Name="logo" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/TFOI;component/Resources/logoNoShadow.png" RenderTransformOrigin="0.5,0.5" Margin="82,16,82,0" VerticalAlignment="Top" Height="150">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -39,7 +39,18 @@
             </Image.Effect>
         </Image>
 
-        <Image Name="newrun_" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/arrow.png" Margin="320,232,549,271" Visibility="Hidden"/>
+        <Image Name="newrun_" RenderOptions.BitmapScalingMode="NearestNeighbor" Source="/Resources/arrow.png" Margin="320,232,549,271" Visibility="Hidden">
+            <Image.Style>
+            <Style TargetType="{x:Type Image}">
+                <Setter Property="Visibility" Value="Hidden" />
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Visibility" Value="Visible" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            </Image.Style>
+        </Image>
         <Image Name="newrun" Source="/Resources/NEWRUN.png" Margin="377,209,394,268" RenderTransformOrigin="0.5,0.5" MouseEnter="newrun_MouseEnter" MouseLeave="newrun_MouseLeave" MouseDown="newrun_MouseDown">
             <Image.RenderTransform>
                 <TransformGroup>

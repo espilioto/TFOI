@@ -436,8 +436,7 @@
    "82":{
       "name":"Lord of the Pit",
       "speed":0.3,
-      "text":"Demon wings",
-      "tform":"Cthulhu"
+      "text":"Demon wings"
    },
    "83":{
       "dmg":0.7,
