@@ -87,7 +87,7 @@ namespace TFOI.menus
                     }
                     else if (line.StartsWith("[INFO] - Initialized player with"))
                     {
-                        var character = Characters.GetCharFromId(Regex.Match(line, @"Subtype (\d)").Groups[1].Value); //regex character ID
+                        var character = Characters.GetCharFromId(Regex.Match(line, @"Subtype (\d+)").Groups[1].Value); //regex character ID
                         run.AddCharacter(character);
 
                         Dispatcher.Invoke(new Action(() => charIcon.ToolTip = character.Name));

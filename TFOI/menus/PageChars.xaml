@@ -15,7 +15,7 @@
         <Image Name="back" Source="/TFOI;component/Resources/back.png" Margin="25,439,847,60" RenderOptions.BitmapScalingMode="NearestNeighbor" MouseDown="back_MouseDown" MouseEnter="back_MouseEnter" MouseLeave="back_MouseLeave" Stretch="Fill"/>
         <Image Name="back_" Source="/TFOI;component/Resources/underline.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Visibility="Hidden" Margin="10,470,832,44" RenderTransformOrigin="0.5,0.5"/>
 
-        <WrapPanel Name="charPanel" Margin="171,0,161,403" RenderTransformOrigin="0.5,0.5" Height="54" VerticalAlignment="Bottom"/>
+        <WrapPanel Name="charPanel" Margin="156,0,150,403" RenderTransformOrigin="0.5,0.5" Height="54" VerticalAlignment="Bottom"/>
 
         <TextBlock Text="TOP 20 ITEMS FOUND" TextAlignment="Center" TextWrapping="Wrap" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="32" Margin="4,0,842,435" Foreground="#FF362F2D"/>
         <Image  Source="/TFOI;component/Resources/itemPanel.png" Margin="4,90,842,104" VerticalAlignment="Center" HorizontalAlignment="Center" Width="114" Stretch="Fill" />
