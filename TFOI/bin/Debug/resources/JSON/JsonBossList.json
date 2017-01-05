@@ -364,5 +364,25 @@
       "name":"Frail",
       "bossHP":"200",
       "text":"The Frail is the posthumous version of Pin."
+   },
+   "070":{
+      "name":"Rag Mega",
+      "bossHP":"110",
+      "text":"Rag Mega is a hybrid boss of Rag Man and Mega Maw."
+   },
+   "071":{
+      "name":"Big Horn",
+      "bossHP":"600",
+      "text":"Big Horn is a large version of Little Horn."
+   },
+   "072":{
+      "name":"VIS SISTERS",
+      "bossHP":"800",
+      "text":"Sisters Vis is one of the bosses added in the expansion The Binding of Isaac: Afterbirth+."
+   },
+   "073":{
+      "name":"Delirium",
+      "bossHP":"10000",
+      "text":"Delirium is a final boss added in the expansion The Binding of Isaac: Afterbirth+."
    }
 }

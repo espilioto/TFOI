@@ -61,8 +61,8 @@ namespace TFOI.menus
 
         private void ReadLog(object sender, ElapsedEventArgs e)
         {
-            //if (true)                                                                               //just for testing purposes
-            if (System.Diagnostics.Process.GetProcessesByName("isaac-ng").Length > 0)
+            if (true)                                                                               //just for testing purposes
+            //if (System.Diagnostics.Process.GetProcessesByName("isaac-ng").Length > 0)
             {
                 Dispatcher.Invoke(new Action(() => txtIsRunning.Foreground = Brushes.ForestGreen));
                 Dispatcher.Invoke(new Action(() => txtIsRunning.Text = "GAME IS RUNNING"));
@@ -406,16 +406,13 @@ namespace TFOI.menus
                             run.PlayerFightingBoss = false;
                         });
                     }
-                    if (line != null)
+                    else if (line.StartsWith("[INFO] - AnmCache memory usage"))
                     {
-                        if (line.StartsWith("[INFO] - Total entity spawn time"))
-                        {
-                            runTimer.Stop();
-                        }
-                        else
-                        {
-                            runTimer.Start();
-                        }
+                        runTimer.Stop();
+                    }
+                    else
+                    {
+                        runTimer.Start();
                     }
                 }
             }

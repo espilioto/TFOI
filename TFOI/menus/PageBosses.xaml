@@ -17,7 +17,7 @@
         <Image Name="bossNameLogo" Margin="0,0,730,379" OpacityMask="Black" Stretch="None"/>
 
         <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="211,37,208,365" >
-            <WrapPanel  Name="bossPanel" Height="347" Width="530" Orientation="Horizontal" VerticalAlignment="Center"/>
+            <WrapPanel  Name="bossPanel" Height="405" Width="530" Orientation="Horizontal" VerticalAlignment="Center"/>
         </ScrollViewer>
 
         <TextBlock Name="textBossInfo" TextWrapping="Wrap" HorizontalAlignment="Left" Height="123" Margin="763,48,0,0" VerticalAlignment="Top" Width="171" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="21.333" Foreground="#FF362F2D"/>
@@ -38,7 +38,7 @@
 
         <TextBlock Text="GLOBAL TOP 5" TextAlignment="Center" TextWrapping="Wrap" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="32" Margin="681,190,71,289" Foreground="#FF362F2D"/>
         <TextBlock Text="NEMESES" TextAlignment="Center" TextWrapping="Wrap" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="32" Margin="624,220,198,259" Foreground="#FF362F2D"/>
-        <StackPanel x:Name="top5Nemeses" Margin="623,262,192,6" />
+        <StackPanel x:Name="top5Nemeses" Margin="624,268,191,0" />
 
         <TextBlock Text="DEFEATED" TextAlignment="Center" TextWrapping="Wrap" FontFamily="/TFOI;component/Resources/#TeamMeatFontBOLD" FontSize="32" Margin="783,220,2,258" Foreground="#FF362F2D"/>
         <Image Source="/TFOI;component/Resources/bossPanel.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Margin="809,255,23,3" Stretch="Fill" RenderTransformOrigin="0.5,0.5" >
@@ -51,7 +51,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <StackPanel x:Name="top5Defeated" Margin="807,262,24,4" />
+        <StackPanel x:Name="top5Defeated" Margin="805,268,26,-2" />
 
     </Grid>
 </Page>
