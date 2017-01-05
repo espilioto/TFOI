@@ -1,6 +1,6 @@
-![awwyiss](https://i.imgur.com/10uOBiI.png)
+![awwyiss](https://github.com/espilioto/TFOI/blob/master/TFOI/Resources/logoNoShadow.png?raw=true)
 # The Finding Of Items
-A run tracker and logger for The Binding of Isaac: Afterbirth
+A run tracker and logger for The Binding of Isaac: Afterbirth+
 
 ### Download [Here](http://moddingofisaac.com/mod/900/thefindingofitems)
 
@@ -33,7 +33,7 @@ Having that as a base, I started developing TFOI (and using it as a reason to pl
 This basically is a text parser that reads the game's log.
 It identifies certain events (like picking up an item) and presents them to the user, so that anyone can catch up with just a glance.
 
-When the run finishes, it inserts the run's data into a database.
+When the run finishes, it inserts the run's data into a local SQLite database.
 That data will be available to the user through various screens like: 
 * Run log
 * Item-related data 
@@ -48,8 +48,6 @@ That data will be available to the user through various screens like:
   * Confirm effects of D4 / D100 / dice rooms (must play more :D)
   * Fix the timer so it doesn't restart when a run is done
   * Fix the timer so you can freely navigate the pages without it resetting
-* Options
-  * DB backup option
 #### *Maybe / Luxury*
 * New Run 
   * mini mode (overlay for streams etc) *maybe, afterbirth does that somewhat*
