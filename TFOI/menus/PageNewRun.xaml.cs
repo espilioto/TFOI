@@ -334,9 +334,9 @@ namespace TFOI.menus
                         }
 
                     }
-                    else if (line.StartsWith("playing cutscene"))
+                    else if (line.StartsWith("[INFO] - playing cutscene"))
                     {
-                        if (line.StartsWith("playing cutscene 1 (Intro).")) //don't match the intro cutscene that plays on every launch
+                        if (line.StartsWith("[INFO] - playing cutscene 1 (Intro).")) //don't match the intro cutscene that plays on every launch
                         {
                             ; ;
                         }
@@ -385,7 +385,7 @@ namespace TFOI.menus
                             });
                         }
                     }
-                    else if (line.StartsWith("deathspawn_boss") || line.StartsWith("TriggerBossDeath")) //boss died
+                    else if (line.StartsWith("[INFO] - deathspawn_boss") || line.StartsWith("[INFO] - TriggerBossDeath")) //boss died
                     {
                         Application.Current.Dispatcher.Invoke((Action)delegate
                         {
@@ -408,7 +408,7 @@ namespace TFOI.menus
                     }
                     if (line != null)
                     {
-                        if (line.StartsWith("[INFO] - Total entity spawn time") || line.StartsWith("[INFO] - Total ANM2 loading time") || line.StartsWith("[INFO] - AnmCache memory"))
+                        if (line.StartsWith("[INFO] - Total entity spawn time"))
                         {
                             runTimer.Stop();
                         }
