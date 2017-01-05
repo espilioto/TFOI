@@ -33,6 +33,7 @@ namespace TFOI
 
                 boss.Id = jsonBoss.Name;
                 boss.Name = jsonBoss.First["name"];                                     //these five properties (should) exist for every boss
+
                 boss.Text = jsonBoss.First["text"];
                 boss.HP = jsonBoss.First["bossHP"]; ;
                 boss.Icon = new Bitmap(Environment.CurrentDirectory + @"\resources\images\bosses\" + boss.Id + ".png");

@@ -40,7 +40,12 @@ namespace TFOI.menus
             foreach (var boss in Bosses.List)
             {
                 var icon = new Image();
+
+                if (boss.Name == "Haunt 2") //quick & dirty
+                    boss.Name = "The Forsaken";
+
                 icon.ToolTip = boss.Name + Environment.NewLine + boss.Text;
+
                 icon.Name = "_" + boss.Id;
                 icon.Tag = "HP: " + boss.HP;
                 icon.Stretch = Stretch.None;

@@ -375,7 +375,12 @@ namespace TFOI.menus
                                 {
                                     Image icon = new Image();
                                     icon.Stretch = Stretch.None;
-                                    icon.ToolTip = boss.Name;
+
+                                    if (boss.Name == "Haunt 2") //quick & dirty
+                                        icon.ToolTip = "The Forsaken";
+                                    else
+                                        icon.ToolTip = boss.Name;
+
                                     icon.Source = Stuff.BitmapToImageSource(boss.Icon);
 
                                     Dispatcher.Invoke(new Action(() => bossPanel.Children.Add(icon)));
@@ -396,7 +401,12 @@ namespace TFOI.menus
                                 Image icon = new Image();
                                 icon.Width = bossPanel.Children[bossPanel.Children.Count - 1].RenderSize.Width;
                                 icon.Height = bossPanel.Children[bossPanel.Children.Count - 1].RenderSize.Height;
+
+                                if (run.RunBosses.Last().Name == "Haunt 2") //quick & dirty
+                                    icon.ToolTip = "The Forsaken - Defeated";
+                                else
                                 icon.ToolTip = run.RunBosses.Last().Name + " - Defeated";
+
                                 icon.Stretch = Stretch.Uniform;
 
                                 icon.Source = Stuff.BitmapToImageSource(Properties.Resources.BossDefeated);

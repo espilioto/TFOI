@@ -42,4 +42,11 @@ Network Trash Folder
 Temporary Items
 .apdisk
 TFOI/bin/Debug/resources/isaac.db
-TFOI/TFOI.exe
+TFOI/bin/Debug/TFOI.vshost.exe.manifest
+TFOI/bin/Debug/TFOI.exe.config
+TFOI/bin/Debug/TFOI.vshost.exe
+TFOI/bin/Debug/TFOI.vshost.exe.config
+TFOI/bin/Debug/TFOI.exe
+TFOI/obj/Debug/TFOI.exe
+TFOI/obj/Debug/TFOI.g.resources
+TFOI/bin/Debug/TFOI.exe
