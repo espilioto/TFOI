@@ -180,7 +180,7 @@ namespace TFOI.menus
 
                         if (item != null && run.RunFloors != null)      //#noshorthands         //can't be too careful
                         {
-                            item.FloorPickedUp = run.RunFloors.Last();
+                            item.FloorPickedUp = run.RunFloors.LastOrDefault();
 
                             if (run.AddItem(item))      //if this item hasn't been picked up before
                             {
@@ -320,7 +320,7 @@ namespace TFOI.menus
 
                         Dispatcher.Invoke(new Action(() => txtRIP.Visibility = Visibility.Visible));
                         Dispatcher.Invoke(new Action(() => txtRIP.Foreground = Brushes.DarkRed));
-                        Dispatcher.Invoke(new Action(() => txtRIP.Text = "RIP IN PEPPERONNIS M8"));
+                        Dispatcher.Invoke(new Action(() => txtRIP.Text = "RIP IN PEACE M8"));
 
                         if (run.PlayerFightingBoss)
                         {
@@ -406,31 +406,16 @@ namespace TFOI.menus
                             run.PlayerFightingBoss = false;
                         });
                     }
-                    //if (line.StartsWith("Mom clear time")) //RIP THIS. AFTERBIRTH.
-                    //{
-                    //    var time = float.Parse(Regex.Match(line, @"\d+").Value);           //regex framecounter (30/sec. why not 60? no idea)
-                    //    TimeSpan timeSpan = TimeSpan.FromSeconds(time / 30);                   //get seconds
-                    //    string str = timeSpan.ToString(@"hh\:mm\:ss");
-
-                    //    run.Time = str;
-                    //    Dispatcher.Invoke(new Action(() => txtTime.Text = "TIME: " + str));
-
-                    //    if (time < 36000)
-                    //    {
-                    //        Dispatcher.Invoke(new Action(() => txtTime.Effect = glowActiveItem));
-                    //    }
-                    //    else
-                    //    {
-                    //        Dispatcher.Invoke(new Action(() => txtTime.Effect = null));
-                    //    }
-                    //}
-                    if (line.StartsWith("[INFO] - Total entity spawn time") || line.StartsWith("[INFO] - Total ANM2 loading time") || line.StartsWith("[INFO] - AnmCache memory"))
+                    if (line != null)
                     {
-                        runTimer.Stop();
-                    }
-                    else
-                    {
-                        runTimer.Start();
+                        if (line.StartsWith("[INFO] - Total entity spawn time") || line.StartsWith("[INFO] - Total ANM2 loading time") || line.StartsWith("[INFO] - AnmCache memory"))
+                        {
+                            runTimer.Stop();
+                        }
+                        else
+                        {
+                            runTimer.Start();
+                        }
                     }
                 }
             }
@@ -443,21 +428,23 @@ namespace TFOI.menus
 
         private void RunTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            run.Time = run.Time.Add(TimeSpan.FromSeconds(1));
+            if (run != null)
+            {
+                run.Time = run.Time.Add(TimeSpan.FromSeconds(1));
+                Dispatcher.Invoke(new Action(() => txtTime.Text = "TIME: " + run.Time.ToString(@"hh\:mm\:ss")));
 
-            Dispatcher.Invoke(new Action(() => txtTime.Text = "TIME: " + run.Time.ToString(@"hh\:mm\:ss")));
-
-            if (run.Time < TimeSpan.FromMinutes(20))                         //bossrush
-            {
-                Dispatcher.Invoke(new Action(() => txtTime.Effect = glowCthulhu));
-            }
-            else if (run.Time < TimeSpan.FromMinutes(30))                   //hush
-            {
-                Dispatcher.Invoke(new Action(() => txtTime.Effect = glowFlyLord));
-            }
-            else
-            {
-                Dispatcher.Invoke(new Action(() => txtTime.Effect = null));
+                if (run.Time < TimeSpan.FromMinutes(20))                         //bossrush
+                {
+                    Dispatcher.Invoke(new Action(() => txtTime.Effect = glowCthulhu));
+                }
+                else if (run.Time < TimeSpan.FromMinutes(30))                   //hush
+                {
+                    Dispatcher.Invoke(new Action(() => txtTime.Effect = glowFlyLord));
+                }
+                else
+                {
+                    Dispatcher.Invoke(new Action(() => txtTime.Effect = null));
+                }
             }
         }
 
