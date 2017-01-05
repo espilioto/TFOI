@@ -6,9 +6,9 @@ A run tracker and logger for The Binding of Isaac: Afterbirth+
 
 ### Features
 * Seed, character, item, floor + curse, boss and time identification for current run.
-* Run log analyzing every recent run (char, items, bosses, time etc). (Soon™)
+* Run history analyzing various stats (char, items, bosses, time etc)
 * Item collection displaying the icon, name, flavor text, detailed stats and run statistics for each one.
-* Character and boss collections displaying run statistics for each one. (Soon™)
+* Character and boss collections displaying run statistics for each one.
 
 #### Usage
 Windows: Just decompress and run. You may need to update the Microsoft .net Framework.  
@@ -41,28 +41,16 @@ That data will be available to the user through various screens like:
 * Character-related data
 
 #### *Todos*
-*Global
-  *DB manipulation tools
-  *
-* New run 
-  * Confirm effects of D4 / D100 / dice rooms (must play more :D)
-  * Fix the timer so it doesn't restart when a run is done
-  * Fix the timer so you can freely navigate the pages without it resetting
-#### *Maybe / Luxury*
-* New Run 
-  * mini mode (overlay for streams etc) *maybe, afterbirth does that somewhat*
-* Rebirth style pixelate menu transitions
-* Items
-  * MouseOver/click effect
-  * tooltip formatting
-
+* Check out if greed mode can be properly logged
+* Run entry manipulation
+* More testing!
 
 #### Known bugs
-*Pretty sure this will fill up eventually*
+* The run timer doesn't stop when the run finishes
+* The run timer resets if you hit back while doing a run
  
 ### License
 [MIT]
-
 
 [NICALiS]: <http://nicalis.com>
 [Edmund McMillen]: <https://twitter.com/edmundmcmillen>
