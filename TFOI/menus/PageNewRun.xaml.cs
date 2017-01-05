@@ -93,11 +93,92 @@ namespace TFOI.menus
                         Dispatcher.Invoke(new Action(() => charIcon.ToolTip = character.Name));
                         Dispatcher.Invoke(new Action(() => charIcon.Source = Stuff.BitmapToImageSource(character.Icon)));
                     }
+                    else if (line.StartsWith("[INFO] - Level::Init"))
+                    {
+                        Dispatcher.Invoke(new Action(() => curseIcon.Visibility = Visibility.Hidden));      //we don't know if the new floor is gonna have a curse
+                        Dispatcher.Invoke(new Action(() => txtCurse.Visibility = Visibility.Hidden));       //so let's hide the curse stuff for now
+
+                        var stage = Regex.Match(line, @"m_Stage (\d+)").Groups[1].Value;            //regex stage id
+                        var altStage = Regex.Match(line, @"m_StageType (\d+)").Groups[1].Value;      //regex alt stage id
+
+                        if (altStage == null)
+                        {
+                            altStage = Regex.Match(line, @"m_AltStage (\d+)").Groups[1].Value;      //floor detection fix for Rebirth
+                        }
+
+                        var floor = Floors.GetFloorFromStageCodes(stage, altStage);
+
+                        if (floor != null)
+                        {
+                            run.AddFloor(floor);
+
+                            Dispatcher.Invoke(new Action(() => floorPanel.ToolTip = run.RunFloors.Last().Name));
+                            Dispatcher.Invoke(new Action(() => floorPanel.Source = Stuff.BitmapToImageSource(run.RunFloors.Last().Icon)));
+                        }
+
+                        runTimer.Start();        //delay the timer as long as possible
+                    }
+                    else if (line.StartsWith("[INFO] - Curse of"))
+                    {
+                        string curse = string.Empty;
+
+                        if (line.Contains("Maze"))
+                        {
+                            curse = "Curse of the Maze";
+                            run.RunFloors.Last().Curse = curse;
+                        }
+                        else if (line.Contains("Blind"))
+                        {
+                            curse = "Curse of the Blind";
+                            run.RunFloors.Last().Curse = curse;
+                        }
+                        else if (line.Contains("Lost"))
+                        {
+                            curse = "Curse of the Lost!";
+                            run.RunFloors.Last().Curse = curse;
+                        }
+                        else if (line.Contains("Unknown"))
+                        {
+                            curse = "Curse of the Unknown";
+                            run.RunFloors.Last().Curse = curse;
+                        }
+                        else if (line.Contains("Darkness"))
+                        {
+                            curse = "Curse of Darkness";
+                            run.RunFloors.Last().Curse = curse;
+                        }
+                        else if (line.Contains("Labyrinth"))                                        //if it's an XL floor
+                        {
+                            curse = "Curse of the Labyrinth";
+
+                            run.AddFloor(Floors.ConvertFloorToXL(run.RunFloors.Last()));            //add the equivalent XL floor to the list
+                            run.RunFloors[run.RunFloors.Count - 1].Curse = curse;                   //add the curse to the new floor
+                            run.RunFloors.RemoveAt(run.RunFloors.Count - 2);                        //and remove the old "regular" one from the list
+
+                            Dispatcher.Invoke(new Action(() => floorPanel.ToolTip = run.RunFloors.Last().Name)); //update the tooltip
+                        }
+
+                        if (string.IsNullOrWhiteSpace(curse))
+                        {
+                            Dispatcher.Invoke(new Action(() => curseIcon.Visibility = Visibility.Hidden));
+                            Dispatcher.Invoke(new Action(() => txtCurse.Visibility = Visibility.Hidden));
+                        }
+                        else
+                        {
+                            Dispatcher.Invoke(new Action(() => txtCurse.Text = curse.ToUpper()));
+
+                            Dispatcher.Invoke(new Action(() => curseIcon.Visibility = Visibility.Visible));
+                            Dispatcher.Invoke(new Action(() => txtCurse.Visibility = Visibility.Visible));
+                        }
+
+
+                        curse = string.Empty;                                           //empty the string so it doesnt trigger when you go to the next floor
+                    }
                     else if (line.StartsWith("[INFO] - Adding collectible "))
                     {
                         var item = Items.GetItemFromId(Regex.Match(line, @"(\d+)").Groups[1].Value); //regex item id
 
-                        if (item != null)               //can't be too careful
+                        if (item != null && run.RunFloors != null)      //#noshorthands         //can't be too careful
                         {
                             item.FloorPickedUp = run.RunFloors.Last();
 
@@ -280,87 +361,6 @@ namespace TFOI.menus
                                 Database.Backup();
                             }
                         }
-                    }
-                    else if (line.StartsWith("[INFO] - Level::Init"))
-                    {
-                        Dispatcher.Invoke(new Action(() => curseIcon.Visibility = Visibility.Hidden));      //we don't know if the new floor is gonna have a curse
-                        Dispatcher.Invoke(new Action(() => txtCurse.Visibility = Visibility.Hidden));       //so let's hide the curse stuff for now
-
-                        var stage = Regex.Match(line, @"m_Stage (\d+)").Groups[1].Value;            //regex stage id
-                        var altStage = Regex.Match(line, @"m_StageType (\d+)").Groups[1].Value;      //regex alt stage id
-
-                        if (altStage == null)
-                        {
-                            altStage = Regex.Match(line, @"m_AltStage (\d+)").Groups[1].Value;      //floor detection fix for Rebirth
-                        }
-
-                        var floor = Floors.GetFloorFromStageCodes(stage, altStage);
-
-                        if (floor != null)
-                        {
-                            run.AddFloor(floor);
-
-                            Dispatcher.Invoke(new Action(() => floorPanel.ToolTip = run.RunFloors.Last().Name));
-                            Dispatcher.Invoke(new Action(() => floorPanel.Source = Stuff.BitmapToImageSource(run.RunFloors.Last().Icon)));
-                        }
-
-                        runTimer.Start();        //delay the timer as long as possible
-                    }
-                    else if (line.StartsWith("[INFO] - Curse of"))
-                    {
-                        string curse = string.Empty;
-
-                        if (line.Contains("Maze"))
-                        {
-                            curse = "Curse of the Maze";
-                            run.RunFloors.Last().Curse = curse;
-                        }
-                        else if (line.Contains("Blind"))
-                        {
-                            curse = "Curse of the Blind";
-                            run.RunFloors.Last().Curse = curse;
-                        }
-                        else if (line.Contains("Lost"))
-                        {
-                            curse = "Curse of the Lost!";
-                            run.RunFloors.Last().Curse = curse;
-                        }
-                        else if (line.Contains("Unknown"))
-                        {
-                            curse = "Curse of the Unknown";
-                            run.RunFloors.Last().Curse = curse;
-                        }
-                        else if (line.Contains("Darkness"))
-                        {
-                            curse = "Curse of Darkness";
-                            run.RunFloors.Last().Curse = curse;
-                        }
-                        else if (line.Contains("Labyrinth"))                                        //if it's an XL floor
-                        {
-                            curse = "Curse of the Labyrinth";
-
-                            run.AddFloor(Floors.ConvertFloorToXL(run.RunFloors.Last()));            //add the equivalent XL floor to the list
-                            run.RunFloors[run.RunFloors.Count - 1].Curse = curse;                   //add the curse to the new floor
-                            run.RunFloors.RemoveAt(run.RunFloors.Count - 2);                        //and remove the old "regular" one from the list
-
-                            Dispatcher.Invoke(new Action(() => floorPanel.ToolTip = run.RunFloors.Last().Name)); //update the tooltip
-                        }
-
-                        if (string.IsNullOrWhiteSpace(curse))
-                        {
-                            Dispatcher.Invoke(new Action(() => curseIcon.Visibility = Visibility.Hidden));
-                            Dispatcher.Invoke(new Action(() => txtCurse.Visibility = Visibility.Hidden));
-                        }
-                        else
-                        {
-                            Dispatcher.Invoke(new Action(() => txtCurse.Text = curse.ToUpper()));
-
-                            Dispatcher.Invoke(new Action(() => curseIcon.Visibility = Visibility.Visible));
-                            Dispatcher.Invoke(new Action(() => txtCurse.Visibility = Visibility.Visible));
-                        }
-
-
-                        curse = string.Empty;                                           //empty the string so it doesnt trigger when you go to the next floor
                     }
                     else if (Regex.Match(line, (@"Room \d\.\d{4}")).Success) //regex boss room
                     {

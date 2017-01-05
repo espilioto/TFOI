@@ -960,10 +960,10 @@
       "text":"Tears + shot speed up"
    },
    "184":{
-      "health":1,
       "name":"Holy Grail",
+      "health":1,
       "text":"Flight + HP up",
-	  "tform":"Angel"
+	   "tform":"Angel"
    },
    "185":{
       "name":"Dead Dove",
@@ -985,10 +985,10 @@
       "text":"Mirrored buddy"
    },
    "189":{
+      "name":"SMB Super Fan",
       "dmg":0.3,
       "health":1,
       "height":1,
-      "name":"SMB Super Fan",
       "range":0.5,
       "speed":0.2,
       "tears":0.2,
@@ -2210,7 +2210,7 @@
    "439":{
       "name":"Mom's Box",
       "text":"What's inside?",
-	  "details":"While held: doubles the effect of trinkets which make sense to be doubled and gives +1 luck",
+	   "details":"While held: doubles the effect of trinkets which make sense to be doubled and gives +1 luck",
       "space":true
    },
    "440":{
@@ -2223,5 +2223,333 @@
    "441":{
       "name":"Mega Blast",
       "text":"Laser breath"
+   },
+   "442":{
+      "name":"Dark Prince's Crown",
+      "text":"Loss is power",
+      "details":"Double damage at exactly 1 red heart"
+   },
+   "443":{
+      "name":"Apple!",
+      "text":"Trick or treat?",
+      "details":"Random chance to fire a 400% damage razor blade",
+      "tears":0.4
+   },
+   "444":{
+      "name":"Lead Pencil",
+      "text":"He's a bleeder!",
+      "details":"Every 15 tears you will fire a tear volley that deals double damage"
+   },
+   "445":{
+      "name":"Dog Tooth",
+      "text":"Bark at the moon!",
+      "details":"Upon entering a room with a secret room, a wolf howl will sound",
+      "damage":0.3,
+      "speed":0.1
+   },
+   "446":{
+      "name":"Dead Tooth",
+      "text":"Halitosis",
+      "details":"Poisonous aura"
+   },
+   "447":{
+      "name":"Linger Bean",
+      "text":"Crying makes me toot",
+      "details":"While firing you have a chance to spawn a poop cloud that deals damage"
+   },
+   "448":{
+      "name":"Shard of Glass",
+      "text":"Blood and Guts!",
+      "details":"Chance to get +5 range and blood creep for the current room when damaged"
+   },
+   "449":{
+      "name":"Metal Plate",
+      "text":"It itches...",
+      "details":"Chance to deflect enemy bullets",
+      "soulhearts":1
+   },
+   "450":{
+      "name":"Eye of Greed",
+      "text":"Gold tears!",
+      "details":"Chance for midas touch tear effect"
+   },
+   "451":{
+      "name":"Tarot Cloth",
+      "text":"I see the future",
+      "details":"Random card or rune drop on pickup. Doubles the use of any tarot card used"
+   },
+   "452":{
+      "name":"Varicose Veins",
+      "text":"I'm leaking...",
+      "details":"Tammy's head on damage"
+   },
+   "453":{
+      "name":"Compound Fracture",
+      "text":"Bone tears!",
+      "range":1.5
+   },
+   "454":{
+      "name":"Polydactyly",
+      "text":"Hold me!",
+      "details":"Adds consumable space, drops 1 card/pill/rune on pickup"
+   },
+   "455":{
+      "name":"Dad's Lost Coin",
+      "text":"I remember this...",
+      "range":1.5
+   },
+   "456":{
+      "name":"Moldy Bread",
+      "text":"Midnight snack!",
+      "health":1
+   },
+   "457":{
+      "name":"Cone Head",
+      "text":"Hard headed!",
+      "soulhearts":1
+   },
+   "458":{
+      "name":"Belly Button",
+      "text":"Whats in there?",
+      "details":"Drops random trinket on pickup. Extra trinket slot."
+   },
+   "459":{
+      "name":"Sinus Infection",
+      "text":"Booger tears!",
+      "details":"Poison tear chance"
+   },
+   "460":{
+      "name":"Glaucoma",
+      "text":"Blind tears!",
+      "details":"Concussive tear chance"
+   },
+   "461":{
+      "name":"Parasitoid",
+      "text":"Egg tears!",
+      "details":"Spider/fly spawn + slow chance"
+   },
+   "462":{
+      "name":"Eye of Belial",
+      "text":"Possessed tears",
+      "details":"Piercing tears. After hitting its first enemy each tear: double damage + homing"
+   },
+   "463":{
+      "name":"Sulfuric Acid",
+      "text":"Acid tears!",
+      "details":"Chance to break objects",
+      "damage":0.3
+   },
+   "464":{
+      "name":"Glyph of Balance",
+      "text":"A gift from above"
+   },
+   "465":{
+      "name":"Analog Stick",
+      "text":"360 tears",
+      "details":"Allows you to fire tears diagonally",
+      "delay":-2
+   },
+   "466":{
+      "name":"Contagion",
+      "text":"Outbreak!",
+   },
+   "467":{
+      "name":"Finger!",
+      "text":"Watch where you point that!"
+   },
+   "468":{
+      "name":"Shade",
+      "text":"It follows"
+   },
+   "469":{
+      "name":"Depression",
+      "text":":("
+   },
+   "470":{
+      "name":"Hushy",
+      "text":"Lil hush!"
+   },
+   "471":{
+      "name":"Lil Monstro",
+      "text":"Ain't he cute?",
+      "damage":3.5
+   },
+   "472":{
+      "name":"King Baby",
+      "text":"Lord of the dead!"
+   },
+   "473":{
+      "name":"Big Chubby",
+      "text":"Chub chub",
+      "damage":2.7
+   },
+   "474":{
+      "name":"Tonsil",
+      "text":"Gross..."
+   },
+   "475":{
+      "name":"Plan C",
+      "text":"Use with caution",
+      "space":true
+   },
+   "476":{
+      "name":"D1",
+      "text":"What will it be?",
+      "space":true
+   },
+   "477":{
+      "name":"Void",
+      "text":"Consume",
+      "space":true
+   },
+   "478":{
+      "name":"Pause",
+      "text":"Stop!",
+      "space":true
+   },
+   "479":{
+      "name":"Smelter",
+      "text":"Trinket melter!",
+      "space":true
+   },
+   "480":{
+      "name":"Compost",
+      "text":"Gain more friends!",
+      "space":true
+   },
+   "481":{
+      "name":"Dataminer",
+      "text":"109",
+      "space":true
+   },
+   "482":{
+      "name":"Clicker",
+      "text":"Change",
+      "space":true
+   },
+   "483":{
+      "name":"MaMa Mega!",
+      "text":"BOOOOOOOOOM!",
+      "space":true
+   },
+   "484":{
+      "name":"Wait What?",
+      "text":"I can't believe it's not butter bean!",
+      "space":true
+   },
+   "485":{
+      "name":"Crooked Penny",
+      "text":"50/50",
+      "space":true
+   },
+   "486":{
+      "name":"Dull Razor",
+      "text":"I feel numb...",
+      "space":true
+   },
+   "487":{
+      "name":"Potato Peeler",
+      "text":"A pound of flesh...",
+      "space":true
+   },
+   "488":{
+      "name":"Metronome",
+      "text":"Waggles a finger",
+      "space":true
+   },
+   "489":{
+      "name":"D infinity",
+      "text":"Reroll forever",
+      "space":true
+   },
+   "490":{
+      "name":"Eden's Soul",
+      "text":"...",
+      "space":true
+   },
+   "491":{
+      "name":"Acid Baby",
+      "text":"Pills pills pills!"
+   },
+   "492":{
+      "name":"YO LISTEN!",
+      "text":"Yo listen!",
+      "luck":1
+   },
+   "493":{
+      "name":"Adderline",
+      "text":"Panic - power"
+   },
+   "494":{
+      "name":"Jacob's Ladder",
+      "text":"Electric tears"
+   },
+   "495":{
+      "name":"Ghost Pepper",
+      "text":"Flame tears",
+      "damage":23
+   },
+   "496":{
+      "name":"Euthanasia",
+      "text":"Needle shot"
+   },
+   "497":{
+      "name":"Camo Undies",
+      "text":"Camo kid"
+   },
+   "498":{
+      "name":"Duality",
+      "text":"You feel very balanced"
+   },
+   "499":{
+      "name":"Eucharist",
+      "text":"Peace be with you"
+   },
+   "500":{
+      "name":"Sack of Sacks",
+      "text":"Gives Sacks!"
+   },
+   "501":{
+      "name":"Greed's Gullet",
+      "text":"Money = Health!"
+   },
+   "502":{
+      "name":"Large Zit",
+      "text":"Creep shots"
+   },
+   "503":{
+      "name":"Little Horn",
+      "text":"Science!"
+   },
+   "504":{
+      "name":"Brown Nugget",
+      "text":"Friendly Fly",
+      "space":true
+   },
+   "505":{
+      "name":"Poke Go",
+      "text":"Gotta catch em..."
+   },
+   "506":{
+      "name":"BackStabber",
+      "text":"Watch your back!"
+   },
+   "507":{
+      "name":"Sharp Straw",
+      "text":"More blood!",
+      "space":true
+   },
+   "508":{
+      "name":"Mom's Razor",
+      "text":"It's sharp!"
+   },
+   "509":{
+      "name":"Bloodshot Eye",
+      "text":"Bloody friend"
+   },
+   "510":{
+      "name":"Delirious",
+      "text":"Unleash the power!",
+      "space":true
    }
 }
