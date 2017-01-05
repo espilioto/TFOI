@@ -27,7 +27,7 @@ namespace TFOI.menus
     /// </summary>
     public partial class PageNewRun : Page
     {
-        DropShadowEffect glowActiveItem, glowFlyLord, glowGuppy, glowSuperBum, glowMom, glowBob, glowShrooms, glowCthulhu, glowTumor, glowDrugs, glowAngel, glowPoop;
+        DropShadowEffect glowActiveItem, glowFlyLord, glowGuppy, glowSuperBum, glowMom, glowBob, glowShrooms, glowCthulhu, glowTumor, glowDrugs, glowAngel, glowPoop, glowBookworm;
         Image icon;
 
         Stream stream;
@@ -61,8 +61,8 @@ namespace TFOI.menus
 
         private void ReadLog(object sender, ElapsedEventArgs e)
         {
-            if (true)                                                                               //just for testing purposes
-            //if (System.Diagnostics.Process.GetProcessesByName("isaac-ng").Length > 0)
+            //if (true)                                                                               //just for testing purposes
+            if (System.Diagnostics.Process.GetProcessesByName("isaac-ng").Length > 0)
             {
                 Dispatcher.Invoke(new Action(() => txtIsRunning.Foreground = Brushes.ForestGreen));
                 Dispatcher.Invoke(new Action(() => txtIsRunning.Text = "GAME IS RUNNING"));
@@ -300,6 +300,8 @@ namespace TFOI.menus
                                                 child.Effect = glowAngel;
                                             else if (child.Tag2 == "Poop")
                                                 child.Effect = glowPoop;
+                                            else if (child.Tag2 == "Bookworm")
+                                                child.Effect = glowBookworm;
 
                                             if (child.Name.Contains(item.Id))
                                             {
@@ -469,6 +471,7 @@ namespace TFOI.menus
             glowDrugs = new DropShadowEffect();
             glowAngel = new DropShadowEffect();
             glowPoop = new DropShadowEffect();
+            glowBookworm = new DropShadowEffect();
 
             glowActiveItem.ShadowDepth = 0;
             glowGuppy.ShadowDepth = 0;
@@ -482,6 +485,7 @@ namespace TFOI.menus
             glowDrugs.ShadowDepth = 0;
             glowAngel.ShadowDepth = 0;
             glowPoop.ShadowDepth = 0;
+            glowBookworm.ShadowDepth = 0;
 
             glowActiveItem.BlurRadius = 15;
             glowGuppy.BlurRadius = 15;
@@ -495,6 +499,7 @@ namespace TFOI.menus
             glowDrugs.BlurRadius = 15;
             glowAngel.BlurRadius = 15;
             glowPoop.BlurRadius = 15;
+            glowBookworm.ShadowDepth = 0;
 
             glowActiveItem.Color = Colors.Aqua;
             glowGuppy.Color = Colors.Black;
@@ -508,6 +513,7 @@ namespace TFOI.menus
             glowDrugs.Color = Colors.DeepSkyBlue;
             glowAngel.Color = Colors.Gold;
             glowPoop.Color = Colors.Brown;
+            glowBookworm.Color = Colors.Gray;
 
             Label activeItem = new Label();
             activeItem.Content = "Active item";
@@ -545,6 +551,9 @@ namespace TFOI.menus
             Label poop = new Label();
             poop.Effect = glowPoop;
             poop.Content = "Poop";
+            Label bookworm = new Label();
+            bookworm.Effect = glowBookworm;
+            bookworm.Content = "Bookworm";
 
             txtHelp.Children.Add(activeItem);
             txtHelp.Children.Add(guppy);
@@ -558,6 +567,7 @@ namespace TFOI.menus
             txtHelp.Children.Add(angel);
             txtHelp.Children.Add(drugs);
             txtHelp.Children.Add(poop);
+            txtHelp.Children.Add(bookworm);
         }
 
         #region menu stuff

@@ -185,13 +185,15 @@
       "text":"Temporary DMG up",
       "details":"+50% / 1.5 times Damage Multiplier if you also have Blood of the Martyr",
       "dmg":2,
-      "space":true
+      "space":true,
+      "tform":"Bookworm"
    },
    "35":{
       "name":"The Necronomicon",
       "text":"Mass room damage",
       "space":true,
-      "dmg":40
+      "dmg":40,
+      "tform":"Bookworm"
    },
    "36":{
       "name":"The Poop",
@@ -307,7 +309,8 @@
    "58":{
       "name":"Book of Shadows",
       "text":"Temporary invincibility",
-      "space":true
+      "space":true,
+      "tform":"Bookworm"
    },
    "60":{
       "name":"The Ladder",
@@ -328,7 +331,8 @@
    "65":{
       "name":"Anarchist Cookbook",
       "text":"Summon bombs",
-      "space":true
+      "space":true,
+      "tform":"Bookworm"
    },
    "66":{
       "name":"The Hourglass",
@@ -410,7 +414,8 @@
    "78":{
       "name":"Book of Revelations",
       "text":"Reusable soul protection",
-      "space":true
+      "space":true,
+      "tform":"Bookworm"
    },
    "79":{
       "dmg":1,
@@ -511,7 +516,8 @@
    "97":{
       "name":"The Book of Sin",
       "text":"Reusable item generator",
-      "space":true
+      "space":true,
+      "tform":"Bookworm"
    },
    "98":{
       "name":"The Relic",
@@ -1005,7 +1011,8 @@
    "192":{
       "name":"Telepathy For Dummies",
       "text":"Temporary psychic shot",
-      "space":true
+      "space":true,
+      "tform":"Bookworm"
    },
    "193":{
       "dmg":0.3,
@@ -1438,7 +1445,8 @@
    "282":{
       "name":"How To Jump",
       "text":"It's time you learned how",
-      "space":true
+      "space":true,
+      "tform":"Bookworm"
    },
    "283":{
       "name":"D100",
@@ -1463,7 +1471,8 @@
    "287":{
       "name":"Book of Secrets",
       "text":"??????",
-      "space":true
+      "space":true,
+      "tform":"Bookworm"
    },
    "288":{
       "name":"Box of Spiders",
@@ -1489,7 +1498,8 @@
    "292":{
       "name":"The Satanic Bible",
       "text":"Reusable evil",
-      "space":true
+      "space":true,
+      "tform":"Bookworm"
    },
    "293":{
       "name":"Head of Krampus",
