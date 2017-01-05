@@ -923,7 +923,7 @@
    "176":{
       "health":"1",
       "name":"Stem Cells",
-      "shotspeed":"0.16",
+      "shotspeed":0.16,
       "text":"HP up"
    },
    "177":{
@@ -949,11 +949,11 @@
       "space":true
    },
    "182":{
+      "name":"Sacred Heart",
       "health":1,
       "dmg":1,
       "dmgx":2.3,
       "height":0.75,
-      "name":"Sacred Heart",
       "range":0.375,
       "shotspeed":-0.25,
       "tears":-0.4,
@@ -1130,7 +1130,7 @@
    },
    "213":{
       "name":"Lost Contact",
-      "shotspeed":"-0.15",
+      "shotspeed":-0.15,
       "text":"Shielded tears"
    },
    "214":{
@@ -1587,9 +1587,9 @@
       "text":"Tears up + knock-back shot"
    },
    "310":{
+      "name":"Eve's Mascara",
       "delayx":2,
       "dmgx":2,
-      "name":"Eve's Mascara",
       "shotspeed":-0.5,
       "text":"Shot speed down + DMG up"
    },
@@ -1681,20 +1681,20 @@
       "text":"Controlled tears"
    },
    "330":{
+      "name":"Soy Milk",
+      "text":"DMG down + tears way up",
       "delay":-2,
       "delayx":0.25,
-      "dmgx":0.2,
-      "name":"Soy Milk",
-      "text":"DMG down + tears way up"
+      "dmgx":0.2
    },
    "331":{
+      "name":"Godhead",
+      "text":"God tears",
       "dmg":0.5,
       "height":0.8,
-      "name":"Godhead",
       "range":1.2,
       "shotspeed":-0.3,
-      "tears":-0.3,
-      "text":"God tears"
+      "tears":-0.3
    },
    "332":{
       "name":"Lazarus' Rags",
