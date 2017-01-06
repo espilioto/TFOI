@@ -27,7 +27,6 @@ namespace TFOI.menus
     /// </summary>
     public partial class PageNewRun : Page
     {
-        DropShadowEffect glowActiveItem, glowFlyLord, glowGuppy, glowSuperBum, glowMom, glowBob, glowShrooms, glowCthulhu, glowTumor, glowDrugs, glowAngel, glowPoop, glowBookworm;
         Image icon;
 
         Stream stream;
@@ -259,6 +258,16 @@ namespace TFOI.menus
                                         icon.Effect = glowPoop;
                                         icon.Tag2 = "Poop";
                                     }
+                                    else if (item.Tform == "Spider")
+                                    {
+                                        icon.Effect = glowSpider;
+                                        icon.Tag2 = "Spider";
+                                    }
+                                    else if (item.Tform == "Bookworm")
+                                    {
+                                        icon.Effect = glowPoop;
+                                        icon.Tag2 = "Bookworm";
+                                    }
 
                                     if (item.Space)
                                     {
@@ -472,6 +481,7 @@ namespace TFOI.menus
             glowAngel = new DropShadowEffect();
             glowPoop = new DropShadowEffect();
             glowBookworm = new DropShadowEffect();
+            glowSpider = new DropShadowEffect();
 
             glowActiveItem.ShadowDepth = 0;
             glowGuppy.ShadowDepth = 0;
@@ -486,34 +496,37 @@ namespace TFOI.menus
             glowAngel.ShadowDepth = 0;
             glowPoop.ShadowDepth = 0;
             glowBookworm.ShadowDepth = 0;
+            glowSpider.ShadowDepth = 0;
 
-            glowActiveItem.BlurRadius = 15;
-            glowGuppy.BlurRadius = 15;
-            glowFlyLord.BlurRadius = 15;
-            glowSuperBum.BlurRadius = 15;      //new
-            glowMom.BlurRadius = 15;
-            glowBob.BlurRadius = 15;
-            glowShrooms.BlurRadius = 15;
-            glowCthulhu.BlurRadius = 15;
-            glowTumor.BlurRadius = 15;
-            glowDrugs.BlurRadius = 15;
-            glowAngel.BlurRadius = 15;
-            glowPoop.BlurRadius = 15;
-            glowBookworm.ShadowDepth = 0;
+            glowActiveItem.BlurRadius = 10;
+            glowGuppy.BlurRadius = 10;
+            glowFlyLord.BlurRadius = 10;
+            glowSuperBum.BlurRadius = 10;      //new
+            glowMom.BlurRadius = 10;
+            glowBob.BlurRadius = 10;
+            glowShrooms.BlurRadius = 10;
+            glowCthulhu.BlurRadius = 10;
+            glowTumor.BlurRadius = 10;
+            glowDrugs.BlurRadius = 10;
+            glowAngel.BlurRadius = 10;
+            glowPoop.BlurRadius = 10;
+            glowBookworm.BlurRadius = 10;
+            glowSpider.BlurRadius = 10;
 
             glowActiveItem.Color = Colors.Aqua;
             glowGuppy.Color = Colors.Black;
-            glowFlyLord.Color = Colors.Blue;
-            glowSuperBum.Color = Colors.Yellow; //new 
-            glowMom.Color = Colors.DeepPink;
+            glowFlyLord.Color = Colors.LightBlue;
+            glowSuperBum.Color = Colors.Orange; //new 
+            glowMom.Color = Colors.MediumPurple;
             glowBob.Color = Colors.Green;
-            glowShrooms.Color = Colors.Orange;
+            glowShrooms.Color = Colors.Yellow;
             glowCthulhu.Color = Colors.Red;
-            glowTumor.Color = Colors.MediumSpringGreen;
-            glowDrugs.Color = Colors.DeepSkyBlue;
-            glowAngel.Color = Colors.Gold;
+            glowTumor.Color = Colors.Chartreuse;
+            glowDrugs.Color = Colors.Violet;
+            glowAngel.Color = Colors.White;
             glowPoop.Color = Colors.Brown;
-            glowBookworm.Color = Colors.Gray;
+            glowBookworm.Color = Colors.Olive;
+            glowSpider.Color = Colors.Blue;
 
             Label activeItem = new Label();
             activeItem.Content = "Active item";
@@ -535,25 +548,28 @@ namespace TFOI.menus
             bob.Content = "Bob";
             Label shrooms = new Label();
             shrooms.Effect = glowShrooms;
-            shrooms.Content = "Mushroom";
+            shrooms.Content = "Fun Guy";
             Label cthulhu = new Label();
             cthulhu.Effect = glowCthulhu;
-            cthulhu.Content = "Evil Angel";
+            cthulhu.Content = "Leviathan";
             Label tumor = new Label();
             tumor.Effect = glowTumor;
-            tumor.Content = "Tumor";
+            tumor.Content = "Conjoined";
             Label angel = new Label();
             angel.Effect = glowAngel;
-            angel.Content = "Angel";
+            angel.Content = "Seraphim";
             Label drugs = new Label();
             drugs.Effect = glowDrugs;
-            drugs.Content = "Drugs";
+            drugs.Content = "Spun";
             Label poop = new Label();
             poop.Effect = glowPoop;
-            poop.Content = "Poop";
+            poop.Content = "Oh crap";
             Label bookworm = new Label();
             bookworm.Effect = glowBookworm;
             bookworm.Content = "Bookworm";
+            Label spider = new Label();
+            spider.Effect = glowSpider;
+            spider.Content = "Spider Baby";
 
             txtHelp.Children.Add(activeItem);
             txtHelp.Children.Add(guppy);
@@ -568,6 +584,7 @@ namespace TFOI.menus
             txtHelp.Children.Add(drugs);
             txtHelp.Children.Add(poop);
             txtHelp.Children.Add(bookworm);
+            txtHelp.Children.Add(spider);
         }
 
         #region menu stuff

@@ -476,7 +476,8 @@
    },
    "89":{
       "name":"Spider Bite",
-      "text":"Slow effect"
+      "text":"Slow effect",
+      "tform":"Spider"
    },
    "90":{
       "dmg":1,
@@ -815,7 +816,8 @@
       "delay":3,
       "delayx":2.1,
       "name":"Mutant Spider",
-      "text":"Quad shot"
+      "text":"Quad shot",
+      "tform":"Spider"
    },
    "154":{
       "name":"Chemical Peel",
@@ -900,7 +902,8 @@
    },
    "171":{
       "name":"Spider Butt",
-      "text":"Mass enemy slowdown + damage"
+      "text":"Mass enemy slowdown + damage",
+      "tform":"Spider"
    },
    "172":{
       "name":"Sacrificial Dagger",
@@ -1121,7 +1124,8 @@
    },
    "211":{
       "name":"Spiderbaby",
-      "text":"Spider revenge"
+      "text":"Spider revenge",
+      "tform":"Spider"
    },
    "212":{
       "name":"Guppy's Collar",
@@ -1477,7 +1481,8 @@
    "288":{
       "name":"Box of Spiders",
       "text":"It's a box of spiders",
-      "space":true
+      "space":true,
+      "tform":"Spider"
    },
    "289":{
       "name":"Red Candle",
@@ -2058,7 +2063,8 @@
    },
    "403":{
       "name":"Spider Mod",
-      "text":"Mod buddy!"
+      "text":"Mod buddy!",
+      "tform":"Spider"
    },
    "404":{
       "name":"Farting Baby",
@@ -2196,7 +2202,8 @@
    "434":{
       "name":"Jar of Flies",
       "text":"Gotta catch 'em all?",
-      "space":true
+      "space":true,
+      "tform":"FlyLord"
    },
    "435":{
       "name":"Lil Loki",
