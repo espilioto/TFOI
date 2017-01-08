@@ -29,7 +29,14 @@ namespace TFOI
         {
             if (Properties.Settings.Default.backupEnabled)
             {
-                File.Copy(System.AppDomain.CurrentDomain.BaseDirectory + @"resources\isaac.db", Properties.Settings.Default.backupPath, true);
+                try
+                {
+                    File.Copy(System.AppDomain.CurrentDomain.BaseDirectory + @"resources\isaac.db", Properties.Settings.Default.backupPath, true);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + Environment.NewLine + ex.Data);
+                }
             }
         }
 
@@ -106,7 +113,7 @@ namespace TFOI
             }
             catch (SQLiteException ex)
             {
-                MessageBox.Show(ex.Message + Environment.NewLine + ex.Data);
+                MessageBox.Show(ex.Message);
             }
             finally
             {

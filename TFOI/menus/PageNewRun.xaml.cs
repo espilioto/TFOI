@@ -27,6 +27,7 @@ namespace TFOI.menus
     /// </summary>
     public partial class PageNewRun : Page
     {
+        DropShadowEffect glowActiveItem, glowFlyLord, glowGuppy, glowSuperBum, glowMom, glowBob, glowShrooms, glowCthulhu, glowTumor, glowDrugs, glowAngel, glowPoop, glowBookworm, glowSpider;
         Image icon;
 
         Stream stream;
